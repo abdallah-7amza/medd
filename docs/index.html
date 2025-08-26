@@ -61,8 +61,8 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Corrected Path: 'site/database.json' relative to the root
-            fetch('site/database.json')
+            // Corrected Path: 'database.json' relative to index.html in the same /docs folder
+            fetch('database.json')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);
