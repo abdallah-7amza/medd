@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Med Portal</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .universities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .university-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .university-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .university-card h2 {
+            margin: 0 0 10px 0;
+            color: #3498db;
+        }
+        .loading {
+            text-align: center;
+            font-size: 18px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select Your University</h1>
+        <div id="universities-container" class="universities-grid">
+            <div class="loading">Loading universities...</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fetch the database.json file
+            fetch('../site/database.json') // Updated path to be relative
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const container = document.getElementById('universities-container');
+                    container.innerHTML = ''; // Clear the loading message
+                    
+                    // Loop through the universities inside the "tree" object
+                    for (const uniId in data.tree) {
+                        const university = data.tree[uniId];
+                        
+                        // Create a card element for each university
+                        const card = document.createElement('div');
+                        card.className = 'university-card';
+                        card.innerHTML = `<h2>${university.name}</h2>`;
+                        
+                        // Add click event to the card
+                        card.addEventListener('click', function() {
+                            // Save the university ID to localStorage
+                            localStorage.setItem('selectedUni', uniId);
+                            
+                            // Redirect to the lessons list page
+                            window.location.href = 'lessons-list.html';
+                        });
+                        
+                        // Add the card to the container
+                        container.appendChild(card);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching the university data:', error);
+                    document.getElementById('universities-container').innerHTML =
+                        '<div class="loading">Error loading universities. Please try again later.</div>';
+                });
+        });
+    </script>
+</body>
+</html>
