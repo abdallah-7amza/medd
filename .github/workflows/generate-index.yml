@@ -10,22 +10,24 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18
         
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          
-      - name: Generate database index
-        run: node generateIndex.js
-
+    - name: Run generateIndex.js
+      run: node generateIndex.js
+      
+    # --- أضف هذه الخطوة الجديدة هنا ---
     - name: Verify file creation
-      run: ls -R     
-
-      - name: Commit generated database.json
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Update database.json [skip ci]"
-          file_pattern: "site/database.json"
+      run: ls -R
+    # -----------------------------------
+      
+    - name: Commit database.json
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "ci: auto-generate database.json"
+        file_pattern: "site/database.json"
