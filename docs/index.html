@@ -61,37 +61,35 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Fetch the database.json file
-            fetch('../site/database.json') // Updated path to be relative
+            // Corrected Path: 'site/database.json' relative to the root
+            fetch('site/database.json')
                 .then(response => {
                     if (!response.ok) {
-                        throw new Error('Network response was not ok');
+                        throw new Error(`HTTP error! status: ${response.status}`);
                     }
                     return response.json();
                 })
                 .then(data => {
                     const container = document.getElementById('universities-container');
-                    container.innerHTML = ''; // Clear the loading message
+                    container.innerHTML = ''; 
                     
-                    // Loop through the universities inside the "tree" object
+                    if (!data.tree || Object.keys(data.tree).length === 0) {
+                        container.innerHTML = '<div class="loading">No universities found.</div>';
+                        return;
+                    }
+
                     for (const uniId in data.tree) {
                         const university = data.tree[uniId];
                         
-                        // Create a card element for each university
                         const card = document.createElement('div');
                         card.className = 'university-card';
                         card.innerHTML = `<h2>${university.name}</h2>`;
                         
-                        // Add click event to the card
                         card.addEventListener('click', function() {
-                            // Save the university ID to localStorage
                             localStorage.setItem('selectedUni', uniId);
-                            
-                            // Redirect to the lessons list page
                             window.location.href = 'lessons-list.html';
                         });
                         
-                        // Add the card to the container
                         container.appendChild(card);
                     }
                 })
