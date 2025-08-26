@@ -10,20 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 18
+      - name: Checkout repository
+        uses: actions/checkout@v4
         
-    - name: Run generateIndex.js
-      run: node generateIndex.js
-      
-    - name: Commit database.json
-      uses: stefanzweifel/git-auto-commit-action@v5
-      with:
-        # Corrected Indentation Here
-        commit_message: ci: auto-generate database.json
-        file_pattern: site/database.json
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Generate database index
+        run: node generateIndex.js
+        
+      - name: Commit generated database.json
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update database.json [skip ci]"
+          file_pattern: "site/database.json"
