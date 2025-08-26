@@ -256,7 +256,7 @@ async function main() {
 
     
 
-    await fs.writeFile('database.json', JSON.stringify(database, null, 2));
+    await fs.writeFile('site/database.json', JSON.stringify(database, null, 2));
 
     console.log('database.json generated successfully!');
 
