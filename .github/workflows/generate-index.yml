@@ -17,14 +17,17 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: 18
+
+    # --- الخطوة الجديدة المضافة هنا ---
+    - name: Create site directory
+      run: mkdir site
+    # -----------------------------------
         
     - name: Run generateIndex.js
       run: node generateIndex.js
       
-    # --- أضف هذه الخطوة الجديدة هنا ---
     - name: Verify file creation
       run: ls -R
-    # -----------------------------------
       
     - name: Commit database.json
       uses: stefanzweifel/git-auto-commit-action@v5
