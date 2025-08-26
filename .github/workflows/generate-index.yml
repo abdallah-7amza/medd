@@ -1,4 +1,3 @@
-
 name: Generate Database Index
 
 on:
@@ -25,5 +24,6 @@ jobs:
     - name: Commit database.json
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
+        # Corrected Indentation Here
         commit_message: ci: auto-generate database.json
         file_pattern: site/database.json
