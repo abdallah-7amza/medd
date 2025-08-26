@@ -20,7 +20,10 @@ jobs:
           
       - name: Generate database index
         run: node generateIndex.js
-        
+
+    - name: Verify file creation
+      run: ls -R     
+
       - name: Commit generated database.json
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
