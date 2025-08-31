@@ -7,6 +7,19 @@ document.addEventListener('DOMContentLoaded', async function() {
     const cardContainer = document.getElementById('card-container');
     const siteTitleEl = document.getElementById('site-title');
     const toolbarContainer = document.getElementById('toolbar-container');
+    const navContainer = document.getElementById('nav-container');
+    
+    // Clear navigation container
+    navContainer.innerHTML = '';
+    
+    // Add back button if yearId exists (not on the initial Academic Years view)
+    if (yearId) {
+        const backLink = document.createElement('a');
+        backLink.href = 'javascript:history.back()';
+        backLink.className = 'back-link';
+        backLink.innerHTML = '← Back';
+        navContainer.appendChild(backLink);
+    }
     
     if (!selectedUniId) {
         pageTitleEl.textContent = 'No University Selected.';
