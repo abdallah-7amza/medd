@@ -8,19 +8,24 @@ on:
 jobs:
   generate-index:
     runs-on: ubuntu-latest
-
+    
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-
+      
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
         node-version: 18
 
-    - name: Run generateIndex.js
-      run: node generateIndex.js
-
+    # --- الخطوة الجديدة هنا ---
+    - name: Install Dependencies
+      run: npm install
+    # -------------------------
+        
+    - name: Generate database index
+      run: npm run build # سنستخدم الأمر الجديد من package.json
+      
     - name: Commit database.json
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
