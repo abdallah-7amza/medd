@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lessons - Med Portal</title>
+    <link rel="stylesheet" href="css/vars.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        /* Make cards non-clickable by default if they are just for display */
+        .card:not(a) {
+            cursor: default;
+        }
+        a.card, a.card:hover {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <h1 id="site-title">Med Portal</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 id="page-title" class="page-title">Loading...</h1>
+            <div id="card-container" class="card-grid">
+                </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        Powered by Abdallah Hamza
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const yearId = urlParams.get('year');
+            const specialtyId = urlParams.get('specialty');
+            const selectedUniId = localStorage.getItem('selectedUni');
+
+            const pageTitleEl = document.getElementById('page-title');
+            const cardContainer = document.getElementById('card-container');
+            const siteTitleEl = document.getElementById('site-title');
+
+            if (!selectedUniId) {
+                pageTitleEl.textContent = 'No University Selected. Please go back to the homepage.';
+                return;
+            }
+
+            try {
+                const response = await fetch('database.json');
+                if (!response.ok) throw new Error('Failed to load database.');
+                const data = await response.json();
+
+                const university = data.tree[selectedUniId];
+                if (!university) {
+                    pageTitleEl.textContent = 'University not found.';
+                    return;
+                }
+                
+                // Update site title with university name
+                siteTitleEl.textContent = `${university.name} Med Portal`;
+
+                cardContainer.innerHTML = ''; // Clear container
+
+                if (!yearId) {
+                    // Display Years
+                    pageTitleEl.textContent = 'Academic Years';
+                    for (const id in university.children) {
+                        const year = university.children[id];
+                        const card = createCard(year.label, `lessons-list.html?year=${id}`);
+                        cardContainer.appendChild(card);
+                    }
+                } else if (yearId && !specialtyId) {
+                    // Display Specialties
+                    const year = university.children[yearId];
+                    if (!year) { pageTitleEl.textContent = 'Year not found.'; return; }
+                    
+                    pageTitleEl.textContent = `Specialties in ${year.label}`;
+                    for (const id in year.children) {
+                        const specialty = year.children[id];
+                        const card = createCard(specialty.label, `lessons-list.html?year=${yearId}&specialty=${id}`);
+                        cardContainer.appendChild(card);
+                    }
+                } else if (yearId && specialtyId) {
+                    // Display Lessons
+                    const year = university.children[yearId];
+                    const specialty = year ? year.children[specialtyId] : null;
+                    if (!specialty) { pageTitleEl.textContent = 'Specialty not found.'; return; }
+
+                    pageTitleEl.textContent = `Lessons in ${specialty.label}`;
+                    if (Object.keys(specialty.children).length === 0) {
+                        cardContainer.innerHTML = '<p>No lessons available for this specialty yet.</p>';
+                        return;
+                    }
+                    for (const id in specialty.children) {
+                        const lesson = specialty.children[id];
+                        // Assuming lesson object has a 'label' for the title and a 'summary' for the description.
+                        const description = lesson.summary || '';
+                        const card = createCard(lesson.label, `lesson.html?year=${yearId}&specialty=${specialtyId}&lesson=${id}`, description);
+                        cardContainer.appendChild(card);
+                    }
+                }
+
+            } catch (error) {
+                console.error('Error:', error);
+                pageTitleEl.textContent = 'Error loading data.';
+            }
+        });
+
+        function createCard(title, url, description = '') {
+            const cardLink = document.createElement('a');
+            cardLink.href = url;
+            cardLink.className = 'card';
+            
+            let content = `<h2>${title}</h2>`;
+            if (description) {
+                content += `<p>${description}</p>`;
+            }
+            cardLink.innerHTML = content;
+            return cardLink;
+        }
+    </script>
+</body>
+</html>
