@@ -1,6 +1,36 @@
 {
-  "generatedAt": "2025-08-31T14:53:18.206Z",
+  "generatedAt": "2025-08-31T15:07:46.630Z",
   "tree": {
+    "cairo": {
+      "children": {
+        "year4": {
+          "children": {
+            "surgery": {
+              "children": {
+                "collection_quiz": {
+                  "children": {},
+                  "hasIndex": false,
+                  "label": "Collection Quiz",
+                  "id": "collection_quiz",
+                  "path": "content/universities/cairo/year4/surgery/collection_quiz"
+                }
+              },
+              "hasIndex": false,
+              "label": "Surgery",
+              "id": "surgery",
+              "path": "content/universities/cairo/year4/surgery"
+            }
+          },
+          "hasIndex": false,
+          "label": "Year4",
+          "id": "year4",
+          "path": "content/universities/cairo/year4"
+        }
+      },
+      "name": "Cairo",
+      "hasIndex": false,
+      "label": "Cairo"
+    },
     "nub": {
       "children": {
         "year5": {
