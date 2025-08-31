@@ -9,7 +9,7 @@ function formatLabel(name) {
 
 // Main recursive function to scan directories
 async function scanDirectory(dirPath, isUniversity = false) {
-    const node = { children: {} };
+    const node = { children: {}, resources: {} };
 
     // --- 1. Read metadata for the current folder (from index.md or meta.json) ---
     if (isUniversity) {
@@ -17,7 +17,7 @@ async function scanDirectory(dirPath, isUniversity = false) {
         try {
             const metaContent = await fs.readFile(metaPath, 'utf8');
             const meta = JSON.parse(metaContent);
-            node.name = meta.name || formatLabel(path.basename(dirPath)); // University has a 'name'
+            node.name = meta.name || formatLabel(path.basename(dirPath));
         } catch {
             node.name = formatLabel(path.basename(dirPath));
         }
@@ -37,24 +37,60 @@ async function scanDirectory(dirPath, isUniversity = false) {
         node.label = node.label || formatLabel(path.basename(dirPath));
     }
 
-    // --- 2. Scan for resource files (like quizzes) ---
-    node.resources = {};
+    // --- 2. Scan for lesson-specific resources ---
     const quizPath = path.join(dirPath, 'quiz.json');
     try {
         const quizContent = await fs.readFile(quizPath, 'utf8');
         node.resources.lessonQuiz = JSON.parse(quizContent);
-    } catch {
-        // No quiz.json found, which is fine.
-    }
+    } catch {}
 
-    // --- 3. Recursively scan children directories ---
+    // --- 3. Scan for Collection Quizzes ---
+    const collectionQuizPath = path.join(dirPath, '_collection_quiz');
+    try {
+        await fs.access(collectionQuizPath);
+        const files = await fs.readdir(collectionQuizPath);
+        const collectionQuizzes = [];
+
+        for (const file of files) {
+            if (file.endsWith('.json')) {
+                const baseName = path.basename(file, '.json');
+                const jsonFilePath = path.join(collectionQuizPath, file);
+                
+                try {
+                    const quizContent = await fs.readFile(jsonFilePath, 'utf8');
+                    const quizData = JSON.parse(quizContent);
+                    
+                    const cssFilePath = path.join(collectionQuizPath, `${baseName}.css`);
+                    const jsFilePath = path.join(collectionQuizPath, `${baseName}.js`);
+
+                    const cssExists = await fs.access(cssFilePath).then(() => true).catch(() => false);
+                    const jsExists = await fs.access(jsFilePath).then(() => true).catch(() => false);
+
+                    collectionQuizzes.push({
+                        id: baseName,
+                        quizData: quizData,
+                        css: cssExists ? cssFilePath.replace(/\\/g, '/') : null,
+                        js: jsExists ? jsFilePath.replace(/\\/g, '/') : null
+                    });
+                } catch (e) {
+                    console.error(`Error processing collection quiz ${jsonFilePath}:`, e);
+                }
+            }
+        }
+        if (collectionQuizzes.length > 0) {
+            node.resources.collectionQuizzes = collectionQuizzes;
+        }
+    } catch {}
+
+    // --- 4. Recursively scan children directories ---
     const entries = await fs.readdir(dirPath, { withFileTypes: true });
     for (const entry of entries) {
+        // Ignore special folders like _collection_quiz
         if (entry.isDirectory() && !entry.name.startsWith('_') && !entry.name.startsWith('.')) {
             const childPath = path.join(dirPath, entry.name);
             node.children[entry.name] = await scanDirectory(childPath);
             node.children[entry.name].id = entry.name;
-            node.children[entry.name].path = childPath.replace(/\\/g, '/'); // Normalize path for consistency
+            node.children[entry.name].path = childPath.replace(/\\/g, '/');
         }
     }
 
@@ -76,19 +112,20 @@ async function main() {
         tree: {}
     };
 
-    const uniDirs = await fs.readdir(universitiesPath, { withFileTypes: true });
-    for (const uniDir of uniDirs) {
-        if (uniDir.isDirectory()) {
-            const uniPath = path.join(universitiesPath, uniDir.name);
-            database.tree[uniDir.name] = await scanDirectory(uniPath, true);
+    try {
+        const uniDirs = await fs.readdir(universitiesPath, { withFileTypes: true });
+        for (const uniDir of uniDirs) {
+            if (uniDir.isDirectory()) {
+                const uniPath = path.join(universitiesPath, uniDir.name);
+                database.tree[uniDir.name] = await scanDirectory(uniPath, true);
+            }
         }
+        await fs.writeFile(outputPath, JSON.stringify(database, null, 2));
+        console.log(`Database generated successfully at ${outputPath}`);
+    } catch (error) {
+        console.error("Error generating database:", error);
+        process.exit(1);
     }
-
-    await fs.writeFile(outputPath, JSON.stringify(database, null, 2));
-    console.log(`Database generated successfully at ${outputPath}`);
 }
 
-main().catch(error => {
-    console.error("Error generating database:", error);
-    process.exit(1);
-});
+main();
