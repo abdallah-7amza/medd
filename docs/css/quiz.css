@@ -10,6 +10,14 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
+/* Question counter */
+#question-counter {
+    font-size: 0.9rem;
+    color: var(--text-light-color);
+    margin-bottom: 10px;
+    text-align: right;
+}
+
 /* Question styling */
 #question-stem {
     font-size: 1.2rem;
@@ -45,6 +53,23 @@
 
 .option input[type="radio"] {
     margin-right: 10px;
+}
+
+/* Instant feedback styles */
+.option.correct {
+    background-color: #d4edda; /* Light Green */
+    border-color: #28a745; /* Green */
+}
+
+.option.incorrect {
+    background-color: #f8d7da; /* Light Red */
+    border-color: #dc3545; /* Red */
+}
+
+/* Style to prevent further clicks after an answer is selected */
+.options-disabled .option {
+    cursor: not-allowed;
+    opacity: 0.7;
 }
 
 /* Progress bar */
