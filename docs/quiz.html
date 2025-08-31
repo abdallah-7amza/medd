@@ -38,7 +38,14 @@
                 <div id="results-screen">
                     <h2>Quiz Results</h2>
                     <div id="score-display">You scored 0 out of 0</div>
-                    <a href="javascript:history.back()" id="restart-btn">Back to Lessons</a>
+                    <div>
+                        <a href="javascript:history.back()" id="restart-btn">Back to Lessons</a>
+                        <button id="review-btn">Review Answers</button>
+                    </div>
+                </div>
+                
+                <div id="review-screen" style="display: none;">
+                    <!-- Review content will be dynamically added here -->
                 </div>
             </div>
         </div>
@@ -67,7 +74,9 @@
             const progressBar = document.getElementById('progress-bar');
             const quizInterface = document.getElementById('quiz-interface');
             const resultsScreen = document.getElementById('results-screen');
+            const reviewScreen = document.getElementById('review-screen');
             const scoreDisplay = document.getElementById('score-display');
+            const reviewBtn = document.getElementById('review-btn');
             const siteTitle = document.getElementById('site-title');
             
             // Quiz state variables
@@ -344,6 +353,98 @@
                 localStorage.removeItem(localStorageKey);
             }
             
+            function showReview() {
+                // Hide results screen and show review screen
+                resultsScreen.style.display = 'none';
+                reviewScreen.style.display = 'block';
+                
+                // Clear any previous content
+                reviewScreen.innerHTML = '';
+                
+                // Add a title for the review section
+                const reviewTitle = document.createElement('h2');
+                reviewTitle.textContent = 'Quiz Review';
+                reviewTitle.style.color = 'var(--primary-color)';
+                reviewTitle.style.marginBottom = '20px';
+                reviewScreen.appendChild(reviewTitle);
+                
+                // Loop through all questions
+                quizData.questions.forEach((question, index) => {
+                    // Create a container for this question
+                    const questionBlock = document.createElement('div');
+                    questionBlock.className = 'review-question-block';
+                    
+                    // Add the question number and text
+                    const questionTitle = document.createElement('h3');
+                    questionTitle.textContent = `Question ${index + 1}: ${question.stem || question.question || "Question"}`;
+                    questionBlock.appendChild(questionTitle);
+                    
+                    // Create a list for the options
+                    const optionsList = document.createElement('div');
+                    
+                    // Get the correct answer
+                    const correctAnswer = question.correct !== undefined ? question.correct : question.correctAnswer;
+                    
+                    // Add each option
+                    question.options.forEach((option, optionIndex) => {
+                        const optionElement = document.createElement('div');
+                        optionElement.className = 'option';
+                        optionElement.style.marginBottom = '8px';
+                        
+                        // Add radio button (disabled)
+                        const radio = document.createElement('input');
+                        radio.type = 'radio';
+                        radio.name = `review-question-${index}`;
+                        radio.value = optionIndex;
+                        radio.disabled = true;
+                        radio.style.marginRight = '8px';
+                        
+                        // Add label
+                        const label = document.createElement('label');
+                        label.textContent = option;
+                        
+                        optionElement.appendChild(radio);
+                        optionElement.appendChild(label);
+                        
+                        // Mark the correct answer
+                        if (optionIndex === correctAnswer) {
+                            optionElement.classList.add('correct');
+                        }
+                        
+                        // Mark the user's answer if it was incorrect
+                        if (userAnswers[index] === optionIndex && optionIndex !== correctAnswer) {
+                            optionElement.classList.add('incorrect');
+                        }
+                        
+                        optionsList.appendChild(optionElement);
+                    });
+                    
+                    questionBlock.appendChild(optionsList);
+                    
+                    // Add explanation if available
+                    if (question.explanation) {
+                        const explanationDiv = document.createElement('div');
+                        explanationDiv.className = 'review-explanation';
+                        explanationDiv.innerHTML = `<strong>Explanation:</strong> ${question.explanation}`;
+                        questionBlock.appendChild(explanationDiv);
+                    }
+                    
+                    // Add this question block to the review screen
+                    reviewScreen.appendChild(questionBlock);
+                });
+                
+                // Add a back button to return to results
+                const backToResultsBtn = document.createElement('button');
+                backToResultsBtn.textContent = 'Back to Results';
+                backToResultsBtn.className = 'toolbar-button';
+                backToResultsBtn.style.marginTop = '20px';
+                backToResultsBtn.addEventListener('click', function() {
+                    reviewScreen.style.display = 'none';
+                    resultsScreen.style.display = 'block';
+                });
+                reviewScreen.appendChild(backToResultsBtn);
+            }
+            
             function showError(message) {
                 questionCounter.textContent = '';
                 questionStem.textContent = message;
@@ -361,6 +462,8 @@
                     displayQuestion(currentQuestionIndex);
                 }
             });
+            
+            reviewBtn.addEventListener('click', showReview);
         });
     </script>
 </body>
