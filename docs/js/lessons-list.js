@@ -79,17 +79,17 @@ document.addEventListener('DOMContentLoaded', async function() {
             
             // Check for collection quizzes
             if (specialty.resources && specialty.resources.collectionQuizzes && specialty.resources.collectionQuizzes.length > 0) {
-                // Get the first quiz from the array
-                const firstQuiz = specialty.resources.collectionQuizzes[0];
-                
-                // Create a button for the quiz
-                const quizButton = document.createElement('a');
-                quizButton.href = `quiz.html?year=${yearId}&specialty=${specialtyId}&collection=${firstQuiz.id}`;
-                quizButton.className = 'toolbar-button';
-                quizButton.textContent = `Start ${specialty.label} Quiz Bank`;
-                
-                // Add the button to the toolbar
-                toolbarContainer.appendChild(quizButton);
+                // Loop through each quiz and create a button for it
+                specialty.resources.collectionQuizzes.forEach(quiz => {
+                    // Create a button for the quiz
+                    const quizButton = document.createElement('a');
+                    quizButton.href = `quiz.html?year=${yearId}&specialty=${specialtyId}&collection=${quiz.id}`;
+                    quizButton.className = 'toolbar-button';
+                    quizButton.textContent = `Start ${specialty.label} Quiz Bank`;
+                    
+                    // Add the button to the toolbar
+                    toolbarContainer.appendChild(quizButton);
+                });
             }
             
             for (const id in specialty.children) {
