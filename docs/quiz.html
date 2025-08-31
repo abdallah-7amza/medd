@@ -22,6 +22,7 @@
                         <div id="progress-bar"></div>
                     </div>
                     
+                    <div id="question-counter">Loading question...</div>
                     <div id="question-stem">Loading question...</div>
                     
                     <div id="options-container">
@@ -58,6 +59,7 @@
             const selectedUniId = localStorage.getItem('selectedUni');
             
             // Get DOM elements
+            const questionCounter = document.getElementById('question-counter');
             const questionStem = document.getElementById('question-stem');
             const optionsContainer = document.getElementById('options-container');
             const submitBtn = document.getElementById('submit-btn');
@@ -78,6 +80,9 @@
                 showError('Missing parameters. Please go back and select a lesson.');
                 return;
             }
+            
+            // Generate a unique key for this quiz in localStorage
+            const localStorageKey = `quiz-progress-${selectedUniId}-${yearId}-${specialtyId}-${lessonId}`;
             
             try {
                 // Fetch the database to get quiz data
@@ -110,6 +115,27 @@
                 // Get quiz data
                 quizData = lesson.resources.lessonQuiz;
                 
+                // Try to load saved progress from localStorage
+                const savedProgress = localStorage.getItem(localStorageKey);
+                if (savedProgress) {
+                    try {
+                        userAnswers = JSON.parse(savedProgress);
+                        // If saved progress is incomplete, fill the rest with null
+                        if (userAnswers.length < quizData.questions.length) {
+                            const tempAnswers = [...userAnswers];
+                            userAnswers = new Array(quizData.questions.length).fill(null);
+                            for (let i = 0; i < tempAnswers.length; i++) {
+                                userAnswers[i] = tempAnswers[i];
+                            }
+                        }
+                    } catch (e) {
+                        console.error('Error parsing saved progress:', e);
+                        userAnswers = new Array(quizData.questions.length).fill(null);
+                    }
+                } else {
+                    userAnswers = new Array(quizData.questions.length).fill(null);
+                }
+                
                 // Initialize the quiz
                 initializeQuiz();
                 
@@ -119,14 +145,22 @@
             }
             
             function initializeQuiz() {
-                // Reset state
-                currentQuestionIndex = 0;
-                userAnswers = new Array(quizData.questions.length).fill(null);
+                // Show first question or resume from where left off
+                // Find the first unanswered question
+                let resumeIndex = 0;
+                for (let i = 0; i < userAnswers.length; i++) {
+                    if (userAnswers[i] === null) {
+                        resumeIndex = i;
+                        break;
+                    }
+                    // If all questions are answered, show the last one
+                    if (i === userAnswers.length - 1) {
+                        resumeIndex = i;
+                    }
+                }
                 
-                // Show first question
-                displayQuestion(0);
-                
-                // Update progress bar
+                currentQuestionIndex = resumeIndex;
+                displayQuestion(currentQuestionIndex);
                 updateProgressBar();
             }
             
@@ -136,11 +170,15 @@
                 
                 const question = quizData.questions[index];
                 
+                // Update question counter
+                questionCounter.textContent = `Question ${index + 1} of ${quizData.questions.length}`;
+                
                 // Update question stem
                 questionStem.textContent = question.stem || question.question || "Question";
                 
-                // Clear options container
+                // Clear options container and reset state
                 optionsContainer.innerHTML = '';
+                optionsContainer.classList.remove('options-disabled');
                 
                 // Add options
                 question.options.forEach((option, i) => {
@@ -168,9 +206,14 @@
                     
                     // Add click event to option
                     optionElement.addEventListener('click', function() {
+                        // If options are disabled, don't process clicks
+                        if (optionsContainer.classList.contains('options-disabled')) {
+                            return;
+                        }
+                        
                         // Remove selected class from all options
                         document.querySelectorAll('.option').forEach(opt => {
-                            opt.classList.remove('selected');
+                            opt.classList.remove('selected', 'correct', 'incorrect');
                         });
                         
                         // Add selected class to clicked option
@@ -181,6 +224,32 @@
                         
                         // Enable submit button
                         submitBtn.disabled = false;
+                        
+                        // Instant feedback
+                        // Get the correct answer
+                        const correctAnswer = question.correct !== undefined ? question.correct : question.correctAnswer;
+                        
+                        // Check if the selected answer is correct
+                        if (parseInt(radio.value) === correctAnswer) {
+                            this.classList.add('correct');
+                        } else {
+                            this.classList.add('incorrect');
+                            // Highlight the correct answer
+                            document.querySelectorAll('.option').forEach(opt => {
+                                if (parseInt(opt.querySelector('input').value) === correctAnswer) {
+                                    opt.classList.add('correct');
+                                }
+                            });
+                        }
+                        
+                        // Disable all options to prevent changing the answer
+                        optionsContainer.classList.add('options-disabled');
+                        
+                        // Record the answer
+                        userAnswers[index] = parseInt(radio.value);
+                        
+                        // Save progress to localStorage
+                        localStorage.setItem(localStorageKey, JSON.stringify(userAnswers));
                     });
                     
                     optionsContainer.appendChild(optionElement);
@@ -199,6 +268,19 @@
                 // Enable submit button if user has already answered this question
                 if (userAnswers[index] !== null) {
                     submitBtn.disabled = false;
+                    
+                    // If the question was already answered, show the feedback
+                    optionsContainer.classList.add('options-disabled');
+                    const correctAnswer = question.correct !== undefined ? question.correct : question.correctAnswer;
+                    
+                    document.querySelectorAll('.option').forEach(opt => {
+                        const value = parseInt(opt.querySelector('input').value);
+                        if (value === correctAnswer) {
+                            opt.classList.add('correct');
+                        } else if (value === userAnswers[index]) {
+                            opt.classList.add('incorrect');
+                        }
+                    });
                 } else {
                     submitBtn.disabled = true;
                 }
@@ -222,8 +304,11 @@
                     return;
                 }
                 
-                // Record answer
+                // Record answer (already recorded in the click event, but double-check)
                 userAnswers[currentQuestionIndex] = parseInt(selectedOption.value);
+                
+                // Save progress to localStorage
+                localStorage.setItem(localStorageKey, JSON.stringify(userAnswers));
                 
                 // Check if this is the last question
                 if (currentQuestionIndex === quizData.questions.length - 1) {
@@ -254,9 +339,13 @@
                 // Hide quiz interface and show results
                 quizInterface.style.display = 'none';
                 resultsScreen.style.display = 'block';
+                
+                // Clear the saved progress since the quiz is completed
+                localStorage.removeItem(localStorageKey);
             }
             
             function showError(message) {
+                questionCounter.textContent = '';
                 questionStem.textContent = message;
                 optionsContainer.innerHTML = '';
                 submitBtn.style.display = 'none';
