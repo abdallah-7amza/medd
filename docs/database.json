@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-31T11:24:02.807Z",
+  "generatedAt": "2025-08-31T11:35:29.261Z",
   "tree": {
     "nub": {
       "children": {
@@ -13,6 +13,34 @@
                   "label": "Anemia",
                   "summary": "An overview of anemia in pediatrics, including causes, clinical features, and management.",
                   "markdownContent": "\n# Anemia in Pediatrics\n\nThis is the main content of the lesson about Anemia.\n(Content will be added here later)\n",
+                  "resources": {
+                    "lessonQuiz": {
+                      "questions": [
+                        {
+                          "stem": "What is the most common cause of anemia in children worldwide?",
+                          "options": [
+                            "Iron deficiency",
+                            "Vitamin B12 deficiency",
+                            "Folate deficiency",
+                            "Hemolytic anemia"
+                          ],
+                          "correct": 0,
+                          "explanation": "Iron deficiency is by far the most common cause of anemia in the pediatric population globally, primarily due to nutritional factors."
+                        },
+                        {
+                          "stem": "A 2-year-old child presents with pallor and fatigue. A complete blood count shows microcytic, hypochromic anemia. Which of the following is the most likely diagnosis?",
+                          "options": [
+                            "Anemia of chronic disease",
+                            "Lead poisoning",
+                            "Iron deficiency anemia",
+                            "Thalassemia minor"
+                          ],
+                          "correct": 2,
+                          "explanation": "Microcytic, hypochromic anemia in a toddler is the classic presentation of iron deficiency anemia."
+                        }
+                      ]
+                    }
+                  },
                   "id": "anemia",
                   "path": "content/universities/nub/year5/pediatrics/anemia"
                 }
@@ -29,9 +57,9 @@
           "path": "content/universities/nub/year5"
         }
       },
+      "name": "NUB",
       "hasIndex": false,
-      "label": "Nub",
-      "name": "NUB"
+      "label": "Nub"
     }
   }
 }
