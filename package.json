@@ -1,3 +1,11 @@
 {
-  "type": "module"
+  "name": "med-portal-indexer",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "gray-matter": "^4.0.3"
+  },
+  "scripts": {
+    "build": "node generateIndex.js"
+  }
 }
