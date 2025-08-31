@@ -4,8 +4,30 @@
       "id": "nub",
       "name": "NUB",
       "path": "content/universities/nub",
-      "children": {}
+      "children": {
+        "year5": {
+          "id": "year5",
+          "label": "Year5",
+          "path": "content/universities/nub/year5",
+          "children": {
+            "pediatrics": {
+              "id": "pediatrics",
+              "label": "Pediatrics",
+              "path": "content/universities/nub/year5/pediatrics",
+              "children": {
+                "anemia": {
+                  "id": "anemia",
+                  "label": "Anemia",
+                  "path": "content/universities/nub/year5/pediatrics/anemia",
+                  "children": {},
+                  "hasIndex": true
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
-  "generatedAt": "2025-08-31T09:39:05.789Z"
+  "generatedAt": "2025-08-31T10:03:25.828Z"
 }
