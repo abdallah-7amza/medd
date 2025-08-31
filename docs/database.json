@@ -1,34 +1,37 @@
 {
-  "generatedAt": "2025-08-31T10:42:00.042Z",
+  "generatedAt": "2025-08-31T11:00:14.197Z",
   "tree": {
-    "universities": {
-      "id": "universities",
-      "label": "Universities",
-      "path": "content/universities",
+    "nub": {
       "children": {
-        "nub": {
-          "id": "nub",
-          "label": "Nub",
-          "path": "content/universities/nub",
+        "year5": {
           "children": {
-            "year5": {
-              "id": "year5",
-              "label": "Year5",
-              "path": "content/universities/nub/year5",
+            "pediatrics": {
               "children": {
-                "pediatrics": {
-                  "id": "pediatrics",
-                  "label": "Pediatrics",
-                  "path": "content/universities/nub/year5/pediatrics",
-                  "hasIndex": false,
+                "anemia": {
                   "children": {},
-                  "resources": {}
+                  "hasIndex": true,
+                  "label": "Anemia",
+                  "summary": "An overview of anemia in pediatrics, including causes, clinical features, and management.",
+                  "markdownContent": "\n# Anemia in Pediatrics\n\nThis is the main content of the lesson about Anemia.\n(Content will be added here later)\n",
+                  "id": "anemia",
+                  "path": "content/universities/nub/year5/pediatrics/anemia"
                 }
-              }
+              },
+              "hasIndex": false,
+              "label": "Pediatrics",
+              "id": "pediatrics",
+              "path": "content/universities/nub/year5/pediatrics"
             }
-          }
+          },
+          "hasIndex": false,
+          "label": "Year5",
+          "id": "year5",
+          "path": "content/universities/nub/year5"
         }
-      }
+      },
+      "hasIndex": false,
+      "label": "Nub",
+      "name": "NUB"
     }
   }
 }
