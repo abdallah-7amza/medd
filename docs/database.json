@@ -1,26 +1,28 @@
 {
+  "generatedAt": "2025-08-31T10:42:00.042Z",
   "tree": {
-    "nub": {
-      "id": "nub",
-      "name": "NUB",
-      "path": "content/universities/nub",
+    "universities": {
+      "id": "universities",
+      "label": "Universities",
+      "path": "content/universities",
       "children": {
-        "year5": {
-          "id": "year5",
-          "label": "Year5",
-          "path": "content/universities/nub/year5",
+        "nub": {
+          "id": "nub",
+          "label": "Nub",
+          "path": "content/universities/nub",
           "children": {
-            "pediatrics": {
-              "id": "pediatrics",
-              "label": "Pediatrics",
-              "path": "content/universities/nub/year5/pediatrics",
+            "year5": {
+              "id": "year5",
+              "label": "Year5",
+              "path": "content/universities/nub/year5",
               "children": {
-                "anemia": {
-                  "id": "anemia",
-                  "label": "Anemia",
-                  "path": "content/universities/nub/year5/pediatrics/anemia",
+                "pediatrics": {
+                  "id": "pediatrics",
+                  "label": "Pediatrics",
+                  "path": "content/universities/nub/year5/pediatrics",
+                  "hasIndex": false,
                   "children": {},
-                  "hasIndex": true
+                  "resources": {}
                 }
               }
             }
@@ -28,6 +30,5 @@
         }
       }
     }
-  },
-  "generatedAt": "2025-08-31T10:40:53.651Z"
+  }
 }
