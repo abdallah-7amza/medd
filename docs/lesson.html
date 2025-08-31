@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson - Med Portal</title>
+    <link rel="stylesheet" href="css/vars.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        #lesson-content {
+            background-color: var(--card-background-color);
+            border-radius: 8px;
+            padding: 25px 35px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            line-height: 1.7;
+        }
+        #lesson-content h1, #lesson-content h2, #lesson-content h3 {
+            color: var(--primary-color);
+            margin-top: 24px;
+            margin-bottom: 16px;
+        }
+        #lesson-content p { margin-bottom: 16px; }
+        #lesson-content ul, #lesson-content ol { margin-bottom: 16px; padding-left: 24px; }
+        #lesson-content li { margin-bottom: 8px; }
+        #toolbar-container { margin: 25px 0; display: flex; gap: 10px; }
+        .toolbar-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s;
+        }
+        .toolbar-button:hover { background-color: #003366; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: var(--primary-color); text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <h1 id="site-title">Med Portal</h1>
+    </header>
+    <main>
+        <div class="container">
+            <a href="javascript:history.back()" class="back-link">← Back to Lessons</a>
+            
+            <h1 id="lesson-title" class="page-title">Loading...</h1>
+            
+            <div id="toolbar-container">
+                </div>
+            
+            <div id="lesson-content">
+                </div>
+        </div>
+    </main>
+    <footer class="main-footer">
+        Powered by Abdallah Hamza
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const yearId = urlParams.get('year');
+            const specialtyId = urlParams.get('specialty');
+            const lessonId = urlParams.get('lesson');
+            const selectedUniId = localStorage.getItem('selectedUni');
+
+            const lessonTitleEl = document.getElementById('lesson-title');
+            const lessonContentEl = document.getElementById('lesson-content');
+            const toolbarContainer = document.getElementById('toolbar-container');
+            const siteTitleEl = document.getElementById('site-title');
+
+            if (!yearId || !specialtyId || !lessonId || !selectedUniId) {
+                lessonTitleEl.textContent = 'Error: Missing information in URL.';
+                return;
+            }
+
+            try {
+                const response = await fetch('database.json');
+                if (!response.ok) throw new Error('Failed to load database.');
+                const data = await response.json();
+
+                const university = data.tree[selectedUniId];
+                const year = university?.children[yearId];
+                const specialty = year?.children[specialtyId];
+                const lesson = specialty?.children[lessonId];
+
+                if (!lesson) {
+                    throw new Error('Lesson could not be found in the database.');
+                }
+                
+                // Update titles
+                siteTitleEl.textContent = `${university.name} Med Portal`; // Corrected to use .name
+                lessonTitleEl.textContent = lesson.label;
+
+                // Render markdown content
+                if (lesson.markdownContent) {
+                    lessonContentEl.innerHTML = marked.parse(lesson.markdownContent);
+                } else {
+                    lessonContentEl.innerHTML = '<p>No content available for this lesson.</p>';
+                }
+
+                // Build toolbar
+                if (lesson.resources?.lessonQuiz) {
+                    const quizButton = document.createElement('a');
+                    quizButton.href = `quiz.html?year=${yearId}&specialty=${specialtyId}&lesson=${lessonId}`;
+                    quizButton.className = 'toolbar-button';
+                    quizButton.textContent = 'Start Quiz';
+                    toolbarContainer.appendChild(quizButton);
+                }
+
+            } catch (error) {
+                console.error('Error loading lesson:', error);
+                lessonTitleEl.textContent = 'Error loading lesson.';
+                lessonContentEl.innerHTML = `<p>${error.message}</p>`;
+            }
+        });
+    </script>
+</body>
+</html>
