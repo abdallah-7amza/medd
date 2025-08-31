@@ -7,9 +7,22 @@ function formatLabel(name) {
     return name.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
 }
 
+// Main recursive function to scan directories
 async function scanDirectory(dirPath, isUniversity = false) {
     const node = { children: {} };
-    // --- Metadata for the current node ---
+
+    // --- 1. Read metadata for the current folder (from index.md or meta.json) ---
+    if (isUniversity) {
+        const metaPath = path.join(dirPath, 'meta.json');
+        try {
+            const metaContent = await fs.readFile(metaPath, 'utf8');
+            const meta = JSON.parse(metaContent);
+            node.name = meta.name || formatLabel(path.basename(dirPath)); // University has a 'name'
+        } catch {
+            node.name = formatLabel(path.basename(dirPath));
+        }
+    }
+
     const indexPath = path.join(dirPath, 'index.md');
     try {
         await fs.access(indexPath);
@@ -21,34 +34,39 @@ async function scanDirectory(dirPath, isUniversity = false) {
         node.markdownContent = content;
     } catch {
         node.hasIndex = false;
-        node.label = formatLabel(path.basename(dirPath));
+        node.label = node.label || formatLabel(path.basename(dirPath));
     }
 
-    // --- Special handling for university folders ---
-    if (isUniversity) {
-        const metaPath = path.join(dirPath, 'meta.json');
-        try {
-            const metaContent = await fs.readFile(metaPath, 'utf8');
-            const meta = JSON.parse(metaContent);
-            node.name = meta.name || node.label; // Use 'name' for university
-        } catch {
-            node.name = node.label;
-        }
+    // --- 2. Scan for resource files (like quizzes) ---
+    node.resources = {};
+    const quizPath = path.join(dirPath, 'quiz.json');
+    try {
+        const quizContent = await fs.readFile(quizPath, 'utf8');
+        node.resources.lessonQuiz = JSON.parse(quizContent);
+    } catch {
+        // No quiz.json found, which is fine.
     }
-    
-    // --- Recursively scan children directories ---
+
+    // --- 3. Recursively scan children directories ---
     const entries = await fs.readdir(dirPath, { withFileTypes: true });
     for (const entry of entries) {
         if (entry.isDirectory() && !entry.name.startsWith('_') && !entry.name.startsWith('.')) {
             const childPath = path.join(dirPath, entry.name);
             node.children[entry.name] = await scanDirectory(childPath);
             node.children[entry.name].id = entry.name;
-            node.children[entry.name].path = childPath;
+            node.children[entry.name].path = childPath.replace(/\\/g, '/'); // Normalize path for consistency
         }
     }
+
+    // Clean up empty resources object
+    if (Object.keys(node.resources).length === 0) {
+        delete node.resources;
+    }
+
     return node;
 }
 
+// Main execution function
 async function main() {
     const universitiesPath = 'content/universities';
     const outputPath = 'docs/database.json';
