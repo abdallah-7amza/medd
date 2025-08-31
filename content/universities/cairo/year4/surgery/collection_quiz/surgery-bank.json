@@ -1,0 +1,15 @@
+{
+  "questions": [
+    {
+      "stem": "What is the most common cause of acute appendicitis in adults?",
+      "options": [
+        "Lymphoid hyperplasia",
+        "Fecalith obstruction",
+        "Foreign body",
+        "Carcinoid tumor"
+      ],
+      "correct": 1,
+      "explanation": "Obstruction of the appendiceal lumen by a fecalith is the most common etiology of acute appendicitis."
+    }
+  ]
+}
