@@ -1,272 +1,155 @@
 import fs from 'fs/promises';
-
 import path from 'path';
-
-
-
-async function scanDirectory(dirPath, relativePath = '', isTopLevel = false) {
-
-  const items = await fs.readdir(dirPath);
-
-  const result = {
-
-    children: {}
-
-  };
-
-
-
-  for (const item of items) {
-
-    const itemPath = path.join(dirPath, item);
-
-    const itemRelativePath = path.join(relativePath, item);
-
-    const stats = await fs.stat(itemPath);
-
-
-
-    if (stats.isDirectory()) {
-
-      if (item.startsWith('_') || item.startsWith('.')) {
-
-        if (item === '_collection_quiz') {
-
-          const collectionQuizzes = await processCollectionQuiz(itemPath, itemRelativePath);
-
-          if (collectionQuizzes.length > 0) {
-
-            result.resources = result.resources || {};
-
-            result.resources.collectionQuiz = collectionQuizzes;
-
-          }
-
-        }
-
-        continue;
-
-      }
-
-
-
-      const subResult = await scanDirectory(itemPath, itemRelativePath, false);
-
-
-
-      if (isTopLevel) {
-
-        let uniName = formatName(item);
-
-        try {
-
-          const metaPath = path.join(itemPath, 'meta.json');
-
-          const metaContent = await fs.readFile(metaPath, 'utf-8');
-
-          const meta = JSON.parse(metaContent);
-
-          if (meta.name) {
-
-            uniName = meta.name;
-
-          }
-
-        } catch (error) {
-
-          // meta.json doesn't exist or is invalid, use formatted name
-
-        }
-
-
-
-        result.children[item] = {
-
-          id: item,
-
-          name: uniName,
-
-          path: `content/universities/${itemRelativePath}`,
-
-          ...subResult
-
-        };
-
-      } else {
-
-        result.children[item] = {
-
-          id: item,
-
-          label: formatName(item),
-
-          path: `content/universities/${itemRelativePath}`,
-
-          ...subResult
-
-        };
-
-      }
-
-    } else if (stats.isFile()) {
-
-      if (item === 'index.md') {
-
-        result.hasIndex = true;
-
-      } else if (item === 'quiz.json') {
-
-        result.resources = result.resources || {};
-
-        result.resources.lessonQuiz = {
-
-          file: `content/universities/${itemRelativePath}`
-
-        };
-
-      }
-
-    }
-
-  }
-
-
-
-  return result;
-
+import matter from 'gray-matter';
+
+// Helper function to format folder names into readable labels
+function formatLabel(folderName) {
+    return folderName
+        .split('-')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
 }
 
-
-
-async function processCollectionQuiz(dirPath, relativePath) {
-
-  const items = await fs.readdir(dirPath);
-
-  const collectionQuizzes = [];
-
-
-
-  for (const item of items) {
-
-    if (item.endsWith('.json')) {
-
-      const baseName = item.replace('.json', '');
-
-      const itemPath = path.join(dirPath, item);
-
-      const itemRelativePath = path.join(relativePath, item);
-
-      
-
-      // Check for corresponding CSS and JS files
-
-      const cssPath = path.join(dirPath, `${baseName}.css`);
-
-      const jsPath = path.join(dirPath, `${baseName}.js`);
-
-      
-
-      let cssFile = null;
-
-      let jsFile = null;
-
-      
-
-      try {
-
-        await fs.access(cssPath);
-
-        cssFile = `content/universities/${path.join(relativePath, `${baseName}.css`)}`;
-
-      } catch (error) {
-
-        // CSS file doesn't exist
-
-      }
-
-      
-
-      try {
-
-        await fs.access(jsPath);
-
-        jsFile = `content/universities/${path.join(relativePath, `${baseName}.js`)}`;
-
-      } catch (error) {
-
-        // JS file doesn't exist
-
-      }
-
-      
-
-      collectionQuizzes.push({
-
-        id: baseName,
-
-        file: `content/universities/${itemRelativePath}`,
-
-        css: cssFile,
-
-        js: jsFile
-
-      });
-
-    }
-
-  }
-
-
-
-  return collectionQuizzes;
-
+// Helper function to check if a file exists
+async function fileExists(filePath) {
+    try {
+        await fs.access(filePath);
+        return true;
+    } catch {
+        return false;
+    }
 }
 
-
-
-function formatName(name) {
-
-  return name.replace(/[-_]/g, ' ')
-
-    .replace(/\b\w/g, l => l.toUpperCase());
-
+// Main function to generate the database index
+async function generateIndex() {
+    const contentPath = 'content';
+    const outputPath = 'docs/database.json';
+    
+    // Initialize the database structure
+    const database = {
+        generatedAt: new Date().toISOString(),
+        tree: {}
+    };
+    
+    // Get all university directories
+    const universityDirs = await fs.readdir(contentPath);
+    
+    for (const uniId of universityDirs) {
+        const uniPath = path.join(contentPath, uniId);
+        const uniStat = await fs.stat(uniPath);
+        
+        if (!uniStat.isDirectory()) continue;
+        
+        // Create university node
+        database.tree[uniId] = {
+            id: uniId,
+            label: formatLabel(uniId),
+            path: uniPath,
+            children: {}
+        };
+        
+        // Get all year directories for this university
+        const yearDirs = await fs.readdir(uniPath);
+        
+        for (const yearId of yearDirs) {
+            const yearPath = path.join(uniPath, yearId);
+            const yearStat = await fs.stat(yearPath);
+            
+            if (!yearStat.isDirectory()) continue;
+            
+            // Create year node
+            database.tree[uniId].children[yearId] = {
+                id: yearId,
+                label: formatLabel(yearId),
+                path: yearPath,
+                children: {}
+            };
+            
+            // Get all specialty directories for this year
+            const specialtyDirs = await fs.readdir(yearPath);
+            
+            for (const specialtyId of specialtyDirs) {
+                const specialtyPath = path.join(yearPath, specialtyId);
+                const specialtyStat = await fs.stat(specialtyPath);
+                
+                if (!specialtyStat.isDirectory()) continue;
+                
+                // Create specialty node
+                database.tree[uniId].children[yearId].children[specialtyId] = {
+                    id: specialtyId,
+                    label: formatLabel(specialtyId),
+                    path: specialtyPath,
+                    children: {}
+                };
+                
+                // Get all lesson directories for this specialty
+                const lessonDirs = await fs.readdir(specialtyPath);
+                
+                for (const lessonId of lessonDirs) {
+                    const lessonPath = path.join(specialtyPath, lessonId);
+                    const lessonStat = await fs.stat(lessonPath);
+                    
+                    if (!lessonStat.isDirectory()) continue;
+                    
+                    // Check if index.md exists
+                    const indexPath = path.join(lessonPath, 'index.md');
+                    const hasIndex = await fileExists(indexPath);
+                    
+                    // Initialize lesson node
+                    const lessonNode = {
+                        id: lessonId,
+                        label: formatLabel(lessonId),
+                        path: lessonPath,
+                        hasIndex,
+                        children: {},
+                        resources: {}
+                    };
+                    
+                    // If index.md exists, parse frontmatter and content
+                    if (hasIndex) {
+                        try {
+                            const fileContent = await fs.readFile(indexPath, 'utf8');
+                            const parsedMatter = matter(fileContent);
+                            
+                            // Extract title from frontmatter or use formatted folder name
+                            const title = parsedMatter.data.title || formatLabel(lessonId);
+                            
+                            // Extract summary from frontmatter if available
+                            const summary = parsedMatter.data.summary || '';
+                            
+                            // Update lesson node with frontmatter data
+                            lessonNode.label = title;
+                            lessonNode.summary = summary;
+                            lessonNode.markdownContent = parsedMatter.content;
+                            
+                            // Check for additional resources
+                            const quizPath = path.join(lessonPath, 'quiz.json');
+                            const flashcardsPath = path.join(lessonPath, 'flashcards.json');
+                            
+                            if (await fileExists(quizPath)) {
+                                lessonNode.resources.lessonQuiz = true;
+                            }
+                            
+                            if (await fileExists(flashcardsPath)) {
+                                lessonNode.resources.lessonFlashcards = true;
+                            }
+                            
+                        } catch (error) {
+                            console.error(`Error parsing ${indexPath}:`, error);
+                        }
+                    }
+                    
+                    // Add lesson node to specialty
+                    database.tree[uniId].children[yearId].children[specialtyId].children[lessonId] = lessonNode;
+                }
+            }
+        }
+    }
+    
+    // Write the database to file
+    await fs.writeFile(outputPath, JSON.stringify(database, null, 2));
+    console.log(`Database generated successfully at ${outputPath}`);
 }
 
-
-
-async function main() {
-
-  const universitiesPath = path.join('content', 'universities');
-
-  
-
-  try {
-
-    const tree = await scanDirectory(universitiesPath, '', true);
-
-    
-
-    const database = {
-
-      tree: tree.children,
-
-      generatedAt: new Date().toISOString()
-
-    };
-
-    
-
-await fs.writeFile('docs/database.json', JSON.stringify(database, null, 2));
-    console.log('database.json generated successfully!');
-
-  } catch (error) {
-
-    console.error('Error generating database.json:', error);
-
-  }
-
-}
-
-
-
-main();
+// Run the function
+generateIndex().catch(console.error);
