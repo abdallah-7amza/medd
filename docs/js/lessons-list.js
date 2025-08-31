@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const pageTitleEl = document.getElementById('page-title');
     const cardContainer = document.getElementById('card-container');
     const siteTitleEl = document.getElementById('site-title');
+    const toolbarContainer = document.getElementById('toolbar-container');
     
     if (!selectedUniId) {
         pageTitleEl.textContent = 'No University Selected.';
@@ -25,6 +26,9 @@ document.addEventListener('DOMContentLoaded', async function() {
         
         siteTitleEl.textContent = `${university.name} Med Portal`;
         cardContainer.innerHTML = '';
+        
+        // Clear toolbar container
+        toolbarContainer.innerHTML = '';
         
         if (!yearId) {
             // Display Years
@@ -59,6 +63,21 @@ document.addEventListener('DOMContentLoaded', async function() {
             }
             
             pageTitleEl.textContent = `Lessons in ${specialty.label}`;
+            
+            // Check for collection quizzes
+            if (specialty.resources && specialty.resources.collectionQuizzes && specialty.resources.collectionQuizzes.length > 0) {
+                // Get the first quiz from the array
+                const firstQuiz = specialty.resources.collectionQuizzes[0];
+                
+                // Create a button for the quiz
+                const quizButton = document.createElement('a');
+                quizButton.href = `quiz.html?year=${yearId}&specialty=${specialtyId}&collection=${firstQuiz.id}`;
+                quizButton.className = 'toolbar-button';
+                quizButton.textContent = `Start ${specialty.label} Quiz Bank`;
+                
+                // Add the button to the toolbar
+                toolbarContainer.appendChild(quizButton);
+            }
             
             for (const id in specialty.children) {
                 const lesson = specialty.children[id];
