@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Med Portal</title>
+    <link rel="stylesheet" href="css/vars.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1 id="site-title">Med Portal</h1>
+    </header>
+    <main>
+        <div class="container">
+            <a href="javascript:history.back()" class="back-link">← Back</a>
+            
+            <div class="quiz-container">
+                <div id="quiz-interface">
+                    <div id="progress-container">
+                        <div id="progress-bar"></div>
+                    </div>
+                    
+                    <div id="question-stem">Loading question...</div>
+                    
+                    <div id="options-container">
+                        <!-- Options will be dynamically added here -->
+                    </div>
+                    
+                    <div class="quiz-navigation">
+                        <button id="prev-btn" disabled>Previous</button>
+                        <button id="submit-btn" disabled>Next</button>
+                    </div>
+                </div>
+                
+                <div id="results-screen">
+                    <h2>Quiz Results</h2>
+                    <div id="score-display">You scored 0 out of 0</div>
+                    <a href="javascript:history.back()" id="restart-btn">Back to Lessons</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="main-footer">
+        Powered by Abdallah Hamza
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Get URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const yearId = urlParams.get('year');
+            const specialtyId = urlParams.get('specialty');
+            const lessonId = urlParams.get('lesson');
+            
+            // Get selected university from localStorage
+            const selectedUniId = localStorage.getItem('selectedUni');
+            
+            // Get DOM elements
+            const questionStem = document.getElementById('question-stem');
+            const optionsContainer = document.getElementById('options-container');
+            const submitBtn = document.getElementById('submit-btn');
+            const prevBtn = document.getElementById('prev-btn');
+            const progressBar = document.getElementById('progress-bar');
+            const quizInterface = document.getElementById('quiz-interface');
+            const resultsScreen = document.getElementById('results-screen');
+            const scoreDisplay = document.getElementById('score-display');
+            const siteTitle = document.getElementById('site-title');
+            
+            // Quiz state variables
+            let currentQuestionIndex = 0;
+            let userAnswers = [];
+            let quizData = null;
+            
+            // Check if required parameters are present
+            if (!selectedUniId || !yearId || !specialtyId || !lessonId) {
+                showError('Missing parameters. Please go back and select a lesson.');
+                return;
+            }
+            
+            try {
+                // Fetch the database to get quiz data
+                const dbResponse = await fetch('database.json');
+                if (!dbResponse.ok) throw new Error('Failed to load database.');
+                const database = await dbResponse.json();
+                
+                // Update site title with university name
+                siteTitle.textContent = `${database.tree[selectedUniId].name} Med Portal`;
+                
+                // Find the lesson in the database
+                const university = database.tree[selectedUniId];
+                if (!university) throw new Error('University not found.');
+                
+                const year = university.children[yearId];
+                if (!year) throw new Error('Year not found.');
+                
+                const specialty = year.children[specialtyId];
+                if (!specialty) throw new Error('Specialty not found.');
+                
+                const lesson = specialty.children[lessonId];
+                if (!lesson) throw new Error('Lesson not found.');
+                
+                // Check if quiz data exists
+                if (!lesson.resources || !lesson.resources.lessonQuiz) {
+                    showError('No quiz available for this lesson.');
+                    return;
+                }
+                
+                // Get quiz data
+                quizData = lesson.resources.lessonQuiz;
+                
+                // Initialize the quiz
+                initializeQuiz();
+                
+            } catch (error) {
+                console.error('Error loading quiz:', error);
+                showError(`Error loading quiz: ${error.message}`);
+            }
+            
+            function initializeQuiz() {
+                // Reset state
+                currentQuestionIndex = 0;
+                userAnswers = new Array(quizData.questions.length).fill(null);
+                
+                // Show first question
+                displayQuestion(0);
+                
+                // Update progress bar
+                updateProgressBar();
+            }
+            
+            function displayQuestion(index) {
+                // Check if index is valid
+                if (index < 0 || index >= quizData.questions.length) return;
+                
+                const question = quizData.questions[index];
+                
+                // Update question stem
+                questionStem.textContent = question.stem || question.question || "Question";
+                
+                // Clear options container
+                optionsContainer.innerHTML = '';
+                
+                // Add options
+                question.options.forEach((option, i) => {
+                    const optionElement = document.createElement('div');
+                    optionElement.className = 'option';
+                    
+                    const radio = document.createElement('input');
+                    radio.type = 'radio';
+                    radio.name = 'answer';
+                    radio.value = i;
+                    radio.id = `option-${i}`;
+                    
+                    // If user has already answered this question, select their previous answer
+                    if (userAnswers[index] === i) {
+                        radio.checked = true;
+                        optionElement.classList.add('selected');
+                    }
+                    
+                    const label = document.createElement('label');
+                    label.htmlFor = `option-${i}`;
+                    label.textContent = option;
+                    
+                    optionElement.appendChild(radio);
+                    optionElement.appendChild(label);
+                    
+                    // Add click event to option
+                    optionElement.addEventListener('click', function() {
+                        // Remove selected class from all options
+                        document.querySelectorAll('.option').forEach(opt => {
+                            opt.classList.remove('selected');
+                        });
+                        
+                        // Add selected class to clicked option
+                        this.classList.add('selected');
+                        
+                        // Check the radio button
+                        radio.checked = true;
+                        
+                        // Enable submit button
+                        submitBtn.disabled = false;
+                    });
+                    
+                    optionsContainer.appendChild(optionElement);
+                });
+                
+                // Update button text
+                if (index === quizData.questions.length - 1) {
+                    submitBtn.textContent = 'Submit';
+                } else {
+                    submitBtn.textContent = 'Next';
+                }
+                
+                // Update previous button state
+                prevBtn.disabled = (index === 0);
+                
+                // Enable submit button if user has already answered this question
+                if (userAnswers[index] !== null) {
+                    submitBtn.disabled = false;
+                } else {
+                    submitBtn.disabled = true;
+                }
+                
+                // Update progress bar
+                updateProgressBar();
+            }
+            
+            function updateProgressBar() {
+                const progress = ((currentQuestionIndex + 1) / quizData.questions.length) * 100;
+                progressBar.style.width = `${progress}%`;
+            }
+            
+            function submitAnswer() {
+                // Get selected answer
+                const selectedOption = document.querySelector('input[name="answer"]:checked');
+                
+                if (!selectedOption) {
+                    // This shouldn't happen since the button is disabled until an option is selected
+                    alert('Please select an answer before proceeding.');
+                    return;
+                }
+                
+                // Record answer
+                userAnswers[currentQuestionIndex] = parseInt(selectedOption.value);
+                
+                // Check if this is the last question
+                if (currentQuestionIndex === quizData.questions.length - 1) {
+                    // Show results
+                    showResults();
+                } else {
+                    // Move to next question
+                    currentQuestionIndex++;
+                    displayQuestion(currentQuestionIndex);
+                }
+            }
+            
+            function showResults() {
+                // Calculate score
+                let score = 0;
+                quizData.questions.forEach((question, i) => {
+                    // Check if the user's answer matches the correct answer
+                    // The correct answer might be stored as 'correct' or 'correctAnswer'
+                    const correctAnswer = question.correct !== undefined ? question.correct : question.correctAnswer;
+                    if (userAnswers[i] === correctAnswer) {
+                        score++;
+                    }
+                });
+                
+                // Update score display
+                scoreDisplay.textContent = `You scored ${score} out of ${quizData.questions.length}`;
+                
+                // Hide quiz interface and show results
+                quizInterface.style.display = 'none';
+                resultsScreen.style.display = 'block';
+            }
+            
+            function showError(message) {
+                questionStem.textContent = message;
+                optionsContainer.innerHTML = '';
+                submitBtn.style.display = 'none';
+                prevBtn.style.display = 'none';
+            }
+            
+            // Event listeners
+            submitBtn.addEventListener('click', submitAnswer);
+            
+            prevBtn.addEventListener('click', function() {
+                if (currentQuestionIndex > 0) {
+                    currentQuestionIndex--;
+                    displayQuestion(currentQuestionIndex);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
