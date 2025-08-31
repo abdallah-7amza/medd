@@ -4,64 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Med Portal</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f5f7fa;
-            color: #333;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 30px;
-        }
-        .universities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        .university-card {
-            background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .university-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-        .university-card h2 {
-            margin: 0 0 10px 0;
-            color: #3498db;
-        }
-        .loading {
-            text-align: center;
-            font-size: 18px;
-            color: #7f8c8d;
-        }
-    </style>
+    <link rel="stylesheet" href="css/vars.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <div class="container">
         <h1>Select Your University</h1>
         <div id="universities-container" class="universities-grid">
-            <div class="loading">Loading universities...</div>
-        </div>
+            </div>
     </div>
+
+    <footer class="main-footer">
+        Powered by Abdallah Hamza
+    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Corrected Path: 'database.json' relative to index.html in the same /docs folder
             fetch('database.json')
                 .then(response => {
                     if (!response.ok) {
@@ -74,7 +32,8 @@
                     container.innerHTML = ''; 
                     
                     if (!data.tree || Object.keys(data.tree).length === 0) {
-                        container.innerHTML = '<div class="loading">No universities found.</div>';
+                        // You can add a loading/error message style in main.css if you want
+                        container.innerHTML = '<div>No universities found.</div>';
                         return;
                     }
 
@@ -96,7 +55,7 @@
                 .catch(error => {
                     console.error('Error fetching the university data:', error);
                     document.getElementById('universities-container').innerHTML =
-                        '<div class="loading">Error loading universities. Please try again later.</div>';
+                        '<div>Error loading universities. Please try again later.</div>';
                 });
         });
     </script>
