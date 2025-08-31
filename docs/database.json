@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-31T15:07:46.630Z",
+  "generatedAt": "2025-08-31T15:08:23.562Z",
   "tree": {
     "cairo": {
       "children": {
@@ -27,7 +27,7 @@
           "path": "content/universities/cairo/year4"
         }
       },
-      "name": "Cairo",
+      "name": "Cairo University",
       "hasIndex": false,
       "label": "Cairo"
     },
