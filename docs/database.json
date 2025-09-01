@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-01T11:37:17.161Z",
+  "generatedAt": "2025-09-01T11:47:56.455Z",
   "tree": {
     "cairo": {
       "children": {
@@ -182,14 +182,22 @@
                   "id": "anemia",
                   "path": "content/universities/nub/year5/pediatrics/anemia"
                 },
-                "jaundice": {
-                  "children": {},
-                  "hasIndex": true,
-                  "label": "Neonatal Jaundice",
-                  "summary": "An overview of the causes, diagnosis, and management of jaundice in newborns.",
-                  "markdownContent": "\n# Jaundice in Newborns\n\nNeonatal jaundice is a yellowish discoloration of the white part of the eyes and skin in a newborn baby due to high bilirubin levels. It is one of the most common conditions requiring medical attention in newborns.\n\n## Main Causes\n\n* **Physiological Jaundice:** This is the most common type, and it is considered normal. It occurs in more than 50% of newborns.\n* **Pathological Jaundice:** This may be due to underlying conditions such as blood type incompatibility, liver disease, or certain genetic syndromes.\n\n## Diagnosis\nDiagnosis is typically made through a physical examination and can be confirmed by measuring the bilirubin level in the blood or through the skin.\n",
-                  "id": "jaundice",
-                  "path": "content/universities/nub/year5/pediatrics/jaundice"
+                "neonatology": {
+                  "children": {
+                    "jaundice": {
+                      "children": {},
+                      "hasIndex": true,
+                      "label": "Neonatal Jaundice",
+                      "summary": "An overview of the causes, diagnosis, and management of jaundice in newborns.",
+                      "markdownContent": "\n# Jaundice in Newborns\n\nNeonatal jaundice is a yellowish discoloration of the white part of the eyes and skin in a newborn baby due to high bilirubin levels. It is one of the most common conditions requiring medical attention in newborns.\n\n## Main Causes\n\n* **Physiological Jaundice:** This is the most common type, and it is considered normal. It occurs in more than 50% of newborns.\n* **Pathological Jaundice:** This may be due to underlying conditions such as blood type incompatibility, liver disease, or certain genetic syndromes.\n\n## Diagnosis\nDiagnosis is typically made through a physical examination and can be confirmed by measuring the bilirubin level in the blood or through the skin.\n",
+                      "id": "jaundice",
+                      "path": "content/universities/nub/year5/pediatrics/neonatology/jaundice"
+                    }
+                  },
+                  "hasIndex": false,
+                  "label": "Neonatology",
+                  "id": "neonatology",
+                  "path": "content/universities/nub/year5/pediatrics/neonatology"
                 }
               },
               "hasIndex": false,
