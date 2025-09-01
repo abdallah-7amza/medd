@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-01T09:59:24.286Z",
+  "generatedAt": "2025-09-01T10:08:25.153Z",
   "tree": {
     "cairo": {
       "children": {
@@ -25,21 +25,6 @@
           "label": "Year4",
           "id": "year4",
           "path": "content/universities/cairo/year4"
-        },
-        "year5": {
-          "children": {
-            "gynecology": {
-              "children": {},
-              "hasIndex": false,
-              "label": "Gynecology",
-              "id": "gynecology",
-              "path": "content/universities/cairo/year5/gynecology"
-            }
-          },
-          "hasIndex": false,
-          "label": "Year5",
-          "id": "year5",
-          "path": "content/universities/cairo/year5"
         }
       },
       "name": "Cairo University",
