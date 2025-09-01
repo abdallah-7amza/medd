@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-01T13:09:29.455Z",
+  "generatedAt": "2025-09-01T13:21:29.009Z",
   "tree": {
     "cairo": {
       "children": {
@@ -61,9 +61,7 @@
                               "explanation": "HPV types 16 and 18 are high-risk types responsible for approximately 70% of all cervical cancers worldwide."
                             }
                           ]
-                        },
-                        "css": null,
-                        "js": null
+                        }
                       }
                     ]
                   },
@@ -126,9 +124,7 @@
                               "explanation": "HPV types 16 and 18 are high-risk types responsible for approximately 70% of all cervical cancers worldwide."
                             }
                           ]
-                        },
-                        "css": null,
-                        "js": null
+                        }
                       }
                     ]
                   },
@@ -147,34 +143,6 @@
               "children": {
                 "anemia": {
                   "children": {},
-                  "resources": {
-                    "lessonQuiz": {
-                      "questions": [
-                        {
-                          "stem": "What is the most common cause of anemia in children worldwide?",
-                          "options": [
-                            "Iron deficiency",
-                            "Vitamin B12 deficiency",
-                            "Folate deficiency",
-                            "Hemolytic anemia"
-                          ],
-                          "correct": 0,
-                          "explanation": "Iron deficiency is by far the most common cause of anemia in the pediatric population globally, primarily due to nutritional factors."
-                        },
-                        {
-                          "stem": "A 2-year-old child presents with pallor and fatigue. A complete blood count shows microcytic, hypochromic anemia. Which of the following is the most likely diagnosis?",
-                          "options": [
-                            "Anemia of chronic disease",
-                            "Lead poisoning",
-                            "Iron deficiency anemia",
-                            "Thalassemia minor"
-                          ],
-                          "correct": 2,
-                          "explanation": "Microcytic, hypochromic anemia in a toddler is the classic presentation of iron deficiency anemia."
-                        }
-                      ]
-                    }
-                  },
                   "hasIndex": true,
                   "label": "Anemia",
                   "summary": "An overview of anemia in pediatrics, including causes, clinical features, and management.",
