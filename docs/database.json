@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-01T14:19:57.568Z",
+  "generatedAt": "2025-09-01T14:21:50.695Z",
   "tree": {
     "cairo": {
       "children": {
@@ -149,6 +149,15 @@
                   "markdownContent": "\n# Anemia in Pediatrics\n\nThis is the main content of the lesson about Anemia.\n(Content will be added here later)\n",
                   "id": "anemia",
                   "path": "content/universities/nub/year5/pediatrics/anemia"
+                },
+                "neonatology": {
+                  "children": {},
+                  "hasIndex": true,
+                  "label": "Neonatology Branch",
+                  "summary": "This section covers topics related to newborn infants, including jaundice and other neonatal conditions.",
+                  "markdownContent": "\n# Neonatology\n\nThis is the main page for the Neonatology branch. Lessons under this branch will appear here.\n",
+                  "id": "neonatology",
+                  "path": "content/universities/nub/year5/pediatrics/neonatology"
                 }
               },
               "hasIndex": false,
