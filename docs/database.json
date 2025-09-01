@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-01T09:22:58.618Z",
+  "generatedAt": "2025-09-01T09:24:55.563Z",
   "tree": {
     "cairo": {
       "children": {
@@ -48,6 +48,21 @@
     },
     "nub": {
       "children": {
+        " year5": {
+          "children": {
+            "gynecology": {
+              "children": {},
+              "hasIndex": false,
+              "label": "Gynecology",
+              "id": "gynecology",
+              "path": "content/universities/nub/ year5/gynecology"
+            }
+          },
+          "hasIndex": false,
+          "label": " Year5",
+          "id": " year5",
+          "path": "content/universities/nub/ year5"
+        },
         "year5": {
           "children": {
             "pediatrics": {
