@@ -2,49 +2,93 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
+    padding-top: 80px; /* Space for fixed header */
     padding-bottom: 50px; /* Space for fixed footer */
     background-color: var(--background-color);
     color: var(--text-color);
 }
 
-/* Main content container */
+/* Header Banner */
+.main-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Main Content Container */
 .container {
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
-h1 {
+/* Page Title (e.g., "Select Your University") */
+.page-title {
     text-align: center;
-    color: var(--primary-color);
+    color: var(--secondary-color); /* Using red as requested */
     margin-bottom: 40px;
+    font-size: 2.2em;
+    font-weight: bold;
 }
 
-/* University Cards Grid */
-.universities-grid {
+/* Unified Card Grid */
+.card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
 }
 
-.university-card {
+/* Unified Card Style */
+.card {
     background-color: var(--card-background-color);
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: 1px solid #eee;
-}
-
-.university-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-}
-
-.university-card h2 {
-    margin: 0;
+    border: 2px solid var(--primary-color);
+    text-align: center;
     color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card h2 {
+    margin: 0;
+    font-size: 1.3em;
+    color: inherit;
+}
+
+.card p {
+    color: #6c757d;
+    font-size: 0.9em;
+    margin-top: 10px;
+    font-weight: normal;
+}
+
+/* Toolbar for buttons like "Start Quiz Bank" */
+.toolbar {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 /* Footer */
@@ -58,27 +102,4 @@ h1 {
     width: 100%;
     font-size: 0.9em;
     border-top: 1px solid #dee2e6;
-}
-
-.toolbar {
-    margin-bottom: 25px;
-    display: flex;
-    gap: 10px;
-}
-
-.toolbar-button {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.2s;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.toolbar-button:hover {
-    background-color: #003366;
 }
