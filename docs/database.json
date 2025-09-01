@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-01T10:10:29.178Z",
+  "generatedAt": "2025-09-01T10:59:30.060Z",
   "tree": {
     "cairo": {
       "children": {
@@ -61,7 +61,9 @@
                               "explanation": "HPV types 16 and 18 are high-risk types responsible for approximately 70% of all cervical cancers worldwide."
                             }
                           ]
-                        }
+                        },
+                        "css": null,
+                        "js": null
                       }
                     ]
                   },
@@ -124,7 +126,9 @@
                               "explanation": "HPV types 16 and 18 are high-risk types responsible for approximately 70% of all cervical cancers worldwide."
                             }
                           ]
-                        }
+                        },
+                        "css": null,
+                        "js": null
                       }
                     ]
                   },
