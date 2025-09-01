@@ -8,56 +8,22 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Select Your University</h1>
-        <div id="universities-container" class="universities-grid">
-            </div>
-    </div>
+    <header class="main-header">
+        <h1>Medical Masterclass</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 class="page-title">Select Your University</h1>
+            <div id="universities-container" class="card-grid">
+                </div>
+        </div>
+    </main>
 
     <footer class="main-footer">
         Powered by Abdallah Hamza
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('database.json')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    const container = document.getElementById('universities-container');
-                    container.innerHTML = ''; 
-                    
-                    if (!data.tree || Object.keys(data.tree).length === 0) {
-                        // You can add a loading/error message style in main.css if you want
-                        container.innerHTML = '<div>No universities found.</div>';
-                        return;
-                    }
-
-                    for (const uniId in data.tree) {
-                        const university = data.tree[uniId];
-                        
-                        const card = document.createElement('div');
-                        card.className = 'university-card';
-                        card.innerHTML = `<h2>${university.name}</h2>`;
-                        
-                        card.addEventListener('click', function() {
-                            localStorage.setItem('selectedUni', uniId);
-                            window.location.href = 'lessons-list.html';
-                        });
-                        
-                        container.appendChild(card);
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching the university data:', error);
-                    document.getElementById('universities-container').innerHTML =
-                        '<div>Error loading universities. Please try again later.</div>';
-                });
-        });
-    </script>
+    
+    <script src="js/index.js" defer></script>
 </body>
 </html>
