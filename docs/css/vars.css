@@ -1,7 +1,8 @@
 :root {
-  --primary-color: #004080; /* Dark Blue */
+  --primary-color: #0d47a1; /* Dark Blue */
+  --secondary-color: #c62828; /* Dark Red */
   --background-color: #f4f7f6; /* Light Grey */
   --card-background-color: #ffffff; /* White */
   --text-color: #333333; /* Dark Grey */
-  --footer-background-color: #e9ecef; /* Footer Grey */
+  --footer-background-color: #e9ecef;
 }
