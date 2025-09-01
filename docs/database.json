@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-01T10:09:26.796Z",
+  "generatedAt": "2025-09-01T10:10:29.178Z",
   "tree": {
     "cairo": {
       "children": {
@@ -91,6 +91,54 @@
       "children": {
         "year5": {
           "children": {
+            "gynecology": {
+              "children": {
+                "oncology": {
+                  "children": {},
+                  "resources": {
+                    "collectionQuizzes": [
+                      {
+                        "id": "oncology-bank",
+                        "quizData": {
+                          "questions": [
+                            {
+                              "stem": "What is the most common type of ovarian cancer?",
+                              "options": [
+                                "Germ cell tumors",
+                                "Epithelial ovarian cancer",
+                                "Sex cord-stromal tumors",
+                                "Metastatic tumors"
+                              ],
+                              "correct": 1,
+                              "explanation": "Epithelial tumors are the most common type, accounting for about 90% of all ovarian cancers."
+                            },
+                            {
+                              "stem": "Which HPV types are most commonly associated with cervical cancer?",
+                              "options": [
+                                "HPV 6 and 11",
+                                "HPV 16 and 18",
+                                "HPV 31 and 33",
+                                "HPV 45 and 52"
+                              ],
+                              "correct": 1,
+                              "explanation": "HPV types 16 and 18 are high-risk types responsible for approximately 70% of all cervical cancers worldwide."
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "hasIndex": false,
+                  "label": "Oncology",
+                  "id": "oncology",
+                  "path": "content/universities/nub/year5/gynecology/oncology"
+                }
+              },
+              "hasIndex": false,
+              "label": "Gynecology",
+              "id": "gynecology",
+              "path": "content/universities/nub/year5/gynecology"
+            },
             "pediatrics": {
               "children": {
                 "anemia": {
