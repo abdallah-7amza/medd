@@ -1,4 +1,3 @@
-// docs/generateIndex.js (Final Version)
 import fs from 'fs/promises';
 import path from 'path';
 import matter from 'gray-matter';
@@ -28,8 +27,15 @@ async function scanDirectory(dirPath, isUniversity = false) {
         node.markdownContent = content;
     } catch {
         node.hasIndex = false;
-        node.label = formatLabel(path.basename(dirPath));
+        if (!node.label) node.label = formatLabel(path.basename(dirPath));
     }
+
+    const lessonQuizPath = path.join(dirPath, 'quiz.json');
+    try {
+        const quizContent = await fs.readFile(lessonQuizPath, 'utf8');
+        node.resources.lessonQuiz = JSON.parse(quizContent);
+    } catch {}
+
     const collectionQuizPath = path.join(dirPath, '_collection_quiz');
     try {
         const files = await fs.readdir(collectionQuizPath);
@@ -46,12 +52,12 @@ async function scanDirectory(dirPath, isUniversity = false) {
             node.resources.collectionQuizzes = collectionQuizzes;
         }
     } catch {}
+
     const entries = await fs.readdir(dirPath, { withFileTypes: true });
     for (const entry of entries) {
         if (entry.isDirectory() && !entry.name.startsWith('_') && !entry.name.startsWith('.')) {
             const childPath = path.join(dirPath, entry.name);
             node.children[entry.name] = await scanDirectory(childPath);
-            node.children[entry.name].id = entry.name;
         }
     }
     if (Object.keys(node.resources).length === 0) delete node.resources;
