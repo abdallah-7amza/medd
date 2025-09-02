@@ -32,65 +32,30 @@ document.addEventListener('DOMContentLoaded', async function() {
         cardContainer.innerHTML = '';
         toolbarContainer.innerHTML = '';
 
-        // Display Collection Quizzes
+        // Display Collection Quizzes and Flashcards for the BRANCH
         if (currentNode.resources?.collectionQuizzes) {
             currentNode.resources.collectionQuizzes.forEach(quiz => {
-                const quizButton = document.createElement('a');
-                quizButton.href = `quiz.html?collection=${quiz.id}&path=${path}`;
-                quizButton.className = 'card';
-                quizButton.innerHTML = `<h2>Start ${quiz.title}</h2>`;
+                const quizButton = createResourceButton(`Start ${quiz.title}`, `quiz.html?collection=${quiz.id}&path=${path}`);
                 toolbarContainer.appendChild(quizButton);
             });
         }
-        
-        // ### START: NEW CODE FOR FLASHCARDS ###
-        // Display Flashcard Decks
         if (currentNode.resources?.flashcardDecks) {
             currentNode.resources.flashcardDecks.forEach(deck => {
-                const deckButton = document.createElement('a');
-                // We reuse the 'collection' URL parameter for simplicity to pass the deck ID
-                deckButton.href = `flashcards.html?collection=${deck.id}&path=${path}`;
-                deckButton.className = 'card'; // Display it like other main cards
-                deckButton.innerHTML = `<h2><i class="fa-solid fa-layer-group"></i> Start Flashcards: ${deck.title}</h2>`;
+                const deckButton = createResourceButton(`Start Flashcards: ${deck.title}`, `flashcards.html?collection=${deck.id}&path=${path}`);
                 toolbarContainer.appendChild(deckButton);
             });
         }
-        // ### END: NEW CODE FOR FLASHCARDS ###
 
-        // Display Child Nodes (Branches or Lessons)
+        // Display a single card for each child TOPIC
         if (currentNode.children) {
             for (const id in currentNode.children) {
                 const childNode = currentNode.children[id];
                 const newPath = `${path}/${id}`;
-                const isBranch = childNode.children && Object.keys(childNode.children).length > 0;
                 
-                let targetUrl;
-                let showLessonQuizButton = false;
-
-                if (isBranch) {
-                    targetUrl = `lessons-list.html?path=${newPath}`;
-                } else if (childNode.hasIndex) {
-                    targetUrl = `lesson.html?path=${newPath}`;
-                    if (childNode.resources?.lessonQuiz) {
-                        showLessonQuizButton = true;
-                    }
-                } else if (childNode.resources?.lessonQuiz) {
-                    targetUrl = `quiz.html?lessonQuiz=true&path=${newPath}`;
-                } else {
-                    targetUrl = '#'; 
-                }
-
-                const card = createCard(childNode.label, targetUrl, childNode.summary || '');
-
-                if (showLessonQuizButton) {
-                    const lessonQuizBtn = document.createElement('a');
-                    lessonQuizBtn.href = `quiz.html?lessonQuiz=true&path=${newPath}`;
-                    lessonQuizBtn.textContent = "Start Lesson Quiz";
-                    lessonQuizBtn.className = 'lesson-quiz-button';
-                    lessonQuizBtn.addEventListener('click', (e) => e.stopPropagation());
-                    card.appendChild(lessonQuizBtn);
-                }
-
+                // The card ALWAYS links to lesson.html now, which acts as the topic page
+                const targetUrl = `lesson.html?path=${newPath}`;
+                
+                const card = createCard(childNode.label, targetUrl, childNode.summary || 'Click to see available content and resources.');
                 cardContainer.appendChild(card);
             }
         }
@@ -104,18 +69,14 @@ function createCard(title, url, description = '') {
     const cardLink = document.createElement('a');
     cardLink.href = url;
     cardLink.className = 'card';
-    
-    let content = `<div class="card-content"><h2>${title}</h2>`;
-    if (url.includes('quiz.html') && !description) {
-        content += `<p>A set of questions to test your knowledge on this topic.</p>`;
-    } else if (description) {
-        content += `<p>${description}</p>`;
-    }
-    content += `</div>`;
-    cardLink.innerHTML = content;
-
-    if (url === '#') {
-        cardLink.classList.add('disabled');
-    }
+    cardLink.innerHTML = `<div class="card-content"><h2>${title}</h2><p>${description}</p></div>`;
     return cardLink;
+}
+
+function createResourceButton(text, url) {
+    const button = document.createElement('a');
+    button.href = url;
+    button.className = 'card'; // Use card style for a consistent look
+    button.innerHTML = `<h2>${text}</h2>`;
+    return button;
 }
