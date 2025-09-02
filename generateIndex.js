@@ -2,12 +2,15 @@ import fs from 'fs/promises';
 import path from 'path';
 import matter from 'gray-matter';
 
+// ... (function formatLabel remains the same)
 function formatLabel(name) {
     return name.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
 }
 
+
 async function scanDirectory(dirPath, isUniversity = false) {
     const node = { children: {}, resources: {} };
+    // ... (logic for meta.json and index.md remains the same)
     if (isUniversity) {
         const metaPath = path.join(dirPath, 'meta.json');
         try {
@@ -45,7 +48,13 @@ async function scanDirectory(dirPath, isUniversity = false) {
                 const baseName = path.basename(file, '.json');
                 const jsonFilePath = path.join(collectionQuizPath, file);
                 const quizContent = await fs.readFile(jsonFilePath, 'utf8');
-                collectionQuizzes.push({ id: baseName, quizData: JSON.parse(quizContent) });
+                const quizData = JSON.parse(quizContent);
+                // **THIS IS THE FIX**: Read the title from the quiz data, or format the filename as a fallback.
+                collectionQuizzes.push({ 
+                    id: baseName, 
+                    title: quizData.title || formatLabel(baseName), // The Important Change
+                    quizData: quizData 
+                });
             }
         }
         if (collectionQuizzes.length > 0) {
@@ -64,6 +73,7 @@ async function scanDirectory(dirPath, isUniversity = false) {
     return node;
 }
 
+// ... (function main remains the same)
 async function main() {
     const database = { generatedAt: new Date().toISOString(), tree: {} };
     const universitiesPath = 'content/universities';
