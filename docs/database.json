@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-02T12:32:30.743Z",
+  "generatedAt": "2025-09-02T12:33:18.944Z",
   "tree": {
     "cairo": {
       "children": {
@@ -55,6 +55,7 @@
                     "collectionQuizzes": [
                       {
                         "id": "oncology-bank",
+                        "title": "Oncology Bank",
                         "quizData": {
                           "questions": [
                             {
@@ -112,6 +113,7 @@
                     "collectionQuizzes": [
                       {
                         "id": "oncology-bank",
+                        "title": "Oncology Bank",
                         "quizData": {
                           "questions": [
                             {
@@ -199,6 +201,7 @@
                     "collectionQuizzes": [
                       {
                         "id": "neonatology-bank",
+                        "title": "Neonatology Bank",
                         "quizData": {
                           "questions": [
                             {
@@ -228,6 +231,7 @@
                       },
                       {
                         "id": "pbl-of-neonatology",
+                        "title": "Pbl Of Neonatology",
                         "quizData": {
                           "questions": [
                             {
