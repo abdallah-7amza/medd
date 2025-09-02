@@ -1,0 +1,54 @@
+{
+  "questions": [
+    {
+      "stem": "Which of the following is the most common cause of neonatal jaundice?",
+      "options": [
+        "Biliary atresia",
+        "Hemolytic disease of the newborn",
+        "Physiological jaundice",
+        "Neonatal hepatitis"
+      ],
+      "correct": 2
+    },
+    {
+      "stem": "A newborn develops jaundice on the 2nd day of life. Which of the following is the most likely explanation?",
+      "options": [
+        "Physiological jaundice",
+        "Breastfeeding jaundice",
+        "Pathological jaundice due to sepsis",
+        "Kernicterus"
+      ],
+      "correct": 0
+    },
+    {
+      "stem": "Which of the following features suggests pathological jaundice?",
+      "options": [
+        "Appears after 24 hours of age",
+        "Peak bilirubin < 12 mg/dl",
+        "Conjugated bilirubin > 2 mg/dl",
+        "Resolves within 7–10 days"
+      ],
+      "correct": 2
+    },
+    {
+      "stem": "The most dangerous complication of untreated severe neonatal jaundice is:",
+      "options": [
+        "Hypoglycemia",
+        "Kernicterus",
+        "Failure to thrive",
+        "Anemia"
+      ],
+      "correct": 1
+    },
+    {
+      "stem": "Which treatment is the first-line management for most cases of severe unconjugated hyperbilirubinemia in neonates?",
+      "options": [
+        "Exchange transfusion",
+        "Phototherapy",
+        "Antibiotics",
+        "Ursodeoxycholic acid"
+      ],
+      "correct": 1
+    }
+  ]
+}
