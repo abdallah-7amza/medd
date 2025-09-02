@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-02T11:52:34.090Z",
+  "generatedAt": "2025-09-02T11:53:15.063Z",
   "tree": {
     "cairo": {
       "children": {
@@ -28,6 +28,23 @@
                   "children": {
                     "endometrial-cancer": {
                       "children": {},
+                      "resources": {
+                        "lessonQuiz": {
+                          "questions": [
+                            {
+                              "stem": "What is the most common presenting symptom of endometrial cancer?",
+                              "options": [
+                                "Abdominal pain",
+                                "Bloating",
+                                "Postmenopausal bleeding",
+                                "Urinary frequency"
+                              ],
+                              "correct": 2,
+                              "explanation": "Postmenopausal bleeding is the classic and most common symptom, occurring in over 90% of cases."
+                            }
+                          ]
+                        }
+                      },
                       "hasIndex": true,
                       "label": "Endometrial Cancer",
                       "summary": "An overview of the most common gynecologic malignancy in developed countries.",
