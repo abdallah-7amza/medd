@@ -1,15 +1,12 @@
 document.addEventListener('DOMContentLoaded', async function() {
-    // Get URL parameters
     const urlParams = new URLSearchParams(window.location.search);
-    const yearId = urlParams.get('year');
-    const specialtyId = urlParams.get('specialty');
-    const lessonId = urlParams.get('lesson');
+    const path = urlParams.get('path') || '';
+    const pathSegments = path.split('/').filter(Boolean);
     const collectionId = urlParams.get('collection');
-    
-    // Get selected university from localStorage
+    const isLessonQuiz = urlParams.has('lessonQuiz');
     const selectedUniId = localStorage.getItem('selectedUni');
-    
-    // Get DOM elements
+
+    const siteTitleEl = document.getElementById('site-title');
     const questionCounter = document.getElementById('question-counter');
     const questionStem = document.getElementById('question-stem');
     const optionsContainer = document.getElementById('options-container');
@@ -18,252 +15,89 @@ document.addEventListener('DOMContentLoaded', async function() {
     const progressBar = document.getElementById('progress-bar');
     const quizInterface = document.getElementById('quiz-interface');
     const resultsScreen = document.getElementById('results-screen');
-    const reviewScreen = document.getElementById('review-screen');
     const scoreDisplay = document.getElementById('score-display');
-    const reviewBtn = document.getElementById('review-btn');
-    const siteTitle = document.getElementById('site-title');
-    
-    // Quiz state variables
+
     let currentQuestionIndex = 0;
     let userAnswers = [];
     let quizData = null;
-    
-    // Check if required parameters are present
-    if (!selectedUniId || !yearId || !specialtyId) {
-        showError('Missing parameters. Please go back and select a lesson.');
-        return;
-    }
-    
-    // Generate a unique key for this quiz in localStorage
-    const localStorageKey = lessonId 
-        ? `quiz-progress-${selectedUniId}-${yearId}-${specialtyId}-${lessonId}`
-        : `quiz-progress-${selectedUniId}-${yearId}-${specialtyId}-${collectionId}`;
-    
+
     try {
-        // Fetch the database to get quiz data
-        const dbResponse = await fetch('database.json');
-        if (!dbResponse.ok) throw new Error('Failed to load database.');
-        const database = await dbResponse.json();
-        
-        // Update site title with university name
-        siteTitle.textContent = `${database.tree[selectedUniId].name} Med Portal`;
-        
-        // Find the lesson or specialty in the database
-        const university = database.tree[selectedUniId];
-        if (!university) throw new Error('University not found.');
-        
-        const year = university.children[yearId];
-        if (!year) throw new Error('Year not found.');
-        
-        const specialty = year.children[specialtyId];
-        if (!specialty) throw new Error('Specialty not found.');
-        
-        // Determine quiz type and get quiz data
-        if (lessonId) {
-            // Lesson-specific quiz
-            const lesson = specialty.children[lessonId];
-            if (!lesson) throw new Error('Lesson not found.');
-            
-            // Check if quiz data exists
-            if (!lesson.resources || !lesson.resources.lessonQuiz) {
-                showError('No quiz available for this lesson.');
-                return;
-            }
-            
-            // Get quiz data
-            quizData = lesson.resources.lessonQuiz;
+        if (!selectedUniId || !path) throw new Error("University or Path not specified.");
+
+        const response = await fetch('database.json');
+        const data = await response.json();
+        let currentNode = data.tree[selectedUniId];
+        siteTitleEl.textContent = `${currentNode.name} Med Portal`;
+
+        for (const segment of pathSegments.slice(1)) {
+            currentNode = currentNode.children[segment];
+        }
+
+        if (isLessonQuiz) {
+            quizData = currentNode.resources?.lessonQuiz;
         } else if (collectionId) {
-            // Collection quiz
-            if (!specialty.resources || !specialty.resources.collectionQuizzes) {
-                showError('No collection quizzes available for this specialty.');
-                return;
-            }
-            
-            // Find the specific collection quiz
-            const collectionQuiz = specialty.resources.collectionQuizzes.find(quiz => quiz.id === collectionId);
-            if (!collectionQuiz) {
-                showError('Collection quiz not found.');
-                return;
-            }
-            
-            // Get quiz data
-            quizData = collectionQuiz.quizData;
-        } else {
-            showError('Invalid quiz parameters. Please go back and try again.');
-            return;
+            const collectionQuiz = currentNode.resources?.collectionQuizzes?.find(q => q.id === collectionId);
+            quizData = collectionQuiz?.quizData;
         }
-        
-        // Try to load saved progress from localStorage
-        const savedProgress = localStorage.getItem(localStorageKey);
-        if (savedProgress) {
-            try {
-                userAnswers = JSON.parse(savedProgress);
-                // If saved progress is incomplete, fill the rest with null
-                if (userAnswers.length < quizData.questions.length) {
-                    const tempAnswers = [...userAnswers];
-                    userAnswers = new Array(quizData.questions.length).fill(null);
-                    for (let i = 0; i < tempAnswers.length; i++) {
-                        userAnswers[i] = tempAnswers[i];
-                    }
-                }
-            } catch (e) {
-                console.error('Error parsing saved progress:', e);
-                userAnswers = new Array(quizData.questions.length).fill(null);
-            }
-        } else {
-            userAnswers = new Array(quizData.questions.length).fill(null);
-        }
-        
-        // Initialize the quiz
+
+        if (!quizData || !quizData.questions) throw new Error('Quiz data could not be found or is invalid.');
+
         initializeQuiz();
-        
+
     } catch (error) {
-        console.error('Error loading quiz:', error);
-        showError(`Error loading quiz: ${error.message}`);
+        console.error("Quiz Loading Error:", error);
+        showError(error.message);
     }
-    
+
     function initializeQuiz() {
-        // Show first question or resume from where left off
-        // Find the first unanswered question
-        let resumeIndex = 0;
-        for (let i = 0; i < userAnswers.length; i++) {
-            if (userAnswers[i] === null) {
-                resumeIndex = i;
-                break;
-            }
-            // If all questions are answered, show the last one
-            if (i === userAnswers.length - 1) {
-                resumeIndex = i;
-            }
-        }
-        
-        currentQuestionIndex = resumeIndex;
-        displayQuestion(currentQuestionIndex);
-        updateProgressBar();
+        userAnswers = new Array(quizData.questions.length).fill(null);
+        displayQuestion(0);
     }
-    
+
     function displayQuestion(index) {
-        // Check if index is valid
-        if (index < 0 || index >= quizData.questions.length) return;
-        
+        currentQuestionIndex = index;
         const question = quizData.questions[index];
-        
-        // Update question counter
         questionCounter.textContent = `Question ${index + 1} of ${quizData.questions.length}`;
-        
-        // Update question stem
-        questionStem.textContent = question.stem || question.question || "Question";
-        
-        // Clear options container and reset state
+        questionStem.textContent = question.stem;
         optionsContainer.innerHTML = '';
         optionsContainer.classList.remove('options-disabled');
-        
-        // Add options
+
         question.options.forEach((option, i) => {
             const optionElement = document.createElement('div');
             optionElement.className = 'option';
+            optionElement.innerHTML = `<input type="radio" name="answer" value="${i}" id="option-${i}"><label for="option-${i}">${option}</label>`;
             
-            const radio = document.createElement('input');
-            radio.type = 'radio';
-            radio.name = 'answer';
-            radio.value = i;
-            radio.id = `option-${i}`;
-            
-            // If user has already answered this question, select their previous answer
-            if (userAnswers[index] === i) {
-                radio.checked = true;
-                optionElement.classList.add('selected');
-            }
-            
-            const label = document.createElement('label');
-            label.htmlFor = `option-${i}`;
-            label.textContent = option;
-            
-            optionElement.appendChild(radio);
-            optionElement.appendChild(label);
-            
-            // Add click event to option
-            optionElement.addEventListener('click', function() {
-                // If options are disabled, don't process clicks
-                if (optionsContainer.classList.contains('options-disabled')) {
-                    return;
-                }
-                
-                // Remove selected class from all options
-                document.querySelectorAll('.option').forEach(opt => {
-                    opt.classList.remove('selected', 'correct', 'incorrect');
-                });
-                
-                // Add selected class to clicked option
-                this.classList.add('selected');
-                
-                // Check the radio button
-                radio.checked = true;
-                
-                // Enable submit button
-                submitBtn.disabled = false;
-                
-                // Instant feedback
-                // Get the correct answer
-                const correctAnswer = question.correct !== undefined ? question.correct : question.correctAnswer;
-                
-                // Check if the selected answer is correct
-                if (parseInt(radio.value) === correctAnswer) {
-                    this.classList.add('correct');
-                } else {
-                    this.classList.add('incorrect');
-                    // Highlight the correct answer
-                    document.querySelectorAll('.option').forEach(opt => {
-                        if (parseInt(opt.querySelector('input').value) === correctAnswer) {
-                            opt.classList.add('correct');
-                        }
-                    });
-                }
-                
-                // Disable all options to prevent changing the answer
-                optionsContainer.classList.add('options-disabled');
-                
-                // Record the answer
-                userAnswers[index] = parseInt(radio.value);
-                
-                // Save progress to localStorage
-                localStorage.setItem(localStorageKey, JSON.stringify(userAnswers));
-            });
-            
+            optionElement.addEventListener('click', () => selectOption(i, question.correct));
             optionsContainer.appendChild(optionElement);
         });
+        updateNavigation();
+    }
+
+    function selectOption(selectedIndex, correctIndex) {
+        if (optionsContainer.classList.contains('options-disabled')) return;
         
-        // Update button text
-        if (index === quizData.questions.length - 1) {
-            submitBtn.textContent = 'Submit';
-        } else {
-            submitBtn.textContent = 'Next';
-        }
+        userAnswers[currentQuestionIndex] = selectedIndex;
+        document.querySelector(`input[value='${selectedIndex}']`).checked = true;
         
-        // Update previous button state
-        prevBtn.disabled = (index === 0);
-        
-        // Enable submit button if user has already answered this question
-        if (userAnswers[index] !== null) {
-            submitBtn.disabled = false;
-            
-            // If the question was already answered, show the feedback
-            optionsContainer.classList.add('options-disabled');
-            const correctAnswer = question.correct !== undefined ? question.correct : question.correctAnswer;
-            
-            document.querySelectorAll('.option').forEach(opt => {
-                const value = parseInt(opt.querySelector('input').value);
-                if (value === correctAnswer) {
-                    opt.classList.add('correct');
-                } else if (value === userAnswers[index]) {
-                    opt.classList.add('incorrect');
-                }
-            });
-        } else {
-            submitBtn.disabled = true;
-        }
-        
-        // Update progress bar
+        showFeedback(correctIndex);
+        updateNavigation();
+    }
+
+    function showFeedback(correctIndex) {
+        optionsContainer.classList.add('options-disabled');
+        document.querySelectorAll('.option').forEach((opt, i) => {
+            if (i === correctIndex) {
+                opt.classList.add('correct');
+            } else if (userAnswers[currentQuestionIndex] === i) {
+                opt.classList.add('incorrect');
+            }
+        });
+    }
+
+    function updateNavigation() {
+        prevBtn.disabled = currentQuestionIndex === 0;
+        submitBtn.disabled = userAnswers[currentQuestionIndex] === null;
+        submitBtn.textContent = (currentQuestionIndex === quizData.questions.length - 1) ? 'Submit' : 'Next';
         updateProgressBar();
     }
     
@@ -271,166 +105,32 @@ document.addEventListener('DOMContentLoaded', async function() {
         const progress = ((currentQuestionIndex + 1) / quizData.questions.length) * 100;
         progressBar.style.width = `${progress}%`;
     }
-    
-    function submitAnswer() {
-        // Get selected answer
-        const selectedOption = document.querySelector('input[name="answer"]:checked');
-        
-        if (!selectedOption) {
-            // This shouldn't happen since the button is disabled until an option is selected
-            alert('Please select an answer before proceeding.');
-            return;
-        }
-        
-        // Record answer (already recorded in the click event, but double-check)
-        userAnswers[currentQuestionIndex] = parseInt(selectedOption.value);
-        
-        // Save progress to localStorage
-        localStorage.setItem(localStorageKey, JSON.stringify(userAnswers));
-        
-        // Check if this is the last question
-        if (currentQuestionIndex === quizData.questions.length - 1) {
-            // Show results
-            showResults();
-        } else {
-            // Move to next question
-            currentQuestionIndex++;
-            displayQuestion(currentQuestionIndex);
-        }
-    }
-    
+
     function showResults() {
-        // Calculate score
         let score = 0;
-        quizData.questions.forEach((question, i) => {
-            // Check if the user's answer matches the correct answer
-            // The correct answer might be stored as 'correct' or 'correctAnswer'
-            const correctAnswer = question.correct !== undefined ? question.correct : question.correctAnswer;
-            if (userAnswers[i] === correctAnswer) {
-                score++;
-            }
+        quizData.questions.forEach((q, i) => {
+            if (userAnswers[i] === q.correct) score++;
         });
-        
-        // Update score display
         scoreDisplay.textContent = `You scored ${score} out of ${quizData.questions.length}`;
-        
-        // Hide quiz interface and show results
         quizInterface.style.display = 'none';
         resultsScreen.style.display = 'block';
-        
-        // Clear the saved progress since the quiz is completed
-        localStorage.removeItem(localStorageKey);
-    }
-    
-    function showReview() {
-        // Hide results screen and show review screen
-        resultsScreen.style.display = 'none';
-        reviewScreen.style.display = 'block';
-        
-        // Clear any previous content
-        reviewScreen.innerHTML = '';
-        
-        // Add a title for the review section
-        const reviewTitle = document.createElement('h2');
-        reviewTitle.textContent = 'Quiz Review';
-        reviewTitle.style.color = 'var(--primary-color)';
-        reviewTitle.style.marginBottom = '20px';
-        reviewScreen.appendChild(reviewTitle);
-        
-        // Loop through all questions
-        quizData.questions.forEach((question, index) => {
-            // Create a container for this question
-            const questionBlock = document.createElement('div');
-            questionBlock.className = 'review-question-block';
-            
-            // Add the question number and text
-            const questionTitle = document.createElement('h3');
-            questionTitle.textContent = `Question ${index + 1}: ${question.stem || question.question || "Question"}`;
-            questionBlock.appendChild(questionTitle);
-            
-            // Create a list for the options
-            const optionsList = document.createElement('div');
-            
-            // Get the correct answer
-            const correctAnswer = question.correct !== undefined ? question.correct : question.correctAnswer;
-            
-            // Add each option
-            question.options.forEach((option, optionIndex) => {
-                const optionElement = document.createElement('div');
-                optionElement.className = 'option';
-                optionElement.style.marginBottom = '8px';
-                
-                // Add radio button (disabled)
-                const radio = document.createElement('input');
-                radio.type = 'radio';
-                radio.name = `review-question-${index}`;
-                radio.value = optionIndex;
-                radio.disabled = true;
-                radio.style.marginRight = '8px';
-                
-                // Add label
-                const label = document.createElement('label');
-                label.textContent = option;
-                
-                optionElement.appendChild(radio);
-                optionElement.appendChild(label);
-                
-                // Mark the correct answer
-                if (optionIndex === correctAnswer) {
-                    optionElement.classList.add('correct');
-                }
-                
-                // Mark the user's answer if it was incorrect
-                if (userAnswers[index] === optionIndex && optionIndex !== correctAnswer) {
-                    optionElement.classList.add('incorrect');
-                }
-                
-                optionsList.appendChild(optionElement);
-            });
-            
-            questionBlock.appendChild(optionsList);
-            
-            // Add explanation if available
-            if (question.explanation) {
-                const explanationDiv = document.createElement('div');
-                explanationDiv.className = 'review-explanation';
-                explanationDiv.innerHTML = `<strong>Explanation:</strong> ${question.explanation}`;
-                questionBlock.appendChild(explanationDiv);
-            }
-            
-            // Add this question block to the review screen
-            reviewScreen.appendChild(questionBlock);
-        });
-        
-        // Add a back button to return to results
-        const backToResultsBtn = document.createElement('button');
-        backToResultsBtn.textContent = 'Back to Results';
-        backToResultsBtn.className = 'toolbar-button';
-        backToResultsBtn.style.marginTop = '20px';
-        backToResultsBtn.addEventListener('click', function() {
-            reviewScreen.style.display = 'none';
-            resultsScreen.style.display = 'block';
-        });
-        reviewScreen.appendChild(backToResultsBtn);
     }
     
     function showError(message) {
-        questionCounter.textContent = '';
-        questionStem.textContent = message;
-        optionsContainer.innerHTML = '';
-        submitBtn.style.display = 'none';
-        prevBtn.style.display = 'none';
+        quizInterface.innerHTML = `<p style="color: red; text-align: center;">${message}</p>`;
     }
-    
-    // Event listeners
-    submitBtn.addEventListener('click', submitAnswer);
-    
-    prevBtn.addEventListener('click', function() {
-        if (currentQuestionIndex > 0) {
-            currentQuestionIndex--;
-            displayQuestion(currentQuestionIndex);
+
+    submitBtn.addEventListener('click', () => {
+        if (currentQuestionIndex < quizData.questions.length - 1) {
+            displayQuestion(currentQuestionIndex + 1);
+        } else {
+            showResults();
         }
     });
-    
-    reviewBtn.addEventListener('click', showReview);
+
+    prevBtn.addEventListener('click', () => {
+        if (currentQuestionIndex > 0) {
+            displayQuestion(currentQuestionIndex - 1);
+        }
+    });
 });
