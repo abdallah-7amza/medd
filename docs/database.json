@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-02T19:19:20.875Z",
+  "generatedAt": "2025-09-02T19:28:34.150Z",
   "tree": {
     "cairo": {
       "children": {
@@ -1693,7 +1693,15 @@
                   "markdownContent": "\n# Neonatology\n\nThis is the main page for the Neonatology branch. Lessons under this branch will appear here.\n"
                 },
                 "nutrition": {
-                  "children": {},
+                  "children": {
+                    "malnutrition": {
+                      "children": {},
+                      "hasIndex": true,
+                      "label": "Principles of Malnutrition",
+                      "summary": "An overview of the causes and classifications of malnutrition.",
+                      "markdownContent": "\n# Principles of Malnutrition\n\nThis topic covers the primary and secondary forms of malnutrition in pediatrics.\n"
+                    }
+                  },
                   "resources": {
                     "collectionQuizzes": [
                       {
