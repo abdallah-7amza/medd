@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         cardContainer.innerHTML = '';
         toolbarContainer.innerHTML = '';
 
+        // Display Collection Quizzes
         if (currentNode.resources?.collectionQuizzes) {
             currentNode.resources.collectionQuizzes.forEach(quiz => {
                 const quizButton = document.createElement('a');
@@ -41,27 +42,51 @@ document.addEventListener('DOMContentLoaded', async function() {
                 toolbarContainer.appendChild(quizButton);
             });
         }
+        
+        // ### START: NEW CODE FOR FLASHCARDS ###
+        // Display Flashcard Decks
+        if (currentNode.resources?.flashcardDecks) {
+            currentNode.resources.flashcardDecks.forEach(deck => {
+                const deckButton = document.createElement('a');
+                // We reuse the 'collection' URL parameter for simplicity to pass the deck ID
+                deckButton.href = `flashcards.html?collection=${deck.id}&path=${path}`;
+                deckButton.className = 'card'; // Display it like other main cards
+                deckButton.innerHTML = `<h2><i class="fa-solid fa-layer-group"></i> Start Flashcards: ${deck.title}</h2>`;
+                toolbarContainer.appendChild(deckButton);
+            });
+        }
+        // ### END: NEW CODE FOR FLASHCARDS ###
 
+        // Display Child Nodes (Branches or Lessons)
         if (currentNode.children) {
             for (const id in currentNode.children) {
                 const childNode = currentNode.children[id];
                 const newPath = `${path}/${id}`;
                 const isBranch = childNode.children && Object.keys(childNode.children).length > 0;
+                
+                let targetUrl;
+                let showLessonQuizButton = false;
 
-                const targetUrl = isBranch || !childNode.hasIndex
-                    ? `lessons-list.html?path=${newPath}`
-                    : `lesson.html?path=${newPath}`;
+                if (isBranch) {
+                    targetUrl = `lessons-list.html?path=${newPath}`;
+                } else if (childNode.hasIndex) {
+                    targetUrl = `lesson.html?path=${newPath}`;
+                    if (childNode.resources?.lessonQuiz) {
+                        showLessonQuizButton = true;
+                    }
+                } else if (childNode.resources?.lessonQuiz) {
+                    targetUrl = `quiz.html?lessonQuiz=true&path=${newPath}`;
+                } else {
+                    targetUrl = '#'; 
+                }
 
-                // Create the main card for the lesson or branch
                 const card = createCard(childNode.label, targetUrl, childNode.summary || '');
 
-                // **THIS IS THE FIX**: Check for a lesson quiz and add a button INSIDE the card
-                if (childNode.resources?.lessonQuiz) {
+                if (showLessonQuizButton) {
                     const lessonQuizBtn = document.createElement('a');
                     lessonQuizBtn.href = `quiz.html?lessonQuiz=true&path=${newPath}`;
                     lessonQuizBtn.textContent = "Start Lesson Quiz";
                     lessonQuizBtn.className = 'lesson-quiz-button';
-                    // Prevent the card's main link from firing when the button is clicked
                     lessonQuizBtn.addEventListener('click', (e) => e.stopPropagation());
                     card.appendChild(lessonQuizBtn);
                 }
@@ -78,11 +103,19 @@ document.addEventListener('DOMContentLoaded', async function() {
 function createCard(title, url, description = '') {
     const cardLink = document.createElement('a');
     cardLink.href = url;
-    cardLink.className = 'card'; // This class makes the card a flex container for easy positioning
-    cardLink.innerHTML = `
-        <div class="card-content">
-            <h2>${title}</h2>
-            ${description ? `<p>${description}</p>` : ''}
-        </div>`;
+    cardLink.className = 'card';
+    
+    let content = `<div class="card-content"><h2>${title}</h2>`;
+    if (url.includes('quiz.html') && !description) {
+        content += `<p>A set of questions to test your knowledge on this topic.</p>`;
+    } else if (description) {
+        content += `<p>${description}</p>`;
+    }
+    content += `</div>`;
+    cardLink.innerHTML = content;
+
+    if (url === '#') {
+        cardLink.classList.add('disabled');
+    }
     return cardLink;
 }
