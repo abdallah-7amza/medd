@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-02T14:45:59.155Z",
+  "generatedAt": "2025-09-02T14:52:24.108Z",
   "tree": {
     "cairo": {
       "children": {
@@ -49,6 +49,11 @@
                       "label": "Endometrial Cancer",
                       "summary": "An overview of the most common gynecologic malignancy in developed countries.",
                       "markdownContent": "\n# Endometrial Cancer\n\nEndometrial cancer arises from the endometrium, the lining of the uterus. It is the most common cancer of the female reproductive organs.\n\n## Risk Factors\nThe primary risk factor for endometrial cancer is prolonged exposure to unopposed estrogen. Key risk factors include:\n* Obesity\n* Nulliparity (never having given birth)\n* Late menopause\n* Diabetes Mellitus\n* Tamoxifen therapy\n\n## Clinical Presentation\nThe classic symptom is **postmenopausal bleeding**. Any bleeding after menopause should be investigated to rule out endometrial cancer.\n"
+                    },
+                    "flashcards": {
+                      "children": {},
+                      "hasIndex": false,
+                      "label": "Flashcards"
                     }
                   },
                   "resources": {
