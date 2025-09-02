@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-02T14:53:25.009Z",
+  "generatedAt": "2025-09-02T15:06:46.875Z",
   "tree": {
     "cairo": {
       "children": {
@@ -49,11 +49,6 @@
                       "label": "Endometrial Cancer",
                       "summary": "An overview of the most common gynecologic malignancy in developed countries.",
                       "markdownContent": "\n# Endometrial Cancer\n\nEndometrial cancer arises from the endometrium, the lining of the uterus. It is the most common cancer of the female reproductive organs.\n\n## Risk Factors\nThe primary risk factor for endometrial cancer is prolonged exposure to unopposed estrogen. Key risk factors include:\n* Obesity\n* Nulliparity (never having given birth)\n* Late menopause\n* Diabetes Mellitus\n* Tamoxifen therapy\n\n## Clinical Presentation\nThe classic symptom is **postmenopausal bleeding**. Any bleeding after menopause should be investigated to rule out endometrial cancer.\n"
-                    },
-                    "flashcards": {
-                      "children": {},
-                      "hasIndex": false,
-                      "label": "Flashcards"
                     }
                   },
                   "resources": {
@@ -87,6 +82,26 @@
                             }
                           ]
                         }
+                      }
+                    ],
+                    "flashcardDecks": [
+                      {
+                        "id": "oncology-basics",
+                        "title": "Oncology Basics",
+                        "cards": [
+                          {
+                            "front": "What is the definition of 'Metastasis'?",
+                            "back": "The spread of cancer cells from the place where they first formed to another part of the body."
+                          },
+                          {
+                            "front": "What does the 'T' in the TNM staging system for cancer stand for?",
+                            "back": "It stands for the size and extent of the primary Tumor."
+                          },
+                          {
+                            "front": "Which virus is a major risk factor for cervical cancer?",
+                            "back": "Human Papillomavirus (HPV)."
+                          }
+                        ]
                       }
                     ]
                   },
