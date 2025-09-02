@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-02T15:06:46.875Z",
+  "generatedAt": "2025-09-02T15:08:58.217Z",
   "tree": {
     "cairo": {
       "children": {
@@ -348,6 +348,28 @@
                   "children": {
                     "jaundice": {
                       "children": {},
+                      "resources": {
+                        "flashcardDecks": [
+                          {
+                            "id": "jaundice-key-terms",
+                            "title": "Jaundice Key Terms",
+                            "cards": [
+                              {
+                                "front": "What is the clinical term for jaundice?",
+                                "back": "Hyperbilirubinemia, which means an excess of bilirubin in the blood."
+                              },
+                              {
+                                "front": "What is the primary, most common treatment for neonatal jaundice?",
+                                "back": "Phototherapy, which uses special blue light to break down bilirubin in the skin."
+                              },
+                              {
+                                "front": "What is Kernicterus?",
+                                "back": "A rare but serious form of brain damage in newborns caused by excessively high and untreated levels of bilirubin."
+                              }
+                            ]
+                          }
+                        ]
+                      },
                       "hasIndex": true,
                       "label": "Neonatal Jaundice",
                       "summary": "An overview of the causes, types, diagnosis, and management of jaundice in newborns.",
