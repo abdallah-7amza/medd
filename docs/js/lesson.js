@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 function createResourceButton(text, url) {
     const button = document.createElement('a');
     button.href = url;
-    button.className = 'toolbar-button'; // Using the attractive card-like button style
+    button.className = 'toolbar-button'; // استخدام شكل الزر الجذاب
     button.innerHTML = text;
     return button;
 }
