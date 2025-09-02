@@ -1,0 +1,15 @@
+{
+  "questions": [
+    {
+      "stem": "What is the most common presenting symptom of endometrial cancer?",
+      "options": [
+        "Abdominal pain",
+        "Bloating",
+        "Postmenopausal bleeding",
+        "Urinary frequency"
+      ],
+      "correct": 2,
+      "explanation": "Postmenopausal bleeding is the classic and most common symptom, occurring in over 90% of cases."
+    }
+  ]
+}
