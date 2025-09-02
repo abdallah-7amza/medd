@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', async function() {
             for (const id in currentNode.children) {
                 const childNode = currentNode.children[id];
                 const newPath = `${path}/${id}`;
-                // This is the critical logic that fixes navigation
                 const isBranch = childNode.children && Object.keys(childNode.children).length > 0;
                 
                 const targetUrl = isBranch
