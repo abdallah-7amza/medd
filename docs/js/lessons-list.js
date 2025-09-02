@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         if (currentNode.resources) {
             if (currentNode.resources.collectionQuizzes) {
                 currentNode.resources.collectionQuizzes.forEach(quiz => {
-                    toolbarContainer.appendChild(createResourceButton(`Start ${quiz.title}`, `quiz.html?collection=${quiz.id}&path=${path}`));
+                    toolbarContainer.appendChild(createResourceButton(`Start ${currentNode.label} Quiz Bank`, `quiz.html?collection=${quiz.id}&path=${path}`));
                 });
             }
             if (currentNode.resources.flashcardDecks) {
@@ -50,9 +50,10 @@ document.addEventListener('DOMContentLoaded', async function() {
             for (const id in currentNode.children) {
                 const childNode = currentNode.children[id];
                 const newPath = `${path}/${id}`;
-                const isBranch = childNode.children && Object.keys(childNode.children).length > 0;
                 
-                const targetUrl = isBranch
+                // *** أصبح القرار الآن بسيطًا جدًا وآمنًا ***
+                // الواجهة الأمامية لم تعد تفكر، بل تنفذ ما تقوله لها البيانات
+                const targetUrl = childNode.isBranch
                     ? `lessons-list.html?path=${newPath}`
                     : `lesson.html?path=${newPath}`;
                 
