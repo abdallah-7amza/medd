@@ -2,15 +2,14 @@ import fs from 'fs/promises';
 import path from 'path';
 import matter from 'gray-matter';
 
-// ... (function formatLabel remains the same)
 function formatLabel(name) {
     return name.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
 }
 
-
 async function scanDirectory(dirPath, isUniversity = false) {
     const node = { children: {}, resources: {} };
-    // ... (logic for meta.json and index.md remains the same)
+
+    // --- University and Lesson Metadata Logic (No changes here) ---
     if (isUniversity) {
         const metaPath = path.join(dirPath, 'meta.json');
         try {
@@ -33,12 +32,14 @@ async function scanDirectory(dirPath, isUniversity = false) {
         if (!node.label) node.label = formatLabel(path.basename(dirPath));
     }
 
+    // --- Lesson Quiz Logic (No changes here) ---
     const lessonQuizPath = path.join(dirPath, 'quiz.json');
     try {
         const quizContent = await fs.readFile(lessonQuizPath, 'utf8');
         node.resources.lessonQuiz = JSON.parse(quizContent);
     } catch {}
 
+    // --- Collection Quiz Logic (No changes here) ---
     const collectionQuizPath = path.join(dirPath, '_collection_quiz');
     try {
         const files = await fs.readdir(collectionQuizPath);
@@ -49,10 +50,9 @@ async function scanDirectory(dirPath, isUniversity = false) {
                 const jsonFilePath = path.join(collectionQuizPath, file);
                 const quizContent = await fs.readFile(jsonFilePath, 'utf8');
                 const quizData = JSON.parse(quizContent);
-                // **THIS IS THE FIX**: Read the title from the quiz data, or format the filename as a fallback.
                 collectionQuizzes.push({ 
                     id: baseName, 
-                    title: quizData.title || formatLabel(baseName), // The Important Change
+                    title: quizData.title || formatLabel(baseName),
                     quizData: quizData 
                 });
             }
@@ -62,6 +62,36 @@ async function scanDirectory(dirPath, isUniversity = false) {
         }
     } catch {}
 
+    // ***************************************************************
+    // ### START: NEW CODE FOR FLASHCARDS ###
+    // This is the new, safe addition to handle flashcards.
+    // ***************************************************************
+    const flashcardsPath = path.join(dirPath, '_flashcards');
+    try {
+        const files = await fs.readdir(flashcardsPath);
+        const flashcardDecks = [];
+        for (const file of files) {
+            if (file.endsWith('.json')) {
+                const baseName = path.basename(file, '.json');
+                const jsonFilePath = path.join(flashcardsPath, file);
+                const deckContent = await fs.readFile(jsonFilePath, 'utf8');
+                const deckData = JSON.parse(deckContent);
+                flashcardDecks.push({
+                    id: baseName,
+                    title: deckData.title || formatLabel(baseName),
+                    cards: deckData.cards
+                });
+            }
+        }
+        if (flashcardDecks.length > 0) {
+            node.resources.flashcardDecks = flashcardDecks;
+        }
+    } catch {}
+    // ***************************************************************
+    // ### END: NEW CODE FOR FLASHCARDS ###
+    // ***************************************************************
+
+    // --- Recursive Directory Scanning Logic (No changes here) ---
     const entries = await fs.readdir(dirPath, { withFileTypes: true });
     for (const entry of entries) {
         if (entry.isDirectory() && !entry.name.startsWith('_') && !entry.name.startsWith('.')) {
@@ -73,8 +103,8 @@ async function scanDirectory(dirPath, isUniversity = false) {
     return node;
 }
 
-// ... (function main remains the same)
 async function main() {
+    // ... (Main function remains the same)
     const database = { generatedAt: new Date().toISOString(), tree: {} };
     const universitiesPath = 'content/universities';
     try {
