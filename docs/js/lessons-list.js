@@ -1,7 +1,6 @@
-// docs/js/lessons-list.js (Final Version)
 document.addEventListener('DOMContentLoaded', async function() {
     const urlParams = new URLSearchParams(window.location.search);
-    let path = urlParams.get('path') || '';
+    const path = urlParams.get('path') || '';
     const pathSegments = path.split('/').filter(Boolean);
 
     const pageTitleEl = document.getElementById('page-title');
@@ -23,13 +22,13 @@ document.addEventListener('DOMContentLoaded', async function() {
         const data = await response.json();
         const university = data.tree[selectedUniId];
         siteTitleEl.textContent = `${university.name} Med Portal`;
-        
+
         let currentNode = university;
-        for (const segment of pathSegments) {
+        for (const segment of pathSegments.slice(1)) {
             currentNode = currentNode.children[segment];
         }
 
-        pageTitleEl.textContent = currentNode.label || 'Select a topic';
+        pageTitleEl.textContent = currentNode.label || currentNode.name;
         cardContainer.innerHTML = '';
         toolbarContainer.innerHTML = '';
 
@@ -43,21 +42,30 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
-        if (currentNode.children) {
+        if (currentNode.children && Object.keys(currentNode.children).length > 0) {
             for (const id in currentNode.children) {
                 const childNode = currentNode.children[id];
-                const newPath = path ? `${path}/${id}` : id;
-                const hasChildren = childNode.children && Object.keys(childNode.children).length > 0;
+                const newPath = `${path}/${id}`;
+                const isBranch = childNode.children && Object.keys(childNode.children).length > 0;
                 
-                const targetUrl = hasChildren || !childNode.hasIndex
+                const targetUrl = isBranch || !childNode.hasIndex
                     ? `lessons-list.html?path=${newPath}`
+                    // This is a lesson because it has content (hasIndex=true)
                     : `lesson.html?path=${newPath}`;
 
                 const card = createCard(childNode.label, targetUrl, childNode.summary || '');
+
+                if (childNode.resources?.lessonQuiz) {
+                    const lessonQuizBtn = document.createElement('a');
+                    lessonQuizBtn.href = `quiz.html?lessonQuiz=true&path=${newPath}`;
+                    lessonQuizBtn.textContent = "Start Lesson Quiz";
+                    lessonQuizBtn.className = 'lesson-quiz-button';
+                    lessonQuizBtn.addEventListener('click', (e) => e.stopPropagation());
+                    card.appendChild(lessonQuizBtn);
+                }
                 cardContainer.appendChild(card);
             }
         }
-
     } catch (error) {
         console.error('Error:', error);
         pageTitleEl.textContent = 'Error loading data.';
