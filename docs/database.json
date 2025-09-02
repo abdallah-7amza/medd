@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-01T14:38:42.285Z",
+  "generatedAt": "2025-09-02T10:55:32.988Z",
   "tree": {
     "cairo": {
       "children": {
@@ -10,18 +10,15 @@
                 "collection_quiz": {
                   "children": {},
                   "hasIndex": false,
-                  "label": "Collection Quiz",
-                  "id": "collection_quiz"
+                  "label": "Collection Quiz"
                 }
               },
               "hasIndex": false,
-              "label": "Surgery",
-              "id": "surgery"
+              "label": "Surgery"
             }
           },
           "hasIndex": false,
-          "label": "Year4",
-          "id": "year4"
+          "label": "Year4"
         },
         "year5": {
           "children": {
@@ -63,18 +60,15 @@
                     ]
                   },
                   "hasIndex": false,
-                  "label": "Oncology",
-                  "id": "oncology"
+                  "label": "Oncology"
                 }
               },
               "hasIndex": false,
-              "label": "Gynecology",
-              "id": "gynecology"
+              "label": "Gynecology"
             }
           },
           "hasIndex": false,
-          "label": "Year5",
-          "id": "year5"
+          "label": "Year5"
         }
       },
       "name": "Cairo University",
@@ -123,23 +117,48 @@
                     ]
                   },
                   "hasIndex": false,
-                  "label": "Oncology",
-                  "id": "oncology"
+                  "label": "Oncology"
                 }
               },
               "hasIndex": false,
-              "label": "Gynecology",
-              "id": "gynecology"
+              "label": "Gynecology"
             },
             "pediatrics": {
               "children": {
                 "anemia": {
                   "children": {},
+                  "resources": {
+                    "lessonQuiz": {
+                      "questions": [
+                        {
+                          "stem": "What is the most common cause of anemia in children worldwide?",
+                          "options": [
+                            "Iron deficiency",
+                            "Vitamin B12 deficiency",
+                            "Folate deficiency",
+                            "Hemolytic anemia"
+                          ],
+                          "correct": 0,
+                          "explanation": "Iron deficiency is by far the most common cause of anemia in the pediatric population globally, primarily due to nutritional factors."
+                        },
+                        {
+                          "stem": "A 2-year-old child presents with pallor and fatigue. A complete blood count shows microcytic, hypochromic anemia. Which of the following is the most likely diagnosis?",
+                          "options": [
+                            "Anemia of chronic disease",
+                            "Lead poisoning",
+                            "Iron deficiency anemia",
+                            "Thalassemia minor"
+                          ],
+                          "correct": 2,
+                          "explanation": "Microcytic, hypochromic anemia in a toddler is the classic presentation of iron deficiency anemia."
+                        }
+                      ]
+                    }
+                  },
                   "hasIndex": true,
                   "label": "Anemia",
                   "summary": "An overview of anemia in pediatrics, including causes, clinical features, and management.",
-                  "markdownContent": "\n# Anemia in Pediatrics\n\nThis is the main content of the lesson about Anemia.\n(Content will be added here later)\n",
-                  "id": "anemia"
+                  "markdownContent": "\n# Anemia in Pediatrics\n\nThis is the main content of the lesson about Anemia.\n(Content will be added here later)\n"
                 },
                 "neonatology": {
                   "children": {
@@ -148,25 +167,21 @@
                       "hasIndex": true,
                       "label": "Neonatal Jaundice",
                       "summary": "An overview of the causes, types, diagnosis, and management of jaundice in newborns.",
-                      "markdownContent": "\n# Neonatal Jaundice\n\nNeonatal jaundice is the yellowing of the skin and the white part of the eye (sclera) in a newborn baby, caused by a high level of bilirubin in the blood (Hyperbilirubinemia). It is one of the most common conditions requiring medical attention in this age group.\n\n## Types of Neonatal Jaundice\n\nIt can be broadly classified into two types:\n\n### 1. Physiological Jaundice\nThis is the most common type and is considered largely normal. It occurs in more than 50% of newborns.\n* **Cause:** The newborn's liver is not fully mature, which reduces its ability to process bilirubin effectively.\n* **Onset:** It typically begins on the second or third day after birth, peaks between the third and fifth days, and then gradually disappears.\n\n### 2. Pathological Jaundice\nThis is the type that warrants concern and investigation, as it results from an underlying medical condition.\n* **Warning Signs:**\n    * Appearance of jaundice within the first 24 hours of the newborn's life.\n    * A rapid and persistent rise in bilirubin levels.\n    * Prolonged duration (lasting more than two weeks).\n    * May be accompanied by other symptoms such as lethargy, poor feeding, or pale stools.\n\n* **Common Causes:**\n    * **Blood group incompatibility (ABO/Rh incompatibility):** Leads to the rapid breakdown of red blood cells.\n    * **G6PD enzyme deficiency (Favism):** Makes red blood cells more susceptible to breakdown.\n    * **Neonatal Sepsis.**\n    * **Liver disease or biliary atresia.**\n\n## Diagnosis and Assessment\n\n1.  **Clinical Examination:** Observing the color of the baby's skin and the whites of their eyes.\n2.  **Bilirubin Level Measurement:**\n    * **Transcutaneous Bilirubin (TcB):** A simple device placed on the baby's skin.\n    * **Total Serum Bilirubin (TSB):** This is the most accurate measurement, obtained by taking a blood sample.\n\n## Treatment\n\nThe goal of treatment is to lower the bilirubin level to prevent it from reaching the brain and causing serious complications (Kernicterus).\n\n* **Phototherapy:** This is the most common treatment, where the baby is exposed to special blue light that helps break down bilirubin in the skin into substances the body can easily eliminate.\n* **Exchange Transfusion:** This is reserved for very severe cases that do not respond to phototherapy, where the baby's blood is gradually replaced with donor blood.\n* \n",
-                      "id": "jaundice"
+                      "markdownContent": "\n# Neonatal Jaundice\n\nNeonatal jaundice is the yellowing of the skin and the white part of the eye (sclera) in a newborn baby, caused by a high level of bilirubin in the blood (Hyperbilirubinemia). It is one of the most common conditions requiring medical attention in this age group.\n\n## Types of Neonatal Jaundice\n\nIt can be broadly classified into two types:\n\n### 1. Physiological Jaundice\nThis is the most common type and is considered largely normal. It occurs in more than 50% of newborns.\n* **Cause:** The newborn's liver is not fully mature, which reduces its ability to process bilirubin effectively.\n* **Onset:** It typically begins on the second or third day after birth, peaks between the third and fifth days, and then gradually disappears.\n\n### 2. Pathological Jaundice\nThis is the type that warrants concern and investigation, as it results from an underlying medical condition.\n* **Warning Signs:**\n    * Appearance of jaundice within the first 24 hours of the newborn's life.\n    * A rapid and persistent rise in bilirubin levels.\n    * Prolonged duration (lasting more than two weeks).\n    * May be accompanied by other symptoms such as lethargy, poor feeding, or pale stools.\n\n* **Common Causes:**\n    * **Blood group incompatibility (ABO/Rh incompatibility):** Leads to the rapid breakdown of red blood cells.\n    * **G6PD enzyme deficiency (Favism):** Makes red blood cells more susceptible to breakdown.\n    * **Neonatal Sepsis.**\n    * **Liver disease or biliary atresia.**\n\n## Diagnosis and Assessment\n\n1.  **Clinical Examination:** Observing the color of the baby's skin and the whites of their eyes.\n2.  **Bilirubin Level Measurement:**\n    * **Transcutaneous Bilirubin (TcB):** A simple device placed on the baby's skin.\n    * **Total Serum Bilirubin (TSB):** This is the most accurate measurement, obtained by taking a blood sample.\n\n## Treatment\n\nThe goal of treatment is to lower the bilirubin level to prevent it from reaching the brain and causing serious complications (Kernicterus).\n\n* **Phototherapy:** This is the most common treatment, where the baby is exposed to special blue light that helps break down bilirubin in the skin into substances the body can easily eliminate.\n* **Exchange Transfusion:** This is reserved for very severe cases that do not respond to phototherapy, where the baby's blood is gradually replaced with donor blood.\n* \n"
                     }
                   },
                   "hasIndex": true,
                   "label": "Neonatology Branch",
                   "summary": "This section covers topics related to newborn infants, including jaundice and other neonatal conditions.",
-                  "markdownContent": "\n# Neonatology\n\nThis is the main page for the Neonatology branch. Lessons under this branch will appear here.\n",
-                  "id": "neonatology"
+                  "markdownContent": "\n# Neonatology\n\nThis is the main page for the Neonatology branch. Lessons under this branch will appear here.\n"
                 }
               },
               "hasIndex": false,
-              "label": "Pediatrics",
-              "id": "pediatrics"
+              "label": "Pediatrics"
             }
           },
           "hasIndex": false,
-          "label": "Year5",
-          "id": "year5"
+          "label": "Year5"
         }
       },
       "name": "NUB",
