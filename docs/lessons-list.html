@@ -1,29 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lessons - Med Portal</title>
-    <link rel="stylesheet" href="css/vars.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-</head>
-<body>
-    <header class="main-header">
-        <h1 id="site-title">Med Portal</h1>
-    </header>
-    <main>
-        <div class="container">
-            <div id="nav-container"></div>
-            <h1 id="page-title" class="page-title">Loading...</h1>
-  
-           <div id="toolbar-container" class="toolbar"></div>
-            <div id="card-container" class="card-grid"></div>
-        </div>
-    </main>
-    <footer class="main-footer">
-        Powered by Abdallah Hamza
-    </footer>
-    <script src="js/lessons-list.js" defer></script>
-</body>
-</html>
+document.addEventListener('DOMContentLoaded', async function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const path = urlParams.get('path') || '';
+    const pathSegments = path.split('/').filter(Boolean);
+
+    const pageTitleEl = document.getElementById('page-title');
+    const cardContainer = document.getElementById('card-container');
+    const siteTitleEl = document.getElementById('site-title');
+    const toolbarContainer = document.getElementById('toolbar-container');
+    const navContainer = document.getElementById('nav-container');
+    const selectedUniId = localStorage.getItem('selectedUni');
+
+    navContainer.innerHTML = '<a href="javascript:history.back()" class="back-link">← Back</a>';
+
+    if (!selectedUniId) {
+        pageTitleEl.textContent = 'No University Selected.';
+        return;
+    }
+
+    try {
+        const response = await fetch('./database.json');
+        if (!response.ok) throw new Error("Database file not found.");
+        const data = await response.json();
+        const university = data.tree[selectedUniId];
+        siteTitleEl.textContent = `${university.name} Med Portal`;
+
+        let currentNode = university;
+        for (const segment of pathSegments.slice(1)) {
+            currentNode = currentNode.children[segment];
+        }
+
+        pageTitleEl.textContent = currentNode.label || currentNode.name;
+        cardContainer.innerHTML = '';
+        toolbarContainer.innerHTML = '';
+
+        if (currentNode.resources) {
+            if (currentNode.resources.collectionQuizzes) {
+                currentNode.resources.collectionQuizzes.forEach(quiz => {
+                    toolbarContainer.appendChild(createResourceButton(`Start ${currentNode.label} Quiz Bank`, `quiz.html?collection=${quiz.id}&path=${path}`));
+                });
+            }
+            if (currentNode.resources.flashcardDecks) {
+                currentNode.resources.flashcardDecks.forEach(deck => {
+                    toolbarContainer.appendChild(createResourceButton(`Start Flashcards: ${deck.title}`, `flashcards.html?collection=${deck.id}&path=${path}`));
+                });
+            }
+        }
+
+        if (currentNode.children) {
+            for (const id in currentNode.children) {
+                const childNode = currentNode.children[id];
+                const newPath = `${path}/${id}`;
+                
+                // *** أصبح القرار الآن بسيطًا جدًا وآمنًا ***
+                // الواجهة الأمامية لم تعد تفكر، بل تنفذ ما تقوله لها البيانات
+                const targetUrl = childNode.isBranch
+                    ? `lessons-list.html?path=${newPath}`
+                    : `lesson.html?path=${newPath}`;
+                
+                const card = createCard(childNode.label, targetUrl, childNode.summary || 'View content and resources for this topic.');
+                cardContainer.appendChild(card);
+            }
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        pageTitleEl.textContent = `Error: ${error.message}`;
+    }
+});
+
+function createCard(title, url, description) {
+    const cardLink = document.createElement('a');
+    cardLink.href = url;
+    cardLink.className = 'card';
+    cardLink.innerHTML = `<div class="card-content"><h2>${title}</h2><p>${description}</p></div>`;
+    return cardLink;
+}
+
+function createResourceButton(text, url) {
+    const button = document.createElement('a');
+    button.href = url;
+    button.className = 'card';
+    button.innerHTML = `<h2>${text}</h2>`;
+    return button;
+}
