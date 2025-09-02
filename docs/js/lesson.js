@@ -14,11 +14,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
 
     try {
-        // THIS IS THE CORRECTED LINE
         const response = await fetch('./database.json');
-        
         if (!response.ok) throw new Error("Database file not found.");
-
         const data = await response.json();
         let topicNode = data.tree[selectedUniId];
         siteTitleEl.textContent = `${topicNode.name} Med Portal`;
@@ -32,36 +29,33 @@ document.addEventListener('DOMContentLoaded', async function() {
         pageTitleEl.textContent = topicNode.label;
         toolbarContainer.innerHTML = '';
 
-        if (topicNode.resources?.lessonQuiz) {
-            const quizButton = createResourceButton(`Start Quiz`, `quiz.html?lessonQuiz=true&path=${path}`);
-            toolbarContainer.appendChild(quizButton);
-        }
-
-        if (topicNode.resources?.flashcardDecks) {
-            topicNode.resources.flashcardDecks.forEach(deck => {
-                const deckButton = createResourceButton(`Start Flashcards: ${deck.title}`, `flashcards.html?collection=${deck.id}&path=${path}`);
-                toolbarContainer.appendChild(deckButton);
-            });
+        if (topicNode.resources) {
+            if (topicNode.resources.lessonQuiz) {
+                toolbarContainer.appendChild(createResourceButton(`Start Quiz`, `quiz.html?lessonQuiz=true&path=${path}`));
+            }
+            if (topicNode.resources.flashcardDecks) {
+                topicNode.resources.flashcardDecks.forEach(deck => {
+                    toolbarContainer.appendChild(createResourceButton(`Start Flashcards: ${deck.title}`, `flashcards.html?collection=${deck.id}&path=${path}`));
+                });
+            }
         }
 
         if (topicNode.hasIndex) {
             contentContainer.innerHTML = marked.parse(topicNode.markdownContent);
         } else {
-            contentContainer.innerHTML = "<p>No detailed lesson text is available for this topic, but you can use the resources above.</p>";
+            contentContainer.innerHTML = "<p>No detailed lesson is available for this topic, but you can use the resources above.</p>";
         }
 
     } catch (error) {
         console.error('Error:', error);
-        pageTitleEl.textContent = 'Error loading topic.';
-        pageTitleEl.style.color = 'red';
-        contentContainer.innerHTML = `<p>Details: ${error.message}</p>`;
+        pageTitleEl.textContent = `Error: ${error.message}`;
     }
 });
 
 function createResourceButton(text, url) {
     const button = document.createElement('a');
     button.href = url;
-    button.className = 'button button-primary';
-    button.textContent = text;
+    button.className = 'toolbar-button'; // Using the attractive card-like button style
+    button.innerHTML = text;
     return button;
 }
