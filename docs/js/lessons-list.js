@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     try {
         const response = await fetch('./database.json');
+        if (!response.ok) throw new Error("Database file not found.");
         const data = await response.json();
         const university = data.tree[selectedUniId];
         siteTitleEl.textContent = `${university.name} Med Portal`;
@@ -32,40 +33,41 @@ document.addEventListener('DOMContentLoaded', async function() {
         cardContainer.innerHTML = '';
         toolbarContainer.innerHTML = '';
 
-        // Display Collection Quizzes and Flashcards for the BRANCH
-        if (currentNode.resources?.collectionQuizzes) {
-            currentNode.resources.collectionQuizzes.forEach(quiz => {
-                const quizButton = createResourceButton(`Start ${quiz.title}`, `quiz.html?collection=${quiz.id}&path=${path}`);
-                toolbarContainer.appendChild(quizButton);
-            });
-        }
-        if (currentNode.resources?.flashcardDecks) {
-            currentNode.resources.flashcardDecks.forEach(deck => {
-                const deckButton = createResourceButton(`Start Flashcards: ${deck.title}`, `flashcards.html?collection=${deck.id}&path=${path}`);
-                toolbarContainer.appendChild(deckButton);
-            });
+        if (currentNode.resources) {
+            if (currentNode.resources.collectionQuizzes) {
+                currentNode.resources.collectionQuizzes.forEach(quiz => {
+                    toolbarContainer.appendChild(createResourceButton(`Start ${quiz.title}`, `quiz.html?collection=${quiz.id}&path=${path}`));
+                });
+            }
+            if (currentNode.resources.flashcardDecks) {
+                currentNode.resources.flashcardDecks.forEach(deck => {
+                    toolbarContainer.appendChild(createResourceButton(`Start Flashcards: ${deck.title}`, `flashcards.html?collection=${deck.id}&path=${path}`));
+                });
+            }
         }
 
-        // Display a single card for each child TOPIC
         if (currentNode.children) {
             for (const id in currentNode.children) {
                 const childNode = currentNode.children[id];
                 const newPath = `${path}/${id}`;
+                // This is the critical logic that fixes navigation
+                const isBranch = childNode.children && Object.keys(childNode.children).length > 0;
                 
-                // The card ALWAYS links to lesson.html now, which acts as the topic page
-                const targetUrl = `lesson.html?path=${newPath}`;
+                const targetUrl = isBranch
+                    ? `lessons-list.html?path=${newPath}`
+                    : `lesson.html?path=${newPath}`;
                 
-                const card = createCard(childNode.label, targetUrl, childNode.summary || 'Click to see available content and resources.');
+                const card = createCard(childNode.label, targetUrl, childNode.summary || 'View content and resources for this topic.');
                 cardContainer.appendChild(card);
             }
         }
     } catch (error) {
         console.error('Error:', error);
-        pageTitleEl.textContent = 'Error loading data.';
+        pageTitleEl.textContent = `Error: ${error.message}`;
     }
 });
 
-function createCard(title, url, description = '') {
+function createCard(title, url, description) {
     const cardLink = document.createElement('a');
     cardLink.href = url;
     cardLink.className = 'card';
@@ -76,7 +78,7 @@ function createCard(title, url, description = '') {
 function createResourceButton(text, url) {
     const button = document.createElement('a');
     button.href = url;
-    button.className = 'card'; // Use card style for a consistent look
+    button.className = 'card';
     button.innerHTML = `<h2>${text}</h2>`;
     return button;
 }
