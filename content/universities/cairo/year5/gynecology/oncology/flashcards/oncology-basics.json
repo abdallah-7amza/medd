@@ -1,0 +1,17 @@
+{
+  "title": "Oncology Basics",
+  "cards": [
+    {
+      "front": "What is the definition of 'Metastasis'?",
+      "back": "The spread of cancer cells from the place where they first formed to another part of the body."
+    },
+    {
+      "front": "What does the 'T' in the TNM staging system for cancer stand for?",
+      "back": "It stands for the size and extent of the primary Tumor."
+    },
+    {
+      "front": "Which virus is a major risk factor for cervical cancer?",
+      "back": "Human Papillomavirus (HPV)."
+    }
+  ]
+}
