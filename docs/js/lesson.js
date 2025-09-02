@@ -14,7 +14,11 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
 
     try {
+        // THIS IS THE CORRECTED LINE
         const response = await fetch('./database.json');
+        
+        if (!response.ok) throw new Error("Database file not found.");
+
         const data = await response.json();
         let topicNode = data.tree[selectedUniId];
         siteTitleEl.textContent = `${topicNode.name} Med Portal`;
@@ -23,17 +27,16 @@ document.addEventListener('DOMContentLoaded', async function() {
             topicNode = topicNode.children[segment];
         }
 
-        pageTitleEl.textContent = topicNode.label;
-        toolbarContainer.innerHTML = ''; // Clear toolbar
+        if (!topicNode) throw new Error("Topic not found in database.");
 
-        // ** THIS IS THE NEW LOGIC **
-        // Check for a lesson-specific quiz
+        pageTitleEl.textContent = topicNode.label;
+        toolbarContainer.innerHTML = '';
+
         if (topicNode.resources?.lessonQuiz) {
             const quizButton = createResourceButton(`Start Quiz`, `quiz.html?lessonQuiz=true&path=${path}`);
             toolbarContainer.appendChild(quizButton);
         }
 
-        // Check for flashcard decks related to this lesson
         if (topicNode.resources?.flashcardDecks) {
             topicNode.resources.flashcardDecks.forEach(deck => {
                 const deckButton = createResourceButton(`Start Flashcards: ${deck.title}`, `flashcards.html?collection=${deck.id}&path=${path}`);
@@ -41,7 +44,6 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
-        // Display the main lesson content, if it exists
         if (topicNode.hasIndex) {
             contentContainer.innerHTML = marked.parse(topicNode.markdownContent);
         } else {
@@ -51,13 +53,15 @@ document.addEventListener('DOMContentLoaded', async function() {
     } catch (error) {
         console.error('Error:', error);
         pageTitleEl.textContent = 'Error loading topic.';
+        pageTitleEl.style.color = 'red';
+        contentContainer.innerHTML = `<p>Details: ${error.message}</p>`;
     }
 });
 
 function createResourceButton(text, url) {
     const button = document.createElement('a');
     button.href = url;
-    button.className = 'button button-primary'; // Using the attractive button style
+    button.className = 'button button-primary';
     button.textContent = text;
     return button;
 }
