@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', async function() {
     let currentCardIndex = 0;
     let flashcardDeck = null;
 
+    // *** NEW: Create a unique key for this deck in localStorage ***
+    const localStorageKey = `flashcard-progress-${selectedUniId}-${path}-${collectionId}`;
+
     if (!selectedUniId || !path || !collectionId) {
         deckTitleEl.textContent = 'Error: Missing required parameters.';
         return;
@@ -48,8 +51,14 @@ document.addEventListener('DOMContentLoaded', async function() {
         if (!flashcardDeck) {
             throw new Error(`Deck with ID '${collectionId}' not found.`);
         }
+        
+        // *** NEW: Load saved progress or start from 0 ***
+        const savedIndex = localStorage.getItem(localStorageKey);
+        if (savedIndex) {
+            currentCardIndex = parseInt(savedIndex, 10);
+        }
 
-        // Initialize the first card
+        // Initialize the card
         deckTitleEl.textContent = flashcardDeck.title;
         displayCard(currentCardIndex);
 
@@ -59,26 +68,26 @@ document.addEventListener('DOMContentLoaded', async function() {
         deckTitleEl.style.color = 'red';
     }
 
-    // Function to display a card at a specific index
+    // Function to display a card and save progress
     function displayCard(index) {
         if (!flashcardDeck || !flashcardDeck.cards || flashcardDeck.cards.length === 0) return;
         
-        // Ensure the card is showing the front face
         flashcardEl.classList.remove('is-flipped');
 
         const card = flashcardDeck.cards[index];
         cardFrontContentEl.textContent = card.front;
         cardBackContentEl.textContent = card.back;
 
-        // Update counter
         counterEl.textContent = `Card ${index + 1} / ${flashcardDeck.cards.length}`;
 
-        // Enable/disable navigation buttons
         prevBtn.disabled = index === 0;
         nextBtn.disabled = index === flashcardDeck.cards.length - 1;
+
+        // *** NEW: Save the current index to localStorage ***
+        localStorage.setItem(localStorageKey, index);
     }
 
-    // Event listener for the flip button/card
+    // Event listeners
     flipBtn.addEventListener('click', () => {
         flashcardEl.classList.toggle('is-flipped');
     });
@@ -86,7 +95,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         flashcardEl.classList.toggle('is-flipped');
     });
 
-    // Event listener for the previous button
     prevBtn.addEventListener('click', () => {
         if (currentCardIndex > 0) {
             currentCardIndex--;
@@ -94,7 +102,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
     });
 
-    // Event listener for the next button
     nextBtn.addEventListener('click', () => {
         if (currentCardIndex < flashcardDeck.cards.length - 1) {
             currentCardIndex++;
