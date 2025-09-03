@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-03T09:17:21.088Z",
+  "generatedAt": "2025-09-03T09:36:30.732Z",
   "tree": {
     "cairo": {
       "children": {
@@ -12,6 +12,28 @@
                   "hasIndex": false,
                   "label": "Collection Quiz"
                 }
+              },
+              "resources": {
+                "flashcardDecks": [
+                  {
+                    "id": "surgical-instruments",
+                    "title": "Surgical Instruments",
+                    "cards": [
+                      {
+                        "front": "Scalpel",
+                        "back": "A small and extremely sharp bladed instrument used for surgery and anatomical dissection."
+                      },
+                      {
+                        "front": "Forceps",
+                        "back": "A handheld, hinged instrument used for grasping and holding objects, similar to tweezers."
+                      },
+                      {
+                        "front": "Retractor",
+                        "back": "A surgical instrument used to separate the edges of a surgical incision or wound, or to hold back underlying organs and tissues."
+                      }
+                    ]
+                  }
+                ]
               },
               "hasIndex": false,
               "label": "Surgery",
@@ -57,6 +79,7 @@
                     "collectionQuizzes": [
                       {
                         "id": "oncology-bank",
+                        "title": "Oncology Bank",
                         "quizData": {
                           "questions": [
                             {
@@ -83,6 +106,26 @@
                             }
                           ]
                         }
+                      }
+                    ],
+                    "flashcardDecks": [
+                      {
+                        "id": "oncology-basics",
+                        "title": "Oncology Basics",
+                        "cards": [
+                          {
+                            "front": "What is the definition of 'Metastasis'?",
+                            "back": "The spread of cancer cells from the place where they first formed to another part of the body."
+                          },
+                          {
+                            "front": "What does the 'T' in the TNM staging system for cancer stand for?",
+                            "back": "It stands for the size and extent of the primary Tumor."
+                          },
+                          {
+                            "front": "Which virus is a major risk factor for cervical cancer?",
+                            "back": "Human Papillomavirus (HPV)."
+                          }
+                        ]
                       }
                     ]
                   },
@@ -118,6 +161,7 @@
                     "collectionQuizzes": [
                       {
                         "id": "oncology-bank",
+                        "title": "Oncology Bank",
                         "quizData": {
                           "questions": [
                             {
@@ -186,12 +230,33 @@
                           "explanation": "Microcytic, hypochromic anemia in a toddler is the classic presentation of iron deficiency anemia."
                         }
                       ]
-                    }
+                    },
+                    "flashcardDecks": [
+                      {
+                        "id": "anemia-types",
+                        "title": "Types of Anemia",
+                        "cards": [
+                          {
+                            "front": "Microcytic Anemia",
+                            "back": "Characterized by small red blood cells (low MCV). It is most commonly caused by iron deficiency."
+                          },
+                          {
+                            "front": "Macrocytic Anemia",
+                            "back": "Characterized by large red blood cells (high MCV). It is often caused by a deficiency in Vitamin B12 or Folate."
+                          },
+                          {
+                            "front": "Normocytic Anemia",
+                            "back": "Characterized by normal-sized red blood cells but a low overall count. It is often associated with chronic disease or acute blood loss."
+                          }
+                        ]
+                      }
+                    ]
                   },
                   "hasIndex": true,
                   "label": "Anemia",
                   "summary": "An overview of anemia in pediatrics, including causes, clinical features, and management.",
-                  "markdownContent": "\n# Anemia in Pediatrics\n\nThis is the main content of the lesson about Anemia.\n(Content will be added here later)\n"
+                  "markdownContent": "\n# Anemia in Pediatrics\n\nThis is the main content of the lesson about Anemia.\n(Content will be added here later)\n",
+                  "isBranch": true
                 },
                 "git": {
                   "children": {},
@@ -199,6 +264,7 @@
                     "collectionQuizzes": [
                       {
                         "id": "pbl-of-git",
+                        "title": "PBL of GIT",
                         "quizData": {
                           "title": "PBL of GIT",
                           "questions": [
@@ -334,10 +400,33 @@
                   "children": {
                     "jaundice": {
                       "children": {},
+                      "resources": {
+                        "flashcardDecks": [
+                          {
+                            "id": "jaundice-key-terms",
+                            "title": "Jaundice Key Terms",
+                            "cards": [
+                              {
+                                "front": "What is the clinical term for jaundice?",
+                                "back": "Hyperbilirubinemia, which means an excess of bilirubin in the blood."
+                              },
+                              {
+                                "front": "What is the primary, most common treatment for neonatal jaundice?",
+                                "back": "Phototherapy, which uses special blue light to break down bilirubin in the skin."
+                              },
+                              {
+                                "front": "What is Kernicterus?",
+                                "back": "A rare but serious form of brain damage in newborns caused by excessively high and untreated levels of bilirubin."
+                              }
+                            ]
+                          }
+                        ]
+                      },
                       "hasIndex": true,
                       "label": "Neonatal Jaundice",
                       "summary": "An overview of the causes, types, diagnosis, and management of jaundice in newborns.",
-                      "markdownContent": "\n# Neonatal Jaundice\n\nNeonatal jaundice is the yellowing of the skin and the white part of the eye (sclera) in a newborn baby, caused by a high level of bilirubin in the blood (Hyperbilirubinemia). It is one of the most common conditions requiring medical attention in this age group.\n\n## Types of Neonatal Jaundice\n\nIt can be broadly classified into two types:\n\n### 1. Physiological Jaundice\nThis is the most common type and is considered largely normal. It occurs in more than 50% of newborns.\n* **Cause:** The newborn's liver is not fully mature, which reduces its ability to process bilirubin effectively.\n* **Onset:** It typically begins on the second or third day after birth, peaks between the third and fifth days, and then gradually disappears.\n\n### 2. Pathological Jaundice\nThis is the type that warrants concern and investigation, as it results from an underlying medical condition.\n* **Warning Signs:**\n    * Appearance of jaundice within the first 24 hours of the newborn's life.\n    * A rapid and persistent rise in bilirubin levels.\n    * Prolonged duration (lasting more than two weeks).\n    * May be accompanied by other symptoms such as lethargy, poor feeding, or pale stools.\n\n* **Common Causes:**\n    * **Blood group incompatibility (ABO/Rh incompatibility):** Leads to the rapid breakdown of red blood cells.\n    * **G6PD enzyme deficiency (Favism):** Makes red blood cells more susceptible to breakdown.\n    * **Neonatal Sepsis.**\n    * **Liver disease or biliary atresia.**\n\n## Diagnosis and Assessment\n\n1.  **Clinical Examination:** Observing the color of the baby's skin and the whites of their eyes.\n2.  **Bilirubin Level Measurement:**\n    * **Transcutaneous Bilirubin (TcB):** A simple device placed on the baby's skin.\n    * **Total Serum Bilirubin (TSB):** This is the most accurate measurement, obtained by taking a blood sample.\n\n## Treatment\n\nThe goal of treatment is to lower the bilirubin level to prevent it from reaching the brain and causing serious complications (Kernicterus).\n\n* **Phototherapy:** This is the most common treatment, where the baby is exposed to special blue light that helps break down bilirubin in the skin into substances the body can easily eliminate.\n* **Exchange Transfusion:** This is reserved for very severe cases that do not respond to phototherapy, where the baby's blood is gradually replaced with donor blood.\n* \n"
+                      "markdownContent": "\n# Neonatal Jaundice\n\nNeonatal jaundice is the yellowing of the skin and the white part of the eye (sclera) in a newborn baby, caused by a high level of bilirubin in the blood (Hyperbilirubinemia). It is one of the most common conditions requiring medical attention in this age group.\n\n## Types of Neonatal Jaundice\n\nIt can be broadly classified into two types:\n\n### 1. Physiological Jaundice\nThis is the most common type and is considered largely normal. It occurs in more than 50% of newborns.\n* **Cause:** The newborn's liver is not fully mature, which reduces its ability to process bilirubin effectively.\n* **Onset:** It typically begins on the second or third day after birth, peaks between the third and fifth days, and then gradually disappears.\n\n### 2. Pathological Jaundice\nThis is the type that warrants concern and investigation, as it results from an underlying medical condition.\n* **Warning Signs:**\n    * Appearance of jaundice within the first 24 hours of the newborn's life.\n    * A rapid and persistent rise in bilirubin levels.\n    * Prolonged duration (lasting more than two weeks).\n    * May be accompanied by other symptoms such as lethargy, poor feeding, or pale stools.\n\n* **Common Causes:**\n    * **Blood group incompatibility (ABO/Rh incompatibility):** Leads to the rapid breakdown of red blood cells.\n    * **G6PD enzyme deficiency (Favism):** Makes red blood cells more susceptible to breakdown.\n    * **Neonatal Sepsis.**\n    * **Liver disease or biliary atresia.**\n\n## Diagnosis and Assessment\n\n1.  **Clinical Examination:** Observing the color of the baby's skin and the whites of their eyes.\n2.  **Bilirubin Level Measurement:**\n    * **Transcutaneous Bilirubin (TcB):** A simple device placed on the baby's skin.\n    * **Total Serum Bilirubin (TSB):** This is the most accurate measurement, obtained by taking a blood sample.\n\n## Treatment\n\nThe goal of treatment is to lower the bilirubin level to prevent it from reaching the brain and causing serious complications (Kernicterus).\n\n* **Phototherapy:** This is the most common treatment, where the baby is exposed to special blue light that helps break down bilirubin in the skin into substances the body can easily eliminate.\n* **Exchange Transfusion:** This is reserved for very severe cases that do not respond to phototherapy, where the baby's blood is gradually replaced with donor blood.\n* \n",
+                      "isBranch": true
                     },
                     "neonatal-jaundice": {
                       "children": {},
@@ -405,6 +494,7 @@
                     "collectionQuizzes": [
                       {
                         "id": "neonatology-bank",
+                        "title": "Neonatology Bank",
                         "quizData": {
                           "questions": [
                             {
@@ -434,6 +524,7 @@
                       },
                       {
                         "id": "pbl-of-neonatology",
+                        "title": "PBL of Neonatology",
                         "quizData": {
                           "title": "PBL of Neonatology",
                           "questions": [
@@ -1669,6 +1760,7 @@
                     "collectionQuizzes": [
                       {
                         "id": "pbl-of-nutrition",
+                        "title": "PBL of Nutrition",
                         "quizData": {
                           "title": "PBL of Nutrition",
                           "questions": [
