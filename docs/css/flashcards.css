@@ -1,106 +1,97 @@
-/* Main viewer container */
-.flashcard-viewer {
-    max-width: 700px;
-    margin: 40px auto;
-    padding: 25px;
-    background-color: var(--card-background-color);
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+/* Main container for the flashcard and its 3D scene */
+.flashcard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
 }
 
-/* Progress Bar and Counter */
-.progress-container {
-    background-color: #e9ecef;
-    border-radius: 5px;
-    height: 10px;
-    margin-bottom: 5px;
-}
-.progress-bar {
-    height: 100%;
-    background-color: var(--primary-color);
-    width: 0%;
-    border-radius: 5px;
-    transition: width 0.3s ease;
-}
-.card-counter {
-    text-align: center;
-    color: #6c757d;
-    margin-bottom: 25px;
-    font-size: 0.9em;
-}
-
-/* 3D Flippable Card styles */
 .flashcard-scene {
     width: 100%;
-    height: 350px;
-    perspective: 1000px;
-    margin-bottom: 25px;
+    max-width: 600px;
+    height: 400px;
+    perspective: 1000px; /* This creates the 3D space */
 }
+
 .flashcard {
     width: 100%;
     height: 100%;
     position: relative;
-    transform-style: preserve-3d;
     transition: transform 0.6s;
+    transform-style: preserve-3d; /* This is key for the 3D effect */
     cursor: pointer;
 }
+
+/* This class will be toggled by JavaScript to flip the card */
 .flashcard.is-flipped {
     transform: rotateY(180deg);
 }
+
+/* Common styles for both front and back faces */
 .flashcard-face {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
+    backface-visibility: hidden; /* Hides the back of the face when it's turned away */
     display: flex;
     justify-content: center;
-    align-items: center; /* This will center short text */
-    padding: 25px;
-    font-size: 1.4em;
-    text-align: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    /* START: Changes for long text */
-    flex-direction: column;
-    overflow-y: auto; /* Allow scrolling for long text */
-    /* END: Changes for long text */
-}
-.flashcard-front {
-    background-color: #ffffff;
-    border: 1px solid #dee2e6;
-    color: var(--text-color);
-}
-.flashcard-back {
-    background-color: var(--primary-color);
-    color: white;
-    transform: rotateY(180deg);
-}
-
-/* Navigation buttons */
-.flashcard-nav {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    border-top: 1px solid #eee;
-    padding-top: 20px;
-}
-
-/* Completion Screen Style */
-.completion-screen {
+    border: 1px solid #ddd;
+    font-size: 1.5em;
     text-align: center;
-    padding: 40px 20px;
 }
-.completion-screen h2 {
+
+.flashcard-front {
+    background-color: var(--card-background-color);
     color: var(--primary-color);
-    margin-bottom: 15px;
 }
-.completion-screen p {
+
+.flashcard-back {
+    background-color: #f8f9fa;
+    color: var(--text-color);
+    transform: rotateY(180deg); /* Start with the back face turned away */
+    align-items: flex-start; /* Align text to the top */
+    text-align: left;
+    font-size: 1.1em;
+    /* *** هذا هو الجزء الذي يضمن استيعاب أي قدر من المعلومات *** */
+    overflow-y: auto; /* Add a scrollbar if content overflows */
+}
+
+.flashcard-counter {
+    text-align: center;
     font-size: 1.1em;
     color: #6c757d;
-    margin-bottom: 30px;
+    margin-top: 15px;
 }
-.completion-screen div {
+
+/* Navigation buttons styling */
+.flashcard-navigation {
     display: flex;
     justify-content: center;
     gap: 15px;
+    margin-top: 25px;
+}
+
+.nav-button {
+    padding: 12px 25px;
+    font-size: 1em;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    background-color: #e9ecef;
+    color: #333;
+}
+
+.nav-button:hover {
+    transform: translateY(-2px);
+}
+
+.flip-button {
+    background-color: var(--primary-color);
+    color: white;
 }
