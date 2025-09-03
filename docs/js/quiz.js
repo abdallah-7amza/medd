@@ -1,6 +1,5 @@
-// docs/js/quiz.js (Final and Complete Version)
 document.addEventListener('DOMContentLoaded', async function() {
-    // --- GET URL PARAMS AND DOM ELEMENTS ---
+    // --- 1. GET URL PARAMS AND DOM ELEMENTS ---
     const urlParams = new URLSearchParams(window.location.search);
     const path = urlParams.get('path') || '';
     const collectionId = urlParams.get('collection');
@@ -11,6 +10,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const questionCounter = document.getElementById('question-counter');
     const questionStem = document.getElementById('question-stem');
     const optionsContainer = document.getElementById('options-container');
+    const explanationContainer = document.getElementById('explanation-container');
     const submitBtn = document.getElementById('submit-btn');
     const prevBtn = document.getElementById('prev-btn');
     const progressBar = document.getElementById('progress-bar');
@@ -23,12 +23,13 @@ document.addEventListener('DOMContentLoaded', async function() {
     let currentQuestionIndex = 0;
     let userAnswers = [];
     let quizData = null;
+    let storageKey = '';
 
-    // --- LOAD QUIZ DATA ---
+    // --- 2. LOAD QUIZ DATA ---
     try {
         if (!selectedUniId || !path) throw new Error("University or Path not specified.");
 
-        const response = await fetch('database.json');
+        const response = await fetch('./database.json');
         const data = await response.json();
         let currentNode = data.tree[selectedUniId];
         siteTitleEl.textContent = `${currentNode.name} Med Portal`;
@@ -40,23 +41,30 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         if (isLessonQuiz) {
             quizData = currentNode.resources?.lessonQuiz;
+            storageKey = `quiz-progress-${path}`;
         } else if (collectionId) {
             const collectionQuiz = currentNode.resources?.collectionQuizzes?.find(q => q.id === collectionId);
             quizData = collectionQuiz?.quizData;
+            storageKey = `quiz-progress-${path}-${collectionId}`;
         }
 
         if (!quizData || !quizData.questions) throw new Error('Quiz data could not be found.');
-
+        
         initializeQuiz();
 
     } catch (error) {
         showError(error.message);
     }
 
-    // --- QUIZ FUNCTIONS ---
+    // --- 3. ALL QUIZ FUNCTIONS ---
     function initializeQuiz() {
-        userAnswers = new Array(quizData.questions.length).fill(null);
-        displayQuestion(0);
+        const savedProgress = localStorage.getItem(storageKey);
+        userAnswers = savedProgress ? JSON.parse(savedProgress) : new Array(quizData.questions.length).fill(null);
+        
+        let resumeIndex = userAnswers.findIndex(answer => answer === null);
+        if (resumeIndex === -1) resumeIndex = quizData.questions.length - 1;
+        
+        displayQuestion(resumeIndex);
     }
 
     function displayQuestion(index) {
@@ -66,6 +74,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         questionStem.textContent = question.stem;
         optionsContainer.innerHTML = '';
         optionsContainer.classList.remove('options-disabled');
+        explanationContainer.style.display = 'none';
 
         question.options.forEach((option, i) => {
             const optionElement = document.createElement('div');
@@ -74,27 +83,39 @@ document.addEventListener('DOMContentLoaded', async function() {
             if (userAnswers[index] === i) {
                 optionElement.querySelector('input').checked = true;
             }
-            optionElement.addEventListener('click', () => selectOption(i, question.correct));
+            optionElement.addEventListener('click', () => selectOption(i));
             optionsContainer.appendChild(optionElement);
         });
+
+        if (userAnswers[index] !== null) {
+            showFeedback();
+        }
         updateNavigation();
-        if (userAnswers[index] !== null) showFeedback(question.correct);
     }
 
-    function selectOption(selectedIndex, correctIndex) {
+    function selectOption(selectedIndex) {
         if (optionsContainer.classList.contains('options-disabled')) return;
         userAnswers[currentQuestionIndex] = selectedIndex;
+        localStorage.setItem(storageKey, JSON.stringify(userAnswers));
         document.querySelector(`input[value='${selectedIndex}']`).checked = true;
-        showFeedback(correctIndex);
+        showFeedback();
         updateNavigation();
     }
 
-    function showFeedback(correctIndex) {
+    function showFeedback() {
         optionsContainer.classList.add('options-disabled');
+        const correctIndex = quizData.questions[currentQuestionIndex].correct;
+        const explanationText = quizData.questions[currentQuestionIndex].explanation;
+
         document.querySelectorAll('.option').forEach((opt, i) => {
             if (i === correctIndex) opt.classList.add('correct');
             else if (userAnswers[currentQuestionIndex] === i) opt.classList.add('incorrect');
         });
+
+        if (explanationText) {
+            explanationContainer.innerHTML = `<strong>Explanation:</strong> ${explanationText}`;
+            explanationContainer.style.display = 'block';
+        }
     }
 
     function updateNavigation() {
@@ -117,9 +138,9 @@ document.addEventListener('DOMContentLoaded', async function() {
         scoreDisplay.textContent = `You scored ${score} out of ${quizData.questions.length}`;
         quizInterface.style.display = 'none';
         resultsScreen.style.display = 'block';
+        localStorage.removeItem(storageKey);
     }
-
-    // **THIS IS THE FIX for the review button**
+    
     function showReview() {
         resultsScreen.style.display = 'none';
         reviewScreen.style.display = 'block';
@@ -131,11 +152,8 @@ document.addEventListener('DOMContentLoaded', async function() {
             let optionsHTML = '';
             question.options.forEach((option, i) => {
                 let className = 'option';
-                if (i === question.correct) {
-                    className += ' correct';
-                } else if (i === userAnswers[index]) {
-                    className += ' incorrect';
-                }
+                if (i === question.correct) className += ' correct';
+                else if (i === userAnswers[index]) className += ' incorrect';
                 optionsHTML += `<div class="${className}">${option}</div>`;
             });
             questionBlock.innerHTML = `
@@ -148,19 +166,19 @@ document.addEventListener('DOMContentLoaded', async function() {
         
         const backBtn = document.createElement('button');
         backBtn.textContent = 'Back to Results';
-        backBtn.className = 'toolbar-button';
+        backBtn.className = 'button button-secondary';
         backBtn.onclick = () => {
             reviewScreen.style.display = 'none';
             resultsScreen.style.display = 'block';
         };
         reviewScreen.appendChild(backBtn);
     }
-    
+
     function showError(message) {
         quizInterface.innerHTML = `<p style="color: red; text-align: center;">${message}</p>`;
     }
 
-    // --- EVENT LISTENERS ---
+    // Event Listeners
     submitBtn.addEventListener('click', () => {
         if (currentQuestionIndex < quizData.questions.length - 1) {
             displayQuestion(currentQuestionIndex + 1);
@@ -174,6 +192,6 @@ document.addEventListener('DOMContentLoaded', async function() {
             displayQuestion(currentQuestionIndex - 1);
         }
     });
-
-    reviewBtn.addEventListener('click', showReview); // Correctly attached
+    
+    reviewBtn.addEventListener('click', showReview);
 });
