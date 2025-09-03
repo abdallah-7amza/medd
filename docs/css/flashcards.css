@@ -3,26 +3,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 30px 0;
+    margin: 25px 0;
 }
 
 .flashcard-scene {
     width: 100%;
-    max-width: 600px;
+    max-width: 650px; /* Slightly wider */
     height: 400px;
-    perspective: 1000px; /* This creates the 3D space */
+    perspective: 1200px;
 }
 
 .flashcard {
     width: 100%;
     height: 100%;
     position: relative;
-    transition: transform 0.6s;
-    transform-style: preserve-3d; /* This is key for the 3D effect */
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
     cursor: pointer;
 }
 
-/* This class will be toggled by JavaScript to flip the card */
 .flashcard.is-flipped {
     transform: rotateY(180deg);
 }
@@ -32,45 +31,48 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Hides the back of the face when it's turned away */
+    backface-visibility: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    border: 1px solid #ddd;
-    font-size: 1.5em;
-    text-align: center;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .flashcard-front {
-    background-color: var(--card-background-color);
+    background: linear-gradient(135deg, #ffffff 0%, #f7f9fc 100%);
     color: var(--primary-color);
+    font-size: 1.8em;
+    font-weight: 600;
 }
 
 .flashcard-back {
     background-color: #f8f9fa;
     color: var(--text-color);
-    transform: rotateY(180deg); /* Start with the back face turned away */
-    align-items: flex-start; /* Align text to the top */
+    transform: rotateY(180deg);
+    align-items: flex-start;
     text-align: left;
     font-size: 1.1em;
-    /* *** هذا هو الجزء الذي يضمن استيعاب أي قدر من المعلومات *** */
-    overflow-y: auto; /* Add a scrollbar if content overflows */
+    line-height: 1.6;
+    overflow-y: auto; /* For scrollable long text */
 }
 
+/* Style for the counter */
 .flashcard-counter {
     text-align: center;
     font-size: 1.1em;
+    font-weight: 500;
     color: #6c757d;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 /* Navigation buttons styling */
 .flashcard-navigation {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 15px;
     margin-top: 25px;
 }
@@ -79,19 +81,33 @@
     padding: 12px 25px;
     font-size: 1em;
     font-weight: 600;
-    border: none;
-    border-radius: 6px;
+    border: 2px solid transparent;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.2s, transform 0.2s;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-button:disabled {
     background-color: #e9ecef;
-    color: #333;
+    color: #adb5bd;
+    cursor: not-allowed;
+    transform: none;
 }
 
-.nav-button:hover {
-    transform: translateY(-2px);
+.nav-button:not(:disabled):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.flip-button {
+#prev-btn, #next-btn {
+    background-color: #fff;
+    border-color: #dee2e6;
+    color: #495057;
+}
+
+#flip-btn {
     background-color: var(--primary-color);
     color: white;
+    font-size: 1.1em; /* Make it stand out */
+    padding: 15px 30px;
 }
