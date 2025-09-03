@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/vars.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/quiz.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
     <header class="main-header">
@@ -18,42 +19,40 @@
             
             <div class="quiz-container">
                 <div id="quiz-interface">
-                    <div id="progress-container">
-                        <div id="progress-bar"></div>
+                    <div id="progress-container" style="background-color: #e9ecef; border-radius: 5px; height: 10px; margin-bottom: 20px;">
+                        <div id="progress-bar" style="height: 100%; width: 0%; background-color: var(--primary-color); border-radius: 5px; transition: width 0.3s ease;"></div>
                     </div>
                     
-                    <div id="question-counter">Loading question...</div>
+                    <div id="question-counter">Loading...</div>
                     <div id="question-stem">Loading question...</div>
                     
                     <div id="options-container">
-                        <!-- Options will be dynamically added here -->
-                    </div>
+                        </div>
                     
+                    <div id="explanation-container" class="explanation-container"></div>
                     <div class="quiz-navigation">
-                        <button id="prev-btn" disabled>Previous</button>
-                        <button id="submit-btn" disabled>Next</button>
+                        <button id="prev-btn">Previous</button>
+                        <button id="submit-btn">Next</button>
                     </div>
                 </div>
-                
-                <div id="results-screen">
+
+                <div id="results-screen" style="display: none; text-align: center;">
                     <h2>Quiz Results</h2>
                     <div id="score-display">You scored 0 out of 0</div>
                     <div>
-                        <a href="javascript:history.back()" id="restart-btn">Back to Lessons</a>
+                        <a href="javascript:history.back()" id="restart-btn">Back to Topic</a>
                         <button id="review-btn">Review Answers</button>
                     </div>
                 </div>
-                
+
                 <div id="review-screen" style="display: none;">
-                    <!-- Review content will be dynamically added here -->
-                </div>
+                    </div>
             </div>
         </div>
     </main>
     <footer class="main-footer">
         Powered by Abdallah Hamza
     </footer>
-    
     <script src="js/quiz.js" defer></script>
 </body>
 </html>
