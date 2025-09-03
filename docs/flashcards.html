@@ -15,10 +15,10 @@
 
     <main>
         <div class="container">
-            <a href="javascript:history.back()" class="back-link">← Back to Lessons</a>
+            <a href="javascript:history.back()" class="back-link">← Back to Topic</a>
             <h1 id="deck-title" class="page-title">Loading Deck...</h1>
 
-            <div class="flashcard-viewer">
+            <div id="flashcard-viewer" class="flashcard-viewer">
                 <div class="progress-container">
                     <div id="flashcard-progress-bar" class="progress-bar"></div>
                 </div>
@@ -37,7 +37,16 @@
                     <button id="next-card-btn" class="button button-secondary">Next</button>
                 </div>
             </div>
-        </div>
+
+            <div id="completion-screen" class="completion-screen" style="display: none;">
+                <h2>Deck Complete!</h2>
+                <p>You have reviewed all the cards in this deck.</p>
+                <div>
+                    <button id="restart-deck-btn" class="button button-primary">Review Again</button>
+                    <a href="javascript:history.back()" class="button button-secondary">Back to Topic</a>
+                </div>
+            </div>
+            </div>
     </main>
 
     <footer class="main-footer">
