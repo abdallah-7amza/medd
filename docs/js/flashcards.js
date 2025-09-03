@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     // --- Get DOM Elements and URL Params ---
     const urlParams = new URLSearchParams(window.location.search);
     const path = urlParams.get('path');
-    const deckId = urlParams.get('collection'); // We'll reuse 'collection' param for simplicity
+    const deckId = urlParams.get('collection');
     const selectedUniId = localStorage.getItem('selectedUni');
 
     const deckTitleEl = document.getElementById('deck-title');
@@ -15,15 +15,21 @@ document.addEventListener('DOMContentLoaded', async function() {
     const prevBtn = document.getElementById('prev-card-btn');
     const flipBtn = document.getElementById('flip-card-btn');
     const nextBtn = document.getElementById('next-card-btn');
+    const viewer = document.getElementById('flashcard-viewer');
+    const completionScreen = document.getElementById('completion-screen');
+    const restartBtn = document.getElementById('restart-deck-btn');
 
     let currentCardIndex = 0;
     let deckData = null;
+    let storageKey = '';
 
     // --- Load Data ---
     try {
         if (!selectedUniId || !path || !deckId) throw new Error("Missing parameters.");
+        
+        storageKey = `flashcard-progress-${selectedUniId}-${path}-${deckId}`;
 
-        const response = await fetch('database.json');
+        const response = await fetch('./database.json');
         const data = await response.json();
         const university = data.tree[selectedUniId];
         siteTitleEl.textContent = `${university.name} Med Portal`;
@@ -37,50 +43,56 @@ document.addEventListener('DOMContentLoaded', async function() {
         if (!deckData) throw new Error("Flashcard deck not found.");
 
         deckTitleEl.textContent = deckData.title;
-        displayCard(currentCardIndex);
+        initializeDeck();
 
     } catch (error) {
         console.error("Flashcard Error:", error);
         deckTitleEl.textContent = "Error";
-        document.querySelector('.flashcard-viewer').innerHTML = `<p style="color:red; text-align:center;">${error.message}</p>`;
+        viewer.innerHTML = `<p style="color:red; text-align:center;">${error.message}</p>`;
     }
 
     // --- Core Functions ---
+    function initializeDeck() {
+        const savedIndex = localStorage.getItem(storageKey);
+        currentCardIndex = savedIndex ? parseInt(savedIndex, 10) : 0;
+        displayCard(currentCardIndex);
+    }
+
     function displayCard(index) {
         if (!deckData || index < 0 || index >= deckData.cards.length) return;
 
         currentCardIndex = index;
         const card = deckData.cards[index];
-
-        // Reset flip state
         flashcard.classList.remove('is-flipped');
-
-        // Set content
         frontFace.textContent = card.front;
         backFace.textContent = card.back;
 
-        // Update UI
         cardCounter.textContent = `Card ${index + 1} / ${deckData.cards.length}`;
         const progressPercent = ((index + 1) / deckData.cards.length) * 100;
         progressBar.style.width = `${progressPercent}%`;
 
-        // Update button states
         prevBtn.disabled = index === 0;
         nextBtn.disabled = index === deckData.cards.length - 1;
+
+        // Save progress to localStorage
+        localStorage.setItem(storageKey, index);
+    }
+
+    function showCompletionScreen() {
+        viewer.style.display = 'none';
+        completionScreen.style.display = 'block';
+        localStorage.removeItem(storageKey); // Clear progress
     }
 
     // --- Event Listeners ---
-    flipBtn.addEventListener('click', () => {
-        flashcard.classList.toggle('is-flipped');
-    });
-
-    flashcard.addEventListener('click', () => {
-        flashcard.classList.toggle('is-flipped');
-    });
+    flipBtn.addEventListener('click', () => flashcard.classList.toggle('is-flipped'));
+    flashcard.addEventListener('click', () => flashcard.classList.toggle('is-flipped'));
 
     nextBtn.addEventListener('click', () => {
         if (currentCardIndex < deckData.cards.length - 1) {
             displayCard(currentCardIndex + 1);
+        } else {
+            showCompletionScreen();
         }
     });
 
@@ -88,5 +100,11 @@ document.addEventListener('DOMContentLoaded', async function() {
         if (currentCardIndex > 0) {
             displayCard(currentCardIndex - 1);
         }
+    });
+
+    restartBtn.addEventListener('click', () => {
+        completionScreen.style.display = 'none';
+        viewer.style.display = 'block';
+        initializeDeck();
     });
 });
