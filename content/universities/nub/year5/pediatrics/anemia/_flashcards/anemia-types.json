@@ -1,0 +1,17 @@
+{
+  "title": "Types of Anemia",
+  "cards": [
+    {
+      "front": "Microcytic Anemia",
+      "back": "Characterized by small red blood cells (low MCV). It is most commonly caused by iron deficiency."
+    },
+    {
+      "front": "Macrocytic Anemia",
+      "back": "Characterized by large red blood cells (high MCV). It is often caused by a deficiency in Vitamin B12 or Folate."
+    },
+    {
+      "front": "Normocytic Anemia",
+      "back": "Characterized by normal-sized red blood cells but a low overall count. It is often associated with chronic disease or acute blood loss."
+    }
+  ]
+}
