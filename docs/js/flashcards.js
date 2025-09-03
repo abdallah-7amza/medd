@@ -1,110 +1,104 @@
 document.addEventListener('DOMContentLoaded', async function() {
-    // --- Get DOM Elements and URL Params ---
+    // Get parameters from the URL
     const urlParams = new URLSearchParams(window.location.search);
     const path = urlParams.get('path');
-    const deckId = urlParams.get('collection');
+    const collectionId = urlParams.get('collection');
     const selectedUniId = localStorage.getItem('selectedUni');
 
+    // Get DOM elements
     const deckTitleEl = document.getElementById('deck-title');
+    const cardFrontContentEl = document.getElementById('card-front-content');
+    const cardBackContentEl = document.getElementById('card-back-content');
+    const flashcardEl = document.getElementById('flashcard');
+    const counterEl = document.getElementById('flashcard-counter');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const flipBtn = document.getElementById('flip-btn');
     const siteTitleEl = document.getElementById('site-title');
-    const progressBar = document.getElementById('flashcard-progress-bar');
-    const cardCounter = document.getElementById('card-counter');
-    const flashcard = document.getElementById('flashcard');
-    const frontFace = document.getElementById('flashcard-front');
-    const backFace = document.getElementById('flashcard-back');
-    const prevBtn = document.getElementById('prev-card-btn');
-    const flipBtn = document.getElementById('flip-card-btn');
-    const nextBtn = document.getElementById('next-card-btn');
-    const viewer = document.getElementById('flashcard-viewer');
-    const completionScreen = document.getElementById('completion-screen');
-    const restartBtn = document.getElementById('restart-deck-btn');
 
     let currentCardIndex = 0;
-    let deckData = null;
-    let storageKey = '';
+    let flashcardDeck = null;
 
-    // --- Load Data ---
+    if (!selectedUniId || !path || !collectionId) {
+        deckTitleEl.textContent = 'Error: Missing required parameters.';
+        return;
+    }
+
     try {
-        if (!selectedUniId || !path || !deckId) throw new Error("Missing parameters.");
-        
-        storageKey = `flashcard-progress-${selectedUniId}-${path}-${deckId}`;
-
+        // Fetch the main database
         const response = await fetch('./database.json');
+        if (!response.ok) throw new Error("Database file not found.");
         const data = await response.json();
-        const university = data.tree[selectedUniId];
-        siteTitleEl.textContent = `${university.name} Med Portal`;
 
-        let currentNode = university;
-        for (const segment of path.split('/').filter(Boolean).slice(1)) {
+        // Navigate to the correct node in the database tree
+        let currentNode = data.tree[selectedUniId];
+        siteTitleEl.textContent = `${currentNode.name} Med Portal`;
+        const pathSegments = path.split('/').filter(Boolean);
+        for (const segment of pathSegments.slice(1)) {
             currentNode = currentNode.children[segment];
         }
 
-        deckData = currentNode.resources?.flashcardDecks?.find(d => d.id === deckId);
-        if (!deckData) throw new Error("Flashcard deck not found.");
+        if (!currentNode || !currentNode.resources || !currentNode.resources.flashcardDecks) {
+            throw new Error("Flashcard deck not found in the database.");
+        }
 
-        deckTitleEl.textContent = deckData.title;
-        initializeDeck();
+        // Find the specific deck by its ID
+        flashcardDeck = currentNode.resources.flashcardDecks.find(deck => deck.id === collectionId);
+
+        if (!flashcardDeck) {
+            throw new Error(`Deck with ID '${collectionId}' not found.`);
+        }
+
+        // Initialize the first card
+        deckTitleEl.textContent = flashcardDeck.title;
+        displayCard(currentCardIndex);
 
     } catch (error) {
-        console.error("Flashcard Error:", error);
-        deckTitleEl.textContent = "Error";
-        viewer.innerHTML = `<p style="color:red; text-align:center;">${error.message}</p>`;
+        console.error('Error:', error);
+        deckTitleEl.textContent = `Error: ${error.message}`;
+        deckTitleEl.style.color = 'red';
     }
 
-    // --- Core Functions ---
-    function initializeDeck() {
-        const savedIndex = localStorage.getItem(storageKey);
-        currentCardIndex = savedIndex ? parseInt(savedIndex, 10) : 0;
-        displayCard(currentCardIndex);
-    }
-
+    // Function to display a card at a specific index
     function displayCard(index) {
-        if (!deckData || index < 0 || index >= deckData.cards.length) return;
+        if (!flashcardDeck || !flashcardDeck.cards || flashcardDeck.cards.length === 0) return;
+        
+        // Ensure the card is showing the front face
+        flashcardEl.classList.remove('is-flipped');
 
-        currentCardIndex = index;
-        const card = deckData.cards[index];
-        flashcard.classList.remove('is-flipped');
-        frontFace.textContent = card.front;
-        backFace.textContent = card.back;
+        const card = flashcardDeck.cards[index];
+        cardFrontContentEl.textContent = card.front;
+        cardBackContentEl.textContent = card.back;
 
-        cardCounter.textContent = `Card ${index + 1} / ${deckData.cards.length}`;
-        const progressPercent = ((index + 1) / deckData.cards.length) * 100;
-        progressBar.style.width = `${progressPercent}%`;
+        // Update counter
+        counterEl.textContent = `Card ${index + 1} / ${flashcardDeck.cards.length}`;
 
+        // Enable/disable navigation buttons
         prevBtn.disabled = index === 0;
-        nextBtn.disabled = index === deckData.cards.length - 1;
-
-        // Save progress to localStorage
-        localStorage.setItem(storageKey, index);
+        nextBtn.disabled = index === flashcardDeck.cards.length - 1;
     }
 
-    function showCompletionScreen() {
-        viewer.style.display = 'none';
-        completionScreen.style.display = 'block';
-        localStorage.removeItem(storageKey); // Clear progress
-    }
-
-    // --- Event Listeners ---
-    flipBtn.addEventListener('click', () => flashcard.classList.toggle('is-flipped'));
-    flashcard.addEventListener('click', () => flashcard.classList.toggle('is-flipped'));
-
-    nextBtn.addEventListener('click', () => {
-        if (currentCardIndex < deckData.cards.length - 1) {
-            displayCard(currentCardIndex + 1);
-        } else {
-            showCompletionScreen();
-        }
+    // Event listener for the flip button/card
+    flipBtn.addEventListener('click', () => {
+        flashcardEl.classList.toggle('is-flipped');
+    });
+    flashcardEl.addEventListener('click', () => {
+        flashcardEl.classList.toggle('is-flipped');
     });
 
+    // Event listener for the previous button
     prevBtn.addEventListener('click', () => {
         if (currentCardIndex > 0) {
-            displayCard(currentCardIndex - 1);
+            currentCardIndex--;
+            displayCard(currentCardIndex);
         }
     });
 
-    restartBtn.addEventListener('click', () => {
-        completionScreen.style.display = 'none';
-        viewer.style.display = 'block';
-        initializeDeck();
+    // Event listener for the next button
+    nextBtn.addEventListener('click', () => {
+        if (currentCardIndex < flashcardDeck.cards.length - 1) {
+            currentCardIndex++;
+            displayCard(currentCardIndex);
+        }
     });
 });
