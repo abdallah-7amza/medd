@@ -15,44 +15,36 @@
 
     <main>
         <div class="container">
-            <a href="javascript:history.back()" class="back-link">← Back to Topic</a>
+            <a href="javascript:history.back()" class="back-link">← Back</a>
             <h1 id="deck-title" class="page-title">Loading Deck...</h1>
 
-            <div id="flashcard-viewer" class="flashcard-viewer">
-                <div class="progress-container">
-                    <div id="flashcard-progress-bar" class="progress-bar"></div>
-                </div>
-                <div id="card-counter" class="card-counter">Card 0 / 0</div>
-
+            <div class="flashcard-container">
                 <div class="flashcard-scene">
                     <div id="flashcard" class="flashcard">
-                        <div id="flashcard-front" class="flashcard-face flashcard-front"></div>
-                        <div id="flashcard-back" class="flashcard-face flashcard-back"></div>
+                        <div class="flashcard-face flashcard-front">
+                            <p id="card-front-content"></p>
+                        </div>
+                        <div class="flashcard-face flashcard-back">
+                            <p id="card-back-content"></p>
+                        </div>
                     </div>
                 </div>
-
-                <div class="flashcard-nav">
-                    <button id="prev-card-btn" class="button button-secondary">Previous</button>
-                    <button id="flip-card-btn" class="button button-primary">Flip Card</button>
-                    <button id="next-card-btn" class="button button-secondary">Next</button>
-                </div>
             </div>
 
-            <div id="completion-screen" class="completion-screen" style="display: none;">
-                <h2>Deck Complete!</h2>
-                <p>You have reviewed all the cards in this deck.</p>
-                <div>
-                    <button id="restart-deck-btn" class="button button-primary">Review Again</button>
-                    <a href="javascript:history.back()" class="button button-secondary">Back to Topic</a>
-                </div>
+            <div id="flashcard-counter" class="flashcard-counter">Card 0 / 0</div>
+
+            <div class="flashcard-navigation">
+                <button id="prev-btn" class="nav-button">Previous</button>
+                <button id="flip-btn" class="nav-button flip-button">Flip Card</button>
+                <button id="next-btn" class="nav-button">Next</button>
             </div>
-            </div>
+        </div>
     </main>
 
     <footer class="main-footer">
         Powered by Abdallah Hamza
     </footer>
-    
+
     <script src="js/flashcards.js" defer></script>
 </body>
 </html>
