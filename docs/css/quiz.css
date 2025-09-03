@@ -185,3 +185,18 @@
 .back-link:hover {
     text-decoration: underline;
 }
+/* === Explanation Box Style === */
+.explanation-container {
+    display: none; /* Hidden by default */
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+.explanation-container strong {
+    color: var(--primary-color);
+}
