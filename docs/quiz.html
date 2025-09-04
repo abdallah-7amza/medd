@@ -7,11 +7,9 @@
     <link rel="stylesheet" href="css/vars.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/quiz.css">
+    <link rel="stylesheet" href="css/tutor.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<link rel="stylesheet" href="css/tutor.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<script type="module" src="https://cdn.jsdelivr.net/npm/@google/generative-ai"></script>
-</head>
+    </head>
 <body>
     <header class="main-header">
         <h1 id="site-title">Med Portal</h1>
@@ -29,8 +27,7 @@
                     <div id="question-counter">Loading...</div>
                     <div id="question-stem">Loading question...</div>
                     
-                    <div id="options-container">
-                        </div>
+                    <div id="options-container"></div>
                     
                     <div id="explanation-container" class="explanation-container"></div>
                     <div class="quiz-navigation">
@@ -48,15 +45,15 @@
                     </div>
                 </div>
 
-                <div id="review-screen" style="display: none;">
-                    </div>
+                <div id="review-screen" style="display: none;"></div>
             </div>
         </div>
     </main>
     <footer class="main-footer">
         Powered by Abdallah Hamza
     </footer>
+
     <script src="js/quiz.js" defer></script>
-<script src="js/tutor.js" defer></script>
+    <script type="module" src="js/tutor.js"></script>
 </body>
 </html>
