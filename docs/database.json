@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-04T23:34:29.572Z",
+  "generatedAt": "2025-09-04T23:51:25.474Z",
   "tree": {
     "nub": {
       "children": {
@@ -779,6 +779,11 @@
                   "hasIndex": false,
                   "label": "Basic Obstetrics",
                   "isBranch": true
+                },
+                "early-obstetric-complications": {
+                  "children": {},
+                  "hasIndex": false,
+                  "label": "Early Obstetric Complications"
                 }
               },
               "hasIndex": false,
