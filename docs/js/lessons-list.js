@@ -33,15 +33,16 @@ document.addEventListener('DOMContentLoaded', async function() {
         cardContainer.innerHTML = '';
         toolbarContainer.innerHTML = '';
 
+        // **UPDATED**: Logic now passes the correct 'type' to createResourceButton
         if (currentNode.resources) {
             if (currentNode.resources.collectionQuizzes) {
                 currentNode.resources.collectionQuizzes.forEach(quiz => {
-                    toolbarContainer.appendChild(createResourceButton(quiz.title, `quiz.html?collection=${quiz.id}&path=${path}`));
+                    toolbarContainer.appendChild(createResourceButton(quiz.title, `quiz.html?collection=${quiz.id}&path=${path}`, 'quiz'));
                 });
             }
             if (currentNode.resources.flashcardDecks) {
                 currentNode.resources.flashcardDecks.forEach(deck => {
-                    toolbarContainer.appendChild(createResourceButton(deck.title, `flashcards.html?collection=${deck.id}&path=${path}`));
+                    toolbarContainer.appendChild(createResourceButton(deck.title, `flashcards.html?collection=${deck.id}&path=${path}`, 'flashcards'));
                 });
             }
         }
@@ -55,7 +56,6 @@ document.addEventListener('DOMContentLoaded', async function() {
                     ? `lessons-list.html?path=${newPath}`
                     : `lesson.html?path=${newPath}`;
                 
-                // The 'description' parameter is now ignored in createCard
                 const card = createCard(childNode.label, targetUrl, childNode.summary);
                 cardContainer.appendChild(card);
             }
@@ -66,19 +66,21 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
 });
 
+// **UPDATED**: This function now assigns the correct class for lessons
 function createCard(title, url, description) {
     const cardLink = document.createElement('a');
     cardLink.href = url;
-    cardLink.className = 'card';
-    // *** التعديل هنا: تم حذف الفقرة <p> التي كانت تعرض الوصف ***
+    cardLink.className = 'card card--lesson'; // Assigns the lesson identity
     cardLink.innerHTML = `<div class="card-content"><h2>${title}</h2></div>`;
     return cardLink;
 }
 
-function createResourceButton(text, url) {
+// **UPDATED**: This function now assigns a class based on the resource type
+function createResourceButton(text, url, type) {
     const button = document.createElement('a');
     button.href = url;
-    button.className = 'card'; // Using card style for a consistent look
+    // Assigns a dynamic class like 'card--quiz' or 'card--flashcards'
+    button.className = `card card--${type}`;
     button.innerHTML = `<h2>${text}</h2>`;
     return button;
 }
