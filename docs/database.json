@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-04T18:41:57.042Z",
+  "generatedAt": "2025-09-04T18:44:22.566Z",
   "tree": {
     "cairo": {
       "children": {
@@ -185,35 +185,6 @@
             },
             "pediatrics": {
               "children": {
-                "anemia": {
-                  "children": {},
-                  "resources": {
-                    "flashcardDecks": [
-                      {
-                        "id": "anemia-types",
-                        "title": "Types of Anemia",
-                        "cards": [
-                          {
-                            "front": "Microcytic Anemia",
-                            "back": "Characterized by small red blood cells (low MCV). It is most commonly caused by iron deficiency."
-                          },
-                          {
-                            "front": "Macrocytic Anemia",
-                            "back": "Characterized by large red blood cells (high MCV). It is often caused by a deficiency in Vitamin B12 or Folate."
-                          },
-                          {
-                            "front": "Normocytic Anemia",
-                            "back": "Characterized by normal-sized red blood cells but a low overall count. It is often associated with chronic disease or acute blood loss."
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  "hasIndex": true,
-                  "label": "Anemia",
-                  "summary": "An overview of anemia in pediatrics, including causes, clinical features, and management.",
-                  "markdownContent": "\n# Anemia in Pediatrics\n\nThis is the main content of the lesson about Anemia.\n(Content will be added here later)\n"
-                },
                 "endocrine": {
                   "children": {},
                   "resources": {
