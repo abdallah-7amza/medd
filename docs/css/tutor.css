@@ -1,0 +1,202 @@
+/* --- AI Tutor Floating Button --- */
+.ai-tutor-fab {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: #7c3aed; /* Violet color */
+    color: white;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8em;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    z-index: 999;
+}
+
+.ai-tutor-fab:hover {
+    transform: scale(1.1);
+    background-color: #6d28d9;
+}
+
+/* --- General Modal Styles --- */
+.tutor-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.tutor-modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tutor-modal-content {
+    background-color: #f8f9fa;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* --- API Key Modal Specifics --- */
+.api-modal h2 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+.api-modal p {
+    color: #6c757d;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+.api-modal input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+.api-modal button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+}
+#api-validation-message {
+    margin-top: 15px;
+    font-weight: 500;
+    height: 20px;
+}
+#api-validation-message.success { color: #28a745; }
+#api-validation-message.error { color: #dc3545; }
+
+/* --- Chat Window --- */
+.chat-window {
+    position: fixed;
+    bottom: 100px;
+    right: 25px;
+    width: 90%;
+    max-width: 380px;
+    height: 70vh;
+    max-height: 550px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.chat-window.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Chat Header */
+.chat-header {
+    background-color: #f1f3f5;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dee2e6;
+}
+.chat-header h3 { margin: 0; font-size: 1.1em; color: #343a40; }
+.header-controls button { background: none; border: none; font-size: 1.2em; cursor: pointer; color: #868e96; }
+.api-status { font-size: 0.8em; margin-right: 10px; }
+
+/* Chat Area */
+.chat-area {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+.chat-bubble {
+    padding: 10px 15px;
+    border-radius: 18px;
+    max-width: 80%;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+.ai-bubble {
+    background-color: #e9ecef;
+    color: #343a40;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+.user-bubble {
+    background-color: var(--primary-color);
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+/* Input Area */
+.chat-input-area {
+    padding: 10px;
+    border-top: 1px solid #dee2e6;
+    background-color: #fff;
+}
+
+/* *** UPDATED: Quick Actions Bar *** */
+.quick-actions {
+    display: flex; /* Use flexbox for horizontal layout */
+    gap: 8px;
+    margin-bottom: 10px;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    white-space: nowrap; /* Prevent buttons from wrapping to the next line */
+    padding-bottom: 8px; /* Add some space for the scrollbar if visible */
+
+    /* Hide scrollbar for a cleaner look */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.quick-actions::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+.quick-action-btn {
+    flex: 0 0 auto; /* Prevent buttons from shrinking */
+    background-color: #f1f3f5;
+    border: 1px solid #dee2e6;
+    border-radius: 20px;
+    padding: 8px 14px;
+    font-size: 0.85em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.quick-action-btn:hover {
+    background-color: #e2e6ea;
+}
+
+.input-wrapper { display: flex; gap: 8px; }
+.input-wrapper input { flex-grow: 1; border: 1px solid #ced4da; border-radius: 8px; padding: 10px; }
+.input-wrapper button { background-color: var(--primary-color); color: white; border: none; border-radius: 8px; padding: 0 15px; cursor: pointer; }
