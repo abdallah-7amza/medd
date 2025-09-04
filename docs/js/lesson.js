@@ -29,25 +29,17 @@ document.addEventListener('DOMContentLoaded', async function() {
         pageTitleEl.textContent = topicNode.label;
         toolbarContainer.innerHTML = '';
 
-        // Display resources for THIS specific topic
         if (topicNode.resources) {
-            // *** THIS IS THE NEWLY ADDED LOGIC ***
-            if (topicNode.resources.collectionQuizzes) {
-                topicNode.resources.collectionQuizzes.forEach(quiz => {
-                    toolbarContainer.appendChild(createResourceButton(quiz.title, `quiz.html?collection=${quiz.id}&path=${path}`));
-                });
-            }
             if (topicNode.resources.lessonQuiz) {
                 toolbarContainer.appendChild(createResourceButton(`Start Quiz`, `quiz.html?lessonQuiz=true&path=${path}`));
             }
-            if (topic.resources.flashcardDecks) {
-                topic.resources.flashcardDecks.forEach(deck => {
-                    toolbarContainer.appendChild(createResourceButton(deck.title, `flashcards.html?collection=${deck.id}&path=${path}`));
+            if (topicNode.resources.flashcardDecks) {
+                topicNode.resources.flashcardDecks.forEach(deck => {
+                    toolbarContainer.appendChild(createResourceButton(`Start Flashcards: ${deck.title}`, `flashcards.html?collection=${deck.id}&path=${path}`));
                 });
             }
         }
 
-        // Display the lesson's markdown content
         if (topicNode.hasIndex) {
             contentContainer.innerHTML = marked.parse(topicNode.markdownContent);
         } else {
@@ -63,7 +55,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 function createResourceButton(text, url) {
     const button = document.createElement('a');
     button.href = url;
-    button.className = 'button button-primary'; // You can change this class if you want the card style
-    button.textContent = text;
+    button.className = 'toolbar-button'; // استخدام شكل الزر الجذاب
+    button.innerHTML = text;
     return button;
 }
