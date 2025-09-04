@@ -29,13 +29,19 @@ document.addEventListener('DOMContentLoaded', async function() {
         pageTitleEl.textContent = topicNode.label;
         toolbarContainer.innerHTML = '';
 
+        // **UPDATED**: This section now calls the new button creation function with the correct types
         if (topicNode.resources) {
+            if (topicNode.resources.collectionQuizzes) {
+                topicNode.resources.collectionQuizzes.forEach(quiz => {
+                    toolbarContainer.appendChild(createResourceButton(quiz.title, `quiz.html?collection=${quiz.id}&path=${path}`, 'quiz'));
+                });
+            }
             if (topicNode.resources.lessonQuiz) {
-                toolbarContainer.appendChild(createResourceButton(`Start Quiz`, `quiz.html?lessonQuiz=true&path=${path}`));
+                toolbarContainer.appendChild(createResourceButton(`Start Quiz`, `quiz.html?lessonQuiz=true&path=${path}`, 'quiz'));
             }
             if (topicNode.resources.flashcardDecks) {
                 topicNode.resources.flashcardDecks.forEach(deck => {
-                    toolbarContainer.appendChild(createResourceButton(`Start Flashcards: ${deck.title}`, `flashcards.html?collection=${deck.id}&path=${path}`));
+                    toolbarContainer.appendChild(createResourceButton(deck.title, `flashcards.html?collection=${deck.id}&path=${path}`, 'flashcards'));
                 });
             }
         }
@@ -52,10 +58,12 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
 });
 
-function createResourceButton(text, url) {
+// **UPDATED**: This function now creates cards with the correct visual identity
+function createResourceButton(text, url, type) {
     const button = document.createElement('a');
     button.href = url;
-    button.className = 'toolbar-button'; // استخدام شكل الزر الجذاب
-    button.innerHTML = text;
+    // Applies the correct class (e.g., 'card--quiz') for consistent styling
+    button.className = `card card--${type}`;
+    button.innerHTML = `<h2>${text}</h2>`;
     return button;
 }
