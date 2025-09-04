@@ -1,3 +1,6 @@
+// **التغيير الجذري الأول**: نقوم باستيراد المكتبة مباشرة هنا
+import { GoogleGenerativeAI } from "https://cdn.jsdelivr.net/npm/@google/generative-ai";
+
 document.addEventListener('DOMContentLoaded', function() {
     // --- 1. HTML Injection & Element Setup ---
     const fab = document.createElement('button');
@@ -7,11 +10,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const apiModal = document.createElement('div');
     apiModal.id = 'api-key-modal';
+    // ... ( باقي كود إنشاء الواجهة لم يتغير ) ...
     apiModal.className = 'tutor-modal-overlay';
     apiModal.innerHTML = `
         <div class="tutor-modal-content api-modal">
             <h2>AI Tutor Setup</h2>
-            <p>Please enter your Gemini API Key to activate the AI Tutor. You can get one from Google AI Studio.</p>
+            <p>Please enter your Gemini API Key. You can get one from Google AI Studio.</p>
             <input type="password" id="api-key-input" placeholder="Enter your API Key">
             <button id="validate-api-key-btn">Validate & Save Key</button>
             <div id="api-validation-message"></div>
@@ -47,12 +51,12 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         </div>
     `;
-
+    
     document.body.appendChild(fab);
     document.body.appendChild(apiModal);
     document.body.appendChild(chatWindow);
 
-    // --- 2. Get References and Setup State ---
+    // --- 2. Get References and setup state ---
     const apiKeyModal = document.getElementById('api-key-modal');
     const chatWin = document.getElementById('chat-window');
     const apiStatus = document.getElementById('api-status');
@@ -61,14 +65,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const sendBtn = document.getElementById('chat-send-btn');
     const quickActionsContainer = document.getElementById('quick-actions');
     const GEMINI_API_KEY_STORAGE = 'gemini_api_key';
-    let genAI; // Will hold the Gemini AI instance
+    let genAI;
 
     // --- 3. Core Logic: API Key & Initialization ---
     function initializeTutor() {
         const savedApiKey = localStorage.getItem(GEMINI_API_KEY_STORAGE);
         if (savedApiKey) {
             try {
-                genAI = new google.generativeai.GoogleGenerativeAI(savedApiKey);
+                // **التغيير البسيط الثاني**: لم نعد نستخدم google.generativeai
+                genAI = new GoogleGenerativeAI(savedApiKey);
                 apiStatus.textContent = '✅';
                 chatWin.classList.toggle('visible');
             } catch (error) {
@@ -89,17 +94,15 @@ document.addEventListener('DOMContentLoaded', function() {
             validationMsg.className = 'error';
             return;
         }
-
         validationMsg.textContent = 'Validating...';
         validationMsg.className = '';
-
         try {
-            const testAI = new google.generativeai.GoogleGenerativeAI(apiKey);
+            const testAI = new GoogleGenerativeAI(apiKey);
             const model = testAI.getGenerativeModel({ model: "gemini-pro" });
-            await model.generateContent("Test"); // Simple API call to validate
+            await model.generateContent("Test");
 
             localStorage.setItem(GEMINI_API_KEY_STORAGE, apiKey);
-            genAI = testAI; // Set the main AI instance
+            genAI = testAI;
             validationMsg.textContent = '✅ API connected successfully!';
             validationMsg.className = 'success';
             setTimeout(() => {
@@ -109,16 +112,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 1000);
         } catch (error) {
             console.error("API Key Validation Error:", error);
-            validationMsg.textContent = '❌ Invalid API key, please try again.';
+            validationMsg.textContent = '❌ Invalid API key or network error.';
             validationMsg.className = 'error';
         }
     }
 
     // --- 4. Context Awareness ---
     function getPageContext() {
+        // ... ( هذا الجزء لم يتغير ) ...
         let context = "No specific context found on this page.";
         const path = window.location.pathname;
-
         if (path.includes('lesson.html')) {
             const content = document.getElementById('content-container')?.innerText;
             if(content) context = `This is a lesson page. The content is:\n\n---\n${content}\n---`;
@@ -135,36 +138,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- 5. Main AI Interaction Function ---
     async function sendMessageToAI(prompt) {
+        // ... ( هذا الجزء لم يتغير ) ...
         if (!genAI) {
             addMessageToChat("AI is not initialized. Please check your API Key.", 'ai');
             return;
         }
-
         const thinkingBubble = addMessageToChat("Thinking...", 'ai');
-        
         try {
             const model = genAI.getGenerativeModel({ model: "gemini-pro" });
             const pageContext = getPageContext();
-
             const fullPrompt = `
                 **Behavior Rules:**
                 - You are an expert medical tutor. Your role is to explain, connect ideas, and answer with clear clinical logic.
                 - ALWAYS explain in English.
                 - If the user asks for Arabic, you MUST explain in Arabic but KEEP all medical terms in English without translation.
-
                 **Page Context:**
                 ${pageContext}
-
                 **User's Request:**
                 ${prompt}
             `;
-
             const result = await model.generateContent(fullPrompt);
             const response = await result.response;
             const text = response.text();
-            
-            thinkingBubble.textContent = text; // Update the "Thinking..." bubble with the real answer
-
+            thinkingBubble.textContent = text;
         } catch (error) {
             console.error("Error communicating with Gemini:", error);
             thinkingBubble.textContent = "Sorry, I encountered an error. Please check the console or try again.";
@@ -175,7 +171,6 @@ document.addEventListener('DOMContentLoaded', function() {
     fab.addEventListener('click', initializeTutor);
     document.getElementById('validate-api-key-btn').addEventListener('click', validateAndSaveApiKey);
     document.getElementById('close-chat-btn').addEventListener('click', () => chatWin.classList.remove('visible'));
-
     sendBtn.addEventListener('click', () => {
         const userInput = chatInput.value.trim();
         if (userInput) {
@@ -184,20 +179,19 @@ document.addEventListener('DOMContentLoaded', function() {
             chatInput.value = '';
         }
     });
-    
     chatInput.addEventListener('keyup', (e) => {
         if (e.key === 'Enter') sendBtn.click();
     });
-
     quickActionsContainer.addEventListener('click', (event) => {
         if (event.target.classList.contains('quick-action-btn')) {
             const prompt = event.target.dataset.prompt;
             sendMessageToAI(prompt);
         }
     });
-    
+
     // --- 7. Helper Functions ---
     function addMessageToChat(message, sender) {
+        // ... ( هذا الجزء لم يتغير ) ...
         const bubble = document.createElement('div');
         bubble.className = `chat-bubble ${sender === 'user' ? 'user-bubble' : 'ai-bubble'}`;
         bubble.textContent = message;
