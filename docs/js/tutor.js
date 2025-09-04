@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     // --- 1. Create and inject HTML elements into the body ---
-
     const fab = document.createElement('button');
     fab.className = 'ai-tutor-fab';
-    fab.innerHTML = '<i class="fa-solid fa-robot"></i>';
+    fab.innerHTML = '<i class="fa-solid fa-brain"></i>';
     fab.title = 'Open AI Tutor';
 
     const apiModal = document.createElement('div');
@@ -54,68 +53,71 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.appendChild(apiModal);
     document.body.appendChild(chatWindow);
 
-    // --- 2. Get references to all interactive elements ---
+    // --- 2. Get references and setup state ---
     const apiKeyModal = document.getElementById('api-key-modal');
     const chatWin = document.getElementById('chat-window');
+    const apiStatus = document.getElementById('api-status');
     const quickActionsContainer = document.getElementById('quick-actions');
-    const chatInput = document.getElementById('chat-input');
-    const sendBtn = document.getElementById('chat-send-btn');
+    const GEMINI_API_KEY_STORAGE = 'gemini_api_key';
 
-    // --- 3. UI interaction logic (without real AI functionality yet) ---
-    fab.addEventListener('click', () => {
-        // This will be smarter later. For now, it just opens the API modal.
-        apiKeyModal.classList.add('visible');
-    });
-
+    // --- 3. Core Logic: API Key Management & UI Toggling ---
+    function initializeTutor() {
+        const savedApiKey = localStorage.getItem(GEMINI_API_KEY_STORAGE);
+        if (savedApiKey) {
+            chatWin.classList.toggle('visible');
+            apiStatus.textContent = '✅';
+        } else {
+            apiKeyModal.classList.add('visible');
+        }
+    }
+    
+    fab.addEventListener('click', initializeTutor);
+    
     document.getElementById('close-chat-btn').addEventListener('click', () => {
         chatWin.classList.remove('visible');
     });
 
     document.getElementById('validate-api-key-btn').addEventListener('click', () => {
-        // Placeholder logic:
-        apiKeyModal.classList.remove('visible');
-        chatWin.classList.add('visible');
-        document.getElementById('api-status').textContent = '✅';
+        const apiKey = document.getElementById('api-key-input').value;
+        const validationMsg = document.getElementById('api-validation-message');
+        if (apiKey && apiKey.length > 10) {
+            localStorage.setItem(GEMINI_API_KEY_STORAGE, apiKey);
+            validationMsg.textContent = '✅ API connected successfully!';
+            validationMsg.className = 'success';
+            setTimeout(() => {
+                apiKeyModal.classList.remove('visible');
+                chatWin.classList.add('visible');
+                apiStatus.textContent = '✅';
+            }, 1000);
+        } else {
+            validationMsg.textContent = '❌ Invalid API key, please try again.';
+            validationMsg.className = 'error';
+        }
     });
-    
-    // *** NEW: Central handler for all quick action buttons ***
+
+    // --- 4. Smart Prompt Handling ---
     quickActionsContainer.addEventListener('click', (event) => {
         if (event.target.classList.contains('quick-action-btn')) {
             const action = event.target.dataset.action;
-            let userMessage = '';
             
-            // Create user-facing message based on the button clicked
-            switch (action) {
-                case 'summarize':
-                    userMessage = 'Please summarize this content for me.';
-                    break;
-                case 'explain':
-                    userMessage = 'Can you explain this in more detail?';
-                    break;
-                case 'quiz':
-                    userMessage = 'Quiz me on this topic.';
-                    break;
-                case 'feynman':
-                    userMessage = 'Explain this to me using the Feynman Technique.';
-                    break;
-            }
+            // *** هذا هو التعديل المهم ***
+            // لاحظ أننا لم نعد نستخدم دالة addMessageToChat الخاصة بالطالب
+            // نحن نرسل الأمر مباشرة للذكاء الاصطناعي (مستقبلاً)
+            // ونظهر فقط رسالة مؤقتة من الذكاء الاصطناعي
             
-            addMessageToChat(userMessage, 'user');
-            // This is a placeholder for the AI's response
-            setTimeout(() => {
-                addMessageToChat(`Sure! I will ${action} this content for you once I'm fully connected.`, 'ai');
-            }, 500);
+            addMessageToChat(`Running "${event.target.textContent}"...`, 'ai');
+            
+            // هنا سنضع الكود الذي يرسل الأمر "explain" أو "summarize" إلى Gemini API
         }
     });
-    
-    // --- 4. Helper Functions ---
+
+    // --- 5. Helper Functions ---
     function addMessageToChat(message, sender) {
         const chatArea = document.getElementById('chat-area');
         const bubble = document.createElement('div');
         bubble.className = `chat-bubble ${sender === 'user' ? 'user-bubble' : 'ai-bubble'}`;
         bubble.textContent = message;
         chatArea.appendChild(bubble);
-        // Auto-scroll to the latest message
         chatArea.scrollTop = chatArea.scrollHeight;
     }
 });
