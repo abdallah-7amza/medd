@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/vars.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/flashcards.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
     <header class="main-header">
@@ -18,7 +19,12 @@
             <a href="javascript:history.back()" class="back-link">← Back</a>
             <h1 id="deck-title" class="page-title">Loading Deck...</h1>
 
-            <div class="flashcard-container">
+            <div class="flashcard-master-container">
+                <div class="flashcard-header">
+                    <div id="flashcard-progress-bar" class="progress-bar"></div>
+                    <div id="flashcard-counter" class="counter">1 / 1</div>
+                </div>
+
                 <div class="flashcard-scene">
                     <div id="flashcard" class="flashcard">
                         <div class="flashcard-face flashcard-front">
@@ -29,14 +35,18 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div id="flashcard-counter" class="flashcard-counter">Card 0 / 0</div>
-
-            <div class="flashcard-navigation">
-                <button id="prev-btn" class="nav-button">Previous</button>
-                <button id="flip-btn" class="nav-button flip-button">Flip Card</button>
-                <button id="next-btn" class="nav-button">Next</button>
+                <div class="flashcard-footer">
+                    <div id="navigation-controls">
+                        <button id="prev-btn" class="nav-arrow"><i class="fa-solid fa-arrow-left"></i></button>
+                        <button id="flip-btn" class="flip-text-button">Tap card to flip</button>
+                        <button id="next-btn" class="nav-arrow"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                    <div id="assessment-controls" class="hidden">
+                        <button id="still-learning-btn" class="assessment-btn still-learning">Still Learning</button>
+                        <button id="know-btn" class="assessment-btn know">Know</button>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
