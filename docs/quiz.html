@@ -9,7 +9,18 @@
     <link rel="stylesheet" href="css/quiz.css">
     <link rel="stylesheet" href="css/tutor.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    </head>
+
+    <script type="module" src="https://unpkg.com/@google/generative-ai"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F269Y4LPKL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-F269Y4LPKL');
+    </script>
+</head>
 <body>
     <header class="main-header">
         <h1 id="site-title">Med Portal</h1>
@@ -54,6 +65,6 @@
     </footer>
 
     <script src="js/quiz.js" defer></script>
-    <script type="module" src="js/tutor.js"></script>
+    <script src="js/tutor.js" defer></script>
 </body>
 </html>
