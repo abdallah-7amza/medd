@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // --- 1. HTML Injection & Element Setup ---
-    // (This entire section is unchanged)
+    // (This section is unchanged)
     const fab = document.createElement('button');
     fab.className = 'ai-tutor-fab';
     fab.innerHTML = '<i class="fa-solid fa-brain"></i>';
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.appendChild(chatWindow);
 
     // --- 2. Get References and setup state ---
-    // (This entire section is unchanged)
+    // (This section is unchanged)
     const apiKeyModal = document.getElementById('api-key-modal');
     const chatWin = document.getElementById('chat-window');
     const apiStatus = document.getElementById('api-status');
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let chatHistory = [];
     
     // --- 3. Core Logic: API Key & Initialization ---
-    // (This entire section is unchanged)
+    // (This section is unchanged)
     function initializeTutor() {
         const savedApiKey = localStorage.getItem(GEMINI_API_KEY_STORAGE);
         if (savedApiKey) {
@@ -106,27 +106,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // --- 4. Context Awareness ---
+    // (This section is unchanged)
     function getPageContext() {
         let context = "No specific context found.";
         const path = window.location.pathname;
-
         if (path.includes('lesson.html')) {
             context = document.getElementById('content-container')?.innerText;
-        } 
-        // *** START OF THE MODIFICATION ***
-        else if (path.includes('quiz.html')) {
+        } else if (path.includes('quiz.html')) {
             const question = document.getElementById('question-stem')?.innerText;
-            // Find all option elements and extract their text content
             const options = Array.from(document.querySelectorAll('#options-container .option'))
                                  .map(opt => opt.innerText.trim());
-                                 
             if (question) {
-                // Combine the question and the options into a single context string
                 context = `The current quiz question is: "${question}". The available options are: [${options.join('; ')}]`;
             }
-        } 
-        // *** END OF THE MODIFICATION ***
-        else if (path.includes('flashcards.html')) {
+        } else if (path.includes('flashcards.html')) {
             const front = document.getElementById('card-front-content')?.innerText;
             const back = document.getElementById('card-back-content')?.innerText;
             context = `Flashcard - Front: ${front}\nBack: ${back}`;
@@ -135,19 +128,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // --- 5. Main AI Interaction Function (using fetch) ---
-    // (This entire section is unchanged)
     async function sendMessageToAI(prompt) {
         const apiKey = localStorage.getItem(GEMINI_API_KEY_STORAGE);
         if (!apiKey) {
             addMessageToChat("API Key not found. Please set it up first.", 'ai');
             return;
         }
+
         const thinkingBubble = addMessageToChat("Thinking...", 'ai');
         const pageContext = getPageContext();
         chatHistory.push({ role: "user", parts: [{ text: `${prompt}\n\nContext:\n${pageContext}` }] });
         const systemInstruction = {
             role: "system",
-            parts: [{ text: "Behavior Rules: You are an expert medical tutor. Your role is to explain, connect ideas, and answer with clear clinical logic. ALWAYS explain in English. If the user asks for Arabic, you MUST explain in Arabic but KEEP all medical terms in English without translation." }]
+            parts: [{ text: "Behavior Rules: You are an expert medical tutor. Your role is to explain, connect ideas, and answer with clear clinical logic. ALWAYS explain in English and use markdown for formatting (e.g., **bold**, *italics*, lists). If the user asks for Arabic, you MUST explain in Arabic but KEEP all medical terms in English without translation." }]
         };
         const payload = {
             contents: chatHistory,
@@ -167,8 +160,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const result = await response.json();
             const aiResponse = result.candidates[0].content.parts[0].text;
             
-            thinkingBubble.textContent = aiResponse;
+            // *** THE FIX IS HERE: Use innerHTML and marked.parse() ***
+            if (typeof marked !== 'undefined') {
+                thinkingBubble.innerHTML = marked.parse(aiResponse);
+            } else {
+                thinkingBubble.textContent = aiResponse; // Fallback if marked.js is missing
+            }
+            
             chatHistory.push({ role: "model", parts: [{ text: aiResponse }] });
+
         } catch (error) {
             console.error("Error communicating with Gemini:", error);
             thinkingBubble.textContent = `Sorry, an error occurred: ${error.message}`;
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // --- 6. Event Listeners ---
-    // (This entire section is unchanged)
+    // (This section is unchanged)
     fab.addEventListener('click', initializeTutor);
     document.getElementById('validate-api-key-btn').addEventListener('click', validateAndSaveApiKey);
     document.getElementById('close-chat-btn').addEventListener('click', () => {
@@ -201,11 +201,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // --- 7. Helper Functions ---
-    // (This entire section is unchanged)
+    // **UPDATED**: To handle both plain text (user) and HTML (ai)
     function addMessageToChat(message, sender) {
         const bubble = document.createElement('div');
         bubble.className = `chat-bubble ${sender === 'user' ? 'user-bubble' : 'ai-bubble'}`;
-        bubble.textContent = message;
+        
+        if (sender === 'user') {
+            bubble.textContent = message; // User input is always plain text for security
+        } else {
+            // AI output can be HTML, so we use innerHTML.
+            // This is safe because the content comes from our trusted AI.
+            bubble.innerHTML = message;
+        }
+        
         chatArea.appendChild(bubble);
         chatArea.scrollTop = chatArea.scrollHeight;
         return bubble;
