@@ -38,13 +38,6 @@ async function scanDirectory(dirPath, isUniversity = false) {
     }
 
     // --- 2. Scan for ALL resources ---
-    // Lesson Quiz
-    const quizPath = path.join(dirPath, 'quiz.json');
-    try {
-        const quizContent = await fs.readFile(quizPath, 'utf8');
-        node.resources.lessonQuiz = JSON.parse(quizContent);
-    } catch {}
-
     // Collection Quizzes
     const collectionQuizPath = path.join(dirPath, '_collection_quiz');
     try {
@@ -58,7 +51,7 @@ async function scanDirectory(dirPath, isUniversity = false) {
                 try {
                     const quizContent = await fs.readFile(jsonFilePath, 'utf8');
                     const quizObject = JSON.parse(quizContent);
-                    // *** التعديل هنا: اقرأ العنوان من الملف، أو من اسم الملف كحل بديل ***
+                    // Reads the custom title from the JSON file
                     const title = quizObject.title || formatLabel(baseName);
                     collectionQuizzes.push({ id: baseName, title: title, quizData: quizObject });
                 } catch (e) { console.error(`Error processing collection quiz ${file}:`, e); }
@@ -82,7 +75,7 @@ async function scanDirectory(dirPath, isUniversity = false) {
                 try {
                     const deckContent = await fs.readFile(jsonFilePath, 'utf8');
                     const deckObject = JSON.parse(deckContent);
-                    // *** التعديل هنا: اقرأ العنوان من الملف، أو من اسم الملف كحل بديل ***
+                    // Reads the custom title from the JSON file
                     const title = deckObject.title || formatLabel(baseName);
                     flashcardDecks.push({ id: baseName, title: title, cards: deckObject.cards });
                 } catch (e) { console.error(`Error processing flashcard deck ${file}:`, e); }
@@ -93,7 +86,6 @@ async function scanDirectory(dirPath, isUniversity = false) {
         }
     } catch {}
 
-
     // --- 3. Recursively scan children directories ---
     const entries = await fs.readdir(dirPath, { withFileTypes: true });
     for (const entry of entries) {
@@ -103,10 +95,9 @@ async function scanDirectory(dirPath, isUniversity = false) {
         }
     }
     
-    // Determine if the node is a branch
+    // Correctly determine if the node is a branch
     const hasChildren = Object.keys(node.children).length > 0;
-    const hasBranchResources = node.resources && (node.resources.collectionQuizzes || node.resources.flashcardDecks);
-    if (hasChildren || hasBranchResources) {
+    if (hasChildren) {
         node.isBranch = true;
     }
 
@@ -119,15 +110,9 @@ async function scanDirectory(dirPath, isUniversity = false) {
 
 // Main execution function
 async function main() {
-    // ... (This part remains unchanged)
     const universitiesPath = 'content/universities';
     const outputPath = 'docs/database.json';
-
-    const database = {
-        generatedAt: new Date().toISOString(),
-        tree: {}
-    };
-
+    const database = { generatedAt: new Date().toISOString(), tree: {} };
     try {
         const uniDirs = await fs.readdir(universitiesPath, { withFileTypes: true });
         for (const uniDir of uniDirs) {
