@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async function() {
-    // Get parameters from the URL
+    // Get parameters
     const urlParams = new URLSearchParams(window.location.search);
     const path = urlParams.get('path');
     const collectionId = urlParams.get('collection');
@@ -11,29 +11,29 @@ document.addEventListener('DOMContentLoaded', async function() {
     const cardBackContentEl = document.getElementById('card-back-content');
     const flashcardEl = document.getElementById('flashcard');
     const counterEl = document.getElementById('flashcard-counter');
+    const progressBarEl = document.getElementById('flashcard-progress-bar');
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
-    const flipBtn = document.getElementById('flip-btn');
     const siteTitleEl = document.getElementById('site-title');
+    const navControls = document.getElementById('navigation-controls');
+    const assessControls = document.getElementById('assessment-controls');
+    const knowBtn = document.getElementById('know-btn');
+    const stillLearningBtn = document.getElementById('still-learning-btn');
 
     let currentCardIndex = 0;
     let flashcardDeck = null;
 
-    // *** NEW: Create a unique key for this deck in localStorage ***
-    const localStorageKey = `flashcard-progress-${selectedUniId}-${path}-${collectionId}`;
-
     if (!selectedUniId || !path || !collectionId) {
-        deckTitleEl.textContent = 'Error: Missing required parameters.';
+        deckTitleEl.textContent = 'Error: Missing parameters.';
         return;
     }
-
+    
+    // Fetch and initialize
     try {
-        // Fetch the main database
         const response = await fetch('./database.json');
         if (!response.ok) throw new Error("Database file not found.");
         const data = await response.json();
 
-        // Navigate to the correct node in the database tree
         let currentNode = data.tree[selectedUniId];
         siteTitleEl.textContent = `${currentNode.name} Med Portal`;
         const pathSegments = path.split('/').filter(Boolean);
@@ -41,58 +41,53 @@ document.addEventListener('DOMContentLoaded', async function() {
             currentNode = currentNode.children[segment];
         }
 
-        if (!currentNode || !currentNode.resources || !currentNode.resources.flashcardDecks) {
-            throw new Error("Flashcard deck not found in the database.");
-        }
-
-        // Find the specific deck by its ID
         flashcardDeck = currentNode.resources.flashcardDecks.find(deck => deck.id === collectionId);
+        if (!flashcardDeck) throw new Error(`Deck with ID '${collectionId}' not found.`);
 
-        if (!flashcardDeck) {
-            throw new Error(`Deck with ID '${collectionId}' not found.`);
-        }
-        
-        // *** NEW: Load saved progress or start from 0 ***
-        const savedIndex = localStorage.getItem(localStorageKey);
-        if (savedIndex) {
-            currentCardIndex = parseInt(savedIndex, 10);
-        }
-
-        // Initialize the card
         deckTitleEl.textContent = flashcardDeck.title;
         displayCard(currentCardIndex);
-
     } catch (error) {
-        console.error('Error:', error);
         deckTitleEl.textContent = `Error: ${error.message}`;
-        deckTitleEl.style.color = 'red';
     }
 
-    // Function to display a card and save progress
+    // Main display function
     function displayCard(index) {
         if (!flashcardDeck || !flashcardDeck.cards || flashcardDeck.cards.length === 0) return;
         
         flashcardEl.classList.remove('is-flipped');
+        toggleControls(false); // Show navigation controls
 
         const card = flashcardDeck.cards[index];
         cardFrontContentEl.textContent = card.front;
         cardBackContentEl.textContent = card.back;
 
-        counterEl.textContent = `Card ${index + 1} / ${flashcardDeck.cards.length}`;
-
-        prevBtn.disabled = index === 0;
-        nextBtn.disabled = index === flashcardDeck.cards.length - 1;
-
-        // *** NEW: Save the current index to localStorage ***
-        localStorage.setItem(localStorageKey, index);
+        updateProgress(index, flashcardDeck.cards.length);
     }
 
-    // Event listeners
-    flipBtn.addEventListener('click', () => {
-        flashcardEl.classList.toggle('is-flipped');
-    });
+    function updateProgress(index, total) {
+        counterEl.textContent = `${index + 1} / ${total}`;
+        progressBarEl.style.width = `${((index + 1) / total) * 100}%`;
+        prevBtn.disabled = index === 0;
+        nextBtn.disabled = index === total - 1;
+    }
+    
+    function toggleControls(showAssessment) {
+        navControls.classList.toggle('hidden', showAssessment);
+        assessControls.classList.toggle('hidden', !showAssessment);
+    }
+    
+    function goToNextCard() {
+        if (currentCardIndex < flashcardDeck.cards.length - 1) {
+            currentCardIndex++;
+            displayCard(currentCardIndex);
+        }
+    }
+
+    // Event Listeners
     flashcardEl.addEventListener('click', () => {
         flashcardEl.classList.toggle('is-flipped');
+        const isFlipped = flashcardEl.classList.contains('is-flipped');
+        toggleControls(isFlipped);
     });
 
     prevBtn.addEventListener('click', () => {
@@ -102,10 +97,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
     });
 
-    nextBtn.addEventListener('click', () => {
-        if (currentCardIndex < flashcardDeck.cards.length - 1) {
-            currentCardIndex++;
-            displayCard(currentCardIndex);
-        }
-    });
+    nextBtn.addEventListener('click', goToNextCard);
+    knowBtn.addEventListener('click', goToNextCard);
+    stillLearningBtn.addEventListener('click', goToNextCard);
 });
