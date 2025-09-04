@@ -1,3 +1,5 @@
+/* --- Base Styles Provided By You --- */
+
 /* General Body Styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -20,7 +22,6 @@ body {
     width: 100%;
     z-index: 1000;
 }
-
 .main-header h1 {
     margin: 0;
     font-size: 2em;
@@ -33,7 +34,7 @@ body {
     padding: 0 20px;
 }
 
-/* Page Title (e.g., "Select Your University") */
+/* Page Title */
 .page-title {
     text-align: center;
     color: var(--secondary-color); /* Using red as requested */
@@ -62,27 +63,22 @@ body {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 600;
+    position: relative; /* Essential for visual identity system */
+    overflow: hidden;  /* Keeps watermarks inside */
 }
-
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
-
 .card h2 {
     margin: 0;
     font-size: 1.3em;
     color: inherit;
+    position: relative; /* Ensures title is above watermarks */
+    z-index: 2;
 }
 
-.card p {
-    color: #6c757d;
-    font-size: 0.9em;
-    margin-top: 10px;
-    font-weight: normal;
-}
-
-/* Toolbar for buttons like "Start Quiz Bank" */
+/* Toolbar for buttons */
 .toolbar {
     margin-bottom: 30px;
     display: flex;
@@ -102,4 +98,85 @@ body {
     width: 100%;
     font-size: 0.9em;
     border-top: 1px solid #dee2e6;
+}
+
+/* --- Visual Identity System (Merged) --- */
+
+/* Stylish Back Button */
+.back-link {
+    display: inline-block;
+    margin-bottom: 25px;
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+.back-link:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Base style for icons/tags */
+.card h2::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 10px;
+    font-size: 0.9em;
+}
+.card.card--lesson h2::before {
+    content: "\f518"; /* book-open */
+}
+
+/* Quiz Card Identity */
+.card.card--quiz {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+.card.card--quiz h2::before {
+    content: "MCQs";
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 700;
+    padding: 3px 8px;
+    border: 2px solid white;
+    border-radius: 6px;
+    font-size: 0.7em;
+    vertical-align: middle;
+    margin-right: 12px;
+}
+
+/* Flashcards Deck Identity */
+.card.card--flashcards {
+    background-color: #7c3aed;
+    color: white;
+    border-color: #7c3aed;
+}
+.card.card--flashcards h2::before {
+    content: "\f24d"; /* clone */
+}
+
+/* Watermark Styles */
+.card.card--quiz::after,
+.card.card--flashcards::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-20deg);
+    font-size: 5rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+    pointer-events: none;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+.card.card--quiz::after {
+    content: "MCQS";
+}
+.card.card--flashcards::after {
+    content: "CARDS";
 }
