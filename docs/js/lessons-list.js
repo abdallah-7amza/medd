@@ -36,12 +36,12 @@ document.addEventListener('DOMContentLoaded', async function() {
         if (currentNode.resources) {
             if (currentNode.resources.collectionQuizzes) {
                 currentNode.resources.collectionQuizzes.forEach(quiz => {
-                    toolbarContainer.appendChild(createResourceButton(`Start ${currentNode.label} Quiz Bank`, `quiz.html?collection=${quiz.id}&path=${path}`));
+                    toolbarContainer.appendChild(createResourceButton(quiz.title, `quiz.html?collection=${quiz.id}&path=${path}`));
                 });
             }
             if (currentNode.resources.flashcardDecks) {
                 currentNode.resources.flashcardDecks.forEach(deck => {
-                    toolbarContainer.appendChild(createResourceButton(`Start Flashcards: ${deck.title}`, `flashcards.html?collection=${deck.id}&path=${path}`));
+                    toolbarContainer.appendChild(createResourceButton(deck.title, `flashcards.html?collection=${deck.id}&path=${path}`));
                 });
             }
         }
@@ -51,13 +51,12 @@ document.addEventListener('DOMContentLoaded', async function() {
                 const childNode = currentNode.children[id];
                 const newPath = `${path}/${id}`;
                 
-                // *** أصبح القرار الآن بسيطًا جدًا وآمنًا ***
-                // الواجهة الأمامية لم تعد تفكر، بل تنفذ ما تقوله لها البيانات
                 const targetUrl = childNode.isBranch
                     ? `lessons-list.html?path=${newPath}`
                     : `lesson.html?path=${newPath}`;
                 
-                const card = createCard(childNode.label, targetUrl, childNode.summary || 'View content and resources for this topic.');
+                // The 'description' parameter is now ignored in createCard
+                const card = createCard(childNode.label, targetUrl, childNode.summary);
                 cardContainer.appendChild(card);
             }
         }
@@ -71,14 +70,15 @@ function createCard(title, url, description) {
     const cardLink = document.createElement('a');
     cardLink.href = url;
     cardLink.className = 'card';
-    cardLink.innerHTML = `<div class="card-content"><h2>${title}</h2><p>${description}</p></div>`;
+    // *** التعديل هنا: تم حذف الفقرة <p> التي كانت تعرض الوصف ***
+    cardLink.innerHTML = `<div class="card-content"><h2>${title}</h2></div>`;
     return cardLink;
 }
 
 function createResourceButton(text, url) {
     const button = document.createElement('a');
     button.href = url;
-    button.className = 'card';
+    button.className = 'card'; // Using card style for a consistent look
     button.innerHTML = `<h2>${text}</h2>`;
     return button;
 }
