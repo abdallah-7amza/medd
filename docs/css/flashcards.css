@@ -1,20 +1,20 @@
-/* The new main container for the whole component */
+/* Main Component Container */
 .flashcard-master-container {
     max-width: 600px;
-    margin: 30px auto;
-    background-color: #282e3e; /* Dark background */
+    margin: 25px auto;
+    background-color: #282e3e;
     border-radius: 15px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    overflow: hidden; /* Ensures children conform to border radius */
+    overflow: hidden;
 }
 
-/* Header with progress bar */
+/* Header */
 .flashcard-header {
     padding: 15px 20px;
     position: relative;
+    text-align: center;
 }
 .counter {
-    text-align: center;
     color: #a0a6b5;
     font-size: 0.9em;
     font-weight: 500;
@@ -25,16 +25,16 @@
     left: 0;
     height: 4px;
     background-color: var(--primary-color);
-    width: 0%; /* Will be updated by JS */
+    width: 0%;
     transition: width 0.3s ease;
 }
 
-/* 3D Scene and Card */
+/* Card Scene & Faces */
 .flashcard-scene {
     width: 100%;
-    height: 350px;
+    height: 350px; /* Base height for larger screens */
     perspective: 1500px;
-    padding: 0 20px;
+    padding: 0 20px 20px 20px; /* Add bottom padding */
     box-sizing: border-box;
 }
 .flashcard {
@@ -47,8 +47,6 @@
 .flashcard.is-flipped {
     transform: rotateY(180deg);
 }
-
-/* Front and Back Faces */
 .flashcard-face {
     position: absolute;
     width: 100%;
@@ -61,7 +59,7 @@
     color: #f0f2f5;
     font-size: 1.6em;
     text-align: center;
-    border-radius: 8px; /* Slightly smaller radius than master container */
+    border-radius: 8px;
     background-color: #3b4255;
     cursor: pointer;
 }
@@ -73,12 +71,10 @@
     overflow-y: auto;
 }
 
-/* Footer with controls */
+/* Footer & Controls */
 .flashcard-footer {
-    padding: 20px;
+    padding: 15px 20px;
     background-color: #2f3649;
-}
-#navigation-controls, #assessment-controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -86,9 +82,10 @@
 .nav-arrow {
     background: none;
     border: none;
-    color: #a0a6b5;
-    font-size: 1.8em;
+    color: #ced2de;
+    font-size: 1.6em; /* Slightly smaller icon */
     cursor: pointer;
+    padding: 10px;
     transition: color 0.2s, transform 0.2s;
 }
 .nav-arrow:hover {
@@ -100,37 +97,19 @@
     cursor: not-allowed;
     transform: none;
 }
-.flip-text-button {
-    background: none;
-    border: none;
-    color: #a0a6b5;
-    font-size: 1em;
-    font-weight: 600;
-    cursor: pointer;
+.flip-icon {
+    font-size: 1.8em; /* Make the flip icon stand out */
 }
 
-/* Assessment buttons */
-.assessment-btn {
-    width: 48%;
-    padding: 15px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-.assessment-btn:hover {
-    transform: scale(1.03);
-}
-.still-learning {
-    background-color: #c94343;
-    color: white;
-}
-.know {
-    background-color: #28a745;
-    color: white;
-}
-.hidden {
-    display: none;
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 600px) {
+    .flashcard-scene {
+        height: 300px; /* Shorter card on small screens */
+    }
+    .flashcard-face {
+        font-size: 1.3em; /* Smaller text on card front */
+    }
+    .flashcard-back {
+        font-size: 1em; /* Smaller text on card back */
+    }
 }
