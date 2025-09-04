@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-04T09:25:47.616Z",
+  "generatedAt": "2025-09-04T09:56:47.050Z",
   "tree": {
     "cairo": {
       "children": {
@@ -175,7 +175,8 @@
                     ]
                   },
                   "hasIndex": false,
-                  "label": "Oncology"
+                  "label": "Oncology",
+                  "isBranch": true
                 }
               },
               "hasIndex": false,
@@ -430,7 +431,8 @@
                     ]
                   },
                   "hasIndex": false,
-                  "label": "Endocrine"
+                  "label": "Endocrine",
+                  "isBranch": true
                 },
                 "git": {
                   "children": {},
@@ -567,7 +569,8 @@
                     ]
                   },
                   "hasIndex": false,
-                  "label": "Git"
+                  "label": "Git",
+                  "isBranch": true
                 },
                 "neonatology": {
                   "children": {
