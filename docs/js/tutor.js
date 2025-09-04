@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     // --- 1. HTML Injection & Element Setup ---
+    // (This entire section is unchanged)
     const fab = document.createElement('button');
     fab.className = 'ai-tutor-fab';
     fab.innerHTML = '<i class="fa-solid fa-brain"></i>';
     fab.title = 'Open AI Tutor';
-
     const apiModal = document.createElement('div');
     apiModal.id = 'api-key-modal';
     apiModal.className = 'tutor-modal-overlay';
@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
             <div id="api-validation-message"></div>
         </div>
     `;
-
     const chatWindow = document.createElement('div');
     chatWindow.id = 'chat-window';
     chatWindow.className = 'chat-window';
@@ -45,12 +44,12 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         </div>
     `;
-    
     document.body.appendChild(fab);
     document.body.appendChild(apiModal);
     document.body.appendChild(chatWindow);
 
     // --- 2. Get References and setup state ---
+    // (This entire section is unchanged)
     const apiKeyModal = document.getElementById('api-key-modal');
     const chatWin = document.getElementById('chat-window');
     const apiStatus = document.getElementById('api-status');
@@ -82,8 +81,8 @@ document.addEventListener('DOMContentLoaded', function() {
         validationMsg.textContent = 'Validating...';
 
         try {
-            // Use the fetch method for validation, just like the working example
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`;
+            // *** THE FIX IS HERE: Changed model name ***
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
             const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -109,6 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // --- 4. Context Awareness ---
+    // (This entire section is unchanged)
     function getPageContext() {
         let context = "No specific context found.";
         const path = window.location.pathname;
@@ -134,22 +134,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const thinkingBubble = addMessageToChat("Thinking...", 'ai');
         const pageContext = getPageContext();
-
-        // Add user message to history
         chatHistory.push({ role: "user", parts: [{ text: `${prompt}\n\nContext:\n${pageContext}` }] });
-
         const systemInstruction = {
             role: "system",
             parts: [{ text: "Behavior Rules: You are an expert medical tutor. Your role is to explain, connect ideas, and answer with clear clinical logic. ALWAYS explain in English. If the user asks for Arabic, you MUST explain in Arabic but KEEP all medical terms in English without translation." }]
         };
-        
         const payload = {
             contents: chatHistory,
             systemInstruction: systemInstruction
         };
 
         try {
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`;
+            // *** THE FIX IS HERE: Changed model name ***
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
             const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -165,23 +162,22 @@ document.addEventListener('DOMContentLoaded', function() {
             const aiResponse = result.candidates[0].content.parts[0].text;
             
             thinkingBubble.textContent = aiResponse;
-            // Add AI response to history
             chatHistory.push({ role: "model", parts: [{ text: aiResponse }] });
 
         } catch (error) {
             console.error("Error communicating with Gemini:", error);
             thinkingBubble.textContent = `Sorry, an error occurred: ${error.message}`;
-            // Remove the last user message from history on error
             chatHistory.pop();
         }
     }
 
     // --- 6. Event Listeners ---
+    // (This entire section is unchanged)
     fab.addEventListener('click', initializeTutor);
     document.getElementById('validate-api-key-btn').addEventListener('click', validateAndSaveApiKey);
     document.getElementById('close-chat-btn').addEventListener('click', () => {
         chatWin.classList.remove('visible');
-        chatHistory = []; // Reset history on close
+        chatHistory = [];
     });
     sendBtn.addEventListener('click', () => {
         const userInput = chatInput.value.trim();
@@ -199,6 +195,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // --- 7. Helper Functions ---
+    // (This entire section is unchanged)
     function addMessageToChat(message, sender) {
         const bubble = document.createElement('div');
         bubble.className = `chat-bubble ${sender === 'user' ? 'user-bubble' : 'ai-bubble'}`;
