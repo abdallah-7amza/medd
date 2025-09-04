@@ -9,6 +9,17 @@
     <link rel="stylesheet" href="css/flashcards.css">
     <link rel="stylesheet" href="css/tutor.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <script type="module" src="https://unpkg.com/@google/generative-ai"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F269Y4LPKL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-F269Y4LPKL');
+    </script>
 </head>
 <body>
     <header class="main-header">
@@ -17,7 +28,29 @@
 
     <main>
         <div class="container">
-           </div>
+            <a href="javascript:history.back()" class="back-link">← Back</a>
+            <h1 id="deck-title" class="page-title">Loading Deck...</h1>
+
+            <div class="flashcard-master-container">
+                <div class="flashcard-header">
+                    <div id="flashcard-progress-bar" class="progress-bar"></div>
+                    <div id="flashcard-counter" class="counter">1 / 1</div>
+                </div>
+
+                <div class="flashcard-scene">
+                    <div id="flashcard" class="flashcard">
+                        <div class="flashcard-face flashcard-front"><p id="card-front-content"></p></div>
+                        <div class="flashcard-face flashcard-back"><p id="card-back-content"></p></div>
+                    </div>
+                </div>
+
+                <div class="flashcard-footer">
+                    <button id="prev-btn" class="nav-arrow"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button id="flip-btn" class="nav-arrow flip-icon"><i class="fa-solid fa-rotate"></i></button>
+                    <button id="next-btn" class="nav-arrow"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer class="main-footer">
