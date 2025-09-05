@@ -1,57 +1,10 @@
 {
-  "generatedAt": "2025-09-05T09:23:35.154Z",
+  "generatedAt": "2025-09-05T09:48:27.923Z",
   "tree": {
     "nub": {
       "children": {
         "year5": {
           "children": {
-            "gynecology": {
-              "children": {
-                "oncology": {
-                  "children": {},
-                  "resources": {
-                    "collectionQuizzes": [
-                      {
-                        "id": "oncology-bank",
-                        "title": "Oncology Bank",
-                        "quizData": {
-                          "questions": [
-                            {
-                              "stem": "What is the most common type of ovarian cancer?",
-                              "options": [
-                                "Germ cell tumors",
-                                "Epithelial ovarian cancer",
-                                "Sex cord-stromal tumors",
-                                "Metastatic tumors"
-                              ],
-                              "correct": 1,
-                              "explanation": "Epithelial tumors are the most common type, accounting for about 90% of all ovarian cancers."
-                            },
-                            {
-                              "stem": "Which HPV types are most commonly associated with cervical cancer?",
-                              "options": [
-                                "HPV 6 and 11",
-                                "HPV 16 and 18",
-                                "HPV 31 and 33",
-                                "HPV 45 and 52"
-                              ],
-                              "correct": 1,
-                              "explanation": "HPV types 16 and 18 are high-risk types responsible for approximately 70% of all cervical cancers worldwide."
-                            }
-                          ]
-                        }
-                      }
-                    ]
-                  },
-                  "hasIndex": false,
-                  "label": "Oncology",
-                  "isBranch": true
-                }
-              },
-              "hasIndex": false,
-              "label": "Gynecology",
-              "isBranch": true
-            },
             "obstetrics": {
               "children": {
                 "basic-obstetrics": {
