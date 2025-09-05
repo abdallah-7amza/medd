@@ -1,0 +1,137 @@
+{
+  "title": "Gynaecology Revision",
+  "cards": [
+    {
+      "front": "What are the indications for a Hysterosalpingogram (HSG)?",
+      "back": "Infertility, suspected intrauterine anomalies, or intrauterine defects."
+    },
+    {
+      "front": "What are contraindications for an HSG?",
+      "back": "Suspicion of pregnancy or Pelvic Inflammatory Disease (PID)."
+    },
+    {
+      "front": "An HSG shows bilateral hydrosalpinx. What is the management for infertility?",
+      "back": "Bilateral tubal disconnection then ICSI/IVF."
+    },
+    {
+      "front": "A patient complains of metrorrhagia and infertility. Hysteroscopy shows a filling defect. What is the likely diagnosis and management?",
+      "back": "The likely diagnosis is an Endometrial Polyp. Management is Hysteroscopic Polypectomy."
+    },
+    {
+      "front": "A patient with a history of two evacuations for abortion now has amenorrhea and infertility. What is the diagnosis and management?",
+      "back": "The diagnosis is Asherman's syndrome. Management is Hysteroscopic adhesiolysis."
+    },
+    {
+      "front": "Does Asherman's syndrome cause anovulation?",
+      "back": "No, Asherman's syndrome has no effect on ovulation."
+    },
+    {
+      "front": "What are the high-risk HPV types for cervical cancer?",
+      "back": "HPV types 16 and 18."
+    },
+    {
+      "front": "What is the most common route of metastasis for cervical cancer?",
+      "back": "Lymphatic spread."
+    },
+    {
+      "front": "What are common causes of death in different gynecological cancers?",
+      "back": "Cervix: Uremia.\nEndometrium: Peritonitis (infection).\nVulva: Hemorrhage.\nOvary: Intestinal obstruction."
+    },
+    {
+      "front": "What is the treatment for Stage 1 endometrial cancer?",
+      "back": "Pan-hysterectomy (total abdominal hysterectomy and bilateral salpingo-oophorectomy (TAH-BSO))."
+    },
+    {
+      "front": "Which type of endometrial hyperplasia has the highest risk of becoming cancer?",
+      "back": "Complex EH with atypia (29% risk)."
+    },
+    {
+      "front": "What is the most common type of ovarian tumor?",
+      "back": "Epithelial tumors (90%)."
+    },
+    {
+      "front": "What is the most common benign and malignant epithelial ovarian tumor?",
+      "back": "Benign: Serous cystadenoma.\nMalignant: Serous cystadenocarcinoma."
+    },
+    {
+      "front": "What is the most common route of spread for ovarian cancer?",
+      "back": "Transcoelomic spread is the commonest route."
+    },
+    {
+      "front": "What factors are protective against ovarian cancer?",
+      "back": "Pregnancy and the use of oral contraceptive pills (OCP)."
+    },
+    {
+      "front": "Match the tumor marker to the ovarian tumor: CA-125, AFP, HCG, LDH.",
+      "back": "CA-125: Epithelium Tumor.\nAFP: Yolk Sac Tumor.\nHCG: Chorio-Carcinoma.\nLDH: Dysgerminoma."
+    },
+    {
+      "front": "What is the biggest risk factor for an ectopic pregnancy?",
+      "back": "A previous ectopic pregnancy."
+    },
+    {
+      "front": "What is the management for an ectopic pregnancy seen on laparoscopy?",
+      "back": "Laparoscopic Salpingectomy. Salpingostomy may be done if the patient has only one Fallopian tube."
+    },
+    {
+      "front": "What is the management for an undisturbed ectopic pregnancy with a β-hCG of 400 mIU/mL and no fetal heartbeat?",
+      "back": "Methotrexate injection."
+    },
+    {
+      "front": "What are the symptoms of Polycystic Ovarian Syndrome (PCO)?",
+      "back": "Infertility and amenorrhea."
+    },
+    {
+      "front": "Describe the hormonal imbalance in PCOS.",
+      "back": "High LH, Estrogen, androgen, and insulin, with low FSH. Progesterone is not involved in the pathology."
+    },
+    {
+      "front": "What is the best management for a 24-year-old virgin patient with PCOS symptoms?",
+      "back": "Oral contraception pills with an antiandrogen (e.g., DIANE)."
+    },
+    {
+      "front": "What is the most common cause of postmenopausal bleeding?",
+      "back": "Atrophic endometritis or senile atrophy."
+    },
+    {
+      "front": "What evidence proves that fibroids are estrogen-dependent?",
+      "back": "They do not develop before puberty or after menopause, existing tumors tend to atrophy after menopause, and they are commonly associated with other estrogen-dependent conditions like endometriosis and endometrial hyperplasia."
+    },
+    {
+      "front": "What is the management for an asymptomatic 3-4 cm intramural fibroid found incidentally?",
+      "back": "Follow-up only, as no symptoms require no treatment."
+    },
+    {
+      "front": "What are the typical laparoscopic findings of endometriosis?",
+      "back": "Adhesions, a fixed retroverted uterus, tender pelvic mass (kissing ovaries), Douglas pouch nodules, and a chocolate ovarian cyst."
+    },
+    {
+      "front": "What are some non-contraceptive benefits of OCPs?",
+      "back": "Treatment of dysfunctional uterine bleeding and endometriosis. They also lead to a lower incidence of P.I.D, endometrial carcinoma, and epithelial ovarian cancer."
+    },
+    {
+      "front": "What is the first step in managing a suspected missed IUD?",
+      "back": "A pregnancy test."
+    },
+    {
+      "front": "What are the types of IUDs and their mechanisms of action?",
+      "back": "Copper IUD: Prevents implantation.\nMirena (hormonal): Causes endometrial atrophy by secreting Progesterone."
+    },
+    {
+      "front": "What is the most important factor affecting female fertility?",
+      "back": "The mother's age."
+    },
+    {
+      "front": "Which arteries run within the infundibulopelvic ligament?",
+      "back": "The Ovarian arteries."
+    },
+    {
+      "front": "What embryological error causes a transverse vaginal septum?",
+      "back": "Improper fusion of the urogenital sinus and Müllerian ducts."
+    },
+    {
+      "front": "A young patient has primary amenorrhea and cyclic abdominal pain with a bluish bulge at the vulva. What is the embryological error?",
+      "back": "An imperforate hymen, which occurs due to improper canalization of the urogenital sinus."
+    }
+  ]
+}
