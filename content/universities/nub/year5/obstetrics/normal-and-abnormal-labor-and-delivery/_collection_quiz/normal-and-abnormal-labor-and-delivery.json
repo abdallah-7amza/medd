@@ -852,6 +852,644 @@
       ],
       "correct": 2,
       "explanation": ""
+    },
+    {
+      "stem": "Regarding face presentation, choose the correct answer:",
+      "options": [
+        "Most cases are mentoposterior.",
+        "Denominator is the fetal nose.",
+        "The engaging diameter is the mento -vertical diameter.",
+        "Increased risk of fetal congenital anomalies.",
+        "The diameter distending the vulva is the submento -bregmatic diameter."
+      ],
+      "correct": 3
+    },
+    {
+      "stem": "Which of the following describes a frank breech?",
+      "options": [
+        "Flexion of the hips and extension of the knees.",
+        "Flexion of the hips and flexion of the knees.",
+        "Extension of the hips and flexion of the knees.",
+        "Extension of the hips and extension the knees.",
+        "Lower extremities flexed at the hips and knees flexed."
+      ],
+      "correct": 0
+    },
+    {
+      "stem": "In which of the following condition vaginal delivery is contraindicated?",
+      "options": [
+        "Extended breech head.",
+        "Breech with extended legs.",
+        "Twins with 1st vertex and 2nd breech.",
+        "Direct occipto-posterior.",
+        "Premature rupture of membranes."
+      ],
+      "correct": 0
+    },
+    {
+      "stem": "Which of the following is an indication of C.S in breech delivery?",
+      "options": [
+        "Breech with extended legs (frank breech).",
+        "Complete breech.",
+        "Estimated fetal weight is between 2.5 kg to 3.5 kg.",
+        "Sacro-anterior position.",
+        "Extended fetal neck as detected by ultrasound."
+      ],
+      "correct": 4
+    },
+    {
+      "stem": "The following is encouraging for a trial of vaginal delivery in breech presentation:",
+      "options": [
+        "Previous breech delivery.",
+        "Footling presentation.",
+        "Estimated fetal weight is between 1.5 kg to 2 kg.",
+        "Buttocks are felt at level of pelvic brim.",
+        "Extended fetal head as detected by ultrasound."
+      ],
+      "correct": 0
+    },
+    {
+      "stem": "A P2+2 with previous precipitate vaginal deliveries, 38 weeks gestation presents for ANC. Examination and US show complete breech presentation +/- 3 kg, fundal posterior placenta and AFI: 15. What is your suggested management?",
+      "options": [
+        "Wait for spontaneous onset of labor.",
+        "Induction of labor.",
+        "Cesarean delivery.",
+        "Spontaneous correction is the rule.",
+        "Council for external cephalic version."
+      ],
+      "correct": 0
+    },
+    {
+      "stem": "In Assisted Breech delivery:",
+      "options": [
+        "Traction on fetal trunk should be done to assist fetal head delivery.",
+        "Prague maneuver is routinely used to deliver the after coming head.",
+        "Fetal back should be kept anterior.",
+        "Once the fetal neck appears under symphysis, fetal body should be lifted towards mother's abdomen.",
+        "Episiotomy is usually done after delivering the fetal body."
+      ],
+      "correct": 2
+    },
+    {
+      "stem": "Regarding assisted breech delivery:",
+      "options": [
+        "Baby is delivered spontaneously till the fetal head.",
+        "Fetal body should be covered with warm towels to avoid premature respiration.",
+        "Moulding of the fetal head is delayed.",
+        "After-coming head is delivered in extension.",
+        "Cord prolapse is more common in frank breech."
+      ],
+      "correct": 1
+    },
+    {
+      "stem": "Which type of breech presentation with highest incidence of cord prolapse?",
+      "options": [
+        "Complete breech.",
+        "Frank breech.",
+        "Preterm breech.",
+        "Sacro-posterior presentation.",
+        "Footling presentation."
+      ],
+      "correct": 4
+    },
+    {
+      "stem": "Which type of breech presentation with least incidence of cord prolapse?",
+      "options": [
+        "Complete breech.",
+        "Frank breech.",
+        "Preterm breech.",
+        "Sacro-posterior presentation.",
+        "Footling presentation."
+      ],
+      "correct": 1
+    },
+    {
+      "stem": "Regarding retained after-coming head of breech presentation:",
+      "options": [
+        "More common in complete breech.",
+        "Mere common in primipara.",
+        "In preterm breech, the head may be entrapped in incompletely dilated cervix.",
+        "Previous cephalic delivery minimizes the risk of retained after-coming head.",
+        "Urgent cesarean delivery is the suitable management."
+      ],
+      "correct": 2
+    },
+    {
+      "stem": "The following can predispose to retained after-coming head in breech presentation?",
+      "options": [
+        "Complete breech.",
+        "Frank breech.",
+        "Well flexed fetal head.",
+        "Associated placenta previa.",
+        "Traction on fetal body during assisted breech delivery."
+      ],
+      "correct": 4
+    },
+    {
+      "stem": "What is commonest type of monozygotic twins?",
+      "options": [
+        "Dichorionic diamniotic.",
+        "Dichorionc monoamniotic.",
+        "Monochorionic diamniotic.",
+        "Monochorionic monoamniotic.",
+        "Conjoined twins."
+      ],
+      "correct": 2
+    },
+    {
+      "stem": "Regarding monozygotic twins, if splitting of the fertilized ovum occurs during 1 2 days of fertilization, the resultant twins will be:",
+      "options": [
+        "Monochorionic monoamniotic.",
+        "Monochorionic diamniotic.",
+        "Dichorionic monoamniotic.",
+        "Dichorionic diamniotic.",
+        "Conjoined twins."
+      ],
+      "correct": 3
+    },
+    {
+      "stem": "A patient had just delivered her first twin vaginally at 37 weeks. PV examination reveals a fully dilated cervix and a shoulder presenting second twin with bulging amniotic sac. Fetal heart rate is reassuring. The appropriate management?",
+      "options": [
+        "Amniotomy & oxytocin.",
+        "External cephalic version and wait for spontaneous cephalic delivery.",
+        "Amniotomy, internal podalic version & breech extraction.",
+        "Immediate cesarean section.",
+        "No action & wait for spontaneous expulsion."
+      ],
+      "correct": 2
+    },
+    {
+      "stem": "Obstetric ultrasound in twin pregnancy can identify all of the following EXCEPT:",
+      "options": [
+        "Differentiate monochorionic from dichorionic type.",
+        "Differentiate monoamniotic from diamniotic type.",
+        "Diagnosis of conjoined twins.",
+        "Diagnosis of discordant twins.",
+        "Diagnosis of contracted pelvis."
+      ],
+      "correct": 4
+    },
+    {
+      "stem": "Multifetal gestations have a higher risk of all the following EXCЕРТ:",
+      "options": [
+        "Preeclampsia.",
+        "Atonic postpartum hemorrhage.",
+        "Maternal anemia.",
+        "Post term pregnancy.",
+        "Hyperemesis gravidarum."
+      ],
+      "correct": 3
+    },
+    {
+      "stem": "A full term primipara with twin pregnancy presents after delivery of first twin vaginally at home an hour ago. PV reveals a fully dilated cervix and a shoulder presenting second twin with drained liquor. The appropriate management is:",
+      "options": [
+        "Oxytocin.",
+        "External cephalic version and wait for spontaneous cephalic delivery.",
+        "internal podalic version & breech extraction.",
+        "Cesarean section.",
+        "No action & wait for spontaneous expulsion."
+      ],
+      "correct": 3
+    },
+    {
+      "stem": "Transverse lie in a full-term multipara in labor, is most commonly managed by:",
+      "options": [
+        "External cephalic version.",
+        "Wait for spontaneous vaginal delivery.",
+        "Cesarean delivery.",
+        "Oxytocin induction.",
+        "Internal podalic version and breech extraction."
+      ],
+      "correct": 2
+    },
+    {
+      "stem": "In a multipara at 32 weeks; transverse lie is diagnosed by US during routine ANC. Best management is:",
+      "options": [
+        "External cephalic version.",
+        "Wait for spontaneous correction.",
+        "Cesarean delivery.",
+        "Oxytocin induction.",
+        "Internal podalic version and breech extraction."
+      ],
+      "correct": 1
+    },
+    {
+      "stem": "Regarding a case of neglected shoulder:",
+      "options": [
+        "More common in preterm labor.",
+        "External cephalic version is a safe option.",
+        "Internal podalic version may be done in selected cases.",
+        "Low vertical cesarean section is preferably done.",
+        "Easy fetal extraction in transverse lower segment incision."
+      ],
+      "correct": 3
+    },
+    {
+      "stem": "Which of the followings predisposes to cord prolapse:",
+      "options": [
+        "Coiling of the cord around fetal neck.",
+        "True knot of the cord.",
+        "Major placenta previa (centralis).",
+        "Oligohydramnios.",
+        "Malpositions and malpresentations."
+      ],
+      "correct": 4
+    },
+    {
+      "stem": "Regarding cord prolapse, one of the following is correct:",
+      "options": [
+        "Usually associated with polyhydramnios.",
+        "In breech presentation, it is most likely with frank breech.",
+        "Urgent cesarean delivery is indicated regardless pulsations.",
+        "Reposition of the cord in the vagina has no value in decreasing fetal mortality.",
+        "Patient should be positioned in semi-sitting position."
+      ],
+      "correct": 0
+    },
+    {
+      "stem": "Regarding occult cord prolapse, all the followings are true EXCEРТ:",
+      "options": [
+        "Membranes are intact.",
+        "Cord is not seen outside the vulva.",
+        "Cord is not felt by PV examination.",
+        "Variable deceleration is present on continuous CTG monitoring.",
+        "It can kill the baby without leaving any trace of evidence."
+      ],
+      "correct": 0
+    },
+    {
+      "stem": "A multipara presents with a prolapse non-pulsating cord. Cervix is 8 cm cervical dilatation, cephalic occipito-anterior -2 station. What should be your next step?",
+      "options": [
+        "No emergency and observe labor.",
+        "Urgent cesarean section.",
+        "Vacuum extraction.",
+        "Reposit the cord above the presenting part.",
+        "Continue labor."
+      ],
+      "correct": 0
+    },
+    {
+      "stem": "A multipara with polyhydramnios has a pulsating cord prolapse following uncontrolled artificial rupture of membranes during 2nd stage of labor. Fetus is cephalic, occipito-anterior and descended to +2 station after rupture membranes. What is your suggested management?",
+      "options": [
+        "Caesarean delivery.",
+        "Forceps application not including the cord between blades.",
+        "Vacuum extraction including the cord in the cup.",
+        "Reposit the cord in vagina and follow labor progress.",
+        "Put the patient on Lt Lateral position."
+      ],
+      "correct": 1
+    },
+    {
+      "stem": "Cord presentation denotes:",
+      "options": [
+        "Only umbilical cord is felt with no presenting part.",
+        "Umbilical cord will be delivered 1st.",
+        "Membranes are intact with cord felt below the presenting part.",
+        "Cord is protruding outside the vulva.",
+        "Tight coiling of the cord around fetal neck."
+      ],
+      "correct": 2
+    },
+    {
+      "stem": "A full-term multipara during labor with a cord felt below the fetal head at -2 station. Cervix is 3 cm 80% effaced, membranes are intact and fetal heart is reassuring. What is your recommended management?",
+      "options": [
+        "Artificial rupture of membranes.",
+        "Cesarean delivery.",
+        "Observe progress of labor so long membranes are intact.",
+        "Oxytocin to enhance labor.",
+        "By vaginal examination try to elevate the cord above the presenting part."
+      ],
+      "correct": 1
+    },
+    {
+      "stem": "A P3+0 cephalic presentation had ROM and a fully dilated cervix for 1/2 an hour. She has uterine contraction 1/10 minutes and PV shows a fetal head station -2. The most probable diagnosis is:",
+      "options": [
+        "Obstructed labor.",
+        "Hypotonic uterine inertia.",
+        "Hypertonic uterine inertia.",
+        "Constriction ring.",
+        "Cervical dystocia."
+      ],
+      "correct": 1
+    },
+    {
+      "stem": "Regarding the previous case, what is your suggested management?",
+      "options": [
+        "Watchful expectancy for another 1 hour.",
+        "Instrumental delivery.",
+        "Cesarean section.",
+        "Oxytocin infusion.",
+        "Vaginal misoprostol."
+      ],
+      "correct": 3
+    },
+    {
+      "stem": "Contraindications for oxytocin during labor include:",
+      "options": [
+        "Past date pregnancy.",
+        "Pathological retraction ring.",
+        "Maternal hypertension.",
+        "Premature rupture of membranes.",
+        "Fetal malpositions."
+      ],
+      "correct": 1
+    },
+    {
+      "stem": "The leading cause of maternal mortality in Egypt is:",
+      "options": [
+        "Postpartum hemorrhage.",
+        "Puerperal sepsis.",
+        "Eclampsia.",
+        "Amniotic fluid embolism.",
+        "Anesthesia complications."
+      ],
+      "correct": 0
+    },
+    {
+      "stem": "Complications of precipitate labor include all the following EXCЕРТ:",
+      "options": [
+        "Preterm labor.",
+        "Cervical tears.",
+        "Perineal tears",
+        "Intracranial hemorrhage.",
+        "Post-partum hemorrhage."
+      ],
+      "correct": 0
+    },
+    {
+      "stem": "Contraindications of use of oxytocin include all the following EXСЕРТ:",
+      "options": [
+        "Transverse lie.",
+        "Occipito posterior position.",
+        "Hypertonic inertia.",
+        "Cervical dystocia.",
+        "Fetal distress."
+      ],
+      "correct": 1
+    },
+    {
+      "stem": "Complications of oxytocin include all the following EXCEPT:",
+      "options": [
+        "Fetal distress.",
+        "Hypertonic inertia.",
+        "Rupture uterus.",
+        "Maternal hypertension.",
+        "Neonatal hyperbilirubinemia."
+      ],
+      "correct": 3
+    },
+    {
+      "stem": "The following drugs is contraindicated in cases of hypertonic uterine inertia:",
+      "options": [
+        "IV fluids.",
+        "Oxytocin.",
+        "Sedatives",
+        "Hyoscine.",
+        "Analgesics."
+      ],
+      "correct": 1
+    },
+    {
+      "stem": "Contraindications for oxytocin to augment labor include:",
+      "options": [
+        "Premature fetus.",
+        "Hypertonic uterine inertia.",
+        "Maternal hypertension.",
+        "Premature rupture of membranes.",
+        "All cases with antepartum hemorrhage."
+      ],
+      "correct": 1
+    },
+    {
+      "stem": "A 35-year-old G4P3, 36 weeks gestation presents with frequent painful contractions of two hours duration. On examination, the cervix is fully dilated and the head is felt at +2 station. This course of labor may be associated with all of the following EXСЕРТ:",
+      "options": [
+        "Higher incidence of Cesarean section.",
+        "Fetal intracranial haemorrhage.",
+        "Fetal distress.",
+        "Atonic postpartum haemorrhage.",
+        "Traumatic postpartum haemorrhage."
+      ],
+      "correct": 0
+    },
+    {
+      "stem": "Regarding a constriction ring, all of the followings are true EXCEPT:",
+      "options": [
+        "It is felt vaginally.",
+        "It is seen abdominally.",
+        "It is relieved by deep anaesthesia.",
+        "It is associated with retained placenta.",
+        "It can occur at any part of the uterus."
+      ],
+      "correct": 1
+    },
+    {
+      "stem": "A full term pregnant, obese, multipara presented late in labor with a fully dilated cervix and involuntary bearing down. Head was delivered spontaneously but arrest of the shoulder delivery occurred. What would be your next step in the management of this patient:",
+      "options": [
+        "Cesarean section.",
+        "Traction on fetal head.",
+        "Hyper flex both hips with abduction and suprapubic pressure.",
+        "Introduce your hand vaginally to bring down an arm.",
+        "Cover the head with warm towel and wait for spontaneous expulsion."
+      ],
+      "correct": 2
+    },
+    {
+      "stem": "The following are possible causes for an obstructed labor EXCЕРТ:",
+      "options": [
+        "Maternal diabetes.",
+        "Malpresentations.",
+        "Contracted pelvis.",
+        "Placenta previa.",
+        "Pendulous abdomen."
+      ],
+      "correct": 3
+    },
+    {
+      "stem": "A diabetic primipara with a short stature presents with a fully dilated cervix for 2 hours. FHR is reassuring but contractions become very infrequent. Fetus is cephalic, -2 station with ruptured membranes. Your likely diagnosis is:",
+      "options": [
+        "Iry hypotonic uterine inertia.",
+        "Obstructed labor.",
+        "Rupture uterus.",
+        "Cervical dystocia.",
+        "Shoulder dystocia."
+      ],
+      "correct": 1
+    },
+    {
+      "stem": "A full-term multipara was referred to the hospital after a prolonged labor in a private clinic. A fetal arm was seen coming out from the vulva, cervix was 9 cm dilated and fetal heart was absent. Best management will be:",
+      "options": [
+        "External cephalic version to allow normal cephalic delivery.",
+        "External podalic version and breech extraction.",
+        "Internal podalic version and breech extraction.",
+        "Wait for full cervical dilatation.",
+        "Upper segment caesarian section."
+      ],
+      "correct": 4
+    },
+    {
+      "stem": "A rising transverse groove seen on the lower abdomen in a woman during labor could be due to:",
+      "options": [
+        "Full urinary bladder.",
+        "Obstructed labor.",
+        "Constriction ring.",
+        "Associated uterine fibroid.",
+        "(a) and (b)."
+      ],
+      "correct": 4
+    },
+    {
+      "stem": "Commonest complication of shoulder dystocia is:",
+      "options": [
+        "Cerebral palsy.",
+        "Clavicular fracture.",
+        "Intracranial hemorrhage.",
+        "Rupture uterus.",
+        "Brachial plexus injury."
+      ],
+      "correct": 4
+    },
+    {
+      "stem": "All the followings are alarming for shoulder dystocia EXCEPT:",
+      "options": [
+        "Estimated fetal weight >4 kg.",
+        "Slow fetal descent during labor.",
+        "Prolonged 2nd stage with slow head extension (turtle sign).",
+        "Maternal diabetes.",
+        "Premature rupture of membranes."
+      ],
+      "correct": 4
+    },
+    {
+      "stem": "A 38-year-old G4P3 of 41 week's gestation is delivering an infant with an estimated foetal weight of 3800gm. After delivery of the head, you note a turtle sign. What is your next procedure?",
+      "options": [
+        "Cesarean section.",
+        "Lovset's manoeuvre.",
+        "Mauricau-Smellie-Viet manoeuvre.",
+        "Delivery of the posterior arm.",
+        "McRobert's manoeuvre."
+      ],
+      "correct": 4
+    },
+    {
+      "stem": "Mc Robert's manoeuvre entails:",
+      "options": [
+        "Delivery of the posterior arm.",
+        "Internal rotation of the foetal shoulders to the oblique plane.",
+        "Fundal pressure.",
+        "Jaw flexion.",
+        "Maternal thigh flexion and suprapubic pressure."
+      ],
+      "correct": 4
+    },
+    {
+      "stem": "After performing the appropriate manoeuvres, a 35-year-old G4P3 finally delivered a 4000gm baby. The attending paediatrician notes that the right arm is hanging to the baby's side with the forearm extended and internally rotated. Which of the following is the baby's most likely diagnosis?",
+      "options": [
+        "Clavicle fracture.",
+        "Humerus fracture.",
+        "Klumpke's palsy.",
+        "Erb's palsy.",
+        "Shoulder dislocation."
+      ],
+      "correct": 3
+    },
+    {
+      "stem": "A pathological retraction ring (Bandl ring) is commonly associated with:",
+      "options": [
+        "Preterm labour.",
+        "Precipitate labour.",
+        "Obstructed labour.",
+        "Twin pregnancy.",
+        "Functional ovarian cysts."
+      ],
+      "correct": 2
+    },
+    {
+      "stem": "All the followings describe pathological retraction ring EXCEPT:",
+      "options": [
+        "It represents an exaggerated physiologic retraction.",
+        "Felt and seen abdominally.",
+        "Present between the upper uterine segment and the lower uterine segment.",
+        "Associated with foetal distress.",
+        "Relieved by deep anaesthesia."
+      ],
+      "correct": 4
+    },
+    {
+      "stem": "A 32-year-old woman G2P1 of 38 week's gestation is having regular contractions. The cervix has been fully dilated for one hour and on examination the head is felt at -1 station with caput succedaneum and severe moulding. The most probable cause for her condition is:",
+      "options": [
+        "Hypertonic inertia.",
+        "Constriction ring.",
+        "Full bladder and rectum.",
+        "Cervical dystocia.",
+        "Cephalo-pelvic disproportion."
+      ],
+      "correct": 4
+    },
+    {
+      "stem": "An obstructed labor in a primipara will eventually leads to:",
+      "options": [
+        "2ry hypotonic inertia.",
+        "Hypertonic inertia.",
+        "Rupture uterus.",
+        "Constriction ring.",
+        "Precipitate labor."
+      ],
+      "correct": 0
+    },
+    {
+      "stem": "Obstructed labor in a multipara will eventually leads to:",
+      "options": [
+        "2ry hypotonic inertia.",
+        "Hypertonic inertia.",
+        "Rupture uterus.",
+        "Constriction ring.",
+        "Precipitate labor."
+      ],
+      "correct": 2
+    },
+    {
+      "stem": "A 34-year-old G5 P4 is referred with a prolonged 2nd stage of labor. Cervix is fully dilated; LOA position; -2 station. Increasing Pelvic caput that is seen protruding out till the introitus and marked moulding are present. FHR is absent. The most appropriate management is:",
+      "options": [
+        "Trial for forceps application.",
+        "Vacuum extraction.",
+        "Emergency Caesarean section.",
+        "Start oxytocin infusion.",
+        "Rehydration and observe."
+      ],
+      "correct": 2
+    },
+    {
+      "stem": "All of the following cause labor dystocia EХСЕРТ:",
+      "options": [
+        "Hydrocephalus.",
+        "Occipto-anterior.",
+        "Face presentation.",
+        "Occipito-posterior.",
+        "Ovarian mass."
+      ],
+      "correct": 1
+    },
+    {
+      "stem": "Management of shoulder dystocia include all of the following EXСЕРТ:",
+      "options": [
+        "Mc Robert's manoeuvre.",
+        "Episiotomy.",
+        "Fundal pressure.",
+        "Woods screw manoeuvre.",
+        "Delivery of the posterior arm."
+      ],
+      "correct": 2
+    },
+    {
+      "stem": "Regarding shoulder dystocia; all the followings are true EХСЕРТ:",
+      "options": [
+        "It could be predicted in most of cases.",
+        "More common in diabetic mothers.",
+        "Fundal pressure should be avoided.",
+        "Avoid lateral flexion of the head on the neck.",
+        "Caesarean delivery is the gold standard treatment."
+      ],
+      "correct": 4
     }
   ]
 }
