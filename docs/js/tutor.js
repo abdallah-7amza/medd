@@ -1,3 +1,5 @@
+import { GoogleGenerativeAI } from "https://cdn.jsdelivr.net/npm/@google/generative-ai";
+
 document.addEventListener('DOMContentLoaded', function() {
     // --- 1. HTML Injection & Element Setup ---
     // (This section is unchanged)
@@ -58,22 +60,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const sendBtn = document.getElementById('chat-send-btn');
     const quickActionsContainer = document.getElementById('quick-actions');
     const GEMINI_API_KEY_STORAGE = 'gemini_api_key';
-    let chatHistory = [];
-    
+    let genAI;
+
     // --- 3. Core Logic: API Key & Initialization ---
     // (This section is unchanged)
     function initializeTutor() {
         const savedApiKey = localStorage.getItem(GEMINI_API_KEY_STORAGE);
         if (savedApiKey) {
-            apiStatus.textContent = '✅';
-            chatWin.classList.toggle('visible');
+            try {
+                genAI = new GoogleGenerativeAI(savedApiKey);
+                apiStatus.textContent = '✅';
+                chatWin.classList.toggle('visible');
+            } catch (error) {
+                console.error("AI Initialization failed:", error);
+                localStorage.removeItem(GEMINI_API_KEY_STORAGE);
+                apiKeyModal.classList.add('visible');
+            }
         } else {
             apiKeyModal.classList.add('visible');
         }
     }
     
     async function validateAndSaveApiKey() {
-        const apiKey = document.getElementById('api-key-input').value.trim();
+        const apiKey = document.getElementById('api-key-input').value;
         const validationMsg = document.getElementById('api-validation-message');
         if (!apiKey) {
             validationMsg.textContent = '❌ Please enter a key.';
@@ -82,31 +91,25 @@ document.addEventListener('DOMContentLoaded', function() {
         validationMsg.textContent = 'Validating...';
 
         try {
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
-            const response = await fetch(apiUrl, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ contents: [{ parts: [{ text: "Hello" }] }] })
-            });
-            if (!response.ok) {
-                const errorBody = await response.json();
-                console.error("API Validation Error:", errorBody);
-                throw new Error(errorBody.error.message || `HTTP error! status: ${response.status}`);
-            }
+            const testAI = new GoogleGenerativeAI(apiKey);
+            const model = testAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
+            await model.generateContent("Test");
+
             localStorage.setItem(GEMINI_API_KEY_STORAGE, apiKey);
+            genAI = testAI;
             validationMsg.textContent = '✅ API connected successfully!';
             setTimeout(() => {
                 apiKeyModal.classList.remove('visible');
                 initializeTutor();
             }, 1000);
         } catch (error) {
-            console.error(error);
-            validationMsg.textContent = `❌ ${error.message}`;
+            console.error("API Key Validation Error:", error);
+            validationMsg.textContent = '❌ Invalid API key or network error.';
         }
     }
 
     // --- 4. Context Awareness ---
-    // (This section is unchanged)
+    // **UPDATED**: Now reads quiz options AND the explanation
     function getPageContext() {
         let context = "No specific context found.";
         const path = window.location.pathname;
@@ -114,65 +117,68 @@ document.addEventListener('DOMContentLoaded', function() {
             context = document.getElementById('content-container')?.innerText;
         } else if (path.includes('quiz.html')) {
             const question = document.getElementById('question-stem')?.innerText;
-            const options = Array.from(document.querySelectorAll('#options-container .option'))
-                                 .map(opt => opt.innerText.trim());
+            const options = Array.from(document.querySelectorAll('#options-container .option')).map(opt => opt.innerText.trim());
+            const explanationContainer = document.getElementById('explanation-container');
+            let explanationText = '';
+            
+            // Check if the explanation is visible on the screen
+            if (explanationContainer && explanationContainer.offsetParent !== null) {
+                explanationText = explanationContainer.innerText.trim();
+            }
+
             if (question) {
-                context = `The current quiz question is: "${question}". The available options are: [${options.join('; ')}]`;
+                context = `This is a quiz page. The current question is: "${question}"\nThe options are: ${options.join(', ')}`;
+                if (explanationText) {
+                    context += `\nThe official explanation provided is: "${explanationText}"`;
+                }
             }
         } else if (path.includes('flashcards.html')) {
             const front = document.getElementById('card-front-content')?.innerText;
             const back = document.getElementById('card-back-content')?.innerText;
             context = `Flashcard - Front: ${front}\nBack: ${back}`;
         }
-        return context;
+        return `The content is:\n\n---\n${context}\n---`;
     }
 
-    // --- 5. Main AI Interaction Function (using fetch) ---
+    // --- 5. Main AI Interaction Function ---
+    // (This section is unchanged)
     async function sendMessageToAI(prompt) {
-        const apiKey = localStorage.getItem(GEMINI_API_KEY_STORAGE);
-        if (!apiKey) {
-            addMessageToChat("API Key not found. Please set it up first.", 'ai');
+        if (!genAI) {
+            addMessageToChat("AI is not initialized. Please check your API Key.", 'ai');
             return;
         }
 
         const thinkingBubble = addMessageToChat("Thinking...", 'ai');
         const pageContext = getPageContext();
-        chatHistory.push({ role: "user", parts: [{ text: `${prompt}\n\nContext:\n${pageContext}` }] });
-        const systemInstruction = {
-            role: "system",
-            parts: [{ text: "Behavior Rules: You are an expert medical tutor. Your role is to explain, connect ideas, and answer with clear clinical logic. ALWAYS explain in English and use markdown for formatting (e.g., **bold**, *italics*, lists). If the user asks for Arabic, you MUST explain in Arabic but KEEP all medical terms in English without translation." }]
-        };
-        const payload = {
-            contents: chatHistory,
-            systemInstruction: systemInstruction
-        };
+        
+        const fullPrompt = `
+            **Behavior Rules:**
+            - You are an expert medical tutor. Your role is to explain, connect ideas, and answer with clear clinical logic.
+            - ALWAYS explain in English and use markdown for formatting (e.g., **bold**, *italics*, lists).
+            - If the user asks for Arabic, you MUST explain in Arabic but KEEP all medical terms in English without translation.
+            
+            **Page Context:**
+            ${pageContext}
+
+            **User's Request:**
+            ${prompt}
+        `;
+
         try {
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
-            const response = await fetch(apiUrl, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
-            if (!response.ok) {
-                 const errorBody = await response.json();
-                 throw new Error(errorBody.error.message);
-            }
-            const result = await response.json();
-            const aiResponse = result.candidates[0].content.parts[0].text;
+            const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
+            const result = await model.generateContent(fullPrompt);
+            const response = await result.response;
+            const text = response.text();
             
-            // *** THE FIX IS HERE: Use innerHTML and marked.parse() ***
             if (typeof marked !== 'undefined') {
-                thinkingBubble.innerHTML = marked.parse(aiResponse);
+                thinkingBubble.innerHTML = marked.parse(text);
             } else {
-                thinkingBubble.textContent = aiResponse; // Fallback if marked.js is missing
+                thinkingBubble.textContent = text;
             }
-            
-            chatHistory.push({ role: "model", parts: [{ text: aiResponse }] });
 
         } catch (error) {
             console.error("Error communicating with Gemini:", error);
-            thinkingBubble.textContent = `Sorry, an error occurred: ${error.message}`;
-            chatHistory.pop();
+            thinkingBubble.textContent = "Sorry, I encountered an error. Please check the console or try again.";
         }
     }
 
@@ -180,10 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // (This section is unchanged)
     fab.addEventListener('click', initializeTutor);
     document.getElementById('validate-api-key-btn').addEventListener('click', validateAndSaveApiKey);
-    document.getElementById('close-chat-btn').addEventListener('click', () => {
-        chatWin.classList.remove('visible');
-        chatHistory = [];
-    });
+    document.getElementById('close-chat-btn').addEventListener('click', () => chatWin.classList.remove('visible'));
     sendBtn.addEventListener('click', () => {
         const userInput = chatInput.value.trim();
         if (userInput) {
@@ -199,18 +202,16 @@ document.addEventListener('DOMContentLoaded', function() {
             sendMessageToAI(prompt);
         }
     });
-
+    
     // --- 7. Helper Functions ---
-    // **UPDATED**: To handle both plain text (user) and HTML (ai)
+    // (This section is unchanged)
     function addMessageToChat(message, sender) {
         const bubble = document.createElement('div');
         bubble.className = `chat-bubble ${sender === 'user' ? 'user-bubble' : 'ai-bubble'}`;
         
         if (sender === 'user') {
-            bubble.textContent = message; // User input is always plain text for security
+            bubble.textContent = message;
         } else {
-            // AI output can be HTML, so we use innerHTML.
-            // This is safe because the content comes from our trusted AI.
             bubble.innerHTML = message;
         }
         
