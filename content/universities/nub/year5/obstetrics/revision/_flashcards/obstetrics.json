@@ -1,0 +1,177 @@
+{
+  "title": "Obstetrics Flashcards",
+  "cards": [
+    {
+      "front": "What is the first sign of pregnancy?",
+      "back": "Amenorrhea."
+    },
+    {
+      "front": "What physiological cardiovascular changes occur during pregnancy?",
+      "back": "Blood volume increases by 50% (peaking at 28-32 weeks), BP drops mid-trimester, cardiac output increases by 40%, and the apex beat shifts upwards and outwards."
+    },
+    {
+      "front": "What causes the physiological drop in hemoglobin during the second trimester?",
+      "back": "Hemodilution, due to a greater increase in plasma volume compared to red blood cell mass."
+    },
+    {
+      "front": "What physiological changes occur to the thyroid during pregnancy?",
+      "back": "Total T3 and T4 levels increase due to higher thyroid-binding globulin (TBG), but free T3 and T4 levels remain unchanged. A physiologic goiter may also occur."
+    },
+    {
+      "front": "Which hormone is responsible for keeping the uterus quiescent (inhibited) during pregnancy?",
+      "back": "Progesterone."
+    },
+    {
+      "front": "What is the decidua?",
+      "back": "It is the secretory endometrium of the uterus during pregnancy, prepared for implantation."
+    },
+    {
+      "front": "List some warning signs and symptoms during pregnancy.",
+      "back": "Severe headache, blurring of vision, epigastric pain, vaginal bleeding, a gush of fluid, or diminished fetal movements."
+    },
+    {
+      "front": "What blood pressure reading defines preeclampsia?",
+      "back": "140/90 mmHg."
+    },
+    {
+      "front": "What is the definitive treatment for preeclampsia?",
+      "back": "Termination of pregnancy."
+    },
+    {
+      "front": "What are the components of HELLP syndrome?",
+      "back": "Hemolysis,\nElevated Liver enzymes, and\nLow Platelets."
+    },
+    {
+      "front": "What is the primary action of Magnesium Sulfate (MgSO4) in severe pre-eclampsia?",
+      "back": "It suppresses the Central Nervous System (CNS) to prevent and control convulsions. Its main function is not the reduction of blood pressure."
+    },
+    {
+      "front": "What is the antidote for MgSO4 toxicity?",
+      "back": "Calcium gluconate."
+    },
+    {
+      "front": "What are the parameters assessed on a CTG (Cardiotocogram)?",
+      "back": "Baseline fetal heart rate, beat-to-beat variability, accelerations, and decelerations."
+    },
+    {
+      "front": "What do the different types of decelerations on a CTG indicate?",
+      "back": "Early: Head Compression.\nVariable: Cord Compression.\nLate: Placental insufficiency / fetal hypoxia (This is the most serious type)."
+    },
+    {
+      "front": "What are the two types of Intrauterine Growth Restriction (IUGR)?",
+      "back": "Symmetrical (TYPE I) and Asymmetrical (TYPE II)."
+    },
+    {
+      "front": "What is the most common complication for a baby born to a mother with poorly managed diabetes?",
+      "back": "Macrosomia."
+    },
+    {
+      "front": "What are potential complications of fetal macrosomia?",
+      "back": "Shoulder dystocia and fetal hypoglycemia after birth."
+    },
+    {
+      "front": "What congenital anomaly is most specific to infants of diabetic mothers?",
+      "back": "Sacral agenesis (Caudal Regression Syndrome)."
+    },
+    {
+      "front": "At what serum bilirubin level does a neonate become at risk for kernicterus?",
+      "back": "Approximately >20 mg/dL."
+    },
+    {
+      "front": "When is amniocentesis typically performed and for what indications?",
+      "back": "It is performed between 14-16 weeks of gestation for indications like karyotyping and checking bilirubin levels."
+    },
+    {
+      "front": "What is the most common cause of antepartum hemorrhage (APH)?",
+      "back": "Placental abruption."
+    },
+    {
+      "front": "What is the most common clinical presentation of placental abruption?",
+      "back": "Pain."
+    },
+    {
+      "front": "What is the most common clinical presentation of placenta previa?",
+      "back": "Asymptomatic. The second most common is painless vaginal bleeding."
+    },
+    {
+      "front": "What is the most common cause of primary postpartum hemorrhage (PPH)?",
+      "back": "Uterine atony."
+    },
+    {
+      "front": "How is postpartum hemorrhage (PPH) defined by blood volume?",
+      "back": "Loss of >500 cc after a vaginal delivery or >1000 cc after a Cesarean section."
+    },
+    {
+      "front": "What is the most important difference between true and false labor pains?",
+      "back": "True labor involves progressive cervical dilatation and the pain is not relieved by analgesia."
+    },
+    {
+      "front": "What are the 5 criteria of the Bishop Score?",
+      "back": "Dilatation, effacement, consistency, position, and station."
+    },
+    {
+      "front": "In which stage of labor is a partogram used?",
+      "back": "Only in the first stage of labor to track cervical dilation, effacement, and station."
+    },
+    {
+      "front": "Describe the leg positions in complete, frank, and incomplete breech presentations.",
+      "back": "Complete: Flexed hips and knees.\nFrank: Flexed hips and extended knees.\nIncomplete (Footling/Knee): Extended hips."
+    },
+    {
+      "front": "What is the denominator in a breech presentation?",
+      "back": "The sacrum."
+    },
+    {
+      "front": "Compare a mediolateral episiotomy with a median episiotomy.",
+      "back": "Mediolateral: More bleeding and more dyspareunia, but no anal sphincter injury.\nMedian: Better cosmetic result and healing with less bleeding, but a higher risk of anal sphincter affection."
+    },
+    {
+      "front": "What is the most common complication of obstructed labor in a multiparous woman?",
+      "back": "Uterine Rupture."
+    },
+    {
+      "front": "What is the most common cause of acute uterine inversion?",
+      "back": "Rapid traction on the cord before full placental separation."
+    },
+    {
+      "front": "How is a retained placenta defined based on time?",
+      "back": "When the placenta is not delivered within 30 minutes of childbirth."
+    },
+    {
+      "front": "What is the most common cause for a Cesarean section?",
+      "back": "A previous CS."
+    },
+    {
+      "front": "Within what timeframe should an Rh-negative mother receive Anti-D immunoglobulin after delivering an Rh-positive baby?",
+      "back": "Within 72 hours."
+    },
+    {
+      "front": "What is the management for a threatened abortion?",
+      "back": "Physical and mental rest."
+    },
+    {
+      "front": "What is the most common complication of twin pregnancy?",
+      "back": "Preterm delivery."
+    },
+    {
+      "front": "What is the complaint associated with a septate uterus and what is its management?",
+      "back": "The complaint is recurrent abortion, and management is hysteroscopic septal resection."
+    },
+    {
+      "front": "What is the complaint associated with a bicornuate uterus?",
+      "back": "Preterm labour."
+    },
+    {
+      "front": "In a pregnant patient with red degeneration of a fibroid, what is the main complaint and management?",
+      "back": "The main complaint is pain, and management is conservative with analgesics and fluids. Myomectomy is contraindicated."
+    },
+    {
+      "front": "What is the drug of choice for treating hyperthyroidism during pregnancy?",
+      "back": "Propylthiouracil (PTU)."
+    },
+    {
+      "front": "Why is radioactive iodine contraindicated for treating hyperthyroidism in pregnancy?",
+      "back": "Because it can cross the placenta and destroy the fetal thyroid gland."
+    }
+  ]
+}
