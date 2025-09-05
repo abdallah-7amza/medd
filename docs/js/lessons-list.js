@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     navContainer.innerHTML = '<a href="javascript:history.back()" class="back-link">← Back</a>';
 
     if (!selectedUniId) {
-        pageTitleEl.textContent = 'No University Selected.';
+        // This check is important, but there is no pageTitleEl in index.html
+        if (pageTitleEl) pageTitleEl.textContent = 'No University Selected.';
         return;
     }
 
@@ -29,11 +30,19 @@ document.addEventListener('DOMContentLoaded', async function() {
             currentNode = currentNode.children[segment];
         }
 
-        pageTitleEl.textContent = currentNode.label || currentNode.name;
+        if (pageTitleEl) {
+            if (pathSegments.length <= 1) {
+                pageTitleEl.style.display = 'none';
+            } else {
+                pageTitleEl.style.display = 'block';
+                pageTitleEl.textContent = currentNode.label || currentNode.name;
+            }
+        }
+
         cardContainer.innerHTML = '';
         toolbarContainer.innerHTML = '';
 
-        // **UPDATED**: Logic now passes the correct 'type' to createResourceButton
+        // Logic now passes the correct 'type' to createResourceButton
         if (currentNode.resources) {
             if (currentNode.resources.collectionQuizzes) {
                 currentNode.resources.collectionQuizzes.forEach(quiz => {
@@ -62,11 +71,11 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
     } catch (error) {
         console.error('Error:', error);
-        pageTitleEl.textContent = `Error: ${error.message}`;
+        if(pageTitleEl) pageTitleEl.textContent = `Error: ${error.message}`;
     }
 });
 
-// **UPDATED**: This function now assigns the correct class for lessons
+// This function now assigns the correct class for lessons
 function createCard(title, url, description) {
     const cardLink = document.createElement('a');
     cardLink.href = url;
@@ -75,7 +84,7 @@ function createCard(title, url, description) {
     return cardLink;
 }
 
-// **UPDATED**: This function now assigns a class based on the resource type
+// This function now assigns a class based on the resource type
 function createResourceButton(text, url, type) {
     const button = document.createElement('a');
     button.href = url;
