@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-05T12:48:49.352Z",
+  "generatedAt": "2025-09-05T12:49:20.782Z",
   "tree": {
     "nub": {
       "children": {
@@ -4341,13 +4341,6 @@
                 },
                 "neonatology": {
                   "children": {
-                    "jaundice": {
-                      "children": {},
-                      "hasIndex": true,
-                      "label": "Neonatal Jaundice",
-                      "summary": "An overview of the causes, types, diagnosis, and management of jaundice in newborns.",
-                      "markdownContent": "\n# Neonatal Jaundice\n\nNeonatal jaundice is the yellowing of the skin and the white part of the eye (sclera) in a newborn baby, caused by a high level of bilirubin in the blood (Hyperbilirubinemia). It is one of the most common conditions requiring medical attention in this age group.\n\n## Types of Neonatal Jaundice\n\nIt can be broadly classified into two types:\n\n### 1. Physiological Jaundice\nThis is the most common type and is considered largely normal. It occurs in more than 50% of newborns.\n* **Cause:** The newborn's liver is not fully mature, which reduces its ability to process bilirubin effectively.\n* **Onset:** It typically begins on the second or third day after birth, peaks between the third and fifth days, and then gradually disappears.\n\n### 2. Pathological Jaundice\nThis is the type that warrants concern and investigation, as it results from an underlying medical condition.\n* **Warning Signs:**\n    * Appearance of jaundice within the first 24 hours of the newborn's life.\n    * A rapid and persistent rise in bilirubin levels.\n    * Prolonged duration (lasting more than two weeks).\n    * May be accompanied by other symptoms such as lethargy, poor feeding, or pale stools.\n\n* **Common Causes:**\n    * **Blood group incompatibility (ABO/Rh incompatibility):** Leads to the rapid breakdown of red blood cells.\n    * **G6PD enzyme deficiency (Favism):** Makes red blood cells more susceptible to breakdown.\n    * **Neonatal Sepsis.**\n    * **Liver disease or biliary atresia.**\n\n## Diagnosis and Assessment\n\n1.  **Clinical Examination:** Observing the color of the baby's skin and the whites of their eyes.\n2.  **Bilirubin Level Measurement:**\n    * **Transcutaneous Bilirubin (TcB):** A simple device placed on the baby's skin.\n    * **Total Serum Bilirubin (TSB):** This is the most accurate measurement, obtained by taking a blood sample.\n\n## Treatment\n\nThe goal of treatment is to lower the bilirubin level to prevent it from reaching the brain and causing serious complications (Kernicterus).\n\n* **Phototherapy:** This is the most common treatment, where the baby is exposed to special blue light that helps break down bilirubin in the skin into substances the body can easily eliminate.\n* **Exchange Transfusion:** This is reserved for very severe cases that do not respond to phototherapy, where the baby's blood is gradually replaced with donor blood.\n* \n"
-                    },
                     "neonatal-jaundice": {
                       "children": {},
                       "hasIndex": false,
