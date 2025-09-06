@@ -1,16 +1,34 @@
 {
-  "title": "rounds",
+  "title": "Rounds",
   "questions": [
     {
       "stem": "What is the syndrome of absent uterus and upper vagina?",
       "options": [
         "Mayer-Rokitansky-Küster-Hauser (MRKH) Syndrome",
         "Turner Syndrome",
-        "Asherman Syndrome",
-        "Androgen Insensitivity Syndrome"
+        "Asherman Syndrome"
       ],
       "correct": 0,
-      "explanation": "Mayer-Rokitansky-Küster-Hauser (MRKH) Syndrome is characterized by congenital failure of development of the Mullerian duct (para-mesonephric duct) structures, specifically the uterus, cervix, and upper vagina. Individuals with this syndrome are females with a 46 XX karyotype and normal secondary sexual characteristics."
+      "explanation": "Mayer-Rokitansky-Küster-Hauser (MRKH) Syndrome is characterized by females with a congenital failure of development of the Mullerian duct (para-mesonephric duct) structures, which include the uterus, cervix, and upper vagina."
+    },
+    {
+      "stem": "A patient with a 46,XX karyotype, normal ovaries, but an absent uterus and vagina may have which condition?",
+      "options": [
+        "Mayer-Rokitansky-Küster-Hauser (MRKH) syndrome",
+        "Asherman syndrome"
+      ],
+      "correct": 0,
+      "explanation": "Females with Mullerian agenesis (MRKH Syndrome) have a 46,XX karyotype and congenital failure of development of the uterus, cervix, and upper vagina. They have normal ovaries that are capable of producing normal amounts of estrogen."
+    },
+    {
+      "stem": "What is the karyotype in Mayer-Rokitansky-Küster-Hauser Syndrome?",
+      "options": [
+        "46, XX",
+        "45, X",
+        "46, XY"
+      ],
+      "correct": 0,
+      "explanation": "In Mayer-Rokitansky-Küster-Hauser (MRKH) Syndrome, the genetic study of a blood sample reveals a 46, XX chromosomal pattern."
     },
     {
       "stem": "Estrogen has an effect on all of the following EXCEPT:",
@@ -21,161 +39,57 @@
         "Endometrial proliferation"
       ],
       "correct": 2,
-      "explanation": "While estrogen plays a role in breast development (thelarche), uterine growth, and endometrial proliferation, axillary and pubic hair growth (pubarche) occurs under the effect of ACTH and androgens, not estrogen."
+      "explanation": "Estrogen contributes to breast development, uterine growth, and endometrial proliferation. However, axillary and pubic hair growth occurs under the effect of ACTH and androgens, not estrogen."
     },
     {
       "stem": "Which hormones characteristically increase after Menopause?",
       "options": [
         "Estrogen and Progesterone",
         "FSH and LH",
-        "Prolactin",
-        "Testosterone"
+        "Prolactin"
       ],
       "correct": 1,
-      "explanation": "After menopause, there is a marked increase in serum FSH & LH levels due to ovarian follicular depletion and subsequent cessation of ovarian estrogen (E2) and inhibin-B secretion, which releases the pituitary gland from their negative feedback effect."
+      "explanation": "After menopause, there is a marked increase in serum FSH & LH levels due to the depletion of ovarian primordial follicles and subsequent cessation of ovarian estrogen (E2) secretion, releasing the pituitary gland from negative feedback."
     },
     {
-      "stem": "The pudendal artery is a branch of which artery?",
+      "stem": "According to Tanner staging, what is often the first physical sign of puberty in girls?",
       "options": [
-        "External iliac artery",
-        "Internal iliac artery",
-        "Femoral artery",
-        "Aorta"
+        "Growth spurt",
+        "Thelarche (breast budding)",
+        "Pubarche (growth of pubic hair)"
       ],
       "correct": 1,
-      "explanation": "The internal pudendal artery is one of the two terminal branches of the anterior division of the internal iliac artery. It is the main arterial supply of the vulva."
-    },
-    {
-      "stem": "All of the following support the uterus EXCEPT:",
-      "options": [
-        "Uterosacral ligament",
-        "Cardinal ligament",
-        "Sacrospinous Ligament",
-        "Pelvic diaphragm"
-      ],
-      "correct": 2,
-      "explanation": "The uterus is supported by cervical ligaments such as the pubocervical, Mackenrodt’s (cardinal), and uterosacral ligaments, as well as the pelvic floor muscles (pelvic diaphragm) and endopelvic fascia. The sacrospinous ligament is not listed as a primary direct support for the uterus in the context of normal anatomy or uterine support, though it is used in surgical procedures for prolapse repair."
-    },
-    {
-      "stem": "Asherman Syndrome can be diagnosed by all these tools EXCEPT:",
-      "options": [
-        "HSG",
-        "Hysteroscopy",
-        "Ultrasound",
-        "Laparoscopy"
-      ],
-      "correct": 3,
-      "explanation": "Asherman Syndrome, which describes acquired intrauterine adhesions, can be diagnosed effectively by Hysterosalpingography (HSG) and hysteroscopy, as these tools allow visualization of the uterine cavity. While pelvic ultrasound can evaluate the uterus, and laparoscopy can view the external pelvic organs, they are not specifically highlighted as definitive diagnostic tools for intrauterine adhesions in the same way HSG and hysteroscopy are."
-    },
-    {
-      "stem": "What is the gold standard to diagnose endometriosis?",
-      "options": [
-        "Ultrasound",
-        "MRI",
-        "CA-125 level",
-        "Laparoscopy with biopsy"
-      ],
-      "correct": 3,
-      "explanation": "Diagnostic Laparoscopy (with or without biopsy) is considered the gold standard in diagnosis and staging of endometriosis. It allows direct visualization of endometriotic implants and performing biopsies to confirm the visual diagnosis."
-    },
-    {
-      "stem": "All are symptoms of endometriosis EXCEPT:",
-      "options": [
-        "Dysmenorrhea",
-        "Dyspareunia",
-        "Infertility",
-        "Amenorrhea"
-      ],
-      "correct": 3,
-      "explanation": "Endometriosis commonly presents with chronic pelvic pain, secondary dysmenorrhea, dyspareunia, and infertility. Amenorrhea, or the absence of menstruation, is not listed as a symptom of endometriosis; rather, endometriosis is often associated with painful menstruation (dysmenorrhea) due to the bleeding of ectopic endometrial tissue."
+      "explanation": "The Tanner stages of pubertal growth indicate that the pubertal cascade starts usually by growth spurt, followed by breast development (thelarche), pubic hair, menarche, and finally axillary hair."
     },
     {
       "stem": "An 8-year-old girl has vaginal bleeding & breast enlargement but no axillary or pubic hair. The diagnosis is:",
       "options": [
         "Constitutional true puberty",
         "Estrogen-secreting ovarian tumor",
-        "McCune-Albright syndrome",
-        "Hypothyroidism"
+        "McCune-Albright syndrome"
       ],
       "correct": 1,
-      "explanation": "Precocious puberty describes the appearance of secondary sexual characters before 8 years of age. Isolated breast enlargement and vaginal bleeding in an 8-year-old girl, without the presence of axillary or pubic hair, points towards an estrogen-secreting ovarian tumor. This is because breast development and vaginal bleeding (menstruation) are primarily driven by estrogen, while pubic and axillary hair growth (pubarche) is under the effect of ACTH and androgens."
-    },
-    {
-      "stem": "All are features of imperforate hymen EXCEPT:",
-      "options": [
-        "Primary amenorrhea",
-        "Cyclic, monthly abdominal pain",
-        "Bulging, bluish membrane at the introitus",
-        "Short stature"
-      ],
-      "correct": 3,
-      "explanation": "Imperforate hymen is a congenital anomaly that leads to primary amenorrhea after puberty because menstrual blood accumulates behind the hymen. This accumulation causes cyclic, monthly lower abdominal pain and progressive abdominal enlargement. On inspection of the vulva, the hymen may bulge at the hymeneal ring with a slight bluish color. Short stature is not a characteristic feature of imperforate hymen; it is, for example, a phenotypic characteristic of Turner Syndrome."
-    },
-    {
-      "stem": "Ovulation occurs approximately how long after the onset of the LH surge?",
-      "options": [
-        "12 hours",
-        "24 hours",
-        "36 hours",
-        "48 hours"
-      ],
-      "correct": 2,
-      "explanation": "Ovulation (oocyte release) occurs approximately 36 hours after the onset of the LH surge and about 12 hours after the LH peak."
-    },
-    {
-      "stem": "Investigation of Androgen Insensitivity Syndrome includes all of the following EXCEPT:",
-      "options": [
-        "Karyotyping",
-        "Testosterone level measurement",
-        "Pelvic ultrasound",
-        "Endometrial biopsy"
-      ],
-      "correct": 3,
-      "explanation": "Androgen Insensitivity Syndrome (AIS) involves a 46, XY karyotype, with absent uterus and upper vagina, and typically present with primary amenorrhea and normal secondary sexual characteristics. Investigations include karyotyping, assessment of testosterone levels (which are in the male range), and pelvic ultrasound to reveal the absent uterus and upper vagina, and presence of gonads (testicles). An endometrial biopsy would not be performed as these individuals have an absent uterus."
-    },
-    {
-      "stem": "The uterine artery supplies which of the following?",
-      "options": [
-        "Ovary",
-        "Uterus",
-        "Vagina",
-        "All of the above"
-      ],
-      "correct": 3,
-      "explanation": "The uterine artery is the main supply of the uterus, giving ascending branches that anastomose with ovarian arteries and descending cervical branches that supply the lower cervix. Additionally, the uterine artery is one of the sources of blood supply to the ureter, and its branches contribute to the blood supply of the vagina. Therefore, the uterine artery directly or indirectly supplies the uterus, upper cervix, ureters, and anastomoses with ovarian vessels, and contributes to vaginal supply."
+      "explanation": "Precocious puberty describes the appearance of secondary sexual characters before 8 years of age. If there is vaginal bleeding and breast enlargement (signs of estrogen effect) but no axillary or pubic hair (which would be influenced by androgens), it suggests a source of estrogen that is not also producing androgens, such as an estrogen-secreting ovarian tumor."
     },
     {
       "stem": "What is the most common cause of primary amenorrhea?",
       "options": [
         "Turner syndrome",
         "Imperforate hymen",
-        "Cervical atresia",
-        "Asherman syndrome"
+        "Cervical atresia"
       ],
       "correct": 0,
-      "explanation": "Turner Syndrome (Gonadal Dysgenesis) is stated as the commonest cause of primary amenorrhea, being responsible for 30% of cases. Imperforate hymen is the commonest cause for cryptomenorrhea, but not the overall commonest cause of primary amenorrhea. Asherman Syndrome is an acquired cause of secondary amenorrhea, and cervical atresia is a very rare condition."
+      "explanation": "Turner syndrome (Gonadal Dysgenesis) is the commonest cause of primary amenorrhea, being responsible for 30% of cases."
     },
     {
-      "stem": "Which part of the uterus is retained during the menstrual cycle?",
+      "stem": "All are features of imperforate hymen EXCEPT:",
       "options": [
-        "Basal layer",
-        "Superficial layer",
-        "Functional layer",
-        "Intermediate layer"
+        "Primary amenorrhea",
+        "Cyclic, monthly abdominal pain",
+        "Short stature"
       ],
-      "correct": 0,
-      "explanation": "The endometrium is divided into three distinct zones: the basal portion (basalis), the mid-portion (spongiosum), and the superficial portion (compactum). The basal portion (basalis) represents the basal 25% of the endometrium, which is retained during menstruation and shows few changes during the menstrual cycle. The superficial and intermediate (functional) layers are shed during menstruation."
-    },
-    {
-      "stem": "In a pituitary stalk lesion, which hormone is NOT affected (or increases)?",
-      "options": [
-        "Prolactin",
-        "Growth Hormone (GH)",
-        "Follicle-Stimulating Hormone (FSH)",
-        "Luteinizing Hormone (LH)"
-      ],
-      "correct": 0,
-      "explanation": "Pituitary hormones (FSH, LH, GH, ACTH, and TSH) are stimulated and controlled by hypothalamic releasing hormones. However, prolactin (PRL) is under chronic inhibition by prolactin inhibiting factor (PIF), which is dopamine. Consequently, damage to the pituitary stalk will interrupt the transport of PIF, resulting in hypopituitarism for other hormones but an associated increase in PRL secretion."
+      "correct": 2,
+      "explanation": "Imperforate hymen can cause primary amenorrhea and cyclic, monthly abdominal pain due to accumulation of menstrual blood (hematocolpos and hematometra). Short stature is a characteristic feature of Turner syndrome, not imperforate hymen."
     },
     {
       "stem": "In cervical atresia, all of the following are present EXCEPT:",
@@ -185,17 +99,37 @@
         "Hematosalpinx"
       ],
       "correct": 1,
-      "explanation": "In cervical atresia, there is failure of canalization of the cervical canal. This leads to a picture of cryptomenorrhea where menstrual blood accumulates. Pelvic ultrasound reveals marked hematometra (blood in the uterus) and no hematocolpos (blood in the vagina), as the vagina is typically not obstructed at its lower end. Hematosalpinx (blood in the fallopian tubes) may occur in long-standing cases as blood extends retrograde from the uterus. In contrast, hematocolpos is characteristic of imperforate hymen where the obstruction is at the vaginal opening."
+      "explanation": "In congenital cervical atresia, failure of canalization of the cervical canal leads to accumulation of menstrual blood, resulting in marked hematometra (blood in uterus) but no hematocolpos (blood in vagina) because the cervix is blocked. The source does not list hematosalpinx as a feature present in cervical atresia."
     },
     {
-      "stem": "IVF is indicated in all of the following EXCEPT:",
+      "stem": "Where does fertilization normally occur?",
       "options": [
-        "Mild oligospermia",
-        "Failure of IUI",
-        "Severe tubal adhesions"
+        "Distal part of the fallopian tube (Ampulla)",
+        "Proximal part of the fallopian tube",
+        "Uterus"
       ],
       "correct": 0,
-      "explanation": "IVF/ICSI procedures are indicated in cases of severe male factor, unexplained infertility (especially after repeated failed IUI), and severe tubo-peritoneal factor with tubal damage and/or extensive tubo-peritoneal adhesions. Mild oligospermia is an indication for Intrauterine Insemination (IUI), not typically IVF as a first line."
+      "explanation": "Fertilization normally occurs in the distal part of the fallopian tube (Ampulla)."
+    },
+    {
+      "stem": "Which part of the uterus is retained during the menstrual cycle?",
+      "options": [
+        "Basal layer",
+        "Functional layer",
+        "Intermediate layer"
+      ],
+      "correct": 0,
+      "explanation": "The endometrium has a basal portion (basalis) which represents the basal 25% of the endometrium, and is retained during menstruation. The functional portion (superficial and intermediate layers) is shed during menstruation."
+    },
+    {
+      "stem": "Ovulation occurs approximately how long after the onset of the LH surge?",
+      "options": [
+        "12 hours",
+        "24 hours",
+        "36 hours"
+      ],
+      "correct": 2,
+      "explanation": "Ovulation (oocyte release) occurs approximately 36 hours after the onset of the LH surge and about 12 hours after the LH peak."
     },
     {
       "stem": "What is the most common cause of infertility?",
@@ -205,36 +139,7 @@
         "Uterine"
       ],
       "correct": 0,
-      "explanation": "In females, ovulatory disturbance (ovarian factor) is the most commonly encountered factor for infertility, being the primary cause in almost 40% of cases. Tubal damage and peritoneal adhesions are also frequently encountered, but ovarian factor holds the highest percentage."
-    },
-    {
-      "stem": "A patient with hirsutism is diagnosed with PCOS and does not need fertility for the next two years. What is the best management?",
-      "options": [
-        "Cyclic contraceptive pills",
-        "Bromocriptine"
-      ],
-      "correct": 0,
-      "explanation": "For hirsutism management, oral contraceptive pills (OCPs), containing combined low dose estrogen and progesterone, are used as they decrease ovarian androgen production, increase SHBG, and decrease free testosterone levels. This is particularly suitable for a patient with PCOS who does not desire fertility for the next two years, as OCPs also provide contraception. Bromocriptine is used for hyperprolactinemia."
-    },
-    {
-      "stem": "All of the following are ovarian causes of anovulation EXCEPT:",
-      "options": [
-        "Hypothyroidism",
-        "Asherman syndrome"
-      ],
-      "correct": 1,
-      "explanation": "Ovarian causes of anovulation include conditions like Polycystic Ovary Syndrome (PCOS), Turner syndrome, and premature ovarian failure. Hypothyroidism is an endocrine disorder that can affect the hypothalamic-pituitary-ovarian axis and lead to anovulation due to elevated TRH and subsequently elevated prolactin levels. Asherman syndrome, however, is a uterine disorder characterized by intrauterine adhesions that prevent endometrial proliferation, leading to secondary amenorrhea, but it is not an ovarian cause of anovulation."
-    },
-    {
-      "stem": "A uterine anomaly with 2 cavities and one cervix is known as:",
-      "options": [
-        "Septate uterus",
-        "Bicornuate uterus",
-        "Uterus didelphys",
-        "Arcuate uterus"
-      ],
-      "correct": 1,
-      "explanation": "A bicornuate uterus is described as having two uterine bodies (2 horns). The image in the sourcebook labeled 'Bicornuate uterus' depicts two uterine horns with one cervix."
+      "explanation": "Ovulatory disturbance (an ovarian factor) is the most commonly encountered factor for female infertility, being the primary cause in almost 40% of cases. Tubal damage and peritoneal adhesions are also frequent causes."
     },
     {
       "stem": "What is the first investigation for male infertility?",
@@ -244,40 +149,127 @@
         "Scrotal ultrasound"
       ],
       "correct": 0,
-      "explanation": "In the diagnosis of male factor infertility, semen analysis should be obtained from all males during infertility investigations. This is considered the primary and essential initial investigation."
+      "explanation": "Semen analysis should be obtained from all males during infertility investigations and is presented as the first special investigation listed for male factor diagnosis."
     },
     {
-      "stem": "Causes of hyperprolactinemia include all of the following EXCEPT:",
+      "stem": "IVF is indicated in all of the following EXCEPT:",
       "options": [
-        "Down-regulation of dopamine inhibition",
-        "Pregnancy",
-        "Lactation",
-        "Dopamine agonists"
+        "Mild oligospermia",
+        "Failure of IUI",
+        "Severe tubal adhesions"
       ],
-      "correct": 3,
-      "explanation": "Hyperprolactinemia can be caused by physiological states such as pregnancy and lactation. It can also be induced by drugs that cause a reduction in hypothalamic secretion of dopamine (PIF). Dopamine agonists, such as Bromocriptine and Cabergoline, are used as treatments for hyperprolactinemia because they stimulate dopamine receptors, thereby inhibiting prolactin secretion, rather than causing it."
+      "correct": 0,
+      "explanation": "Mild oligospermia is listed as an indication for Intra Uterine Insemination (IUI). IVF/ICSI is indicated for severe male factor, failed IUI, severe tubal adhesions, and unexplained infertility."
+    },
+    {
+      "stem": "IVF is used in all of the following EXCEPT:",
+      "options": [
+        "Tubal blockage",
+        "Azoospermia",
+        "Unexplained infertility"
+      ],
+      "correct": 1,
+      "explanation": "IVF, particularly with ICSI, is indicated for tubal blockage, severe male factor, and unexplained infertility. While severe male factor is an indication, the question implies azoospermia as an exception, potentially because it may require additional procedures for sperm retrieval or donor sperm, which fall outside the typical direct 'use' of IVF without preliminary steps."
+    },
+    {
+      "stem": "The pudendal artery is a branch of which artery?",
+      "options": [
+        "External iliac artery",
+        "Internal iliac artery",
+        "Femoral artery"
+      ],
+      "correct": 1,
+      "explanation": "The internal pudendal artery is one of the two terminal branches of the anterior division of the internal iliac artery."
+    },
+    {
+      "stem": "What is the main support of the uterus?",
+      "options": [
+        "Round ligament",
+        "Cardinal (transverse cervical) ligament",
+        "Pelvic floor muscles"
+      ],
+      "correct": 1,
+      "explanation": "The cervical ligaments, which include the Mackenrodt’s ligaments (lateral cervical or cardinal ligaments of the cervix), are described as the strongest cervical ligaments and act as the chief support of the uterus and pelvic structures."
+    },
+    {
+      "stem": "All of the following support the uterus EXCEPT:",
+      "options": [
+        "Uterosacral ligament",
+        "Cardinal ligament",
+        "Sacrospinous Ligament"
+      ],
+      "correct": 2,
+      "explanation": "The uterosacral ligament, cardinal ligament, and pelvic floor muscles (which include pubococcygeus) are all listed as supports of the uterus. The sacrospinous ligament is not listed as a direct support for the uterus in the provided context."
+    },
+    {
+      "stem": "A uterine anomaly with 2 cavities and one cervix is known as:",
+      "options": [
+        "Septate uterus",
+        "Bicornuate uterus",
+        "Uterus didelphys"
+      ],
+      "correct": 0,
+      "explanation": "A septate uterus is a uterine anomaly where the uterine cavity is divided by a longitudinal complete median septum."
+    },
+    {
+      "stem": "What is the most used method for diagnosis of fibroids and uterine anomalies?",
+      "options": [
+        "HSG",
+        "Hysteroscopy",
+        "3D Ultrasound"
+      ],
+      "correct": 2,
+      "explanation": "Introduction of 3D US and Saline Infusion Sonography (SIS), has improved the accuracy of US diagnosis for congenital uterine anomalies and uterine leiomyomas, making it the gold standard."
+    },
+    {
+      "stem": "What is the most common pathological change in a myoma during menopause?",
+      "options": [
+        "Atrophy",
+        "Red degeneration",
+        "Malignant transformation"
+      ],
+      "correct": 0,
+      "explanation": "Atrophy is the commonest change occurring in the menopause due to estrogen deficiency."
+    },
+    {
+      "stem": "A common type of degeneration in a leiomyoma during pregnancy is:",
+      "options": [
+        "Red degeneration",
+        "Hyaline degeneration",
+        "Malignant degeneration"
+      ],
+      "correct": 0,
+      "explanation": "Red degeneration (Necro-biosis) is the commonest change during pregnancy in a leiomyoma, possibly as the tumor may outgrow its blood supply."
     },
     {
       "stem": "Malignant transformation to leiomyosarcoma is suspected in which case?",
       "options": [
         "Menopause with rapid enlargement of a fibroid",
         "A small, asymptomatic fibroid",
-        "Red degeneration during pregnancy",
-        "A calcified fibroid"
+        "Red degeneration during pregnancy"
       ],
       "correct": 0,
-      "explanation": "Malignant transformation of a leiomyoma into a leiomyosarcoma is suspected whenever tumors elicit a rapid growth without evidence of degeneration, tumors that first appear, or increase in size, in the menopause, or tumors that rapidly recur after surgical excision."
+      "explanation": "Malignancy to leiomyosarcoma is suspected whenever tumors that first appear, or increase in size, in the menopause or tumors that elicit a rapid growth without evidence of degeneration."
     },
     {
-      "stem": "What is the karyotype in Mayer-Rokitansky-Küster-Hauser Syndrome?",
+      "stem": "What is the gold standard to diagnose endometriosis?",
       "options": [
-        "46, XX",
-        "45, X",
-        "46, XY",
-        "47, XXY"
+        "Ultrasound",
+        "Laparoscopy with biopsy",
+        "CA-125 level"
       ],
-      "correct": 0,
-      "explanation": "Patients with Mayer-Rokitansky-Küster-Hauser (MRKH) Syndrome are described as females with a 46 XX karyotype. This distinguishes them from conditions like Turner Syndrome (45, X) or Androgen Insensitivity Syndrome (46, XY)."
+      "correct": 1,
+      "explanation": "Diagnostic Laparoscopy (with or without biopsy) is the gold standard in diagnosis and staging of endometriosis."
+    },
+    {
+      "stem": "All are symptoms of endometriosis EXCEPT:",
+      "options": [
+        "Dysmenorrhea",
+        "Dyspareunia",
+        "Amenorrhea"
+      ],
+      "correct": 2,
+      "explanation": "Common symptoms of endometriosis include dysmenorrhea and dyspareunia, as well as chronic pelvic pain. Amenorrhea is the absence or cessation of menstruation and is not listed as a typical symptom of endometriosis; rather, endometriosis can cause painful menses (dysmenorrhea)."
     },
     {
       "stem": "A female with dysmenorrhea and pelvic pain due to endometriosis (post-surgery) needs management to relieve pain. Which is a suitable option?",
@@ -288,7 +280,96 @@
         "All of the above"
       ],
       "correct": 3,
-      "explanation": "Medical treatment for endometriosis aims to alleviate symptoms. Continuous Combined Oral Contraceptive Pills (COCs), Continuous Synthetic Progesterone (Gestagens), and Long-acting GnRH agonists are all presented as ways to manage endometriosis symptoms, particularly pain, after surgery."
+      "explanation": "Medical treatment for endometriosis pain includes GnRH agonists, Danazol (formerly used), and Continuous Combined Oral Contraceptive Pills (COCs). Thus, all listed options are suitable."
+    },
+    {
+      "stem": "Asherman Syndrome can be diagnosed by all these tools EXCEPT:",
+      "options": [
+        "HSG",
+        "Hysteroscopy",
+        "Laparoscopy"
+      ],
+      "correct": 2,
+      "explanation": "HSG (Hysterosalpingography) and hysteroscopy are excellent diagnostic tools for Asherman's syndrome. Laparoscopy is not mentioned as a primary diagnostic tool for Asherman Syndrome (intrauterine adhesions)."
+    },
+    {
+      "stem": "Treatment of uterine synechiae (Asherman syndrome) includes all of the following EXCEPT:",
+      "options": [
+        "Surgery",
+        "Corticosteroids (to decrease fibrosis)",
+        "GnRH agonists"
+      ],
+      "correct": 2,
+      "explanation": "Treatment of uterine synechiae (Asherman syndrome) involves lysis of adhesions via hysteroscopy, followed by cyclic combined EST/PRG therapy to restore endometrial regeneration. Corticosteroids are also mentioned as part of the treatment for uterine synechiae (Asherman syndrome). GnRH agonists are not listed as part of the treatment for Asherman syndrome."
+    },
+    {
+      "stem": "In a pituitary stalk lesion, which hormone level is expected to increase?",
+      "options": [
+        "Prolactin",
+        "Growth Hormone (GH)",
+        "FSH"
+      ],
+      "correct": 0,
+      "explanation": "Damage to the pituitary stalk will result in hypopituitarism for FSH, LH, GH, ACTH, and TSH, but with an associated increase in PRL (prolactin) secretion because prolactin is under chronic inhibition by prolactin inhibiting factor (PIF)."
+    },
+    {
+      "stem": "Causes of hyperprolactinemia include all of the following EXCEPT:",
+      "options": [
+        "Pregnancy",
+        "Lactation",
+        "Dopamine agonists"
+      ],
+      "correct": 2,
+      "explanation": "Causes of hyperprolactinemia include pregnancy, lactation, drug-induced effects (e.g., psychotropic drugs reducing dopamine), primary hypothyroidism, pituitary adenomas, and hypothalamic disorders. Dopamine agonists are actually used as treatment for hyperprolactinemia because dopamine is the prolactin inhibiting factor (PIF)."
+    },
+    {
+      "stem": "A patient with hirsutism is diagnosed with PCOS and does not need fertility for the next two years. What is the best management?",
+      "options": [
+        "Cyclic contraceptive pills",
+        "Bromocriptine"
+      ],
+      "correct": 0,
+      "explanation": "For hirsutism management in PCOS patients who do not need fertility, oral contraceptive pills (OCPs), containing combined low dose E and P, decrease ovarian androgen production, increase SHBG, and decrease free T levels."
+    },
+    {
+      "stem": "All of the following are causes of anovulation EXCEPT:",
+      "options": [
+        "Hypothyroidism",
+        "Asherman syndrome",
+        "Polycystic Ovary Syndrome (PCOS)"
+      ],
+      "correct": 1,
+      "explanation": "Hypothyroidism and Polycystic Ovary Syndrome (PCOS) are both listed as causes of anovulation. Asherman syndrome is characterized by acquired intrauterine adhesions that prevent endometrial proliferation, leading to secondary amenorrhea, but it is not a primary cause of anovulation; rather, it's a uterine factor."
+    },
+    {
+      "stem": "Investigation of Androgen Insensitivity Syndrome includes all of the following EXCEPT:",
+      "options": [
+        "Karyotyping",
+        "Pelvic ultrasound",
+        "Endometrial biopsy"
+      ],
+      "correct": 2,
+      "explanation": "Investigations for Androgen Insensitivity Syndrome include karyotyping (revealing 46, XY) and pelvic ultrasound (revealing absent uterus and small or absent vagina, with testes possibly in inguinal region). An endometrial biopsy is not applicable because these individuals typically have an absent uterus."
+    },
+    {
+      "stem": "A 28-year-old female with an IUD needs it replaced. She has a fibroid at the fundus. Management should be:",
+      "options": [
+        "Replace the IUD",
+        "Shift to combined oral contraceptive pills and follow up on the fibroid",
+        "Perform a myomectomy"
+      ],
+      "correct": 0,
+      "explanation": "Uterine leiomyomas are listed as a contraindication for IUD use if they interfere with proper insertion or cause complications. However, the presence of a fibroid at the fundus, especially if not described as large or interfering with insertion, does not automatically contraindicate IUD replacement, implying that it can be replaced as long as proper placement is ensured. The option 'replace the IUD' implies that it's feasible given the specific information."
+    },
+    {
+      "stem": "What is the gold standard diagnostic tool in dermatomyositis?",
+      "options": [
+        "Ultrasound (US)",
+        "Laparoscopy",
+        "Muscle Biopsy"
+      ],
+      "correct": 2,
+      "explanation": "Muscle Biopsy is listed as the gold standard diagnostic tool for dermatomyositis."
     }
   ]
 }
