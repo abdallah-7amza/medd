@@ -1,237 +1,359 @@
----
 title: "Bleeding in Early Pregnancy"
-summary: "This lesson covers the primary causes of bleeding in early pregnancy, including spontaneous abortion (miscarriage), ectopic pregnancy, and gestational trophoblastic disease. It details the clinical types, diagnosis, and management for each condition."
+
+### Causes of bleeding in Early pregnancy:
+* **Abortion.**
+* **Ectopic pregnancy.**
+* **Gestational trophoblastic disease.**
+* Associated gynecologic conditions (cervical erosion, polyp or cancer).
+
+### SPONTANEOUS ABORTION (MISCARRIAGE)
+**DEFINITION:**
+Termination of pregnancy **before viability of the fetus (in Egypt, before 24 weeks) (MCQ)**. Viability denotes the chance of survival with maximum pediatric support.
+
+**INCIDENCE:**
+Occurs in **15-20%** of pregnancies, mostly in the early 1st trimester.
+
+**ETIOLOGY:**
+* **Genetic or chromosomal abnormalities in > 50% of cases (MCQ).**
+* Accidental trauma.
+* Hormonal as luteal phase defect.
+* Infections e.g. acute maternal fever.
+* Drugs: some teratogenic drugs may cause fetal demise.
+* Psychological factors or idiopathic.
+
+**CLINICAL TYPES OF SPONTANEOUS ABORTION:**
+* Threatened abortion.
+* Inevitable abortion.
+* Incomplete abortion.
+* Complete abortion.
+* Missed abortion.
+* Septic abortion.
+
 ---
-
-## Causes of bleeding in Early pregnancy
-- Abortion.
-- Ectopic pregnancy.
-- Gestational trophoblastic disease.
-- Associated gynecologic conditions (cervical erosion, polyp or cancer).
-
-## SPONTANEOUS ABORTION (MISCARRIAGE)
-
-### DEFINITION
-- Termination of pregnancy **before viability of the fetus** (in Egypt, before 24 weeks) **(MCQ)**.
-
-### INCIDENCE
-- Occurs in **15-20% of pregnancies**, mostly in the early 1st trimester.
-
-### ETIOLOGY
-- **Genetic or chromosomal abnormalities in > 50% of cases (MCQ).**
-- Accidental trauma.
-- Hormonal as luteal phase defect.
-- Infections e.g. **acute maternal fever**.
-- Drugs: some teratogenic drugs may cause fetal demise in utero.
-- Psychological factors or idiopathic.
-
-### CLINICAL TYPES OF SPONTANEOUS ABORTION
-- Threatened abortion.
-- Inevitable abortion.
-- Incomplete abortion.
-- Complete abortion.
-- Missed abortion.
-- Septic abortion.
-
 ### THREATENED ABORTION
-#### Clinical picture
-- Symptoms & signs of pregnancy are present.
-- **Minimal vaginal bleeding (spotting) (MCQ).**
-- Mild suprapubic colicky pain may be present.
-- **Cervix is closed (MCQ).**
-#### Investigations
-- Serial quantitative βHCG estimation to detect adequate doubling.
-- **Ultrasonography is the main diagnostic tool to confirm a living fetus (MCQ).**
-#### Treatment
-- Physical & mental rest.
-- **Hormonal support e.g. natural progesterone is beneficial in cases with luteal phase defect (MCQ).**
-#### Prognosis
-- **50% of cases will continue pregnancy** and 50% will end in inevitable or missed abortion.
+**Clinical picture:**
+* Symptoms & signs of pregnancy are present.
+* Minimal vaginal bleeding.
+* Mild suprapubic colicky pain may be present.
+* **Cervix is closed (MCQ).**
+* **Ultrasound shows an intrauterine gestational sac with a living fetus (MCQ).**
 
+**Investigations:**
+* Serial quantitative ẞHCG estimation to detect adequate doubling.
+* **Ultrasonography is the main diagnostic tool** to confirm fetal condition.
+
+**Treatment:**
+* Physical & mental rest.
+* **Hormonal support e.g. natural progesterone is beneficial in cases with luteal phase defect (MCQ).**
+* Follow up to ensure clinical improvement and fetal growth.
+
+**Prognosis:**
+**50% of cases will continue pregnancy** and 50% will end in inevitable or missed abortion.
+
+---
 ### INEVITABLE ABORTION
-#### Clinical Picture
-- Moderate to **severe vaginal bleeding which may cause hypovolemic shock.**
-- **Rupture of membranes <24 weeks is a sign of inevitability.**
-- Marked suprapubic colicky pain.
-- **Cervix is usually dilated (MCQ).**
-#### Treatment
-- Anti-shock measures (if needed).
-- Termination of pregnancy:
-- **<12 weeks: surgical vaginal evacuation by curettage or suction (MCQ).**
-- **>12 weeks:** Medical evacuation by prostaglandins. If **severe bleeding, abdominal hysterotomy (MCQ).**
+There is no chance for pregnancy to continue.
 
+**Clinical Picture:**
+* Symptoms & signs of pregnancy are present.
+* **Moderate to severe vaginal bleeding** which may cause hypovolemic shock.
+* **Rupture of membranes <24 weeks is a sign of inevitability.**
+* Marked suprapubic colicky pain.
+* **PV examination reveals a dilated cervix (MCQ).**
+
+**Investigations:**
+* Ultrasonography to detect gestational age and decide the route of termination.
+* Blood group and CBC.
+
+**Treatment:**
+Anti-shock measures and termination of pregnancy:
+* **Anti-shock measures:** Rest, sedation, I.V crystalloids infusion, and blood transfusion if needed.
+* **Termination of pregnancy:**
+    * **<12 weeks: surgical vaginal evacuation by curettage or suction (MCQ).**
+    * **>12 weeks:** Medical evacuation by prostaglandins. If bleeding is severe, **abdominal hysterotomy is performed (MCQ).**
+
+---
 ### INCOMPLETE ABORTION
-#### Definition
 Part of the conception products are expelled from the uterus.
-#### Clinical picture
-- Similar bleeding and pain to inevitable abortion, with **passage of parts of conception products (MCQ).**
-- **Cervix is opened & retained parts may be felt.**
-#### Investigations
-- **Ultrasonography detects retained products (hyper-echoic irregular tissues).**
-#### Treatment
-- Anti-shock measures.
-- **Surgical evacuation is required to remove retained products of conception (MCQ).**
 
+**Clinical picture:**
+* Symptoms & signs of pregnancy are present.
+* Bleeding & pain similar to inevitable abortion, with **passage of parts of conception products (MCQ).**
+* **PV examination reveals an opened cervix with retained parts (MCQ).**
+
+**Investigations:**
+* **Ultrasonography detects retained products of conception (POC) (MCQ).**
+
+**Treatment:**
+* Anti-shock measures.
+* **Surgical evacuation.**
+
+---
 ### COMPLETE ABORTION
-#### Definition
-All conception products are expelled from the uterus.
-#### Clinical picture
-**Bleeding and pain cease**, and ultrasound confirms an empty uterus **(MCQ)**.
+All conception products are expelled from the uterus. **Bleeding and pain cease, and ultrasound confirms an empty uterus (MCQ).**
 
+---
 ### MISSED ABORTION
-#### Definition
-Death of an embryo (or fetus) occurs but is **retained in the uterus.**
-#### Clinical picture
-- May be symptomless, or have brownish vaginal discharge.
-- Loss of pregnancy symptoms.
-- Uterus is smaller than expected with a closed internal os.
-- **Coagulation problems may develop (hypofibrinogenemia and DIC) if retained for several weeks (MCQ).**
-#### Investigations
-- **US examination is diagnostic**, revealing intrauterine fetal demise or anembryonic sac (blighted ovum).
-- **Inadequate doubling or decreasing hCG levels (MCQ).**
-#### Treatment
-- Termination of pregnancy:
-- <12 weeks: surgical evacuation.
-- **>12 weeks: Medical induction by prostaglandins (MCQ).**
-#### N.B
-**Anti D immunoglobulin should be given to Rh-ve mothers.**
+Death of an embryo or fetus that is retained in the uterus.
 
+**Clinical picture:**
+* May be symptomless initially, later a **brownish vaginal discharge (MCQ)** and recurrent bleeding may occur, with loss of pregnancy symptoms.
+* PV examination reveals a smaller-than-expected uterus with a **closed internal os**.
+* **Coagulation problems like hypofibrinogenaemia and DIC may develop if retained for several weeks (MCQ).**
+
+**Investigations:**
+* **US examination is diagnostic**, revealing intrauterine fetal demise or anembryonic sac (blighted ovum).
+* Inadequate doubling or decreasing hCG levels.
+
+**Treatment:**
+Termination of pregnancy:
+* <12 weeks: surgical vaginal evacuation.
+* **>12 weeks: Medical induction by prostaglandins (MCQ).** Oxytocin is not effective due to decreased receptors. Abdominal hysterotomy is rare.
+* **N.B:** Following abortion, **Anti-D immunoglobulin should be given to RH-ve mothers.**
+
+---
 ### SEPTIC ABORTION
-#### Definition
-Infection superimposed on any type of abortion (usually incomplete).
-#### Clinical picture
-- Clinical picture of abortion.
-- Signs of infection: **Fever**, malaise, lower abdominal pain, **tender uterus**, and **offensive vaginal discharge.**
-#### Investigations
-- Blood picture shows leukocytosis.
-- Blood culture, kidney/liver functions, and coagulation profile.
-#### Treatment
-- Hospitalization and anti-shock measures.
-- **Parenteral broad-spectrum antibiotics.**
-- Evacuation of the uterus under antibiotic cover. **High risk of uterine perforation.**
-#### Complications
-**Septic shock**, acute renal & liver failure, DIC.
+Infection superimposed on any type of abortion, usually incomplete.
 
-## RECURRENT PREGNANCY LOSS (HABITUAL ABORTION)
-### Definition
-- **Three or more successive spontaneous abortions.**
-### Causes
-- **Immunologic disorders:** **Antiphospholipid syndrome (MCQ).**
-- Genetic or chromosomal abnormalities.
-- **Local uterine causes:**
-- Congenital: **septate uterus.**
-- Traumatic: **Cervical incompetence (causes 2nd-trimester loss) (MCQ).**
-- Neoplastic: **Submucous fibroid (MCQ).**
-- General and chronic diseases (e.g., uncontrolled diabetes).
-- Hormonal: luteal phase defect, thyroid dysfunction.
-### Diagnosis
-- **History:** Late 1st and 2nd trimester abortions may suggest anti-phospholipid syndrome or cervical incompetence.
-- **Investigations:** Vaginal ultrasound, hysteroscopy, chromosomal karyotyping for the couple, screening for **antiphospholipid syndrome (Lupus anticoagulant, anticardiolipin antibodies) (MCQ)** and thrombophilia.
-### Treatment
-- **During pregnancy:**
-- Progesterone supplementation for luteal phase defect.
-- **Low dose aspirin and Low molecular weight Heparin for antiphospholipid syndrome (MCQ).**
-- Surgical treatment: for incompetent os (cerclage).
+**Routes of infection:**
+* Exogenous: from instruments.
+* Endogenous: from genital tract flora.
+* Autogenous: from a septic focus in the body.
 
-## Cervical (Isthmic) Incompetence
-### Definition
-- Inability of the cervix to retain conception past the 1st trimester.
-### Etiology
-- Traumatic injury (e.g., forcible D&C, cervical lacerations).
-- Congenital (rare).
-### Diagnosis
-- History of **mid-trimester abortions with minimal pain and bleeding, often preceded by ROM (MCQ).**
-- **Ultrasound:** **short cervix <2.5cm with funneling of membranes (MCQ).**
-### Treatment
-- **Cervical cerclage operation** during pregnancy ( elective at 11-14 weeks).
-- Suture is removed at 37 weeks or at the onset of labor.
+**Clinical picture:**
+* Clinical picture of abortion.
+* Clinical picture of infection:
+    * **Generally:** Fever, headache, malaise, or septic shock.
+    * **Locally:** Lower abdominal pain, tender uterus, and **offensive vaginal discharge.**
 
-## ECTOPIC PREGNANCY
-### Definition
-- Implantation of the fertilized ovum **outside the normal uterine cavity.**
-### Sites
-- **Fallopian tube (most common, >95%):** Ampullary portion is the most common site. Early disturbance occurs in the **isthmic portion (MCQ)**.
-- Other sites: Ovary, abdomen, rudimentary horn, cervix, CS scar.
+**Investigations:**
+* U.S. to detect intrauterine contents.
+* Blood picture shows leukocytosis.
+* Blood culture, kidney/liver functions, and coagulation profile.
+* Vaginal/cervical swab culture has limited value.
 
-## TUBAL ECTOPIC
-### Etiology and Risk factors
-- **Previous ectopic gestation (highest risk) (MCQ).**
-- **Previous Pelvic Inflammatory Disease (PID).**
-- Endometriosis.
-- Pelvic and tubal surgery.
-- **IUD (prevents intrauterine, not extra-uterine pregnancy) (MCQ).**
-- Progesterone effect (e.g., progesterone-only contraception).
-- ICSI procedure.
-### Results of tubal ectopic
-- **Tubal mole:** Dead ovum surrounded by a blood clot.
-- **Tubal abortion:** Ovum passes through the abdominal ostium, may cause hematosalpinx or pelvic hematocele **(MCQ)**.
-- **Tubal rupture:** Results in diffuse intraperitoneal hemorrhage.
-### Clinical Picture
-#### Symptoms
-- Short period of amenorrhea.
-- **Pain is the most prominent symptom (MCQ).** It precedes bleeding.
-- **Shoulder pain** occurs with massive internal hemorrhage due to phrenic nerve irritation.
-- Vaginal bleeding is usually slight and dark.
-- Syncope (fainting attacks).
-#### Signs
-- Signs of internal bleeding/shock (rapid pulse, hypotension).
-- Lower abdominal tenderness and rebound tenderness.
-- **Marked tenderness on moving the cervix.**
-- An adnexal mass may be felt.
-### Specific investigations
-- **Combined TVS and serum β-hCG are the main diagnostic tools (MCQ).**
-- **TVS:** **Empty uterus** with an adnexal mass and/or pelvic fluid.
-- **Serum βhCG level:**
-- **Improper doubling (not increasing by at least 60% every 48 hours) suggests an unhealthy or ectopic pregnancy (MCQ).**
-- **Discrimination zone:** A gestational sac should be seen intrauterine by TVS with a β-HCG level of **1500 IU/mL**. If the uterus is empty at this level, it confirms an ectopic pregnancy **(MCQ).**
-- **Laparoscopy:** Can confirm diagnosis in doubtful, hemodynamically stable cases.
-### Management of tubal pregnancy
-#### Surgical treatment
-- **Conservative (Salpingostomy):** For young patients with an unruptured tube to preserve fertility.
-- **Radical (Salpingectomy):** Removal of the tube, often done for ruptured or severely damaged tubes **(MCQ).**
-#### Medical treatment (Methotrexate)
-- **Indications:** Undisturbed early cases, small ectopic < 3cm, **no fetal cardiac activity**, and hCG <6000 mIU/ml **(MCQ).**
-- **Contraindications:** Active bleeding, **fetal heart motion**, history of active hepatic or renal disease **(MCQ).**
-- **Counseling:** Subsequent pregnancy should be delayed for 3 months **(MCQ).**
+**Treatment:**
+* Isolate the patient, Fowler's position.
+* Antishock measures may be needed.
+* **Parenteral broad-spectrum antibiotics.**
+* **Obstetrical management:**
+    * < 12 weeks: Vaginal surgical evacuation under antibiotic cover.
+    * >12 weeks: Medical induction. Hysterotomy or hysterectomy may be done if failed or uterus is markedly infected.
 
-## Other Types of Ectopic Pregnancy
-- **Cervical Ectopic Pregnancy:** Presents with **severe vaginal bleeding** rather than pain **(MCQ).**
-- **CS Scar Pregnancy:** Increasing in frequency. **Curettage is a poor treatment option due to high risk of perforation (MCQ).**
-- **Pregnancy in a Rudimentary Horn:** Ruptures later (4th-5th month) with marked internal hemorrhage **(MCQ).**
+**Complications:**
+* **Septic shock.**
+* **Acute renal & liver failure.**
+* **DIC.**
 
-## GESTATIONAL TROPHOBLASTIC DISEASE (GTD)
+---
+### SUMMARY OF CLINICAL TYPES OF ABORTION
+| | **Threatened Ab.** | **Missed** | **Inevitable** | **Incomplete** | **complete** | **septic** |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Symptoms** | | | | | | |
+| 1-Bleeding | -ve | -ve | +ve | +ve | -ve | +ve |
+| 2-cramping Pelvic pain | Usually mild + | Usually mild + | ++or+++ | ++or+++ | + or -ve | Foul vag. discharge Fever |
+| **General exam.** | | | | | | |
+| Bp | Normotensive | Normotensive | Hypotension May be shocked | Hypotension May be shocked | Normotensive | Normotensive |
+| Pulse (rate and volume) | Average | Average | Rapid & low volume | Rapid & low volume | Average | Fever Rapid+good volume |
+| **Pelvic exam.** | | | | | | |
+| 1-Bleeding | Mild + | Mild + | Moderate/severe | Moderate/severe | Mild + | -ve or +ve |
+| 2-Int. OS | closed | closed | opened | opened | closed | Closed or open |
+| **Ultrasound exam** | I.U gestational sac With living fetus | I.U gestational sac With dead fetus | Dead or living fetus +open Int. os. | Retained POC +open Int. os. | Empty uterus | Retained POC |
+| **More investigations** | B-hCG quantitative | -Fibrinogen &FDP DIC | | | | -CBC→ infection -Fibrinogen &FDP DIC |
+| **Treatment** | Rest & reassurance, Progesterone | Surgical or medical evacuation | Antishock, Resuscitation + Evacuation | Antishock, Resuscitation + Evacuation | | Broad spectrum antibiotics + Evacuation |
+
+---
+### RECURRENT PREGNANCY LOSS (HABITUAL ABORTION)
+**Definition:** **Three or more successive spontaneous abortions.**
+
+**Incidence:** 1-2%
+
+**Causes:**
+* **Immunologic disorders are the commonest cause of early RPL:** **Antiphospholipid syndrome (APS)** leads to thrombosis of placental vessels.
+* Genetic or chromosomal abnormalities of the fertilized ovum.
+* Local causes in the uterus:
+    * Congenital: septate uterus.
+    * Traumatic: **Cervical incompetence (2nd trimesteric) (MCQ).**
+    * Neoplastic: **Submucous fibroid, especially fundal (MCQ).**
+* General and chronic diseases.
+* Hormonal as luteal phase defect or thyroid dysfunction.
+* Drugs or excessive smoking.
+* Chronic severe psychological disorders.
+* **N.B.: A fundal subserous fibroid does not commonly cause recurrent abortion (MCQ).**
+
+**Diagnosis:**
+* **History:** Early abortions suggest genetic causes or luteal phase defect. **Late 1st and 2nd trimester abortions may suggest antiphospholipid syndrome or cervical incompetence (MCQ).**
+* **Examination:** May detect general disease or local uterine causes.
+* **Investigations:**
+    * **Vaginal ultrasound** to detect uterine anomalies, fibroids, or signs of an incompetent cervix.
+    * Hysteroscopy for endometrial cavity evaluation.
+    * Chromosomal karyotyping for the couple.
+    * Thyroid function, blood sugar, etc.
+    * **Screening for anti-phospholipid syndrome: Lupus anticoagulant, anticardiolipin and ß2 glycoprotein (MCQ).**
+    * Screening for other causes of thrombophilia (Protein-S, Protein-C deficiency).
+
+**Treatment:**
+* **Inbetween pregnancies:** Treat the cause (e.g., myomectomy), control general disease.
+* **During pregnancy:**
+    * Progesterone supplementation for luteal phase defect.
+    * **Low dose aspirin (LDA) and Low molecular weight Heparin for antiphospholipid syndrome (MCQ).**
+    * Surgical treatment for incompetent os.
+
+---
+### Cervical (Isthmic) Incompetence
+**Definition:** Inability of the cervix to retain conception past the 1st trimester.
+
+**Etiology:**
+* **Traumatic injury** from D&C, previous delivery, or cervical surgery.
+* **Congenital:** very rare.
+
+**Diagnosis:**
+* Past history of trauma.
+* **Abortions are usually mid-trimesteric, easy, preceded by R.O.M & associated with minimal pain & bleeding (MCQ).**
+* Aborted fetus appears normal.
+* **During pregnancy: Ultrasound reveals funneling of membranes and a short cervix <2.5cm (MCQ).**
+
+**Treatment:**
+* **Cerclage operation** during pregnancy at 11-14 weeks, with rest and tocolytics. The suture is removed at 37 weeks or at the onset of labor.
+
+---
+### ECTOPIC PREGNANCY
+**Definition:** Implantation of the fertilized ovum outside the normal uterine cavity.
+
+**Incidence:** 0.5-2% of all pregnancies.
+
+**Sites:**
+* **Fallopian tube is the most common site (MCQ)**, mostly in the ampulla.
+* Other sites: Ovary, abdomen, rudimentary horn, cervix, CS scar.
+
+### TUBAL ECTOPIC
+**Etiology and Risk factors:**
+* **Previous ectopic gestation (MCQ).**
+* Previous Pelvic Inflammatory Disease (PID).
+* Endometriosis.
+* Pelvic and tubal surgery.
+* **IUD: prevents intrauterine pregnancy but not extra-uterine (MCQ).**
+* **Progesterone effect (e.g., in progesterone-only contraception) (MCQ).**
+* **ICSI procedure.**
+* **N.B.: Previous cesarean section is not a primary risk factor for tubal ectopic pregnancy (MCQ).**
+
+**Pathology:**
+* **Uterus:** Slightly enlarged with decidua present without chorionic villi (Arias-Stella reaction).
+* **Tube:** Disturbance of pregnancy occurs as early as 8-10 weeks.
+* **Results:** Tubal mole, tubal abortion, or tubal rupture.
+
+**Clinical Picture:**
+* **[I] Disturbed ectopic pregnancy, subacute type (stable):**
+    * **Symptoms:**
+        * Short period of amenorrhea.
+        * **Pain is the most prominent symptom (MCQ). It may be aching, stabbing, or colicky. It precedes vaginal bleeding (MCQ).**
+        * **Shoulder pain occurs in massive internal hemorrhage (MCQ).**
+        * **Vaginal bleeding is usually slight and dark (MCQ).**
+        * Syncope, nausea, and vomiting.
+    * **Signs:**
+        * **General:** Rapid pulse, falling BP proportional to internal bleeding.
+        * **Abdominal:** Lower abdominal tenderness and rebound tenderness.
+        * **Vaginal:** Marked tenderness on moving the cervix. Uterus slightly enlarged, adnexal mass may be felt.
+* **[II] Disturbed ectopic pregnancy, acute type (unstable):**
+    * The patient is shocked with severe intra-peritoneal hemorrhage. **It is an emergency.**
+* **[III] Undisturbed tubal pregnancy:**
+    * No symptoms or mild pelvic pain. Discovered accidentally.
+
+**Specific investigations:**
+* **The most important are combined transvaginal ultrasound (TVS) and estimation of ß-hCG (MCQ).**
+* **TVS:** **Diagnostic findings are an empty uterus with an adnexal mass** and pelvic fluid collection.
+* **Serum ßhCG level:** In ectopic pregnancy, there is an **improper doubling of the level after 48 hours (MCQ).**
+* **Discrimination zone:** With a ß-HCG level of **>1500 IU/mL, a gestational sac should be seen intrauterine by TVS (MCQ).** If the uterus is empty, it confirms an ectopic pregnancy.
+* **Laparoscopy:** Used to confirm the diagnosis in doubtful, hemodynamically stable cases.
+
+**Management of tubal pregnancy:**
+* Blood transfusion and antishock measures may be needed.
+* **Anti-D should be given to RH-ve cases.**
+* **(A) Surgical treatment:**
+    * **Conservative:** Salpingostomy (linear incision to remove ectopic), tube heals by secondary intention. Recurrence rate is high.
+    * **Radical:** Unilateral salpingectomy.
+* **(B) Medical treatment by methotrexate injections:**
+    * **Mode of action:** Antifolinic acid.
+    * **Indications:** Undisturbed early cases with ectopic < 3cm, **no fetal heart activity (MCQ)**, and hCG <6000 mIU/ml.
+    * Contraindications: **History of active hepatic or renal disease (MCQ).**
+    * Regimen: Single IM injection. Follow up with serum ß-HCG.
+    * Counseling: **Subsequent pregnancy should be delayed for 3 months (MCQ).**
+
+### Other Types of Ectopic Pregnancy
+* **Ovarian Ectopic Pregnancy:** Similar symptoms to tubal. Treatment aims to preserve ovarian tissue.
+* **Advanced Abdominal Pregnancy:** Rare. Placenta is often left in situ to avoid massive hemorrhage.
+* **Pregnancy in a Rudimentary Horn:** **Ruptures late, around 4th-5th month (MCQ).**
+* **Cervical Ectopic Pregnancy:** **Presents with severe vaginal bleeding rather than pain (MCQ).** Hysterectomy may be needed for life-threatening bleeding.
+* **CS Scar Pregnancy:** Increasing frequency. Can be treated with methotrexate or surgery. **Curettage is not a good option (MCQ).**
+
+---
+### GESTATIONAL TROPHOBLASTIC DISEASE (GTD)
+A spectrum of cellular proliferations from placental trophoblasts.
+* **Benign GTD:** Vesicular (Hydatidiform) Mole (Complete and Partial).
+* **Malignant GTD:** Invasive Mole and **Choriocarcinoma (MCQ).**
 
 ### VESICULAR (HYDATIDIFORM) MOLE
-#### Risk factors
-Extremes of age (<20 & >35 years).
-#### Pathology
-- **Complete mole:** Fertilization of an empty ovum. **Karyotype is 46,XX (paternal origin) (MCQ)**. No fetal tissue. Diffuse trophoblastic proliferation.
-- **Partial mole:** Fertilization of a normal ovum by 2 sperms. **Karyotype is triploidy (69 chromosomes).** Fetal tissues are present. Focal changes. **Low potential for malignant transformation (MCQ).**
-- **Theca lutein cysts:** Occur in 25-60% of complete moles due to high hCG levels. **They regress spontaneously after molar evacuation (MCQ).**
-#### Clinical picture
-- Recurrent early pregnancy bleeding.
-- **Severe nausea and vomiting (hyperemesis gravidarum).**
-- Uterus is **larger than calculated gestational age** and has a soft, doughy consistency.
-#### Diagnostic investigations
-- **Ultrasonography is the gold standard.**
-- Complete mole: **Characteristic "snowstorm" appearance (MCQ).**
-- **Serum β-hCG:** **Abnormally high levels (>100,000 mIU/ml).**
-#### Complications
-- Severe bleeding, **early onset preeclampsia**, hyperthyroidism, trophoblastic embolization.
-- **Risk of developing an invasive Mole or Choriocarcinoma (5% of cases) (MCQ).**
-#### Management
-- **Suction evacuation is the gold standard technique (MCQ).**
-- **Hysterectomy** can be considered for elderly patients (>40 years) with completed family **(MCQ).**
-#### Follow up
-- **Serial serum β-hCG assays are mandatory** weekly until negative, then monthly for 1 year to detect **persistent trophoblastic disease (PTD) (MCQ).**
-- **Effective contraception for 1 year is essential.**
+Rare, benign form of GTD.
+
+**Risk factors:** **Extremes of age (<20 & >35 years).**
+
+**Pathology:**
+* **A. Complete mole:**
+    * Originates from **fertilization of an empty ovum, resulting in a 46 XX karyotype (MCQ).**
+    * **Gross:** Uterine cavity distended with grape-like vesicles. **No amniotic sac or fetal tissue.**
+    * **Histology:** Diffuse trophoblastic proliferation, marked villous edema, absent fetal blood vessels.
+* **B. Partial mole:**
+    * Originates from fertilization of a normal ovum by 2 sperms, leading to **triploidy (69 chromosomes).**
+    * **Gross:** Focal hydatidiform changes, with presence of amniotic sac or fetal tissues.
+    * **Histology:** Focal villous edema and trophoblastic proliferation.
+* **C. Associated ovarian cysts:**
+    * **Functional ovarian theca lutein cysts occur in 25-60% of complete moles** due to high hCG levels.
+    * **They undergo spontaneous regression after molar evacuation (MCQ).**
+
+**Clinical picture of molar pregnancy:**
+* **Recurrent early pregnancy bleeding is the chief symptom.**
+* **Severe nausea and vomiting (hyperemesis gravidarum) due to high hCG levels.**
+* Characteristic prune juice discharge or expulsion of vesicles.
+* **Fundal level larger than gestational age.**
+* Uterus is soft and **doughy.**
+* Fetal parts and heart pulsations are absent in complete moles.
+
+**Diagnostic investigations:**
+* **Ultrasonography is the gold standard.**
+    * **Complete mole: shows a characteristic "snowstorm" appearance (MCQ).**
+    * Partial Mole: shows an embryo, often with anomalies, and vesicular changes in the placenta.
+* **Serum ß-hCG: Abnormally high levels, often >100,000 mIU/ml (MCQ).**
+* Metastatic workup for malignant changes.
+
+**Complications of molar pregnancy:**
+* **Hyperemesis gravidarum.**
+* Severe bleeding.
+* **Early onset pregnancy induced hypertension.**
+* **Hyperthyroidism.**
+* Trophoblastic embolization.
+* Risk of developing Invasive Mole or **Choriocarcinoma (5% of complete moles) (MCQ).**
+* **Subsequent uterine adenocarcinoma is not a complication (MCQ).**
+
+**Management of molar pregnancy:**
+* **Suction evacuation is the gold standard technique (MCQ).**
+* Gentle curettage is performed after suction to ensure complete evacuation.
+* **Hysterectomy is indicated only in elderly patients (>40 years) with a completed family (MCQ).**
+* **Follow up:**
+    * **Repeated serum ß-hCG assays weekly until negative for 3 weeks, then monthly for 1 year (MCQ).**
+    * **Contraception is recommended for 1 year.**
+* **Persistent trophoblastic disease (PTD):** Incomplete fall of hCG levels after evacuation. Treated with methotrexate.
 
 ### Malignant Gestational Trophoblastic Diseases (GTD)
-#### Description
-- Includes **Invasive mole** and **Choriocarcinoma.**
-- Characterized by aggressive invasion and tendency to metastasize (lungs, vagina, brain, liver).
-- **More than 50% follow a molar pregnancy.** Can also occur after abortion or term pregnancy.
-#### Diagnosis
-- **Persistent vaginal bleeding** and **abnormally high hCG levels** after a pregnancy event.
-#### Management
-- **Chemotherapy is the main line of treatment.** Hysterectomy may be offered in select cases.
+Includes Invasive Mole and Choriocarcinoma.
+* **More than 50% follow a molar pregnancy.**
+* Characterized by aggressive invasion and tendency to metastasize (lung, vagina, brain, liver).
+* **Gestational Choriocarcinoma:** A highly malignant tumor with early blood-borne metastases.
+
+**Diagnosis of Malignant GTD:**
+* **Persistent vaginal bleeding** following a pregnancy event.
+* **Abnormally high or rising hCG levels** after a terminated pregnancy.
+* Imaging (TVS/TAS, MRI, CT) to detect uterine lesion and metastases.
+
+**Management:**
+* **Chemotherapy is the main line of treatment.**
+* Hysterectomy may be offered to elderly patients or in cases with severe bleeding.
