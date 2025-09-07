@@ -20,6 +20,14 @@ document.addEventListener('DOMContentLoaded', async function() {
     const scoreDisplay = document.getElementById('score-display');
     const reviewBtn = document.getElementById('review-btn');
 
+    // ## START SURGICAL MODIFICATION: Get new elements for Browse and Reset ##
+    const browseBtn = document.getElementById('browse-btn');
+    const browseModal = document.getElementById('browse-modal');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+    const browseList = document.getElementById('browse-list');
+    const resetBtn = document.getElementById('reset-btn');
+    // ## END SURGICAL MODIFICATION ##
+
     let currentQuestionIndex = 0;
     let userAnswers = [];
     let quizData = null;
@@ -50,6 +58,10 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         if (!quizData || !quizData.questions) throw new Error('Quiz data could not be found.');
         
+        // ## START SURGICAL MODIFICATION: Populate the browse modal once data is ready ##
+        populateBrowseModal();
+        // ## END SURGICAL MODIFICATION ##
+
         initializeQuiz();
 
     } catch (error) {
@@ -62,7 +74,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         userAnswers = savedProgress ? JSON.parse(savedProgress) : new Array(quizData.questions.length).fill(null);
         
         let resumeIndex = userAnswers.findIndex(answer => answer === null);
-        if (resumeIndex === -1) resumeIndex = quizData.questions.length - 1;
+        if (resumeIndex === -1) resumeIndex = 0; // If all answered, start from beginning
         
         displayQuestion(resumeIndex);
     }
@@ -126,7 +138,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
     
     function updateProgressBar() {
-        const progress = ((currentQuestionIndex + 1) / quizData.questions.length) * 100;
+        const answeredCount = userAnswers.filter(a => a !== null).length;
+        const progress = (answeredCount / quizData.questions.length) * 100;
         progressBar.style.width = `${progress}%`;
     }
 
@@ -138,7 +151,9 @@ document.addEventListener('DOMContentLoaded', async function() {
         scoreDisplay.textContent = `You scored ${score} out of ${quizData.questions.length}`;
         quizInterface.style.display = 'none';
         resultsScreen.style.display = 'block';
-        localStorage.removeItem(storageKey);
+        
+        // ## SURGICAL CHANGE: The following line is REMOVED to stop automatic reset ##
+        // localStorage.removeItem(storageKey); 
     }
     
     function showReview() {
@@ -173,12 +188,36 @@ document.addEventListener('DOMContentLoaded', async function() {
         };
         reviewScreen.appendChild(backBtn);
     }
+    
+    // ## START SURGICAL MODIFICATION: New function to populate the browse modal ##
+    function populateBrowseModal() {
+        browseList.innerHTML = '';
+        quizData.questions.forEach((question, index) => {
+            const item = document.createElement('div');
+            item.className = 'browse-item';
+            let optionsHTML = '';
+            question.options.forEach((optionText, i) => {
+                let className = 'browse-option';
+                if (i === question.correct) {
+                    className += ' correct-answer';
+                }
+                optionsHTML += `<div class="${className}">${optionText}</div>`;
+            });
+            item.innerHTML = `
+                <h3 class="browse-question">Q${index + 1}: ${question.stem}</h3>
+                ${optionsHTML}
+                <div class="browse-explanation">${question.explanation}</div>
+            `;
+            browseList.appendChild(item);
+        });
+    }
+    // ## END SURGICAL MODIFICATION ##
 
     function showError(message) {
         quizInterface.innerHTML = `<p style="color: red; text-align: center;">${message}</p>`;
     }
 
-    // Event Listeners
+    // --- EVENT LISTENERS ---
     submitBtn.addEventListener('click', () => {
         if (currentQuestionIndex < quizData.questions.length - 1) {
             displayQuestion(currentQuestionIndex + 1);
@@ -194,4 +233,26 @@ document.addEventListener('DOMContentLoaded', async function() {
     });
     
     reviewBtn.addEventListener('click', showReview);
+
+    // ## START SURGICAL MODIFICATION: Event listeners for Browse and Reset ##
+    browseBtn.addEventListener('click', () => {
+        browseModal.classList.remove('hidden');
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+        browseModal.classList.add('hidden');
+    });
+
+    browseModal.addEventListener('click', (e) => {
+        if (e.target === browseModal) {
+            browseModal.classList.add('hidden');
+        }
+    });
+
+    resetBtn.addEventListener('click', () => {
+        localStorage.removeItem(storageKey);
+        // Reload the page to start the quiz fresh
+        window.location.reload();
+    });
+    // ## END SURGICAL MODIFICATION ##
 });
