@@ -31,11 +31,14 @@
             
             <div class="quiz-container">
                 <div id="quiz-interface">
+                    <div class="quiz-header">
+                        <div id="question-counter">Loading...</div>
+                        <button id="browse-btn" class="browse-button"><i class="fa-solid fa-list-ul"></i> Browse</button>
+                    </div>
                     <div id="progress-container" style="background-color: #e9ecef; border-radius: 5px; height: 10px; margin-bottom: 20px;">
                         <div id="progress-bar" style="height: 100%; width: 0%; background-color: var(--primary-color); border-radius: 5px; transition: width 0.3s ease;"></div>
                     </div>
                     
-                    <div id="question-counter">Loading...</div>
                     <div id="question-stem">Loading question...</div>
                     
                     <div id="options-container"></div>
@@ -53,13 +56,24 @@
                     <div>
                         <a href="javascript:history.back()" id="restart-btn">Back to Topic</a>
                         <button id="review-btn">Review Answers</button>
-                    </div>
+                        <button id="reset-btn">Reset Quiz</button>
+                        </div>
                 </div>
 
                 <div id="review-screen" style="display: none;"></div>
             </div>
         </div>
     </main>
+
+    <div id="browse-modal" class="modal-container hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Browse All Questions</h2>
+                <button id="close-modal-btn" class="close-btn">&times;</button>
+            </div>
+            <div id="browse-list" class="browse-list"></div>
+        </div>
+    </div>
     <footer class="main-footer">
         Powered by Abdallah Hamza
     </footer>
