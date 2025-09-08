@@ -349,9 +349,6 @@
       "correct": 4,
       "explanation": "Fitz-Hugh-Curtis syndrome is a perihepatitis (inflammation of the liver capsule) that can occur as a complication of PID, particularly from chlamydial infection, causing right upper quadrant pain."
     },
-  {
-  "title": "Female Genital Infections",
-  "questions": [
     {
       "stem": "The following is NOT a risk factor for PID:",
       "options": [
@@ -699,6 +696,6 @@
       ],
       "correct": 2,
       "explanation": "Chancroid is a sexually transmitted infection characterized by painful genital ulcers and is caused by the bacterium Haemophilus ducreyi."
-    },
+    }
   ]
 }
