@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', async function() {
     // --- 1. GET URL PARAMS AND DOM ELEMENTS ---
-    // (This section is unchanged)
     const urlParams = new URLSearchParams(window.location.search);
     const path = urlParams.get('path') || '';
     const collectionId = urlParams.get('collection');
     const isLessonQuiz = urlParams.has('lessonQuiz');
     const selectedUniId = localStorage.getItem('selectedUni');
+
+    // All DOM elements are fetched here...
     const siteTitleEl = document.getElementById('site-title');
     const questionCounter = document.getElementById('question-counter');
     const questionStem = document.getElementById('question-stem');
@@ -25,26 +26,27 @@ document.addEventListener('DOMContentLoaded', async function() {
     const browseList = document.getElementById('browse-list');
     const resetBtn = document.getElementById('reset-btn');
 
-    // ## START SURGICAL MODIFICATION: New state variables for smart quiz ##
-    let userAnswers = [];
+    // --- NEW STATE VARIABLES FOR THE SMART QUIZ ---
     let quizData = null;
     let storageKey = '';
-    let questionQueue = []; // This will hold the indices of questions to be asked
-    let currentQuestionIndex = -1;
-    // ## END SURGICAL MODIFICATION ##
+    let questionQueue = []; // Holds the indices of questions left to answer
+    let userAnswers = [];   // Always stores the last answer for each question index
+    let totalQuestionsInQuiz = 0;
 
     // --- 2. LOAD QUIZ DATA ---
     try {
         if (!selectedUniId || !path) throw new Error("University or Path not specified.");
-        // ... (Data loading logic is unchanged) ...
+
         const response = await fetch('./database.json');
         const data = await response.json();
         let currentNode = data.tree[selectedUniId];
         siteTitleEl.textContent = `${currentNode.name} Med Portal`;
+
         const pathSegments = path.split('/').filter(Boolean).slice(1);
         for (const segment of pathSegments) {
             currentNode = currentNode.children[segment];
         }
+
         if (isLessonQuiz) {
             quizData = currentNode.resources?.lessonQuiz;
             storageKey = `quiz-progress-${path}`;
@@ -53,8 +55,10 @@ document.addEventListener('DOMContentLoaded', async function() {
             quizData = collectionQuiz?.quizData;
             storageKey = `quiz-progress-${path}-${collectionId}`;
         }
+
         if (!quizData || !quizData.questions) throw new Error('Quiz data could not be found.');
         
+        totalQuestionsInQuiz = quizData.questions.length;
         populateBrowseModal();
         initializeQuiz();
 
@@ -62,7 +66,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         showError(error.message);
     }
 
-    // --- 3. ALL QUIZ FUNCTIONS ---
+    // --- 3. CORE QUIZ FUNCTIONS (REBUILT) ---
     function initializeQuiz() {
         const savedProgress = localStorage.getItem(storageKey);
         if (savedProgress) {
@@ -70,26 +74,23 @@ document.addEventListener('DOMContentLoaded', async function() {
             userAnswers = progress.userAnswers;
             questionQueue = progress.questionQueue;
         } else {
-            userAnswers = new Array(quizData.questions.length).fill(null);
-            // Create a queue of all question indices [0, 1, 2, ..., n-1]
-            questionQueue = Array.from(Array(quizData.questions.length).keys());
+            // First time: queue has all questions, answers are all null
+            questionQueue = Array.from({length: totalQuestionsInQuiz}, (_, i) => i);
+            userAnswers = new Array(totalQuestionsInQuiz).fill(null);
         }
-        
-        // Hide the 'Previous' button as it's not compatible with this mode
-        prevBtn.style.display = 'none';
+
+        prevBtn.style.display = 'none'; // Previous button is not logical in this mode
 
         if (questionQueue.length > 0) {
-            displayNextQuestion();
+            displayQuestion(questionQueue[0]); // Display the first question in the queue
         } else {
-            // If the quiz was already completed, show results directly
-            showResults();
+            showResults(); // Quiz was already completed
         }
     }
 
-    function displayQuestion(index) {
-        currentQuestionIndex = index;
-        const question = quizData.questions[index];
-        questionCounter.textContent = `Question ${index + 1} of ${quizData.questions.length}`;
+    function displayQuestion(questionIndex) {
+        const question = quizData.questions[questionIndex];
+        questionCounter.textContent = `Remaining Questions: ${questionQueue.length}`;
         questionStem.textContent = question.stem;
         optionsContainer.innerHTML = '';
         optionsContainer.classList.remove('options-disabled');
@@ -99,100 +100,102 @@ document.addEventListener('DOMContentLoaded', async function() {
             const optionElement = document.createElement('div');
             optionElement.className = 'option';
             optionElement.innerHTML = `<input type="radio" name="answer" value="${i}" id="option-${i}"><label for="option-${i}">${option}</label>`;
-            optionElement.addEventListener('click', () => selectOption(i));
+            optionElement.addEventListener('click', () => selectOption(questionIndex, i));
             optionsContainer.appendChild(optionElement);
         });
-        
-        updateNavigation();
+        updateNavigation(false); // Disable next button initially
     }
 
-    function selectOption(selectedIndex) {
+    function selectOption(questionIndex, selectedIndex) {
         if (optionsContainer.classList.contains('options-disabled')) return;
-        userAnswers[currentQuestionIndex] = selectedIndex; // Always store answer by original index
-        showFeedback();
-        updateNavigation();
+
+        userAnswers[questionIndex] = selectedIndex; // Store the last answer
+        
+        const isCorrect = selectedIndex === quizData.questions[questionIndex].correct;
+
+        // If the answer is correct, remove it from the queue
+        if (isCorrect) {
+            questionQueue.shift(); // Remove the current question (which is always at the start)
+        } else {
+            // If incorrect, move it from the front to a random later position
+            const currentQuestion = questionQueue.shift();
+            const randomIndex = Math.floor(Math.random() * questionQueue.length) + 1;
+            questionQueue.splice(randomIndex, 0, currentQuestion);
+        }
+
+        showFeedback(questionIndex, selectedIndex);
+        updateNavigation(true); // Enable next button after answering
+        saveProgress();
     }
 
-    function showFeedback() {
+    function showFeedback(questionIndex, selectedIndex) {
         optionsContainer.classList.add('options-disabled');
-        const correctIndex = quizData.questions[currentQuestionIndex].correct;
-        const isCorrect = userAnswers[currentQuestionIndex] === correctIndex;
-
-        // ## START SURGICAL MODIFICATION: Handle incorrect answers ##
-        if (!isCorrect) {
-            // Re-add the question to the queue to be asked again
-            const randomIndex = Math.floor(Math.random() * (questionQueue.length - 1)) + 1; // Insert randomly after the next question
-            questionQueue.splice(randomIndex, 0, currentQuestionIndex);
-        }
-        // ## END SURGICAL MODIFICATION ##
-
+        const correctIndex = quizData.questions[questionIndex].correct;
+        
         document.querySelectorAll('.option').forEach((opt, i) => {
             if (i === correctIndex) opt.classList.add('correct');
-            else if (userAnswers[currentQuestionIndex] === i) opt.classList.add('incorrect');
+            else if (i === selectedIndex) opt.classList.add('incorrect');
         });
 
-        const explanationText = quizData.questions[currentQuestionIndex].explanation;
+        const explanationText = quizData.questions[questionIndex].explanation;
         if (explanationText) {
             explanationContainer.innerHTML = `<strong>Explanation:</strong> ${explanationText}`;
             explanationContainer.style.display = 'block';
         }
     }
 
-    function updateNavigation() {
-        submitBtn.disabled = userAnswers[currentQuestionIndex] === null;
-        submitBtn.textContent = 'Next';
+    function updateNavigation(isAnswered) {
+        submitBtn.disabled = !isAnswered;
         updateProgressBar();
     }
     
     function updateProgressBar() {
-        const totalQuestions = quizData.questions.length;
-        const answeredCorrectlyCount = totalQuestions - questionQueue.length;
-        const progress = (answeredCorrectlyCount / totalQuestions) * 100;
+        const correctCount = totalQuestionsInQuiz - questionQueue.length;
+        const progress = (correctCount / totalQuestionsInQuiz) * 100;
         progressBar.style.width = `${progress}%`;
     }
 
     function showResults() {
         let score = 0;
-        quizData.questions.forEach((q, i) => {
-            if (userAnswers[i] === q.correct) score++;
+        userAnswers.forEach((answer, i) => {
+            if (answer === quizData.questions[i].correct) score++;
         });
-        scoreDisplay.textContent = `You scored ${score} out of ${quizData.questions.length}`;
+        scoreDisplay.textContent = `Final Score: ${score} out of ${totalQuestionsInQuiz}`;
         quizInterface.style.display = 'none';
         resultsScreen.style.display = 'block';
     }
-    
-    // ## START SURGICAL MODIFICATION: Function to display the next question from the queue ##
-    function displayNextQuestion() {
-        const nextQuestionIndex = questionQueue.shift(); // Get and remove the next question from the queue
-        displayQuestion(nextQuestionIndex);
-    }
-    // ## END SURGICAL MODIFICATION ##
 
     function saveProgress() {
-        const progress = {
-            userAnswers: userAnswers,
-            questionQueue: questionQueue
-        };
+        const progress = { userAnswers, questionQueue };
         localStorage.setItem(storageKey, JSON.stringify(progress));
     }
-    
-    // --- EVENT LISTENERS ---
+
+    // --- 4. BROWSE, REVIEW, AND OTHER FUNCTIONS (UNCHANGED) ---
+    // These functions work perfectly with the new system
+    function showReview() { /* ... (code remains the same) ... */ }
+    function populateBrowseModal() { /* ... (code remains the same) ... */ }
+    function showError(message) { /* ... (code remains the same) ... */ }
+
+    // --- 5. EVENT LISTENERS ---
     submitBtn.addEventListener('click', () => {
-        saveProgress(); // Save state after every question
         if (questionQueue.length > 0) {
-            displayNextQuestion();
+            displayQuestion(questionQueue[0]); // Always display the next question in the queue
         } else {
             showResults();
         }
     });
-
-    // ... (All other functions and listeners for Review, Browse, Reset remain the same) ...
-    function showReview() { /* ... unchanged ... */ }
-    function populateBrowseModal() { /* ... unchanged ... */ }
-    function showError(message) { /* ... unchanged ... */ }
+    
     reviewBtn.addEventListener('click', showReview);
-    browseBtn.addEventListener('click', () => { browseModal.classList.remove('hidden'); });
-    closeModalBtn.addEventListener('click', () => { browseModal.classList.add('hidden'); });
+    browseBtn.addEventListener('click', () => browseModal.classList.remove('hidden'));
+    closeModalBtn.addEventListener('click', () => browseModal.classList.add('hidden'));
     browseModal.addEventListener('click', (e) => { if (e.target === browseModal) { browseModal.classList.add('hidden'); } });
-    resetBtn.addEventListener('click', () => { localStorage.removeItem(storageKey); window.location.reload(); });
+    resetBtn.addEventListener('click', () => {
+        localStorage.removeItem(storageKey);
+        window.location.reload();
+    });
+
+    // --- Unchanged Functions (for reference) ---
+    function showReview() { resultsScreen.style.display = 'none'; reviewScreen.style.display = 'block'; reviewScreen.innerHTML = '<h2>Quiz Review</h2>'; quizData.questions.forEach((question, index) => { const questionBlock = document.createElement('div'); questionBlock.className = 'review-question-block'; let optionsHTML = ''; question.options.forEach((option, i) => { let className = 'option'; if (i === question.correct) className += ' correct'; else if (i === userAnswers[index]) className += ' incorrect'; optionsHTML += `<div class="${className}">${option}</div>`; }); questionBlock.innerHTML = `<h3>Q${index + 1}: ${question.stem}</h3><div class="options-container">${optionsHTML}</div>${question.explanation ? `<div class="review-explanation"><strong>Explanation:</strong> ${question.explanation}</div>` : ''}`; reviewScreen.appendChild(questionBlock); }); const backBtn = document.createElement('button'); backBtn.textContent = 'Back to Results'; backBtn.className = 'button button-secondary'; backBtn.onclick = () => { reviewScreen.style.display = 'none'; resultsScreen.style.display = 'block'; }; reviewScreen.appendChild(backBtn); }
+    function populateBrowseModal() { browseList.innerHTML = ''; quizData.questions.forEach((question, index) => { const item = document.createElement('div'); item.className = 'browse-item'; let optionsHTML = ''; question.options.forEach((optionText, i) => { let className = 'browse-option'; if (i === question.correct) { className += ' correct-answer'; } optionsHTML += `<div class="${className}">${optionText}</div>`; }); item.innerHTML = `<h3 class="browse-question">Q${index + 1}: ${question.stem}</h3>${optionsHTML}<div class="browse-explanation">${question.explanation}</div>`; browseList.appendChild(item); }); }
+    function showError(message) { quizInterface.innerHTML = `<p style="color: red; text-align: center;">${message}</p>`; }
 });
