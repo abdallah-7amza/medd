@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const isLessonQuiz = urlParams.has('lessonQuiz');
     const selectedUniId = localStorage.getItem('selectedUni');
 
-    // All DOM elements are fetched here...
+    // ... (All DOM element variables)
     const siteTitleEl = document.getElementById('site-title');
     const questionCounter = document.getElementById('question-counter');
     const questionStem = document.getElementById('question-stem');
@@ -26,12 +26,10 @@ document.addEventListener('DOMContentLoaded', async function() {
     const browseList = document.getElementById('browse-list');
     const resetBtn = document.getElementById('reset-btn');
 
-    // --- NEW STATE VARIABLES FOR THE SMART QUIZ ---
+    let currentQuestionIndex = 0;
+    let userAnswers = [];
     let quizData = null;
     let storageKey = '';
-    let questionQueue = []; // Holds the indices of questions left to answer
-    let userAnswers = [];   // Always stores the last answer for each question index
-    let totalQuestionsInQuiz = 0;
 
     // --- 2. LOAD QUIZ DATA ---
     try {
@@ -58,7 +56,6 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         if (!quizData || !quizData.questions) throw new Error('Quiz data could not be found.');
         
-        totalQuestionsInQuiz = quizData.questions.length;
         populateBrowseModal();
         initializeQuiz();
 
@@ -66,31 +63,24 @@ document.addEventListener('DOMContentLoaded', async function() {
         showError(error.message);
     }
 
-    // --- 3. CORE QUIZ FUNCTIONS (REBUILT) ---
+    // --- 3. ALL QUIZ FUNCTIONS (STABLE VERSION) ---
     function initializeQuiz() {
         const savedProgress = localStorage.getItem(storageKey);
-        if (savedProgress) {
-            const progress = JSON.parse(savedProgress);
-            userAnswers = progress.userAnswers;
-            questionQueue = progress.questionQueue;
-        } else {
-            // First time: queue has all questions, answers are all null
-            questionQueue = Array.from({length: totalQuestionsInQuiz}, (_, i) => i);
-            userAnswers = new Array(totalQuestionsInQuiz).fill(null);
+        userAnswers = savedProgress ? JSON.parse(savedProgress) : new Array(quizData.questions.length).fill(null);
+        
+        let resumeIndex = userAnswers.findIndex(answer => answer === null);
+        if (resumeIndex === -1) { // If all answered, show results
+            showResults();
+            return;
         }
-
-        prevBtn.style.display = 'none'; // Previous button is not logical in this mode
-
-        if (questionQueue.length > 0) {
-            displayQuestion(questionQueue[0]); // Display the first question in the queue
-        } else {
-            showResults(); // Quiz was already completed
-        }
+        
+        displayQuestion(resumeIndex);
     }
 
-    function displayQuestion(questionIndex) {
-        const question = quizData.questions[questionIndex];
-        questionCounter.textContent = `Remaining Questions: ${questionQueue.length}`;
+    function displayQuestion(index) {
+        currentQuestionIndex = index;
+        const question = quizData.questions[index];
+        questionCounter.textContent = `Question ${index + 1} of ${quizData.questions.length}`;
         questionStem.textContent = question.stem;
         optionsContainer.innerHTML = '';
         optionsContainer.classList.remove('options-disabled');
@@ -100,102 +90,158 @@ document.addEventListener('DOMContentLoaded', async function() {
             const optionElement = document.createElement('div');
             optionElement.className = 'option';
             optionElement.innerHTML = `<input type="radio" name="answer" value="${i}" id="option-${i}"><label for="option-${i}">${option}</label>`;
-            optionElement.addEventListener('click', () => selectOption(questionIndex, i));
+            if (userAnswers[index] === i) {
+                optionElement.querySelector('input').checked = true;
+            }
+            optionElement.addEventListener('click', () => selectOption(i));
             optionsContainer.appendChild(optionElement);
         });
-        updateNavigation(false); // Disable next button initially
-    }
 
-    function selectOption(questionIndex, selectedIndex) {
-        if (optionsContainer.classList.contains('options-disabled')) return;
-
-        userAnswers[questionIndex] = selectedIndex; // Store the last answer
-        
-        const isCorrect = selectedIndex === quizData.questions[questionIndex].correct;
-
-        // If the answer is correct, remove it from the queue
-        if (isCorrect) {
-            questionQueue.shift(); // Remove the current question (which is always at the start)
-        } else {
-            // If incorrect, move it from the front to a random later position
-            const currentQuestion = questionQueue.shift();
-            const randomIndex = Math.floor(Math.random() * questionQueue.length) + 1;
-            questionQueue.splice(randomIndex, 0, currentQuestion);
+        if (userAnswers[index] !== null) {
+            showFeedback();
         }
-
-        showFeedback(questionIndex, selectedIndex);
-        updateNavigation(true); // Enable next button after answering
-        saveProgress();
+        updateNavigation();
     }
 
-    function showFeedback(questionIndex, selectedIndex) {
+    function selectOption(selectedIndex) {
+        if (optionsContainer.classList.contains('options-disabled')) return;
+        userAnswers[currentQuestionIndex] = selectedIndex;
+        localStorage.setItem(storageKey, JSON.stringify(userAnswers));
+        document.querySelector(`input[value='${selectedIndex}']`).checked = true;
+        showFeedback();
+        updateNavigation();
+    }
+
+    function showFeedback() {
         optionsContainer.classList.add('options-disabled');
-        const correctIndex = quizData.questions[questionIndex].correct;
-        
+        const correctIndex = quizData.questions[currentQuestionIndex].correct;
+        const explanationText = quizData.questions[currentQuestionIndex].explanation;
+
         document.querySelectorAll('.option').forEach((opt, i) => {
             if (i === correctIndex) opt.classList.add('correct');
-            else if (i === selectedIndex) opt.classList.add('incorrect');
+            else if (userAnswers[currentQuestionIndex] === i) opt.classList.add('incorrect');
         });
 
-        const explanationText = quizData.questions[questionIndex].explanation;
         if (explanationText) {
             explanationContainer.innerHTML = `<strong>Explanation:</strong> ${explanationText}`;
             explanationContainer.style.display = 'block';
         }
     }
 
-    function updateNavigation(isAnswered) {
-        submitBtn.disabled = !isAnswered;
+    function updateNavigation() {
+        prevBtn.disabled = currentQuestionIndex === 0;
+        submitBtn.disabled = userAnswers[currentQuestionIndex] === null;
+        submitBtn.textContent = (currentQuestionIndex === quizData.questions.length - 1) ? 'Submit' : 'Next';
         updateProgressBar();
     }
     
     function updateProgressBar() {
-        const correctCount = totalQuestionsInQuiz - questionQueue.length;
-        const progress = (correctCount / totalQuestionsInQuiz) * 100;
+        const progress = ((currentQuestionIndex + 1) / quizData.questions.length) * 100;
         progressBar.style.width = `${progress}%`;
     }
 
     function showResults() {
         let score = 0;
-        userAnswers.forEach((answer, i) => {
-            if (answer === quizData.questions[i].correct) score++;
+        quizData.questions.forEach((q, i) => {
+            if (userAnswers[i] === q.correct) score++;
         });
-        scoreDisplay.textContent = `Final Score: ${score} out of ${totalQuestionsInQuiz}`;
+        scoreDisplay.textContent = `You scored ${score} out of ${quizData.questions.length}`;
         quizInterface.style.display = 'none';
         resultsScreen.style.display = 'block';
     }
+    
+    function showReview() {
+        resultsScreen.style.display = 'none';
+        reviewScreen.style.display = 'block';
+        reviewScreen.innerHTML = '<h2>Quiz Review</h2>';
 
-    function saveProgress() {
-        const progress = { userAnswers, questionQueue };
-        localStorage.setItem(storageKey, JSON.stringify(progress));
+        quizData.questions.forEach((question, index) => {
+            const questionBlock = document.createElement('div');
+            questionBlock.className = 'review-question-block';
+            let optionsHTML = '';
+            question.options.forEach((option, i) => {
+                let className = 'option';
+                if (i === question.correct) className += ' correct';
+                else if (i === userAnswers[index]) className += ' incorrect';
+                optionsHTML += `<div class="${className}">${option}</div>`;
+            });
+            questionBlock.innerHTML = `
+                <h3>Q${index + 1}: ${question.stem}</h3>
+                <div class="options-container">${optionsHTML}</div>
+                ${question.explanation ? `<div class="review-explanation"><strong>Explanation:</strong> ${question.explanation}</div>` : ''}
+            `;
+            reviewScreen.appendChild(questionBlock);
+        });
+        
+        const backBtn = document.createElement('button');
+        backBtn.textContent = 'Back to Results';
+        backBtn.className = 'button button-secondary';
+        backBtn.onclick = () => {
+            reviewScreen.style.display = 'none';
+            resultsScreen.style.display = 'block';
+        };
+        reviewScreen.appendChild(backBtn);
+    }
+    
+    function populateBrowseModal() {
+        browseList.innerHTML = '';
+        quizData.questions.forEach((question, index) => {
+            const item = document.createElement('div');
+            item.className = 'browse-item';
+            let optionsHTML = '';
+            question.options.forEach((optionText, i) => {
+                let className = 'browse-option';
+                if (i === question.correct) {
+                    className += ' correct-answer';
+                }
+                optionsHTML += `<div class="${className}">${optionText}</div>`;
+            });
+            item.innerHTML = `
+                <h3 class="browse-question">Q${index + 1}: ${question.stem}</h3>
+                ${optionsHTML}
+                <div class="browse-explanation">${question.explanation}</div>
+            `;
+            browseList.appendChild(item);
+        });
     }
 
-    // --- 4. BROWSE, REVIEW, AND OTHER FUNCTIONS (UNCHANGED) ---
-    // These functions work perfectly with the new system
-    function showReview() { /* ... (code remains the same) ... */ }
-    function populateBrowseModal() { /* ... (code remains the same) ... */ }
-    function showError(message) { /* ... (code remains the same) ... */ }
+    function showError(message) {
+        quizInterface.innerHTML = `<p style="color: red; text-align: center;">${message}</p>`;
+    }
 
-    // --- 5. EVENT LISTENERS ---
+    // --- EVENT LISTENERS ---
     submitBtn.addEventListener('click', () => {
-        if (questionQueue.length > 0) {
-            displayQuestion(questionQueue[0]); // Always display the next question in the queue
+        if (currentQuestionIndex < quizData.questions.length - 1) {
+            displayQuestion(currentQuestionIndex + 1);
         } else {
             showResults();
         }
     });
+
+    prevBtn.addEventListener('click', () => {
+        if (currentQuestionIndex > 0) {
+            displayQuestion(currentQuestionIndex - 1);
+        }
+    });
     
     reviewBtn.addEventListener('click', showReview);
-    browseBtn.addEventListener('click', () => browseModal.classList.remove('hidden'));
-    closeModalBtn.addEventListener('click', () => browseModal.classList.add('hidden'));
-    browseModal.addEventListener('click', (e) => { if (e.target === browseModal) { browseModal.classList.add('hidden'); } });
+
+    browseBtn.addEventListener('click', () => {
+        browseModal.classList.remove('hidden');
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+        browseModal.classList.add('hidden');
+    });
+
+    browseModal.addEventListener('click', (e) => {
+        if (e.target === browseModal) {
+            browseModal.classList.add('hidden');
+        }
+    });
+
     resetBtn.addEventListener('click', () => {
         localStorage.removeItem(storageKey);
         window.location.reload();
     });
-
-    // --- Unchanged Functions (for reference) ---
-    function showReview() { resultsScreen.style.display = 'none'; reviewScreen.style.display = 'block'; reviewScreen.innerHTML = '<h2>Quiz Review</h2>'; quizData.questions.forEach((question, index) => { const questionBlock = document.createElement('div'); questionBlock.className = 'review-question-block'; let optionsHTML = ''; question.options.forEach((option, i) => { let className = 'option'; if (i === question.correct) className += ' correct'; else if (i === userAnswers[index]) className += ' incorrect'; optionsHTML += `<div class="${className}">${option}</div>`; }); questionBlock.innerHTML = `<h3>Q${index + 1}: ${question.stem}</h3><div class="options-container">${optionsHTML}</div>${question.explanation ? `<div class="review-explanation"><strong>Explanation:</strong> ${question.explanation}</div>` : ''}`; reviewScreen.appendChild(questionBlock); }); const backBtn = document.createElement('button'); backBtn.textContent = 'Back to Results'; backBtn.className = 'button button-secondary'; backBtn.onclick = () => { reviewScreen.style.display = 'none'; resultsScreen.style.display = 'block'; }; reviewScreen.appendChild(backBtn); }
-    function populateBrowseModal() { browseList.innerHTML = ''; quizData.questions.forEach((question, index) => { const item = document.createElement('div'); item.className = 'browse-item'; let optionsHTML = ''; question.options.forEach((optionText, i) => { let className = 'browse-option'; if (i === question.correct) { className += ' correct-answer'; } optionsHTML += `<div class="${className}">${optionText}</div>`; }); item.innerHTML = `<h3 class="browse-question">Q${index + 1}: ${question.stem}</h3>${optionsHTML}<div class="browse-explanation">${question.explanation}</div>`; browseList.appendChild(item); }); }
-    function showError(message) { quizInterface.innerHTML = `<p style="color: red; text-align: center;">${message}</p>`; }
 });
