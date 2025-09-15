@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     try {
         const urlParams = new URLSearchParams(window.location.search);
         const path = urlParams.get('path');
-        const collectionId = urlParams.get('deck'); // Using 'deck' as a clearer param name
+        const collectionId = urlParams.get('deck') || urlParams.get('collection'); // Using 'deck' as a clearer param name
         const selectedUniId = localStorage.getItem('selectedUni');
 
         if (!selectedUniId || !path || !collectionId) throw new Error('Missing parameters.');
