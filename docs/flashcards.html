@@ -12,7 +12,7 @@
 
     <script type="module" src="https://unpkg.com/@google/generative-ai"></script>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F269Y4LPKL"></script>
+    <script async src="https://www.googagmanager.com/gtag/js?id=G-F269Y4LPKL"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -33,32 +33,67 @@
 
             <div class="flashcard-master-container">
                 <div class="flashcard-header">
-                    <div id="flashcard-progress-bar" class="progress-bar"></div>
-                    <div id="flashcard-counter" class="counter">1 / 1</div>
+                    <div id="flashcard-counter" class="counter">0 / 0</div>
+                    <div class="flashcard-controls">
+                        <div class="setting-row" title="Toggle Celebration Mode">
+                            <label for="celebration-toggle" class="toggle-label">🎉</label>
+                            <label class="switch">
+                                <input type="checkbox" id="celebration-toggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <button id="browse-btn" class="control-btn"><i class="fa-solid fa-list-ul"></i> Browse</button>
+                        <button id="reset-btn" class="control-btn"><i class="fa-solid fa-arrows-rotate"></i> Reset</button>
+                    </div>
                 </div>
+                <div id="flashcard-progress-bar" class="progress-bar-container"><div class="progress-bar-inner"></div></div>
 
                 <div class="flashcard-scene">
                     <div id="flashcard" class="flashcard">
-                        <div class="flashcard-face flashcard-front"><p id="card-front-content"></p></div>
-                        <div class="flashcard-face flashcard-back"><p id="card-back-content"></p></div>
+                        <div class="flashcard-face flashcard-front">
+                            <img id="card-front-image" class="card-image" src="" alt="Question Image" style="display: none;">
+                            <div id="card-front-content"></div>
+                        </div>
+                        <div class="flashcard-face flashcard-back">
+                            <img id="card-back-image" class="card-image" src="" alt="Answer Image" style="display: none;">
+                            <div id="card-back-content"></div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="flashcard-footer">
-                    <button id="prev-btn" class="nav-arrow"><i class="fa-solid fa-arrow-left"></i></button>
-                    <button id="flip-btn" class="nav-arrow flip-icon"><i class="fa-solid fa-rotate"></i></button>
-                    <button id="next-btn" class="nav-arrow"><i class="fa-solid fa-arrow-right"></i></button>
+                    <div id="navigation-controls" class="footer-controls">
+                        <button id="prev-btn" class="nav-arrow"><i class="fa-solid fa-arrow-left"></i></button>
+                        <button id="reveal-btn" class="reveal-button">Reveal Answer</button>
+                        <button id="next-btn" class="nav-arrow"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                    <div id="assessment-controls" class="footer-controls" style="display: none;">
+                        <button id="not-learned-btn" class="assessment-btn not-learned">Not Learned</button>
+                        <button id="learned-btn" class="assessment-btn learned">Learned</button>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
+    
+    <div id="browse-modal" class="modal-container hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Browse Deck</h2>
+                <button id="close-modal-btn" class="close-btn">&times;</button>
+            </div>
+            <div id="browse-list" class="browse-list"></div>
+        </div>
+    </div>
 
     <footer class="main-footer">
         Powered by Abdallah Hamza
     </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    
     <script src="js/flashcards.js" defer></script>
     <script src="js/tutor.js" defer></script>
 </body>
