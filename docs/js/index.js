@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async function() {
     const cardContainer = document.getElementById('universities-container');
-    if (!cardContainer) return; // Exit if not on the homepage
+    if (!cardContainer) return; // Only run on the homepage
 
     cardContainer.innerHTML = '<div>Loading universities...</div>';
 
