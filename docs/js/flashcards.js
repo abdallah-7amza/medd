@@ -1,221 +1,273 @@
 document.addEventListener('DOMContentLoaded', async function() {
     // --- 1. DOM Element Setup ---
     const deckTitleEl = document.getElementById('deck-title');
-    const siteTitleEl = document.getElementById('site-title');
-    const flashcardEl = document.getElementById('flashcard');
     const cardFrontContentEl = document.getElementById('card-front-content');
     const cardBackContentEl = document.getElementById('card-back-content');
     const cardFrontImageEl = document.getElementById('card-front-image');
     const cardBackImageEl = document.getElementById('card-back-image');
+    const flashcardEl = document.getElementById('flashcard');
     const counterEl = document.getElementById('flashcard-counter');
     const progressBarEl = document.querySelector('.progress-bar-inner');
+    const siteTitleEl = document.getElementById('site-title');
+
+    // Controls
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
     const revealBtn = document.getElementById('reveal-btn');
-    const notLearnedBtn = document.getElementById('not-learned-btn');
     const learnedBtn = document.getElementById('learned-btn');
+    const notLearnedBtn = document.getElementById('not-learned-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    const browseBtn = document.getElementById('browse-btn');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+    
+    // Containers
     const navigationControls = document.getElementById('navigation-controls');
     const assessmentControls = document.getElementById('assessment-controls');
-    const browseBtn = document.getElementById('browse-btn');
-    const resetBtn = document.getElementById('reset-btn');
-    const celebrationToggle = document.getElementById('celebration-toggle');
-    const CELEBRATION_KEY = 'celebrationModeEnabled';
     const browseModal = document.getElementById('browse-modal');
-    const closeModalBtn = document.getElementById('close-modal-btn');
     const browseList = document.getElementById('browse-list');
 
     // --- 2. State Variables ---
-    let fullDeck = [];
-    let sessionQueue = [];
-    let currentIndexInQueue = 0;
+    let fullDeck = []; // The original, complete deck of cards
+    let activeDeck = []; // The deck currently in use (can be filtered)
+    let currentCardIndex = 0;
+    let isReviewing = false;
     let localStorageKey = '';
 
     // --- 3. Initialization ---
     try {
         const urlParams = new URLSearchParams(window.location.search);
         const path = urlParams.get('path');
-        const collectionId = urlParams.get('deck') || urlParams.get('collection');
+        const collectionId = urlParams.get('collection');
         const selectedUniId = localStorage.getItem('selectedUni');
 
-        if (!selectedUniId || !path || !collectionId) throw new Error('Missing parameters.');
+        if (!selectedUniId || !path || !collectionId) {
+            throw new Error('Required parameters are missing from the URL.');
+        }
 
-        localStorageKey = `flashcard-progress-${path}-${collectionId}`;
+        localStorageKey = `flashcard-progress-${selectedUniId}-${path.replace(/\//g, '-')}-${collectionId}`;
 
         const response = await fetch('./database.json');
-        if (!response.ok) throw new Error("Database file not found.");
+        if (!response.ok) throw new Error("Could not load database.json. Please check the file path.");
         const data = await response.json();
 
+        // Navigate through the data tree to find the correct node
         let currentNode = data.tree[selectedUniId];
+        if (!currentNode) throw new Error("University not found in database.");
         siteTitleEl.textContent = `${currentNode.name} Med Portal`;
-        const pathSegments = path.split('/').filter(Boolean).slice(1);
+
+        const pathSegments = path.split('/').filter(p => p && p !== 'content' && p !== 'universities' && p !== selectedUniId);
         for (const segment of pathSegments) {
-            currentNode = currentNode.children[segment];
+            if (currentNode.children && currentNode.children[segment]) {
+                currentNode = currentNode.children[segment];
+            } else {
+                throw new Error(`Path segment "${segment}" not found in database.`);
+            }
         }
         
-        // The safe way to access the deck using optional chaining (?.)
-        const flashcardDeck = currentNode.resources?.flashcardDecks?.find(deck => deck.id === collectionId);
-        if (!flashcardDeck || !flashcardDeck.cards) throw new Error("Deck not found in this topic.");
+        const flashcardDeckData = currentNode.resources?.flashcardDecks?.find(deck => deck.id === collectionId);
+        if (!flashcardDeckData || !flashcardDeckData.cards) throw new Error("Flashcard deck not found.");
 
-        fullDeck = flashcardDeck.cards;
-        deckTitleEl.textContent = flashcardDeck.title || collectionId.replace(/[-_]/g, ' ');
+        fullDeck = flashcardDeckData.cards.map((card, index) => ({ ...card, id: index, learned: false }));
+        deckTitleEl.textContent = flashcardDeckData.title;
 
-        setupSettings();
-        populateBrowseModal();
+        loadProgress();
         startSession();
 
     } catch (error) {
-        deckTitleEl.textContent = `Error: ${error.message}`;
-        document.querySelector('.flashcard-master-container').style.display = 'none';
+        console.error("Initialization Error:", error);
+        deckTitleEl.innerHTML = `<span style="color: red;">Error: ${error.message}</span>`;
+        document.querySelector('.flashcard-master-container').style.display = 'none'; // Hide UI on error
     }
 
-    // --- 4. Session Management ---
+    // --- 4. Core Functions ---
+
     function startSession() {
-        const savedQueue = localStorage.getItem(localStorageKey);
-        if (savedQueue) {
-            sessionQueue = JSON.parse(savedQueue);
+        const unlearnedCards = fullDeck.filter(card => !card.learned);
+        if (unlearnedCards.length === 0) {
+            activeDeck = [...fullDeck]; // If all learned, start a review session
+            isReviewing = true;
         } else {
-            sessionQueue = Array.from(Array(fullDeck.length).keys());
+            activeDeck = shuffleArray([...unlearnedCards]);
+            isReviewing = false;
         }
-        currentIndexInQueue = 0;
-        if (sessionQueue.length === 0) {
-            displayCompletion();
-        } else {
-            displayCard(currentIndexInQueue);
-        }
+        currentCardIndex = 0;
+        displayCard(currentCardIndex);
     }
 
-    function saveProgress() {
-        localStorage.setItem(localStorageKey, JSON.stringify(sessionQueue));
-    }
-
-    // --- 5. Card Display & Logic ---
-    function displayCard(queueIndex) {
-        if (sessionQueue.length === 0) {
-            displayCompletion();
+    function displayCard(index) {
+        if (!activeDeck || activeDeck.length === 0) {
+            showCompletionScreen();
             return;
         }
-        currentIndexInQueue = queueIndex;
-        const cardIndex = sessionQueue[currentIndexInQueue];
-        const card = fullDeck[cardIndex];
+        
+        // Ensure index is within bounds
+        currentCardIndex = Math.max(0, Math.min(index, activeDeck.length - 1));
+
+        const card = activeDeck[currentCardIndex];
+        
         flashcardEl.classList.remove('is-flipped');
-        assessmentControls.style.display = 'none';
         navigationControls.style.display = 'flex';
-        cardFrontContentEl.innerHTML = marked.parse(card.question || '');
-        cardBackContentEl.innerHTML = marked.parse(card.answer || '');
-        toggleImageView(card.questionImage, cardFrontImageEl);
-        toggleImageView(card.answerImage, cardBackImageEl);
-        updateProgress();
+        assessmentControls.style.display = 'none';
+
+        // Set text content using Marked.js for Markdown support
+        cardFrontContentEl.innerHTML = marked.parse(card.front || '');
+        cardBackContentEl.innerHTML = marked.parse(card.back || '');
+
+        // Handle images
+        toggleImage(cardFrontImageEl, card.frontImage);
+        toggleImage(cardBackImageEl, card.backImage);
+
+        updateUI();
+        saveProgress();
+    }
+    
+    function handleAssessment(learned) {
+        const cardId = activeDeck[currentCardIndex].id;
+        const originalCard = fullDeck.find(c => c.id === cardId);
+        originalCard.learned = learned;
+
+        if (learned) {
+             // Optional: confetti/sound effect
+        } else {
+            // Logic for "Not Learned" if any (e.g., move to end of deck)
+        }
+        
+        // Move to the next card automatically
+        if (currentCardIndex >= activeDeck.length - 1) {
+            startSession(); // All cards assessed, restart with remaining/all
+        } else {
+            displayCard(currentCardIndex + 1);
+        }
     }
 
-    function toggleImageView(imageUrl, imgElement) {
-        if (imageUrl) {
-            imgElement.src = imageUrl;
+    function showCompletionScreen() {
+        cardFrontContentEl.innerHTML = '<h2>Deck Complete!</h2><p>You have learned all cards in this deck. Reset to study again.</p>';
+        cardBackContentEl.innerHTML = '';
+        toggleImage(cardFrontImageEl, null);
+        toggleImage(cardBackImageEl, null);
+        navigationControls.style.display = 'none';
+        assessmentControls.style.display = 'none';
+        counterEl.textContent = 'Completed';
+        progressBarEl.style.width = '100%';
+    }
+
+    // --- 5. UI & Utility Functions ---
+
+    function updateUI() {
+        const totalInSession = activeDeck.length;
+        const learnedInDeck = fullDeck.filter(c => c.learned).length;
+        const totalInDeck = fullDeck.length;
+
+        counterEl.textContent = `${currentCardIndex + 1} / ${totalInSession}`;
+        progressBarEl.style.width = `${(learnedInDeck / totalInDeck) * 100}%`;
+        
+        prevBtn.disabled = currentCardIndex === 0;
+        nextBtn.disabled = currentCardIndex === totalInSession - 1;
+    }
+    
+    function toggleImage(imgElement, src) {
+        if (src) {
+            imgElement.src = src;
             imgElement.style.display = 'block';
         } else {
             imgElement.style.display = 'none';
         }
     }
     
-    function revealAnswer() {
-        flashcardEl.classList.add('is-flipped');
-        navigationControls.style.display = 'none';
-        assessmentControls.style.display = 'flex';
-    }
-
-    function handleAssessment(wasLearned) {
-        if (wasLearned) {
-            sessionQueue.splice(currentIndexInQueue, 1);
-            const isCelebrationEnabled = localStorage.getItem(CELEBRATION_KEY) === 'true';
-            if (isCelebrationEnabled) {
-                if (typeof Tone !== 'undefined') {
-                    const synth = new Tone.Synth().toDestination();
-                    synth.triggerAttackRelease("C5", "8n");
-                }
-                if (typeof confetti === 'function') {
-                    confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
-                }
-            }
-        } else {
-            const cardToReAdd = sessionQueue.splice(currentIndexInQueue, 1)[0];
-            sessionQueue.push(cardToReAdd);
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
         }
-        saveProgress();
-        if (currentIndexInQueue >= sessionQueue.length) {
-            currentIndexInQueue = 0;
-        }
-        displayCard(currentIndexInQueue);
-    }
-    
-    function displayCompletion() {
-        flashcardEl.classList.remove('is-flipped');
-        cardFrontContentEl.innerHTML = "<h2>Deck Complete!</h2><p>You've reviewed all the cards.</p>";
-        cardBackContentEl.innerHTML = "";
-        toggleImageView(null, cardFrontImageEl);
-        toggleImageView(null, cardBackImageEl);
-        navigationControls.style.display = 'flex';
-        assessmentControls.style.display = 'none';
-        prevBtn.disabled = true;
-        nextBtn.disabled = true;
-        revealBtn.disabled = true;
+        return array;
     }
 
-    // --- 6. UI Updates & Controls ---
-    function updateProgress() {
-        const total = fullDeck.length;
-        const remaining = sessionQueue.length;
-        const learned = total - remaining;
-        counterEl.textContent = `Learned: ${learned} / ${total}`;
-        progressBarEl.style.width = total > 0 ? `${(learned / total) * 100}%` : '0%';
-        prevBtn.disabled = currentIndexInQueue === 0;
-        nextBtn.disabled = currentIndexInQueue >= sessionQueue.length - 1;
-    }
-
-    function setupSettings() {
-        let isCelebrationEnabled = localStorage.getItem(CELEBRATION_KEY) === 'true';
-        celebrationToggle.checked = isCelebrationEnabled;
-        celebrationToggle.addEventListener('change', function() {
-            localStorage.setItem(CELEBRATION_KEY, this.checked);
-        });
-    }
-
-    function populateBrowseModal() {
+    function buildBrowseList() {
         browseList.innerHTML = '';
         fullDeck.forEach((card, index) => {
             const item = document.createElement('div');
             item.className = 'browse-item';
-            const questionHTML = marked.parse(card.question || '');
-            const answerHTML = marked.parse(card.answer || '');
             item.innerHTML = `
-                <div class="browse-question"><strong>Q${index + 1}:</strong> ${questionHTML}</div>
-                <div class="browse-answer"><strong>A:</strong> ${answerHTML}</div>
+                <div class="browse-front">${marked.parse(card.front)}</div>
+                <div class="browse-back">${marked.parse(card.back)}</div>
             `;
             browseList.appendChild(item);
         });
     }
 
+    // --- 6. Persistence (Save/Load Progress) ---
+
+    function saveProgress() {
+        const progress = fullDeck.map(card => ({ id: card.id, learned: card.learned }));
+        localStorage.setItem(localStorageKey, JSON.stringify(progress));
+    }
+
+    function loadProgress() {
+        const savedProgress = localStorage.getItem(localStorageKey);
+        if (savedProgress) {
+            try {
+                const progress = JSON.parse(savedProgress);
+                progress.forEach(p => {
+                    const card = fullDeck.find(c => c.id === p.id);
+                    if (card) card.learned = p.learned;
+                });
+            } catch (e) {
+                console.error("Failed to parse saved progress.");
+                // Reset progress if it's corrupted
+                localStorage.removeItem(localStorageKey);
+            }
+        }
+    }
+
     // --- 7. Event Listeners ---
-    revealBtn.addEventListener('click', revealAnswer);
+
+    revealBtn.addEventListener('click', () => {
+        flashcardEl.classList.add('is-flipped');
+        navigationControls.style.display = 'none';
+        assessmentControls.style.display = 'flex';
+    });
+    
+    flashcardEl.addEventListener('click', () => {
+        if (!flashcardEl.classList.contains('is-flipped')) {
+             revealBtn.click();
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (currentCardIndex > 0) {
+            displayCard(currentCardIndex - 1);
+        }
+    });
+
+    nextBtn.addEventListener('click', () => {
+        if (currentCardIndex < activeDeck.length - 1) {
+            displayCard(currentCardIndex + 1);
+        }
+    });
+
     learnedBtn.addEventListener('click', () => handleAssessment(true));
     notLearnedBtn.addEventListener('click', () => handleAssessment(false));
-    prevBtn.addEventListener('click', () => {
-        if (currentIndexInQueue > 0) {
-            displayCard(currentIndexInQueue - 1);
-        }
-    });
-    nextBtn.addEventListener('click', () => {
-        if (currentIndexInQueue < sessionQueue.length - 1) {
-            displayCard(currentIndexInQueue + 1);
-        }
-    });
+
     resetBtn.addEventListener('click', () => {
-        localStorage.removeItem(localStorageKey);
-        window.location.reload();
+        if (confirm('Are you sure you want to reset all progress for this deck?')) {
+            fullDeck.forEach(card => card.learned = false);
+            saveProgress();
+            startSession();
+        }
     });
-    browseBtn.addEventListener('click', () => browseModal.classList.remove('hidden'));
-    closeModalBtn.addEventListener('click', () => browseModal.classList.add('hidden'));
+    
+    browseBtn.addEventListener('click', () => {
+        buildBrowseList();
+        browseModal.classList.remove('hidden');
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+        browseModal.classList.add('hidden');
+    });
+    
     browseModal.addEventListener('click', (e) => {
         if (e.target === browseModal) {
-            browseModal.classList.add('hidden');
+             browseModal.classList.add('hidden');
         }
     });
 });
