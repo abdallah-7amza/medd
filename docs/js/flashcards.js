@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const resetBtn = document.getElementById('reset-btn');
     const browseBtn = document.getElementById('browse-btn');
     const closeModalBtn = document.getElementById('close-modal-btn');
-    
+
     // Containers
     const navigationControls = document.getElementById('navigation-controls');
     const assessmentControls = document.getElementById('assessment-controls');
@@ -68,6 +68,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         if (!flashcardDeckData || !flashcardDeckData.cards) throw new Error("Flashcard deck not found.");
 
         fullDeck = flashcardDeckData.cards.map((card, index) => ({ ...card, id: index, learned: false }));
+
         deckTitleEl.textContent = flashcardDeckData.title;
 
         loadProgress();
