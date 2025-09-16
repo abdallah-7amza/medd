@@ -1,232 +1,97 @@
-/* --- Main Flashcard Component --- */
-.flashcard-master-container {
-    max-width: 700px;
-    margin: 25px auto;
-    background-color: var(--card-background-color);
-    border-radius: 16px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e9ecef;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
-/* --- Header & Top Controls --- */
-.flashcard-header {
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #e9ecef;
-}
-.counter {
-    font-size: 1em;
-    font-weight: 600;
-    color: #6c757d;
-}
-.flashcard-controls {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-.control-btn {
-    background: none;
-    border: 1px solid #dee2e6;
-    color: #6c757d;
-    padding: 8px 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 0.9em;
-    font-weight: 600;
-    transition: all 0.2s ease;
-}
-.control-btn:hover {
-    background-color: #f8f9fa;
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-}
-.control-btn i {
-    margin-right: 6px;
-}
-
-/* --- Progress Bar --- */
-.progress-bar-container {
-    width: 100%;
-    height: 6px;
-    background-color: #e9ecef;
-}
-.progress-bar-inner {
-    height: 100%;
-    background-color: var(--primary-color);
-    width: 0%;
-    transition: width 0.4s ease;
-    border-radius: 0 3px 3px 0;
-}
-
-/* --- Card Scene & Flip Animation --- */
-.flashcard-scene {
-    width: 100%;
-    height: 400px;
-    perspective: 1500px;
+.main-header {
+    background-color: #004080;
+    color: white;
     padding: 20px;
-    box-sizing: border-box;
+    text-align: center;
 }
+
+.deck-title {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+/* Flashcard Styles */
 .flashcard {
-    width: 100%;
-    height: 100%;
+    width: 300px;
+    height: 200px;
+    margin: 20px auto;
+    perspective: 1000px;
     position: relative;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
 }
-.flashcard.is-flipped {
-    transform: rotateY(180deg);
-}
+
 .flashcard-face {
-    position: absolute;
     width: 100%;
     height: 100%;
+    position: absolute;
     backface-visibility: hidden;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 25px;
-    box-sizing: border-box;
-    font-size: 1.5em;
-    text-align: center;
-    border-radius: 12px;
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out;
 }
-.flashcard-back {
+
+.flashcard .front {
+    transform: rotateY(0deg);
+}
+
+.flashcard .back {
     transform: rotateY(180deg);
-    font-size: 1.1em;
-    justify-content: flex-start;
-    align-items: flex-start;
-    text-align: left;
-    overflow-y: auto;
 }
 
-/* --- Image Styling --- */
-.card-image {
-    max-width: 90%;
-    max-height: 45%;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    object-fit: contain;
-}
-.flashcard-back .card-image {
-    max-height: 40%;
+.flashcard.is-flipped .front {
+    transform: rotateY(-180deg);
 }
 
+.flashcard.is-flipped .back {
+    transform: rotateY(0deg);
+}
 
-/* --- Markdown Content Styling --- */
-.flashcard-face strong {
-    color: var(--primary-color);
+/* Progress Bar */
+.progress-bar-container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #ccc;
+    height: 10px;
 }
-.flashcard-face em {
-    font-style: italic;
-    color: var(--secondary-color);
+
+.progress-bar-inner {
+    height: 100%;
+    background-color: #4caf50;
+    width: 0%;
 }
-.flashcard-face ul, .flashcard-face ol {
+
+/* Controls */
+.controls, footer {
+    text-align: center;
+    margin: 20px;
+}
+
+.control-btn {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #004080;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.control-btn:hover {
+    background-color: #003060;
+}
+
+.counter {
     margin-top: 10px;
-    padding-left: 25px;
+    font-size: 18px;
 }
-
-
-/* --- Footer & Bottom Controls --- */
-.flashcard-footer {
-    padding: 15px;
-    background-color: #f8f9fa;
-    border-top: 1px solid #e9ecef;
-}
-.footer-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.nav-arrow {
-    background: none;
-    border: none;
-    color: #6c757d;
-    font-size: 1.6em;
-    cursor: pointer;
-    padding: 10px;
-    transition: all 0.2s ease;
-}
-.nav-arrow:hover {
-    color: var(--primary-color);
-    transform: scale(1.1);
-}
-.nav-arrow:disabled {
-    color: #ced4da;
-    cursor: not-allowed;
-    transform: none;
-}
-.reveal-button {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 8px;
-    font-size: 1.1em;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-.reveal-button:hover {
-    background-color: #003366;
-}
-
-/* --- Assessment Buttons --- */
-.assessment-btn {
-    flex-grow: 1;
-    margin: 0 5px;
-    padding: 15px;
-    font-size: 1.1em;
-    font-weight: 600;
-    border: 2px solid;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-.not-learned {
-    background-color: #fff6f6;
-    border-color: #dc3545;
-    color: #dc3545;
-}
-.not-learned:hover {
-    background-color: #dc3545;
-    color: white;
-}
-.learned {
-    background-color: #f6fff8;
-    border-color: #28a745;
-    color: #28a745;
-}
-.learned:hover {
-    background-color: #28a745;
-    color: white;
-}
-
-/* --- Celebration Toggle (Copied from Quiz CSS for consistency) --- */
-.setting-row { display: flex; align-items: center; gap: 8px; }
-.toggle-label { font-size: 1.4em; cursor: pointer; user-select: none; }
-.switch { position: relative; display: inline-block; width: 50px; height: 28px; }
-.switch input { opacity: 0; width: 0; height: 0; }
-.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 28px; }
-.slider:before { position: absolute; content: ""; height: 20px; width: 20px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
-input:checked + .slider { background-color: #28a745; }
-input:checked + .slider:before { transform: translateX(22px); }
-
-/* --- Browse Modal (Copied from Quiz CSS for consistency) --- */
-.modal-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); z-index: 2000; display: flex; justify-content: center; align-items: center; opacity: 1; transition: opacity 0.3s ease; }
-.modal-container.hidden { opacity: 0; pointer-events: none; }
-.modal-content { background-color: #fff; padding: 25px; border-radius: 12px; max-width: 800px; width: 90%; max-height: 85vh; overflow-y: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-.modal-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e9ecef; padding-bottom: 15px; margin-bottom: 20px; }
-.modal-header h2 { margin: 0; color: var(--primary-color); }
-.close-btn { background: none; border: none; font-size: 2em; cursor: pointer; color: #6c757d; }
-.browse-list .browse-item { margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
-.browse-list .browse-item:last-child { border-bottom: none; }
-.browse-list .browse-question { font-weight: 600; font-size: 1.1em; margin-bottom: 15px; }
-.browse-list .browse-answer { font-size: 1em; }
