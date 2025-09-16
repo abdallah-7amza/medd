@@ -1,97 +1,115 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+/* Main Component Container */
+.flashcard-master-container {
+    max-width: 600px;
+    margin: 25px auto;
+    background-color: #282e3e;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 
-.main-header {
-    background-color: #004080;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-.deck-title {
-    text-align: center;
-    font-size: 24px;
-    margin: 20px 0;
-}
-
-/* Flashcard Styles */
-.flashcard {
-    width: 300px;
-    height: 200px;
-    margin: 20px auto;
-    perspective: 1000px;
+/* Header */
+.flashcard-header {
+    padding: 15px 20px;
     position: relative;
+    text-align: center;
+}
+.counter {
+    color: #a0a6b5;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+.progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background-color: var(--primary-color);
+    width: 0%;
+    transition: width 0.3s ease;
 }
 
-.flashcard-face {
+/* Card Scene & Faces */
+.flashcard-scene {
+    width: 100%;
+    height: 350px; /* Base height for larger screens */
+    perspective: 1500px;
+    padding: 0 20px 20px 20px; /* Add bottom padding */
+    box-sizing: border-box;
+}
+.flashcard {
     width: 100%;
     height: 100%;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+.flashcard.is-flipped {
+    transform: rotateY(180deg);
+}
+.flashcard-face {
     position: absolute;
+    width: 100%;
+    height: 100%;
     backface-visibility: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.5s ease-in-out;
-}
-
-.flashcard .front {
-    transform: rotateY(0deg);
-}
-
-.flashcard .back {
-    transform: rotateY(180deg);
-}
-
-.flashcard.is-flipped .front {
-    transform: rotateY(-180deg);
-}
-
-.flashcard.is-flipped .back {
-    transform: rotateY(0deg);
-}
-
-/* Progress Bar */
-.progress-bar-container {
-    width: 80%;
-    margin: 20px auto;
-    background-color: #ccc;
-    height: 10px;
-}
-
-.progress-bar-inner {
-    height: 100%;
-    background-color: #4caf50;
-    width: 0%;
-}
-
-/* Controls */
-.controls, footer {
+    padding: 20px;
+    color: #f0f2f5;
+    font-size: 1.6em;
     text-align: center;
-    margin: 20px;
-}
-
-.control-btn {
-    margin: 5px;
-    padding: 10px 20px;
-    background-color: #004080;
-    color: white;
-    border: none;
+    border-radius: 8px;
+    background-color: #3b4255;
     cursor: pointer;
 }
-
-.control-btn:hover {
-    background-color: #003060;
+.flashcard-back {
+    transform: rotateY(180deg);
+    font-size: 1.1em;
+    align-items: flex-start;
+    text-align: left;
+    overflow-y: auto;
 }
 
-.counter {
-    margin-top: 10px;
-    font-size: 18px;
+/* Footer & Controls */
+.flashcard-footer {
+    padding: 15px 20px;
+    background-color: #2f3649;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-arrow {
+    background: none;
+    border: none;
+    color: #ced2de;
+    font-size: 1.6em; /* Slightly smaller icon */
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.2s, transform 0.2s;
+}
+.nav-arrow:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+.nav-arrow:disabled {
+    color: #555c6f;
+    cursor: not-allowed;
+    transform: none;
+}
+.flip-icon {
+    font-size: 1.8em; /* Make the flip icon stand out */
+}
+
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 600px) {
+    .flashcard-scene {
+        height: 300px; /* Shorter card on small screens */
+    }
+    .flashcard-face {
+        font-size: 1.3em; /* Smaller text on card front */
+    }
+    .flashcard-back {
+        font-size: 1em; /* Smaller text on card back */
+    }
 }
