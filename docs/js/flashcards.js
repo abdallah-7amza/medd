@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         if (!currentNode) throw new Error("University not found in database.");
         siteTitleEl.textContent = `${currentNode.name} Med Portal`;
 
-        const pathSegments = path.split('/').filter(p => p && p !== 'content' && p !== 'universities' && p !== selectedUniId);
+        const allSegments = path.split('/'); const pathSegments = allSegments.slice(allSegments.indexOf(selectedUniId) + 1);
         for (const segment of pathSegments) {
             if (currentNode.children && currentNode.children[segment]) {
                 currentNode = currentNode.children[segment];
