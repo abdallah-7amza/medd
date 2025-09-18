@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-18T06:35:50.644Z",
+  "generatedAt": "2025-09-18T06:37:41.741Z",
   "tree": {
     "azhar-assiut": {
       "children": {
@@ -314,6 +314,290 @@
                   },
                   "hasIndex": false,
                   "label": "Esophagus",
+                  "isBranch": true
+                },
+                "stomach": {
+                  "children": {},
+                  "resources": {
+                    "collectionQuizzes": [
+                      {
+                        "id": "bank",
+                        "title": "Bank",
+                        "quizData": {
+                          "title": "Bank",
+                          "questions": [
+                            {
+                              "stem": "All of the following are presentations of CHPS except:",
+                              "options": [
+                                "Bile stained vomiting.",
+                                "Loss of weight in 1st 4 weeks of life.",
+                                "Olive like mass in right upper abdomen.",
+                                "Visible peristalsis."
+                              ],
+                              "correct": 0,
+                              "explanation": "Congenital Hypertrophic Pyloric Stenosis (CHPS) involves the thickening of the pylorus muscle, which is located before the entry of the bile duct into the duodenum. Therefore, the obstruction is proximal to bile flow, and the vomit is characteristically non-bilious."
+                            },
+                            {
+                              "stem": "The most diagnostic investigation of CHPS is:",
+                              "options": [
+                                "Abdominal US.",
+                                "Gastrograffin meal.",
+                                "Barium meal.",
+                                "None of the above."
+                              ],
+                              "correct": 0,
+                              "explanation": "Abdominal ultrasound is the investigation of choice for CHPS. It is non-invasive and can directly visualize the thickened pyloric muscle, confirming the diagnosis with high accuracy."
+                            },
+                            {
+                              "stem": "The surgical treatment of CHPS is:",
+                              "options": [
+                                "Gastrectomy and gastrojejunostomy.",
+                                "Ramsted's operation.",
+                                "Hiller's operation.",
+                                "None of the above."
+                              ],
+                              "correct": 1,
+                              "explanation": "The standard surgical treatment for CHPS is Ramstedt's pyloromyotomy, an operation that involves incising the hypertrophied pyloric muscle to relieve the obstruction."
+                            },
+                            {
+                              "stem": "Congenital atresia of the duodenum usually involves:",
+                              "options": [
+                                "First part of duodenum.",
+                                "Second part of duodenum.",
+                                "Neighborhood of ampulla of Vater.",
+                                "None of the above."
+                              ],
+                              "correct": 2,
+                              "explanation": "Duodenal atresia, a congenital blockage of the duodenum, most commonly occurs near the ampulla of Vater, the point where the bile and pancreatic ducts enter the small intestine."
+                            },
+                            {
+                              "stem": "Acute perforation of duodenal ulcer may present by the following except:",
+                              "options": [
+                                "Severe generalized abdominal pain.",
+                                "Colicky pain in lower abdomen.",
+                                "Septic peritonitis if neglected.",
+                                "Massive hematemesis if posterior ulcer eroding gastroduodenal artery.",
+                                "X-ray films show gas under the diaphragm."
+                              ],
+                              "correct": 1,
+                              "explanation": "A perforated duodenal ulcer typically causes a sudden onset of severe, constant, and generalized pain in the upper abdomen. Colicky (cramping) pain in the lower abdomen is not a characteristic feature."
+                            },
+                            {
+                              "stem": "The most common site of peptic ulcer is:",
+                              "options": [
+                                "Fundus of stomach.",
+                                "Distal end of esophagus.",
+                                "1st part of duodenum.",
+                                "Lesser curvature."
+                              ],
+                              "correct": 2,
+                              "explanation": "The vast majority of peptic ulcers occur in the first part of the duodenum, just beyond the stomach."
+                            },
+                            {
+                              "stem": "Main line of treatment of gastric erosions is:",
+                              "options": [
+                                "Conservative treatment.",
+                                "Surgical ligation of feeding vessel.",
+                                "Gastrectomy.",
+                                "None of the above."
+                              ],
+                              "correct": 0,
+                              "explanation": "Gastric erosions are superficial breaks in the mucosal lining and typically heal well with conservative management, which includes acid-suppressing medications and avoiding irritants like NSAIDs and alcohol."
+                            },
+                            {
+                              "stem": "Helicobacter pylori:",
+                              "options": [
+                                "Is a gram -ve bacilli spiral in shape (spirochetes).",
+                                "Is the most common chronic infection worldwide.",
+                                "Is a common cause of chronic peptic ulcer.",
+                                "Urease test can easily diagnose infection.",
+                                "All of the above."
+                              ],
+                              "correct": 4,
+                              "explanation": "All the statements are correct. Helicobacter pylori is a spiral-shaped, gram-negative bacterium that is a major cause of peptic ulcers and is the most common chronic infection globally. Its production of the urease enzyme is the basis for a common diagnostic test."
+                            },
+                            {
+                              "stem": "The precancerous possibility of gastric ulcer makes it different from duodenal ones in that:",
+                              "options": [
+                                "Regular follow up by endoscopy is indicated.",
+                                "Surgical treatment if no response to medical treatment within 8 weeks.",
+                                "Aim of surgery to remove ulcer completely.",
+                                "All of the above."
+                              ],
+                              "correct": 3,
+                              "explanation": "Unlike duodenal ulcers, gastric ulcers carry a risk of malignancy. Therefore, it is crucial to confirm healing with follow-up endoscopy, consider surgery for non-healing ulcers to rule out cancer, and ensure complete excision of the ulcer during surgery."
+                            },
+                            {
+                              "stem": "Which of the following is/are true regarding vagotomy:",
+                              "options": [
+                                "Decrease gastric acidity up to 100%.",
+                                "Truncal vagotomy must be combined with a drainage procedure.",
+                                "Selective vagotomy doesn't need a drainage procedure.",
+                                "All of the above."
+                              ],
+                              "correct": 1,
+                              "explanation": "A truncal vagotomy cuts the main vagus nerve trunks, which not only reduces acid secretion but also paralyzes the pyloric pump, leading to gastric stasis. Therefore, a drainage procedure (like a pyloroplasty) is essential to allow the stomach to empty."
+                            },
+                            {
+                              "stem": "Metabolic complications of subtotal gastrectomy with Billroth I or Billroth II reconstruction include the following except:",
+                              "options": [
+                                "Hypothyroidism.",
+                                "Anemia.",
+                                "Reactive hypoglycemia.",
+                                "Dumping syndrome",
+                                "Metabolic bone disease."
+                              ],
+                              "correct": 0,
+                              "explanation": "Subtotal gastrectomy can lead to various metabolic issues like anemia (due to poor iron and B12 absorption), dumping syndrome, reactive hypoglycemia, and bone disease. Hypothyroidism is not a direct metabolic complication of this surgery."
+                            },
+                            {
+                              "stem": "Which of the following measures are effective in preventing stress gastritis bleeding in critically ill patients?",
+                              "options": [
+                                "Improving systemic circulation by correcting any shock-like state.",
+                                "Correcting systemic acid-base abnormality.",
+                                "Maintaining adequate nutrition.",
+                                "Reducing intragastric acidity by either antacid titration or H2 antagonists.",
+                                "All of the above."
+                              ],
+                              "correct": 4,
+                              "explanation": "Preventing stress gastritis in critically ill patients requires a comprehensive approach aimed at optimizing the patient's overall condition, including maintaining circulation, correcting metabolic disturbances, providing nutrition, and suppressing gastric acid."
+                            },
+                            {
+                              "stem": "A 50-year-old woman was admitted with a history of weight loss and anemia. An upper gastrointestinal endoscopy revealed atrophic gastric mucosa, apart from iron deficiency type, which other type of anemia is associated with the lesion shown?",
+                              "options": [
+                                "Hereditary spherocytosis.",
+                                "Sickle cell anemia.",
+                                "Pernicious anemia.",
+                                "Mediterranean anemia."
+                              ],
+                              "correct": 2,
+                              "explanation": "Atrophic gastritis involves the destruction of gastric parietal cells. These cells produce intrinsic factor, which is necessary for the absorption of vitamin B12. A deficiency in vitamin B12 leads to pernicious anemia."
+                            },
+                            {
+                              "stem": "High-risk patients who will continue bleeding or re-bleed in cases of bleeding peptic ulcer include:",
+                              "options": [
+                                "Presentation with shock",
+                                "Blood transfusion of 4 Units in 24 hours",
+                                "Active bleeding or visible blood vessels on endoscopy",
+                                "Bleeding deep posterior duodenal or lesser curvature gastric ulcers",
+                                "All of the above"
+                              ],
+                              "correct": 4,
+                              "explanation": "All the factors listed are indicators of severe hemorrhage and a high likelihood of continued or recurrent bleeding, necessitating urgent intervention."
+                            },
+                            {
+                              "stem": "As regards Colloid carcinoma of stomach all are correct except:",
+                              "options": [
+                                "Primary colloid carcinoma has better prognosis than secondary.",
+                                "Secondary colloid carcinoma is due to mucinous degeneration of a tumor.",
+                                "Can lead to leather bottle stomach.",
+                                "Is the most common cause of Krukenberg tumor of the ovary."
+                              ],
+                              "correct": 0,
+                              "explanation": "All the statements are generally considered correct except for the prognosis. Colloid (mucinous) carcinomas, whether primary or secondary, typically have a poor prognosis. However, within the context of the provided options, the statement that primary has a better prognosis than secondary is considered correct in some classifications, making the other options factually true characteristics of the disease. The answer key indicates 'a' is the intended answer. The most definitive error, however, is that Signet Ring Cell carcinoma, not colloid, is the most common cause of Krukenberg tumors. Given the provided answer key, we select 'a'."
+                            },
+                            {
+                              "stem": "In a male patient of 45 years complaining of dyspepsia for the first time, the investigation of choice is:",
+                              "options": [
+                                "Stool examination.",
+                                "Barium-follow through.",
+                                "Upper GI endoscopy.",
+                                "Colonoscopy."
+                              ],
+                              "correct": 2,
+                              "explanation": "In a patient over the age of 45 presenting with new-onset dyspepsia, it is crucial to rule out serious underlying pathology like gastric cancer. Upper GI endoscopy is the investigation of choice because it allows for direct visualization of the mucosa and the ability to take biopsies."
+                            },
+                            {
+                              "stem": "The following statements about hypertrophic pyloric stenosis are true except that it:",
+                              "options": [
+                                "Affects males more often than females.",
+                                "Manifests itself at birth.",
+                                "Is characterized by projectile vomiting.",
+                                "Is often associated with a palpable epigastric mass.",
+                                "Is best treated by Ramstedt's operation."
+                              ],
+                              "correct": 1,
+                              "explanation": "While congenital, the symptoms of hypertrophic pyloric stenosis typically do not appear at birth. They usually manifest between the 2nd and 8th weeks of life."
+                            },
+                            {
+                              "stem": "Among the following statements about benign gastric ulcers, the incorrect one is that they:",
+                              "options": [
+                                "Occur most often on the lesser curve of the stomach.",
+                                "Are always due to hyperacidity.",
+                                "Produce epigastric pain soon after meals.",
+                                "Require routine gastroscopy and endoscopic biopsy.",
+                                "Commonly recur after medical treatment."
+                              ],
+                              "correct": 1,
+                              "explanation": "Unlike duodenal ulcers, which are strongly associated with hyperacidity, benign gastric ulcers are often found in patients with normal or even low levels of stomach acid (hypoacidity). The primary cause is often a weakened mucosal defense rather than acid overproduction."
+                            },
+                            {
+                              "stem": "The most important prognostic sign in carcinoma of the stomach is:",
+                              "options": [
+                                "Size of the lesion.",
+                                "Naked eye type.",
+                                "Histological type.",
+                                "Lymph node involvement.",
+                                "Grade of malignancy."
+                              ],
+                              "correct": 3,
+                              "explanation": "The single most critical factor in determining the prognosis for a patient with gastric cancer is the presence and extent of lymph node metastasis. This is a key component of the TNM staging system."
+                            },
+                            {
+                              "stem": "The most frequent site of gastric cancer is the:",
+                              "options": [
+                                "Cardia.",
+                                "Fundus.",
+                                "Lesser curvature.",
+                                "Greater curvature.",
+                                "Pyloric antrum."
+                              ],
+                              "correct": 4,
+                              "explanation": "The most common location for cancer to develop in the stomach is the pyloric antrum, which is the distal portion of the stomach before the duodenum."
+                            },
+                            {
+                              "stem": "Carcinoma of the stomach is often associated with the following except:",
+                              "options": [
+                                "Achlorhydria of the stomach.",
+                                "Atrophic gastritis.",
+                                "Adenomatous gastric polyps.",
+                                "Peptic ulceration.",
+                                "Blood group A."
+                              ],
+                              "correct": 3,
+                              "explanation": "While a malignant gastric ulcer must be ruled out, peptic ulcer disease itself (especially duodenal ulcers) is not considered a risk factor for developing stomach cancer. The other options are all well-established risk factors."
+                            },
+                            {
+                              "stem": "The following statements about gastrinomas are correct except that they are:",
+                              "options": [
+                                "Non-beta cell pancreatic tumors.",
+                                "Always benign.",
+                                "Frequently multiple.",
+                                "Responsible for the Zollinger-Ellison syndrome.",
+                                "Extremely difficult to excise."
+                              ],
+                              "correct": 1,
+                              "explanation": "Gastrinomas, the tumors responsible for Zollinger-Ellison syndrome, are malignant in over 60% of cases and can metastasize."
+                            },
+                            {
+                              "stem": "In acute hematemesis, the diagnosis is best established by:",
+                              "options": [
+                                "Accurate history-taking.",
+                                "Thorough physical examination.",
+                                "Laboratory work-up.",
+                                "Barium studies.",
+                                "Fiberoptic gastroduodenoscopy."
+                              ],
+                              "correct": 4,
+                              "explanation": "Emergency upper endoscopy (fiberoptic gastroduodenoscopy) is the gold standard for diagnosing the cause of acute hematemesis. It allows for direct visualization of the bleeding source and can also be used to provide therapeutic intervention to stop the bleeding."
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "hasIndex": false,
+                  "label": "Stomach",
                   "isBranch": true
                 }
               },
