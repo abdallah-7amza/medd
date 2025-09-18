@@ -1,25 +1,11 @@
 {
-  "generatedAt": "2025-09-18T06:15:44.249Z",
+  "generatedAt": "2025-09-18T06:20:08.331Z",
   "tree": {
-    "content": {
-      "children": {
-        "universities": {
-          "children": {
-            "azhar-assiut": {
-              "children": {},
-              "hasIndex": false,
-              "label": "Azhar Assiut"
-            }
-          },
-          "hasIndex": false,
-          "label": "Universities",
-          "isBranch": true
-        }
-      },
-      "name": "Content",
+    "azhar-assiut": {
+      "children": {},
+      "name": "Al-Azhar (Assiut)",
       "hasIndex": false,
-      "label": "Content",
-      "isBranch": true
+      "label": "Azhar Assiut"
     },
     "nub": {
       "children": {
