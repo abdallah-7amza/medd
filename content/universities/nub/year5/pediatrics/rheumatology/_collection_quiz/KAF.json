@@ -2,873 +2,411 @@
   "title": "KAF",
   "questions": [
     {
-      "stem": "A 15 months old boy presents with seizures associated with fever. He has been in good health except for a high fever that developed today (39.9 C). He has slight cough and mild nasal congestion. Just prior to the seizures he was playing with some toys. Past medical history is unremarkable. During examination convulsions completely stopped. Which of the following is the most appropriate next step?",
+      "stem": "A 14-year-old adolescent girl presented with palpable purpuric rash on the buttocks and lower extremities with arthritis of ankles and knees. Investigations: erythrocyte sedimentation rate, C-reactive protein, and white blood cell count are elevated; the platelet count is normal, urinalysis shows evidence of hematuria. Which of the following is the most common immune complex associated with this disease?",
       "options": [
-        "Lower the body temperature",
-        "Perform an EEG",
-        "Perform CSF examination",
-        "Start IV diazepam"
+        "IgA",
+        "IgG",
+        "IgM",
+        "IgD"
       ],
       "correct": 0,
-      "explanation": "In cases of febrile convulsions, the immediate management priorities are supportive. This includes ensuring a patent airway, providing oxygen therapy, and using physical measures like tap water fomentations and antipyretic drugs such as paracetamol to lower the body temperature."
+      "explanation": "Henoch-Schonlein Purpura (HSP) is the most common vasculitis of childhood. It is characterized by IgA deposition in the small vessels of the skin, joints, gastrointestinal tract, and kidney."
     },
     {
-      "stem": "A 4-yr-old boy is evaluated for his first generalized tonic-clonic seizure, which lasted more than 10 min. There is no history of illness or fever. Examination an hour after the seizure was completely normal. Which of the following is the most appropriate management?",
+      "stem": "A 12-year-old girl presents with symmetrically painful wrists. She has had intermittent episodes of fever and malaise associated with arthralgia and myalgia. Over the past 6 months, she has progressively lost weight and suffered from alopecia. Recently, on returning from the beach, she was found to have a facial rash. Other features of this disorder include:",
       "options": [
-        "Begin therapy with carbamazepine",
-        "Order an EEG",
-        "Order a CT scan of the brain",
-        "Order an MRI study of the brain"
+        "Deforming arthritis",
+        "Erythema marginatum",
+        "Thrombocytopenia",
+        "Intussusception"
       ],
-      "correct": 1,
-      "explanation": "The prompt describes an unprovoked generalized tonic-clonic seizure in a 4-year-old boy. The clinical diagnosis of epilepsy typically requires at least two unprovoked seizures. A single unprovoked seizure in a child who is now normal requires investigation. The EEG is an important investigation in the clinical evaluation of seizures. It helps determine the location and extent of a structural lesion and can reveal associated malformations or brain atrophy."
+      "correct": 2,
+      "explanation": "Systemic Lupus Erythematosus (SLE) is an autoimmune disease with multi-system inflammation. Hematological findings can include hemolytic anemia, leukopenia, lymphopenia, and thrombocytopenia (platelet count less than 100,000/mm³). Other options like deforming arthritis and erythema marginatum are not characteristic of SLE. Intussusception is a rare complication of Henoch-Schonlein purpura."
     },
     {
-      "stem": "A 5-yr-old child is referred with a 6 weeks history of morning headaches, often associated with vomiting. His parents have noted that during this period he has become irritable and moody. Which of the following would be the most likely to be identified during the physical examination?",
+      "stem": "A 2-year-old-boy presented with fever 6 days ago associated with periungual desquamation. Examination showed a strawberry tongue, cervical lymphadenopathy, truncal polymorphous rash. The laboratory investigations of this patient include",
       "options": [
-        "Marked elevation of blood pressure",
-        "Papilledema",
-        "Significant refractive error",
-        "Tenderness on percussion of frontal sinuses"
+        "Elevated ESR and CRP",
+        "Hematuria",
+        "Leucopenia",
+        "Thrombocytopenia"
       ],
-      "correct": 1,
-      "explanation": "The clinical presentation of morning headaches and vomiting points to signs of increased intracranial tension, which is more common in older children after the closure of cranial sutures. Papilledema, or blurring of vision, is a late sign of increased intracranial tension."
+      "correct": 0,
+      "explanation": "The clinical presentation of a 2-year-old boy with a 6-day history of high fever, periungual desquamation, strawberry tongue, cervical lymphadenopathy, and a truncal polymorphous rash is characteristic of Kawasaki disease. In the acute phase of this disease, laboratory findings typically include leukocytosis with neutrophilia, elevated ESR and CRP, and hypoalbuminemia. Thrombocytosis is usually seen in the subacute phase, not the initial presentation. Hematuria is not a classic feature."
     },
     {
-      "stem": "A 5-yr-old child has a 6-mo history of increasing difficulty in walking associated with urinary incontinence. Physical examination shows an alert child with increased deep tendon reflexes, clonus and bilateral Babinski reflexes in the lower extremities with grade 3/5 weakness symmetrically in all extremities. Which of the following is the most likely diagnosis?",
+      "stem": "An 8-year-old-girl complains from morning stiffness and pain of 4 joints in the last 6 months with uveitis. On physical examination, signs of inflammation are present, including joint tenderness, erythema, and effusion, but no fever or weight loss. Laboratory result: ANA positive, rheumatoid factor negative. Which of the following is the most commonly involved joint?",
       "options": [
-        "Guillain-Barré syndrome",
-        "Medulloblastoma",
-        "Myasthenia gravis",
-        "Spinal cord tumor"
+        "Ankle",
+        "Hip",
+        "Knee",
+        "Wrist"
+      ],
+      "correct": 2,
+      "explanation": "The patient's presentation of arthritis in four joints over the last six months with uveitis, positive ANA, and negative rheumatoid factor is consistent with oligoarticular Juvenile Idiopathic Arthritis (JIA). This is the most common type of JIA, and it typically involves an asymmetrical pattern in large joints, such as the knees and ankles. The knee is a common joint affected in this type of JIA."
+    },
+    {
+      "stem": "A 9-year-old girl has a raised erythematous rash on the cheeks; pleural effusion and tenderness of the small joints of the hands; with history of recurrent mouth and nasal ulcers, urine analysis shows proteinuria. Which of the following findings is not suspected in this patient?",
+      "options": [
+        "Hemolytic anemia",
+        "Leukopenia",
+        "Lymphopenia",
+        "Thrombocytosis"
       ],
       "correct": 3,
-      "explanation": "A spinal cord tumor is a possible cause of progressive motor weakness. The clinical picture of spinal cord lesions includes hypertonia and hyperreflexia, which are characteristic of upper motor neuron lesions. Spinal cord lesions typically affect the lower limbs only and may be associated with other manifestations like urinary incontinence and sensory deficits."
+      "explanation": "The clinical picture of malar rash, oral/nasal ulcers, serositis (pleural effusion), arthritis, and proteinuria is characteristic of Juvenile Systemic Lupus Erythematosus (JSLE). Hematological manifestations of SLE include hemolytic anemia, lymphopenia, leukopenia, and thrombocytopenia. Thrombocytosis is not a feature of SLE."
     },
     {
-      "stem": "7-month-old girl is presented to the emergency department with gradual onset of fever, lethargy, and irritability. Her immunizations are up to date. Examination reveals a febrile infant who does not interact with the examiner and cries inconsolably. A lumbar puncture is performed, and the cerebrospinal fluid shows increase lymphocyte, normal sugar and mild elevation of protein. What is the most likely etiologic agent for this condition?",
+      "stem": "A 10-year-old female with history of insidious onset of fatigue, malaise, and progressive muscle weakness, accompanied by low-grade fevers and scaly, red plaques are found across the knuckles, she is not able to sit up from a supine position, investigations revealed: elevated muscle enzymes (ALT, AST, LDH, CPK, and aldolase), EMG abnormalities suggestive of inflammatory myositis. Which of the following is the most common cause of morbidity?",
       "options": [
-        "Enterovirus infection",
-        "Group B streptococci",
-        "Haemophilus influenzae type b",
-        "Neisseria meningitides"
+        "Avascular necrosis",
+        "Calcinosis",
+        "Infections",
+        "Myocardial infarction"
+      ],
+      "correct": 1,
+      "explanation": "The description of a 10-year-old girl with insidious fatigue, progressive proximal muscle weakness, low-grade fever, scaly red plaques on the knuckles (Gottron's papules), and inability to sit up from a supine position, along with elevated muscle enzymes, is classic for Juvenile Dermatomyositis (JDM). The most common cause of morbidity in this disease is calcinosis, which can occur in severe cases."
+    },
+    {
+      "stem": "A 5-year-old girl presented with history of chronic knee and ankle arthritis and iridocyclitis. What is the laboratory test that can be done to help in the diagnosis?",
+      "options": [
+        "Antinuclear antibody",
+        "Antistreptolysin O antibody",
+        "Erythrocyte sedimentation rate",
+        "Rheumatoid factor"
       ],
       "correct": 0,
-      "explanation": "The clinical presentation of fever, lethargy, and irritability, along with cerebrospinal fluid (CSF) findings of increased lymphocytes, normal sugar, and mild protein elevation, is consistent with viral meningitis, also known as aseptic meningitis. Enteroviruses are the most common cause of viral meningitis."
+      "explanation": "The presentation of chronic knee and ankle arthritis with iridocyclitis is characteristic of oligoarticular Juvenile Idiopathic Arthritis (JIA). This type of JIA is associated with a high risk of chronic asymptomatic iridocyclitis, especially in patients with a positive Antinuclear Antibody (ANA) test. Therefore, testing for ANA is helpful in the diagnostic workup."
     },
     {
-      "stem": "A mother brings in her otherwise healthy 4-year-old son because he was unable to walk since this morning. He had an upper respiratory tract illness with a fever 1 week ago. On physical examination, the boy appears well, but he complains of leg pains bilaterally. Examination reveals bilateral weakness in the lower limbs. Which of the followings is most suitable investigation?",
+      "stem": "You have been asked to evaluate this young boy, who presented with 8 days history of high grade fever and maculopapular skin rash. He was treated with oral antibiotic with poor response. What is the laboratory test that can help in diagnosis?",
       "options": [
-        "lumbar puncture",
-        "Magnetic resonance imaging of the spine",
-        "Nerve conduction studies/electromyography",
-        "X ray hip joints"
-      ],
-      "correct": 2,
-      "explanation": "The clinical picture of a 4-year-old boy with a recent upper respiratory tract illness followed by bilateral lower limb weakness is suggestive of Guillain-Barré syndrome (GBS). The definitive diagnostic investigation for GBS is electromyography (EMG), which reveals a decreased nerve conduction velocity due to demyelination."
-    },
-    {
-      "stem": "During the health supervision visit for a healthy 4-month-old boy, you note that his head circumference is 46 cm (>98th percentile) and his length and weight are at the 50th percentile. He has mild frontal bossing and widely split cranial sutures. The fontanelle is flat. Arm and leg movements, tone, and reflexes are normal. In reviewing prior growth parameters, you note that his head circumference was at the 75th percentile at birth and the 90th percentile at 2 months. Which of the following is the most diagnostic procedure?",
-      "options": [
-        "Electroencephalography",
-        "Head computed tomography scan",
-        "Head ultrasonography",
-        "Lumbar puncture"
-      ],
-      "correct": 1,
-      "explanation": "The patient's head circumference is progressively increasing, suggesting hydrocephalus. The most important investigation for hydrocephalus is a CT scan, as it can show dilatation of the ventricular system. Head ultrasonography is also used, particularly for antenatal diagnosis, but a CT scan provides a more definitive diagnosis and is the most important imaging study."
-    },
-    {
-      "stem": "A 4 year old boy's parents complain that their child has difficulty walking. The child rolled, sat and first stood at normal ages and first walked at 13 months of age. Over the past several months however, the family has noticed an increase inward curvature of the lower spine as he walks and that his gait has become more waddling. On examination, the child is oriented and interactive with the physician with an average body built. Enlargement of his calves has been noticed. What is the most diagnostic procedure?",
-      "options": [
-        "Echocardiography",
-        "EMG",
-        "Muscle biopsy",
-        "Muscle enzymes"
-      ],
-      "correct": 2,
-      "explanation": "The clinical findings of a 4-year-old boy with difficulty walking, waddling gait, and enlarged calves (pseudo hypertrophy) are characteristic of Duchenne muscular dystrophy (DMD). The diagnostic procedure for DMD is a muscle biopsy, which shows absent dystrophin."
-    },
-    {
-      "stem": "The parents of a 3-year-old child are worried about the child's apparent clumsiness with frequent falls and a waddling gait. The child had normal development of motor skills during the first year of life and has normal language development. Which of the following is consistent with Duchenne muscular dystrophy?",
-      "options": [
-        "Female sex",
-        "Gower sign",
-        "Hypertrophy of the quadriceps",
-        "Positive antinuclear antibodies in the blood"
-      ],
-      "correct": 1,
-      "explanation": "Duchenne muscular dystrophy is an X-linked recessive disorder that affects only males. It presents with a waddling gait and difficulty getting up from a sitting position, which is demonstrated by a positive Gower sign."
-    },
-    {
-      "stem": "While at school, a 6-year-old boy is noted by his teacher to experience 10- to 20-second lapses in consciousness, sometimes with clonic movements of the face. His parents have not noticed this behavior at home. What is your diagnosis?",
-      "options": [
-        "Absence seizures",
-        "Lack of concentration",
-        "Partial seizures",
-        "Psychic"
-      ],
-      "correct": 0,
-      "explanation": "Absence seizures are characterized by a sudden cessation of motor activity or speech with a blank facial expression for 5 to 20 seconds, followed by a continuation of the original activity. These attacks can be triggered by hyperventilation. There is no aura before the attack and no postictal manifestations afterward."
-    },
-    {
-      "stem": "A 9 year old girl is referred because of declining academic performance over the last 6 months. Her class teacher was concerned that she has been inattentive and disinterested. She often asks people to repeat what they have said. On examination she looks well. Which investigation is most likely to reveal the diagnosis?",
-      "options": [
-        "CT",
-        "EEG",
-        "Hearing assessment",
-        "MRI"
-      ],
-      "correct": 2,
-      "explanation": "The clinical presentation of a child with declining academic performance, inattention, and frequently asking people to repeat what they have said strongly suggests hearing impairment. Hearing and vision assessments, including Auditory Brainstem Response (ABR) and Visual Evoked Potential (VEP), are important investigations for intellectual disability and related developmental issues."
-    },
-    {
-      "stem": "A 2-year-old boy brought by his parents with acute onset of high fever followed by convulsions, there is no history of headache or vomiting. On examination his temperature is 39.7, he is fully conscious with no convulsions, no neck rigidity but he has congested pharynx. What is the next step in the management?",
-      "options": [
-        "EEG",
-        "Give antipyretic",
-        "Give diazepam IV",
-        "Perform lumbar puncture to rule out meningitis"
-      ],
-      "correct": 1,
-      "explanation": "The patient's history is classic for a simple febrile seizure: a child between 9 months and 5 years old with convulsions at the onset of a rapid rise in body temperature due to an extracranial infection (congested pharynx) and no signs of central nervous system (CNS) infection or other seizure causes. Since the convulsions have already stopped, the immediate priority is to lower the fever with antipyretics and fomentations."
-    },
-    {
-      "stem": "A 4-year-old child falls from the back of a three-wheeled vehicle hitting his head. He experiences no loss of consciousness. In the emergency room he is alert and oriented. CT scan of the head was normal. What is the best step?",
-      "options": [
-        "Do spinal tap",
-        "Perform fundus examination",
-        "Reassurance, advice parent not do anything further.",
-        "Repeat CT exam after 48 hours"
+        "Antinuclear antibody",
+        "Antistreptolysin O antibody",
+        "Complement level",
+        "Serum albumin"
       ],
       "correct": 3,
-      "explanation": "While a CT scan was normal initially, repeat imaging after a period of observation is the best step to detect delayed intracranial complications that may not have been present at the first examination. This approach is not explicitly detailed in the provided text, but it aligns with the principles of monitoring for signs of increased intracranial pressure after head trauma."
+      "explanation": "The clinical presentation of high-grade fever and a maculopapular rash that is unresponsive to oral antibiotics could be consistent with Kawasaki disease. In these cases, laboratory findings include elevated ESR and CRP, leukocytosis with neutrophilia, and hypoalbuminemia."
     },
     {
-      "stem": "A 6 month old boy is brought by his mother because he is floppy. He doesn't seem to be interested in reaching for toys. At 4 month old his head support was week and had a persistent Moro reflex. The most likely diagnosis is",
+      "stem": "Your treatment choice for this boy in (Q 8) is?",
       "options": [
-        "Astrocytoma",
-        "Atonic cerebral palsy",
-        "Down syndrome",
-        "Werding Hoffman disease"
-      ],
-      "correct": 1,
-      "explanation": "The clinical picture of a 6-month-old infant with hypotonia, head lag, and persistent primitive reflexes (Moro reflex) is suggestive of a floppy infant. Atonic cerebral palsy, a type of cerebral palsy, is characterized by a 'floppy infant'-like picture with severe hypotonia, although deep reflexes are preserved or even exaggerated."
-    },
-    {
-      "stem": "A 9 year old child comes to the hospital with acute onset of generalized convulsions and disturbed conscious level. The parents didn't report any similar attacks before; on examination he has normal temperature and mild puffiness. What is your first step?",
-      "options": [
-        "Blood pressure measurement",
-        "CSF examination",
-        "CT scan",
-        "Fundus examination"
-      ],
-      "correct": 0,
-      "explanation": "The patient has new-onset generalized convulsions and disturbed consciousness. The mild puffiness mentioned in the clinical picture may be a sign of renal disease. Measuring blood pressure is crucial because hypertension can be a cause of convulsions and could lead to serious complications such as hypertensive encephalopathy. It is one of the essential vital signs to check in a clinical evaluation of a case of convulsions."
-    },
-    {
-      "stem": "A 5 year old boy was brought to emergency room with intractable convulsions. His mother said that he was playing in the swimming pool just before his friends noticed convulsion and he never had such condition before. On examination he was in coma with dilated non-reactive pupils. Which of the following investigations you should start with?",
-      "options": [
-        "Blood sugar",
-        "CT scan of the head",
-        "Lumbar puncture",
-        "Skull x ray"
-      ],
-      "correct": 0,
-      "explanation": "The child presents with intractable convulsions (status epilepticus) and a history that doesn't immediately suggest a clear cause. Hypoglycemia is a metabolic cause of seizures and is a critical, rapidly treatable condition. Checking blood sugar is a fundamental and immediate step in the workup of a seizing child to rule out this emergent cause."
-    },
-    {
-      "stem": "A five-year-old physically active boy developed sudden paralysis of his left arm and leg. His mother believed that he has poliomyelitis because she was not regular with his vaccination. On examination in the emergency room he showed spasticity and hyperreflexia on his left arm and leg. Cardiac examination revealed systolic parasternal murmur. What is your diagnosis?",
-      "options": [
-        "Embolic hemiplegia",
-        "Hemiplegic cerebral palsy",
-        "Poliomyelitis",
-        "Post diphtheritic paralysis"
-      ],
-      "correct": 0,
-      "explanation": "The presentation of sudden paralysis on one side (hemiplegia) is indicative of a stroke. The presence of a cardiac murmur suggests a cardiac lesion that could be a source of an embolus. This is a more likely diagnosis than poliomyelitis, which is characterized by flaccid, asymmetric paralysis. Cerebral palsy is a non-progressive deficit, and post-diphtheritic paralysis is a symmetric, descending paralysis."
-    },
-    {
-      "stem": "A 2 year old boy with an otitis media is brought to casualty. His father reports that child has had a convulsive attack. Temperature is 39.8.The attack was very brief and his elder brother suffered the same when he was 18 months old. On examination, the child is active playful and alert. What is your probable diagnosis?",
-      "options": [
-        "Brain tumor",
-        "CNS infection",
-        "Febrile seizures",
-        "Generalized epilepsy"
-      ],
-      "correct": 2,
-      "explanation": "The patient is a 2-year-old with a high fever (39.8°C) due to an extracranial infection (otitis media), who had a brief convulsive attack and is now alert and playful. The history of a similar event in an older sibling suggests a genetic predisposition. This combination of factors points to a diagnosis of simple febrile seizures."
-    },
-    {
-      "stem": "A 3 months old infant brought to the emergency department because of vomiting and irritability of 3 days duration. Today the boy had seizures, temperature is 39 Cº, he has mottling of the skin, slow capillary refill and few petechiae. He has also decreased responsiveness, bulging fontanelle but negative kernig's and Brudzinski's signs. Which of the following is true?",
-      "options": [
-        "Febrile seizure is a possible diagnosis",
-        "Lumber puncture is urgently needed.",
-        "Negative meningeal signs exclude diagnosis of meningitis",
-        "The infant is developing septic shock"
+        "Broad spectrum antibiotic intravenously to complete 10 days",
+        "High dose of IVIG",
+        "High dose of IVIG and Corticosteroids.",
+        "High doses of IVIG and Acetylsalicylic acid"
       ],
       "correct": 3,
-      "explanation": "The infant's presentation with fever, mottling of the skin, and slow capillary refill points to poor peripheral perfusion, which is a sign of shock. The presence of a bulging fontanelle and petechiae are also concerning signs that could be related to a severe systemic infection like meningococcemia, which can lead to shock and be fatal in hours."
+      "explanation": "The treatment for Kawasaki disease involves high-dose intravenous immunoglobulin (IVIG) to reduce the risk of coronary artery disease when administered within 10 days of fever onset, as well as high-dose aspirin for its anti-inflammatory and antithrombotic effects."
     },
     {
-      "stem": "A five year old boy was brought to the emergency room with intractable seizures. His mother said that he was playing in the kitchen alone 2 hours before. On examination he was drowsy with pin point pupil. What is the best step to do first?",
+      "stem": "This patient is at risk of developing",
       "options": [
-        "CT head",
-        "Give antidote for organophosphorus toxicity",
-        "Give drugs to stop convulsions",
-        "Screening for toxins"
-      ],
-      "correct": 2,
-      "explanation": "The patient is in status epilepticus (intractable seizures). The first priority in managing ongoing seizures is to control them. The immediate anticonvulsant drugs to stop convulsions are Diazepam or Phenytoin. Before administering the medication, the first aid measures of ABC (Airway, Breathing, Circulation) should be initiated."
-    },
-    {
-      "stem": "A 10 year old boy presented with impaired level of consciousness of 12 hours duration. The patient could be aroused for only short periods during which he can respond to simple verbal commands. The mother says he was perfectly normal when he went to play football with his neighbor. On arrival his hemoglobin 7 gram /dl, temperature 37.2, heart rate 55 / minute, blood pressure 110/70. The cause of his coma is likely to be?",
-      "options": [
-        "Acute hepatic failure",
-        "Diabetic ketoacidosis",
-        "Intracranial hemorrhage",
-        "Poisoning"
-      ],
-      "correct": 2,
-      "explanation": "The patient's presentation with a low heart rate (bradycardia) and normal blood pressure after a period of normal activity is a classic sign of increased intracranial pressure. The clinical picture of headache, irritability, disorientation, convulsions, and focal neurological deficits is suggestive of intracranial hemorrhage, which could be a late complication of a head injury."
-    },
-    {
-      "stem": "A 2 days old infant is referred to the hospital for bilious vomiting. The baby was born at 37 weeks gestation to a 37 old women who had no prenatal care. On examination he has severe hypotonia but no fasciculation. What is the appropriate initial step?",
-      "options": [
-        "Early feeding with nasogastric tube",
-        "EMG",
-        "Karyotyping",
-        "Plain x ray of the abdomen"
-      ],
-      "correct": 3,
-      "explanation": "The clinical presentation of a neonate with bilious vomiting requires a rapid assessment for a possible intestinal obstruction. A plain x-ray of the abdomen is the most appropriate initial investigation to visualize the intestinal gas pattern and determine if there is an obstruction."
-    },
-    {
-      "stem": "A 6 year old child is hospitalized for observation because of a short period unconsciousness after a fall from a poly ground swing. He has developed unilateral pupillary dilatation, focal seizures and hemiplegia. Which of the following is the most appropriate management at this time?",
-      "options": [
-        "CT scan",
-        "EEG",
-        "Ophthalmic consultation",
-        "Spinal tap"
+        "Coronary artery aneurysms",
+        "Proliferative glomerulonephritis",
+        "Septic meningitis",
+        "Transient Uveitis."
       ],
       "correct": 0,
-      "explanation": "The patient's symptoms of unilateral pupillary dilation, focal seizures, and hemiplegia following a head injury are highly suggestive of a focal intracranial lesion, such as a subdural or epidural hematoma. A CT scan is the most appropriate diagnostic procedure for detecting these types of lesions."
+      "explanation": "Kawasaki disease is the leading cause of acquired heart disease in children in developed countries, and it commonly affects the coronary arteries. Coronary artery aneurysms are a significant cardiovascular complication."
     },
     {
-      "stem": "An 11 year old boy presents in a confused state. He developed a fever 2 day previously and had been complaining of headache, fever and photophobia. He had vomited 3 times. On examination, his temp was 39.6 C and he has neck stiffness. What is the diagnostic investigation?",
+      "stem": "An 8-year-old girl presents with symptoms of high fever lasting for 3 days. She is also complaining of severe abdominal pain and an erythematous rash on her lower legs. In the past medical history she has had several episodes of high fever and abdominal pain over the past 6 months which eventually gets better after a few days. What is the most likely diagnosis?",
       "options": [
-        "CBC and ESR",
-        "CSF examination",
-        "CT scan",
-        "Fundus examination"
+        "Dermatomyositis",
+        "Familial Mediterranean fever",
+        "Inflammatory bowel disease",
+        "Recurrent urinary tract infections"
       ],
       "correct": 1,
-      "explanation": "The patient's symptoms of fever, headache, photophobia, vomiting, and neck stiffness are classic signs of meningitis. The diagnostic investigation for meningitis is cerebrospinal fluid (CSF) examination via a lumbar puncture, which differentiates between bacterial, viral, and tuberculous meningitis."
+      "explanation": "The patient's history of recurrent attacks of high fever and severe abdominal pain over the past six months, along with the current presentation of a fever and an erythematous rash on the lower legs, is highly suggestive of Familial Mediterranean fever (FMF). FMF is characterized by recurrent, self-limited attacks of fever, serositis (abdominal pain, chest pain), and a rash. An erysipelas-like rash on the ankle or dorsum of the foot is a classic finding."
     },
     {
-      "stem": "A 9 month old boy is brought by his mother because he is floppy. He doesn't seem to be interested in reaching for toys. At 4 month old his head support was not complete. More reflex is present. What is the investigation that may reveal the cause?",
+      "stem": "You have been asked to evaluate a female patient who's known to have poly-articular juvenile idiopathic arthritis who started to complain of joint deformities. You would expect that this complication is due to",
       "options": [
-        "EMG",
-        "MRI brain",
-        "Muscle biopsy",
-        "Nerve biopsy"
+        "Disease progression",
+        "High dose of corticosteroids",
+        "Methotrexate",
+        "Poor nutrition"
       ],
       "correct": 0,
-      "explanation": "The clinical picture of a 9-month-old boy with hypotonia and motor delay suggests a neuromuscular disorder. The most common cause of a floppy infant is spinal muscle atrophy (SMA). An EMG is the key investigation for SMA, as it shows characteristic findings related to anterior horn cell degeneration."
+      "explanation": "The development of joint deformities in polyarticular Juvenile Idiopathic Arthritis (JIA) is a hallmark of disease progression. It indicates that the arthritis is aggressive and has caused permanent damage, and is not a side effect of medication."
     },
     {
-      "stem": "About 12 days after a mild upper respiratory infection, an 8 years old boy complains of weakness in his lower limbs. Over several days, the weakness progresses to include his trunk and respiratory muscles. Oxygen saturation is 85%. What is the most appropriate initial step?",
+      "stem": "A boy 4 years old suffered from gastroenteritis followed by transient joint swellings in his lower limbs. The probable diagnosis of his joint condition is",
       "options": [
-        "Immediate IV steroids",
-        "Plasmapharesis",
-        "IV gamma globulin",
-        "Mechanical ventilation"
+        "Bone disorder",
+        "Hemophilia",
+        "Reactive arthritis",
+        "Toxic synovitis"
       ],
-      "correct": 3,
-      "explanation": "The patient has developed ascending paralysis and respiratory muscle involvement, leading to respiratory failure (oxygen saturation of 85%). In Guillain-Barré syndrome, respiratory failure is a life-threatening complication that requires immediate mechanical ventilation."
+      "correct": 2,
+      "explanation": "Reactive arthritis is a self-limited, transient oligoarticular arthritis that can occur as a reaction to a preceding bacterial infection, such as an enteric infection with Salmonella or Shigella. The boy's history of gastroenteritis followed by transient joint swellings is a classic presentation."
     },
     {
-      "stem": "A 10 year old child has developed headache that is more frequent in the morning. Over the previous few days his family noticed a change in his behavior, he becomes more irritable than usual. Neurological examination revealed hypertonia and hyperreflexia and positive planter reflex in both lower limbs. Which of the following might be the cause?",
+      "stem": "A 7-year-old boy has crampy abdominal pain and a rash mainly on the back of his legs and buttocks as well as on the extensor surfaces of his forearms. Laboratory analysis reveals proteinuria and hematuria. Which of the following is the most likely diagnosis?",
       "options": [
-        "School stress.",
-        "Supra tentorial lesion",
-        "Intraventricular lesion",
-        "Sub tentorial lesion"
-      ],
-      "correct": 3,
-      "explanation": "The presentation of a headache that is more frequent in the morning and is accompanied by neurological signs such as hypertonia and hyperreflexia (upper motor neuron signs) is suggestive of a space-occupying lesion. The posterior fossa, or subtentorial region, is a common location for tumors in children, such as cerebellar medulloblastoma, which can cause obstructive hydrocephalus and increased intracranial pressure with these symptoms."
-    },
-    {
-      "stem": "A 12 months old boy presents with seizures associated with fever. He has been in good health except for a high fever that developed today (40.1 C). He has slight cough and mild nasal congestion. The top priority in the management during seizures is to",
-      "options": [
-        "Control fever",
-        "Ensure patent airway",
-        "IV diazepam",
-        "IV antibiotics"
+        "Dermatomyositis",
+        "Henoch Schönlein purpura",
+        "Post-streptococcal glomerulonephritis",
+        "Systemic lupus erythematosus"
       ],
       "correct": 1,
-      "explanation": "The top priority in the management of any ongoing seizure is to maintain a patent airway, breathing, and circulation (ABC). The first step is to open the airway to prevent obstruction. This is more critical than controlling the fever or giving medications until the airway is secure."
+      "explanation": "The combination of palpable purpura on the lower legs and buttocks, crampy abdominal pain, proteinuria, and hematuria is the classic tetrad of Henoch-Schonlein Purpura (HSP)."
     },
     {
-      "stem": "A 6 month old boy is brought by his mother because he is floppy. He doesn't seem to be interested in reaching for toys. At 4 month old his head support was weak. He has a history of NICU admission for neonatal hyperbilirubinemia. What is the most likely diagnosis?",
+      "stem": "A 5-year-old boy, who was previously well, has a low grade fever colicky abdominal pain and a rash mainly on the back of his legs and buttocks. On examination there is no abdominal tenderness or masses. Laboratory analysis reveals stool positive for blood and normal platelets count. Which of the following is the most likely diagnosis?",
       "options": [
-        "Atonic cerebral palsy",
-        "Congenial muscular dystrophy.",
-        "Down syndrome",
-        "Werding Hoffman disease"
+        "Anaphylactoid purpura",
+        "Dermatomyositis",
+        "Post streptococcal glomerulonephritis",
+        "Systemic lupus erythematosus"
       ],
       "correct": 0,
-      "explanation": "The history of a floppy infant with delayed head support is consistent with a generalized hypotonia. Atonic cerebral palsy presents with severe hypotonia of the trunk and neck muscles, giving a floppy infant-like picture, and is often associated with delayed motor and mental development. The history of neonatal hyperbilirubinemia could be a contributing factor to brain damage and subsequent cerebral palsy."
+      "explanation": "Anaphylactoid purpura is an old name for Henoch-Schonlein Purpura (HSP). The clinical picture of a low-grade fever, colicky abdominal pain, a rash on the legs and buttocks, and stool positive for blood with a normal platelet count is highly characteristic of this condition. A normal platelet count is an important feature differentiating it from other causes of purpura like ITP."
     },
     {
-      "stem": "An 11 year old girl has a 4 month history of abnormal behavior in the form of repeated crying and abnormal movements. On the examination she has jerky involuntary, arrhythmic movements especially in the upper limbs. No history of previous drug intake. The rest of neurological examination is normal. What is the next best step?",
+      "stem": "A 12-year-old girl presents with symmetrically painful wrists. She has had intermittent episodes of fever and malaise associated with arthralgia and myalgia. Laboratory results demonstrate anemia, elevated ESR, positive antinuclear antibodies and urinalysis with +2 blood and +2 protein. Recently, on returning from the beach, she was found to have a facial rash. What is the most likely diagnosis?",
       "options": [
-        "CT brain",
-        "Detailed cardiac examination",
-        "EMG",
-        "Prescribe haloperidol"
-      ],
-      "correct": 1,
-      "explanation": "The patient presents with choreiform movements and emotional lability, which are classic features of rheumatic chorea. Rheumatic chorea can be the only manifestation of rheumatic fever, but it is often associated with subclinical carditis. Therefore, a detailed cardiac examination, including an echocardiogram, is essential to rule out cardiac involvement."
-    },
-    {
-      "stem": "A 4 year old boy's parents complain that their child has difficulty walking. The child first walked at 13 months of age. On examination, the child is oriented and has enlargement of his calves has been noticed. Family history revealed that the elder son of his aunt has the same condition. Which is true regarding the prognosis of this case?",
-      "options": [
-        "Distal muscles is affected very early in the disease",
-        "Heart failure never occur",
-        "Most cases die in the 2nd decade",
-        "The condition is intermittent"
-      ],
-      "correct": 2,
-      "explanation": "The clinical picture is consistent with Duchenne muscular dystrophy. The prognosis for this condition is poor. Patients are typically unable to walk by age 10 years and die between 15 and 25 years of age from respiratory infections, respiratory failure, or heart failure."
-    },
-    {
-      "stem": "A 7 year old female presents to the emergency room with lower limbs weakness One week prior, she had a fever of 38.5 with vomiting and diarrhea that resolved within 3 days. Neurological examination revealed bilateral symmetrical weakness of the lower limbs. Which of the following is best line of treatment?",
-      "options": [
-        "Immediate physiotherapy",
-        "IV gamma globulins",
-        "Mechanical ventilation",
-        "Plasmapharesis"
-      ],
-      "correct": 1,
-      "explanation": "The patient's history of a recent gastrointestinal infection followed by symmetrical weakness of the lower limbs suggests Guillain-Barré syndrome. The treatment of choice for GBS is intravenous gamma globulin, administered for five successive days."
-    },
-    {
-      "stem": "A 17-month-old male was seen in clinic for evaluation of spells. His first episode was 5 months prior to presentation when he slipped at the poolside and hit the back of his head. He had no loss of consciousness and got up on his own, looked pale and floppy. Since then he has had 3 similar episodes. Neurological examination was free. What is your possible diagnosis?",
-      "options": [
-        "Absence seizures",
-        "Myoclonic seizures",
-        "Pallid breath holding spells",
-        "Infantile spasm"
-      ],
-      "correct": 2,
-      "explanation": "The patient's episodes are triggered by sudden pain or fright (falling and hitting his head), followed by pallor, loss of consciousness, and limpness. The description fits the clinical picture of a pallid breath-holding spell. This condition is differentiated from seizures by the specific trigger and the characteristic sequence of events."
-    },
-    {
-      "stem": "A 6 year old child has a 2 months history of headache that is more frequent in the morning and is followed by vomiting. His family noticed a change in his behavior; he became more irritable. Neurological examination revealed hypertonia and hyperreflexia in the lower limbs. What is your possible diagnosis?",
-      "options": [
-        "Astrocytoma",
-        "Brain abscess",
-        "Intracranial hemorrhage",
-        "Medulloblastoma"
+        "Acute rheumatic fever.",
+        "Henoch-Schonlein purpura",
+        "Rheumatoid arthritis",
+        "Systemic lupus erythematosus."
       ],
       "correct": 3,
-      "explanation": "The child's symptoms of morning headaches with vomiting, irritability, hypertonia, and hyperreflexia point to a space-occupying lesion causing increased intracranial pressure and upper motor neuron signs. A posterior fossa tumor, such as a cerebellar medulloblastoma, is a common cause of obstructive hydrocephalus and increased intracranial tension in children."
+      "explanation": "The presentation of a 12-year-old girl with symmetrically painful wrists, intermittent fever, arthralgia, myalgia, weight loss, alopecia, photosensitive facial rash, anemia, elevated ESR, positive ANA, and signs of nephritis (proteinuria and hematuria) is a textbook case of Juvenile Systemic Lupus Erythematosus (JSLE)."
     },
     {
-      "stem": "A developmentally delayed 6 months infant has CT brain showing intracranial calcification. Neonatal history revealed a history of intrauterine growth retardation, hepatosplenomegaly, prolonged neonatal jaundice and purpura. Which of the following is the most likely the cause?",
+      "stem": "A 14-year-old girl presents with joint pains, fever, chronic fatigue, and weight loss of 2 months' duration. Blood pressure is 160/100 mm Hg, Urine analysis reveals: protein (+), 15 to 20 red blood cells; and 5 to 10 white blood cells. Laboratory tests reveal elevated antinuclear antibody (ANA) and anti-DNA levels and low serum complement levels (C3, C4). What is the most likely diagnosis?",
       "options": [
-        "Congenital rubella",
-        "Congenital syphilis",
-        "Congenital CMV",
-        "Congenital toxoplasmosis"
+        "Juvenile rheumatoid arthritis",
+        "Systemic lupus erythematosus",
+        "Henoch-Schonlein purpura",
+        "Familial Mediterranean fever"
       ],
-      "correct": 2,
-      "explanation": "The constellation of findings, including intrauterine growth retardation, hepatosplenomegaly, prolonged neonatal jaundice, purpura, and developmental delay, are classic signs of congenital infection. Intracranial calcifications are a characteristic finding in congenital toxoplasmosis and Cytomegalovirus (CMV) infections."
+      "correct": 1,
+      "explanation": "A 14-year-old girl with a history of joint pains, fever, chronic fatigue, weight loss, hypertension, hematuria, proteinuria, elevated ANA, high anti-DNA levels, and low serum complement levels (C3, C4) has multiple clinical and laboratory criteria for Systemic Lupus Erythematosus."
     },
     {
-      "stem": "A mother brings in her otherwise healthy 4-year-old son because of problems in walking. He is unable to walk since this morning. He had an upper respiratory tract illness with a fever 1 week ago. Examination reveals bilateral weakness of the lower limbs and tender calf muscles. Which of the following is the most appropriate initial diagnostic procedure?",
+      "stem": "In case 17, what is the investigation needed for definite diagnosis of renal disease?",
       "options": [
-        "Antinuclear antibody measurement",
-        "Lumbar puncture",
-        "Magnetic resonance imaging of the spine",
-        "Nerve conduction studies/electromyography"
+        "Albumin/creatinine ratio",
+        "Renal biopsy",
+        "Renal ultrasonography",
+        "Urine analysis"
+      ],
+      "correct": 1,
+      "explanation": "Renal biopsy is the most definitive investigation for renal disease in a patient with SLE. It is used to stage lupus nephritis, which is crucial for guiding treatment."
+    },
+    {
+      "stem": "In case 17, what is the most common complication of this disease?",
+      "options": [
+        "Heart failure",
+        "Hepatic failure",
+        "Malignancy",
+        "Renal failure"
       ],
       "correct": 3,
-      "explanation": "The clinical presentation of a child with a history of an upper respiratory tract infection followed by bilateral lower limb weakness and tender calf muscles strongly suggests Guillain-Barré syndrome (GBS). The most appropriate diagnostic procedure is a nerve conduction study (EMG), which would show decreased nerve conduction velocity due to demyelination."
+      "explanation": "In patients with SLE, particularly in the case of juvenile onset, there is a higher incidence of CNS and renal involvement compared to adults. Renal failure is a common and serious complication of lupus nephritis."
     },
     {
-      "stem": "A 17-month-old male was seen in clinic for evaluation of spells. His first episode was 5 months prior to presentation when he developed cyanosis at the end of crying. Since then he has had 3 similar episodes. Neurological examination was free. Which one of the following is correct regarding this condition?",
+      "stem": "A child has a 2 week history of spiking fever that reaches as high as 40C°. She has spindle shaped swellings of finger joints and complains of upper sternal pain. When she has fever, the parent note faint salmon-colored rash that resolves with the resolution of the fever. What is the most likely the diagnosis?",
       "options": [
-        "Are commoner over the age of 3.5 years.",
-        "Can be confused with myoclonic seizures.",
-        "May be associated with iron deficiency anemia",
-        "Should be treated with sedatives."
-      ],
-      "correct": 2,
-      "explanation": "The patient's episodes are triggered by crying and result in cyanosis and stiffening, which are characteristic of cyanotic breath-holding spells. The management involves educating and reassuring the parents, as the condition is self-limited, but treating coexisting iron deficiency anemia is important as it can worsen the spells."
-    },
-    {
-      "stem": "A 6-year-old boy appears in a clinic with history of hyperactivity and poor school performance. He cannot watch television more than a few minutes at a time. Physician also noted a reduced attention span and an impulsive behavior. What is the most likely diagnosis?",
-      "options": [
-        "ADHD (attention deficit hyperactivity disorder)",
-        "Drug ingestion",
-        "Normal child",
-        "Schizophrenia"
-      ],
-      "correct": 0,
-      "explanation": "The patient's symptoms of hyperactivity, poor school performance, reduced attention span, and impulsive behavior are the defining features of Attention Deficit Hyperactivity Disorder (ADHD). The symptoms must be present before age 7 and persist for at least 6 months in two or more settings."
-    },
-    {
-      "stem": "A 3-year-old boy is brought to you, as his mother is concerned about his attention span. You note that he has very poor eye contact and poor verbal skills (having only a four-word vocabulary). His weight and height are appropriate for his age. Which one of the following is the most likely diagnosis?",
-      "options": [
-        "Attention deficit hyperactivity disorder",
-        "Autism spectrum disorder",
-        "Depression",
-        "Temper tantrums"
-      ],
-      "correct": 1,
-      "explanation": "The patient's symptoms of very poor eye contact and poor verbal skills (having only a four-word vocabulary) are part of the triad of impairments in social interaction and verbal communication characteristic of Autism Spectrum Disorder (ASD)."
-    },
-    {
-      "stem": "A newborn infant is noted to be profoundly hypotonic at birth; he has a good heart rate but is in respiratory distress. He has a tongue fasciculations. Which of the following investigations is recommended to reach a diagnosis?",
-      "options": [
-        "EMG",
-        "Karyotyping",
-        "MRI",
-        "Muscle enzymes"
-      ],
-      "correct": 0,
-      "explanation": "The patient presents as a 'floppy infant' with profound hypotonia at birth and tongue fasciculations. This is a characteristic clinical sign of Werdnig Hoffmann disease, which is a type of spinal muscular atrophy (SMA). The most definitive investigation for this condition is an EMG."
-    },
-    {
-      "stem": "A 14-year-old girl is brought to your office by her mother because she is complaining of 'seeing double.' The history is significant for headaches that waken the patient from sleep in the morning but are relieved by vomiting. On physical examination, you note that she is unable to abduct either eye. Lower extremity reflexes are slightly exaggerated. Which of the following physical signs is likely to be present in this patient?",
-      "options": [
-        "Hypotension",
-        "Papilledema",
-        "Patency of the anterior fontanelle",
-        "Tachycardia"
-      ],
-      "correct": 1,
-      "explanation": "The patient's symptoms of headaches waking her from sleep and relieved by vomiting, along with neurological signs like inability to abduct her eyes (Abducens nerve palsy), and exaggerated reflexes, are indicative of increased intracranial tension. Papilledema (blurring of vision) is a key sign of increased intracranial pressure."
-    },
-    {
-      "stem": "A 2 years old male is admitted to the hospital with weakness on the left side. History revealed dental extraction 1 week ago, followed by very high fever. By examination he is found to have a presystolic murmur on the left parasternal are. Which of the following is the most likely diagnosis?",
-      "options": [
-        "Infective endocarditis",
-        "Poliomyelitis",
+        "Juvenile rheumatoid arthritis",
+        "Osteoarthritis",
         "Rheumatic fever",
-        "Septicemia"
+        "Septic arthritis"
       ],
       "correct": 0,
-      "explanation": "The patient presents with hemiplegia (weakness on one side) after a dental extraction and a high fever, and has a cardiac murmur. This history is highly suggestive of infective endocarditis, where a dental procedure can be a predisposing factor and embolization of vegetations can lead to neurological complications like embolic hemiplegia."
+      "explanation": "A child with a two-week history of spiking fever, joint swellings (spindle shaped), upper sternal pain, and a faint, salmon-colored rash that appears with fever is presenting with a classic picture of systemic-onset Juvenile Idiopathic Arthritis (SJIA). The fever pattern, rash, and arthritis are all characteristic features."
     },
     {
-      "stem": "A six-month-old breast fed infant presents to the emergency room with generalized tonic clonic seizure activity of about 30-min duration that stops upon the administration of diazepam. Which of the following questions is important to ask about?",
+      "stem": "A 3-year-old boy presents with an 8-day history of high fever, rash, red eyes, persistent crying, and refusal to walk. His conjunctivae are injected. He has cracked, red lips, and a red tongue. He has a few enlarged, tender left cervical lymph nodes; His heart examination is normal except for tachycardia. Which of the following is the most likely diagnosis?",
       "options": [
-        "Does the child have fever?",
-        "Family history of similar conditions",
-        "The mode of delivery either it is vaginal or CS",
-        "Type of feeding whether it is breast or formula?"
+        "Kawasaki disease.",
+        "Scarlet fever",
+        "Systemic lupus erythematosus",
+        "Systemic onset juvenile idiopathic arthritis"
       ],
       "correct": 0,
-      "explanation": "The infant is in status epilepticus (a seizure lasting over 30 minutes). One of the most common causes of status epilepticus in children is a prolonged or complex febrile seizure. Asking about the presence of fever is crucial to distinguish this from other causes of seizures."
+      "explanation": "The clinical findings of a 3-year-old boy with a high fever for eight days, rash, conjunctival injection, red/cracked lips, strawberry tongue, and cervical lymphadenopathy are the core diagnostic criteria for classic Kawasaki disease."
     },
     {
-      "stem": "A 17 months old boy is brought for evaluation because of two episodes in which he abruptly stopped breathing, lost consciousness and had shaking of all four extremities. Both episodes occurred after his older brother took away his favorite toy. After few cries, he stops breathing, turns blue, then becomes stiff and had this jerking of all extremities. What might be these episodes?",
+      "stem": "A mother brings her 3-year-old daughter for evaluation of left knee swelling. The child's symptoms began approximately 30 days ago with morning stiffness that initially lasted 30 minutes. However, she now limps all day. On examination the left ankle and knee are swollen and have decreased range of motion. The review of symptoms is negative for fevers, rash, sore throat. Which of the following is the likely diagnosis?",
       "options": [
-        "Generalized tonic convulsions",
-        "Generalized tonic clonic convulsion",
-        "Cyanotic breath holding spells",
-        "Infantile spasms"
+        "Oligoarticular juvenile idiopathic arthritis",
+        "Polyarticular juvenile idiopathic arthritis",
+        "Systemic lupus erythematosus",
+        "Systemic onset juvenile idiopathic arthritis"
       ],
-      "correct": 2,
-      "explanation": "The patient's episodes are triggered by anger or frustration (his toy being taken), followed by crying, breath-holding, turning blue (cyanosis), and then becoming stiff with jerking. This is a classic presentation of a cyanotic breath-holding spell."
+      "correct": 0,
+      "explanation": "A 3-year-old girl with a history of unilateral knee swelling and limping for a month, followed by ankle involvement (a total of less than 4 joints), and no systemic symptoms like fever or rash, fits the description of oligoarticular Juvenile Idiopathic Arthritis (JIA). This is the most common form of JIA and is characterized by asymmetrical involvement of large joints."
     },
     {
-      "stem": "Which is not a cause of obstructive hydrocephalus?",
+      "stem": "Juvenile rheumatoid arthritis is characterized by one of the following:",
       "options": [
-        "Aquiductal stenosis.",
-        "Dandy-Walker malformation.",
-        "Posterior fossa tumor.",
-        "Subarachnoid hemorrhage."
-      ],
-      "correct": 3,
-      "explanation": "Obstructive (non-communicating) hydrocephalus is caused by an obstruction within the ventricular system. The causes listed are aqueduct stenosis, Dandy-Walker malformation, and posterior fossa tumors, all of which obstruct CSF flow within the ventricles. Subarachnoid hemorrhage is a cause of non-obstructive (communicating) hydrocephalus, where the obstruction is outside the ventricular system in the subarachnoid space."
-    },
-    {
-      "stem": "In spastic cerebral palsy, which of the following is not commonly present?",
-      "options": [
-        "Exaggerated deep tendon reflexes is common",
-        "Mental retardation.",
-        "Sensations are free",
-        "True bulbar palsy."
+        "Commonly affects large joints",
+        "Rheumatoid factor is always positive",
+        "Excellent response to steroids in all cases",
+        "Commonly affects small joints"
       ],
       "correct": 3,
-      "explanation": "Spastic cerebral palsy is due to damage to the cerebral motor cortex. It is commonly associated with seizures, microcephaly, pseudobulbar affection (feeding difficulties/gagging), and mental impairment, but not true bulbar palsy. Exaggerated deep tendon reflexes are a hallmark of spasticity."
+      "explanation": "Polyarticular JIA affects five or more joints, including small and large joints, and is usually symmetrical. Therefore, commonly affecting small joints is a characteristic feature of polyarticular JIA."
     },
     {
-      "stem": "Cerebral palsy is characterized by:",
+      "stem": "Which of the following laboratory results would not support a diagnosis of Kawasaki disease?",
       "options": [
-        "Acquired in late childhood.",
-        "Inherited as autosomal recessive.",
-        "Non-curable.",
-        "Slow progression"
+        "Elevated white blood cell count",
+        "Normal erythrocyte sedimentation rate (ESR)",
+        "Elevated liver transaminases",
+        "White blood cells in the urine with a negative urine culture"
+      ],
+      "correct": 1,
+      "explanation": "In Kawasaki disease, laboratory findings typically include an elevated ESR and CRP. Therefore, a normal ESR would not support the diagnosis. Leukocytosis and elevated liver transaminases are also common findings. Sterile pyuria (white blood cells in the urine with a negative culture) can also occur."
+    },
+    {
+      "stem": "Fever in rheumatic diseases is caused by cytokine release and can take many forms. Regular temperature spikes, once or twice a day is seen in",
+      "options": [
+        "Behçet syndrome",
+        "Dermatomyositis",
+        "Kawasaki disease",
+        "Systemic-onset juvenile idiopathic arthritis"
+      ],
+      "correct": 3,
+      "explanation": "Systemic-onset Juvenile Idiopathic Arthritis (SJIA) is characterized by a high, spiking fever that occurs daily for at least two weeks."
+    },
+    {
+      "stem": "Malar rash is seen in which of the following pediatric diseases?",
+      "options": [
+        "Kawasaki disease",
+        "Leukemia",
+        "Rheumatic fever",
+        "Systemic lupus erythematosus"
+      ],
+      "correct": 3,
+      "explanation": "Malar rash (a butterfly-shaped rash across the cheeks and nose) is a characteristic mucocutaneous manifestation of Systemic Lupus Erythematosus (SLE)."
+    },
+    {
+      "stem": "Non fixed erythematous rash (related to fever) is seen in which of the following pediatric arthritis syndromes?",
+      "options": [
+        "Kawasaki disease",
+        "Lupus erythematosus",
+        "Juvenile idiopathic arthritis",
+        "Sarcoidosis."
       ],
       "correct": 2,
-      "explanation": "Cerebral palsy is defined as a non-progressive, non-fatal, and non-curable motor deficit. It is a disorder that occurs due to damage to the developing brain and is not inherited or acquired in late childhood."
+      "explanation": "Systemic-onset Juvenile Idiopathic Arthritis (SJIA) is a subtype of JIA that presents with a non-fixed, erythematous rash that is related to the fever spikes."
     },
     {
-      "stem": "Causes of mental retardation include",
+      "stem": "Chronic arthritis (>6 weeks) in the following pediatric arthritis syndromes, is mostly seen in",
       "options": [
-        "Fragile X syndrome",
-        "Galactosemia",
-        "Tuberous sclerosis",
+        "Juvenile idiopathic arthritis",
+        "Kawasaki disease",
+        "Leukemia",
+        "Lymphoma"
+      ],
+      "correct": 0,
+      "explanation": "Juvenile idiopathic arthritis (JIA) is a chronic illness of childhood defined by arthritis lasting for more than six weeks."
+    },
+    {
+      "stem": "Skin manifestations in Henoch-Schonlein purpura (HSP) occur in what percentage of cases?",
+      "options": [
+        "20%",
+        "40%",
+        "60%",
+        "100%"
+      ],
+      "correct": 3,
+      "explanation": "Palpable purpura on the lower limbs and buttocks is the hallmark of Henoch-Schonlein Purpura (HSP) and is a consistent finding in all cases."
+    },
+    {
+      "stem": "Criteria for diagnosis of Kawasaki disease do not include",
+      "options": [
+        "Bilateral suppurative conjunctivitis",
+        "Fever of>5 days duration",
+        "Periungual desquamation",
+        "Polymorphous rash"
+      ],
+      "correct": 0,
+      "explanation": "The clinical criteria for classic Kawasaki disease include bilateral bulbar conjunctival injection without exudate. Suppurative conjunctivitis, which involves pus, is not a feature of this disease."
+    },
+    {
+      "stem": "The most common form of juvenile idiopathic arthritis (JIA) is",
+      "options": [
+        "Oligo articular juvenile idiopathic arthritis",
+        "Polyarticular juvenile idiopathic arthritis",
+        "Psoriatic arthritis",
+        "Systemic onset juvenile idiopathic arthritis"
+      ],
+      "correct": 0,
+      "explanation": "Oligoarticular JIA is the most common form of juvenile idiopathic arthritis, accounting for 50% of cases."
+    },
+    {
+      "stem": "The attack of Familial Mediterranean fever usually lasts",
+      "options": [
+        "30 minutes",
+        "2 hours",
+        "14 days",
+        "6 hours to 1 week"
+      ],
+      "correct": 3,
+      "explanation": "Familial Mediterranean fever (FMF) attacks are characterized by recurrent fever, serositis, rash, and musculoskeletal involvement. An attack typically lasts from 6 hours to 96 hours, or up to 4 days, with some sources listing up to one week."
+    },
+    {
+      "stem": "The first option in the treatment of JIA is",
+      "options": [
+        "Hydroxychloroquine",
+        "Nonsteroidal anti-inflammatory drugs",
+        "Physiotherapy",
+        "Systemic corticosteroids"
+      ],
+      "correct": 1,
+      "explanation": "The first line of drug treatment for JIA is typically non-steroidal anti-inflammatory drugs (NSAIDs) such as Ibuprofen or diclofenac, especially in the oligoarticular type."
+    },
+    {
+      "stem": "Which of the following rheumatic diseases of childhood, heliotropic rash of the eyelids and gottrons papules are seen?",
+      "options": [
+        "Henoch-Schonlein purpura",
+        "Kawasaki disease",
+        "Juvenile dermatomyositis",
+        "Systemic lupus erythematosus"
+      ],
+      "correct": 2,
+      "explanation": "Heliotropic rash on the eyelids and Gottron's papules (scaly, red plaques over the knuckles) are classic features of Juvenile Dermatomyositis (JDM)."
+    },
+    {
+      "stem": "Familial Mediterranean fever attacks include",
+      "options": [
+        "Fever",
+        "Rash",
+        "Serositis",
         "All of the above"
       ],
       "correct": 3,
-      "explanation": "The textbook lists Fragile X syndrome as a sex chromosome abnormality, galactosemia as an inborn error of metabolism, and tuberous sclerosis as a neurocutaneous syndrome, all of which are recognized as causes of intellectual disability (mental retardation)."
+      "explanation": "Familial Mediterranean fever (FMF) attacks are characterized by recurrent fever, serositis (such as abdominal pain or chest pain), and a rash. Arthritis is also a common feature."
     },
     {
-      "stem": "Management of status epilepticus should include:",
+      "stem": "Which of the following is the most appropriate laboratory test to diagnose systemic lupus erythematosus?",
       "options": [
-        "Intramuscular diazepam immediately on arrival in hospital",
-        "IV Phenytoin if appropriate initial therapy is ineffective.",
-        "No need for oxygen at any time during therapy",
-        "IV diazepam is contraindicated because of respiratory centre depression"
-      ],
-      "correct": 1,
-      "explanation": "The immediate anticonvulsant drug of choice is IV or rectal diazepam. If the seizures are not controlled within 10 minutes, phenytoin or phenobarbitone is given as a loading dose. The patient should be given oxygen therapy."
-    },
-    {
-      "stem": "Find the statement which does not characterize bacterial meningitis:",
-      "options": [
-        "In newborns, the only feature may be bulging of anterior fontanel",
-        "Neck rigidity is absent in infancy",
-        "Neisseria meningitides is commonest cause in pediatric age groups",
-        "Convulsions are common"
-      ],
-      "correct": 2,
-      "explanation": "Neisseria meningitidis, pneumococci, and Hemophilus influenzae are the most common causes of bacterial meningitis in children from 2 months to 12 years. However, the most common cause is usually Hemophilus influenzae type B. In neonates and infants under 2 months, the commonest causes are group B streptococci and Gram-negative enteric bacilli."
-    },
-    {
-      "stem": "An absence seizure is usually not characterized by?",
-      "options": [
-        "EEG findings are characteristic.",
-        "Precipitated by hyperventilation.",
-        "There is no aura",
-        "Typically the child falls to the ground during an attack."
-      ],
-      "correct": 3,
-      "explanation": "Absence seizures are characterized by a sudden cessation of motor activity or speech with a blank facial expression for a short duration. The child does not fall to the ground. There is no aura and no postictal period, and the attacks can be triggered by hyperventilation. The EEG findings of a 3 spike/second wave are characteristic."
-    },
-    {
-      "stem": "Simple febrile convulsions",
-      "options": [
-        "Frequently occur in neonates",
-        "It is due to an extra cranial cause of fever",
-        "May sometimes occur without fever",
-        "Should always be investigated by lumbar puncture to exclude meningitis"
-      ],
-      "correct": 1,
-      "explanation": "Febrile convulsions are a common condition caused by a rapid rise in body temperature due to an extracranial infection, such as tonsillitis. They typically occur between 9 months and 5 years of age and are a diagnosis of exclusion after ruling out CNS infections."
-    },
-    {
-      "stem": "Which is not true about febrile convulsions?",
-      "options": [
-        "Occurs in children aged from six months to five years.",
-        "Often involve other children in the family",
-        "Simple febrile seizures are more common",
-        "Usually occurs after drop of fever."
-      ],
-      "correct": 3,
-      "explanation": "Febrile convulsions occur at the onset of a rise in body temperature, not after a drop in fever. They typically occur in children between 9 months and 5 years of age, often have a genetic component, and simple febrile seizures are the most common type."
-    },
-    {
-      "stem": "The following anticonvulsant treatment is not appropriate?",
-      "options": [
-        "ACTH for infantile spasm.",
-        "Ethosuximide for absence seizures",
-        "Phenytoin as first choice for absence seizures",
-        "Sodium valproate for primary generalized tonic clonic seizures"
-      ],
-      "correct": 2,
-      "explanation": "The first-line drug for absence seizures is ethosuximide, and sodium valproate is also used for both absence and generalized tonic-clonic seizures. ACTH/corticosteroids are used for epileptic spasms (infantile spasms). Phenytoin is used for generalized tonic-clonic and partial seizures, but not typically for absence seizures."
-    },
-    {
-      "stem": "Find the statement which characterizes bacterial meningitis in infancy.",
-      "options": [
-        "Convulsions never occur",
-        "CSF protein may be normal",
-        "Neck rigidity is absent",
-        "Neisseria meningitides is commonest cause"
-      ],
-      "correct": 2,
-      "explanation": "In infants, the manifestations of meningeal irritation, such as neck rigidity, Kernig's sign, and Brudzinski's sign, are often absent. The only signs may be bulging fontanelle, separated sutures, lethargy, poor feeding, and convulsions. The commonest causes in this age group are Group B streptococci and Gram-negative enteric bacilli."
-    },
-    {
-      "stem": "Acute bacterial meningitis cannot cause",
-      "options": [
-        "Acute adrenal failure.",
-        "Blindness.",
-        "Deafness",
-        "Decrease sugar and protein"
-      ],
-      "correct": 3,
-      "explanation": "Acute bacterial meningitis is characterized by increased protein and decreased glucose in the CSF. All the other options are listed as potential complications, including adrenal failure (shock), blindness, and deafness."
-    },
-    {
-      "stem": "In aseptic meningitis, protein and glucose CSF show:",
-      "options": [
-        "Increased protein and decreased glucose.",
-        "Increased protein and glucose.",
-        "Normal glucose and protein may increase",
-        "Normal protein and decreased glucose."
-      ],
-      "correct": 2,
-      "explanation": "The CSF examination table shows that in viral (aseptic) meningitis, the glucose level is usually normal, and the protein level can be normal or mildly increased."
-    },
-    {
-      "stem": "In acute bacterial meningitis, the CSF protein and glucose will show:",
-      "options": [
-        "Increased protein and decreased glucose.",
-        "Increased protein and glucose.",
-        "Normal protein and decreased glucose.",
-        "Normal protein and glucose."
+        "Antinuclear antibody",
+        "Anti-histone antibody",
+        "Anti-ß 2 glycoprotein I antibody",
+        "Anti-double stranded DNA antibody"
       ],
       "correct": 0,
-      "explanation": "The CSF examination table clearly indicates that in bacterial meningitis, the protein level is increased, and the glucose level is decreased."
+      "explanation": "Antinuclear antibodies (ANA) are a key immunological criterion for the diagnosis of Systemic Lupus Erythematosus (SLE) and are found in nearly all patients."
     },
     {
-      "stem": "Flaccid paralysis is not seen in",
+      "stem": "The most common complication of Familial Mediterranean fever in severe untreated cases is",
       "options": [
-        "Acute infectious polyneuritis",
-        "Cerebral diplegia.",
-        "Poliomyelitis.",
-        "Werdnig Hoffmann disease."
-      ],
-      "correct": 1,
-      "explanation": "Flaccid paralysis is a characteristic of lower motor neuron lesions. Acute infectious polyneuritis (Guillain-Barre syndrome), poliomyelitis, and Werdnig Hoffmann disease are all conditions affecting the peripheral nerves or anterior horn cells, resulting in flaccid paralysis. Cerebral diplegia, a type of cerebral palsy, is an upper motor neuron lesion characterized by spasticity and hypertonia."
-    },
-    {
-      "stem": "One of the following is not a feature of Werdnig Hoffman disease:",
-      "options": [
-        "Choking and dysphagia.",
-        "Mental retardation",
-        "Muscle wasting.",
-        "Tongue fasciculations."
-      ],
-      "correct": 1,
-      "explanation": "Werdnig Hoffman disease is a type of spinal muscular atrophy characterized by progressive hypotonia, muscle weakness, muscle wasting, and tongue fasciculations. It also involves bulbar palsy, leading to weak cry and weak cough, which can cause choking and dysphagia. However, the mentality and eye movements are typically normal."
-    },
-    {
-      "stem": "Hypotonia without significant weakness is a characteristic of:",
-      "options": [
-        "Down's syndrome.",
-        "Duchenne muscular dystrophy.",
-        "Guillain-Barre syndrome.",
-        "Werdnig-Hoffmann disease."
+        "Amyloidosis",
+        "Deformities",
+        "Endocarditis",
+        "Uveitis"
       ],
       "correct": 0,
-      "explanation": "Down syndrome is listed as a genetic cause of a floppy infant, characterized by severe persistent hypotonia at birth or in early infancy."
-    },
-    {
-      "stem": "Select the true statement regarding Guillain-Barre syndrome:",
-      "options": [
-        "Is caused by lesions in the anterior horn cells.",
-        "It is genetically determined.",
-        "Mechanical ventilation may be needed",
-        "Respiratory muscles are never affected."
-      ],
-      "correct": 2,
-      "explanation": "Guillain-Barre syndrome is an acute post-infectious polyneuropathy with demyelination of peripheral nerves. Respiratory muscle paralysis is a known complication that can lead to respiratory failure, necessitating mechanical ventilation."
-    },
-    {
-      "stem": "In Guillain-Barre syndrome, Which is false ?",
-      "options": [
-        "Ascending paralysis.",
-        "Asymmetrical paralysis",
-        "IV immunoglobulin is one of the lines of therapy.",
-        "Sensory manifestations may be present"
-      ],
-      "correct": 1,
-      "explanation": "Guillain-Barré syndrome is characterized by ascending, symmetrical paralysis. All other options are consistent with the disease."
-    },
-    {
-      "stem": "Which statement is not suggestive of Guillain-Barre syndrome?",
-      "options": [
-        "Acute onset of paresthesia in lower extremities.",
-        "Elevation of blood pressure may occur",
-        "Marked weakness and tenderness of muscles.",
-        "Plasmapharesis is the initial treatment of choice"
-      ],
-      "correct": 3,
-      "explanation": "The most common initial presentation of Guillain-Barré syndrome is ascending paralysis with paresthesia in the lower extremities. IV gamma globulin is the best initial treatment choice, while plasmapheresis is an alternative but is not the first choice."
-    },
-    {
-      "stem": "Characteristic features of upper motor neurone lesion include:",
-      "options": [
-        "Ankle Clonus.",
-        "Fasciculation.",
-        "Hyporeflexia.",
-        "Muscle hypertrophy"
-      ],
-      "correct": 0,
-      "explanation": "Upper motor neuron lesions are characterized by hypertonia (spasticity) and exaggerated deep reflexes, including ankle clonus and a positive plantar reflex (Babinski sign). Fasciculations are a sign of lower motor neuron lesions."
-    },
-    {
-      "stem": "A false statement about Duchenne muscular dystrophy is:",
-      "options": [
-        "Cardiomyopathy is an important cause of death.",
-        "Creatine phosphokinase (CPK) is highly elevated.",
-        "EMG shows neuropathic changes.",
-        "The gait is usually waddling."
-      ],
-      "correct": 2,
-      "explanation": "Duchenne muscular dystrophy is a primary muscle disease (myopathy). The EMG findings would show myopathic changes, not neuropathic changes. The other options—cardiomyopathy, elevated CPK, and waddling gait—are all characteristic features of the disease."
-    },
-    {
-      "stem": "Contraindications to performing a lumbar puncture does not include",
-      "options": [
-        "Suspected mass lesion of the brain",
-        "Symptoms and signs of impending cerebral herniation",
-        "Skin infection at the site of the lumbar puncture",
-        "Thrombocytopenia with a platelet count <50x109/L"
-      ],
-      "correct": 3,
-      "explanation": "The provided text states that coagulopathy or thrombocytopenia are contraindications to lumbar puncture, but it does not specify a platelet count cutoff. The other options (suspected mass lesion, signs of cerebral herniation, and skin infection at the site) are all direct contraindications."
-    },
-    {
-      "stem": "The most common type of cerebral palsy (CP) associated with seizures is",
-      "options": [
-        "Ataxic CP",
-        "Spastic diplegia",
-        "Spastic hemiplegia",
-        "Spastic quadriplegia"
-      ],
-      "correct": 2,
-      "explanation": "The textbook mentions that seizures and microcephaly are associated with quadriplegic spastic cerebral palsy. However, according to the provided answer key, the correct answer is c) Spastic hemiplegia."
-    },
-    {
-      "stem": "Which of the following is the drug of choice for treating infantile spasm?",
-      "options": [
-        "Phenobarbitone",
-        "Phenytoin",
-        "Sodium valproate",
-        "Steroids"
-      ],
-      "correct": 3,
-      "explanation": "Epileptic spasms (infantile spasms) are resistant to traditional antiepileptic therapy. The primary treatment mentioned is corticosteroids or Vigabatrin."
-    },
-    {
-      "stem": "The most common precipitant of status epilepticus in children is",
-      "options": [
-        "CNS infection",
-        "Fever",
-        "Medication change",
-        "Trauma"
-      ],
-      "correct": 1,
-      "explanation": "The textbook lists prolonged (complex or atypical) febrile convulsions as one of the etiologies of status epilepticus."
-    },
-    {
-      "stem": "Status epilepticus is defined as continuous seizure activity or recurrent seizure activity without regaining of consciousness lasting for more than",
-      "options": [
-        "5 min",
-        "15 min",
-        "30 min",
-        "45 min"
-      ],
-      "correct": 0,
-      "explanation": "The textbook states that treatment for status epilepticus should be initiated within the first 5 minutes, and neurological sequelae are anticipated after 30 minutes. Therefore, a seizure lasting longer than 5 minutes is considered status epilepticus."
-    },
-    {
-      "stem": "The most common neurologic sequelae of bacterial meningitis is",
-      "options": [
-        "Cognitive impairment",
-        "Delay in acquisition of language",
-        "Hearing loss",
-        "Visual impairment"
-      ],
-      "correct": 2,
-      "explanation": "The textbook lists deafness, caused by damage to the 8th cranial nerve and cochlear hair cells, as a significant late complication of bacterial meningitis."
-    },
-    {
-      "stem": "In Guillain-Barré syndrome, the most likely respiratory infection that triggers the disease is",
-      "options": [
-        "Chlamydia trachomatis",
-        "Haemophilus influenzae",
-        "Mycoplasma pneumoniae",
-        "Staphylococcal aureus"
-      ],
-      "correct": 2,
-      "explanation": "The textbook states that Guillain-Barré syndrome follows bacterial infections, such as Campylobacter jejuni, or viral infections, such as Cytomegalovirus. Mycoplasma pneumoniae is not listed as a trigger. However, according to the provided answer key, the correct answer is c) Mycoplasma pneumoniae."
-    },
-    {
-      "stem": "In spinal muscular atrophy (SMA) type 1, which feature/muscle is not spared?",
-      "options": [
-        "Diaphragm",
-        "Extraocular muscles",
-        "Heart",
-        "Intelligence"
-      ],
-      "correct": 0,
-      "explanation": "The textbook states that SMA type 1 leads to late respiratory paralysis and death in late infancy due to respiratory failure, indicating that the diaphragm is not spared. Extraocular muscles, heart, and intelligence are typically normal."
-    },
-    {
-      "stem": "Which feature is abnormal in cerebral palsy?",
-      "options": [
-        "Cognitive abilities",
-        "Motor functions",
-        "Auditory functions",
-        "Sensory functions"
-      ],
-      "correct": 1,
-      "explanation": "Cerebral palsy is defined as a non-progressive, non-fatal, and non-curable motor deficit. While other manifestations like seizures, mental retardation, and sensory defects may be present, the core deficit is a motor one."
-    },
-    {
-      "stem": "Which of the following conditions does not mimic seizures?",
-      "options": [
-        "Apnea",
-        "Jitteriness",
-        "Infantile spasms",
-        "Breath holding spells"
-      ],
-      "correct": 2,
-      "explanation": "The textbook lists infantile spasms as a type of seizure (epileptic spasms) under the 'Unknown' classification. All the other options are listed as conditions that mimic seizures."
-    },
-    {
-      "stem": "Which is not encountered in Guillain-Barre syndrome :",
-      "options": [
-        "Altered mental status",
-        "Bulbar weakness",
-        "Weakening or tingling sensation in the legs",
-        "Weakness in the arms and upper body"
-      ],
-      "correct": 0,
-      "explanation": "Guillain-Barré syndrome is an acute post-infectious polyneuropathy. The clinical picture is primarily motor and sensory, with weakness, tingling sensations (paresthesia), and bulbar weakness. There is no mention of altered mental status being a feature, as the pathology is in the peripheral nerves, not the brain."
-    },
-    {
-      "stem": "Which of the following is not related to the diagnosis of simple febrile seizures in a one year old boy?",
-      "options": [
-        "All the seizure episodes were associated with fever",
-        "The seizure does not occur more than one time during the febrile illness",
-        "The seizures episodes were all generalized",
-        "The seizures last more than 15 minutes"
-      ],
-      "correct": 3,
-      "explanation": "A simple febrile seizure is a generalized tonic-clonic seizure that lasts for 5 to 15 minutes. A seizure lasting more than 15 minutes would be classified as a complex febrile seizure."
-    },
-    {
-      "stem": "Conditions that mimic seizures do not include",
-      "options": [
-        "Apnea",
-        "Breath holding spells",
-        "Carpopedal spasm",
-        "Tics"
-      ],
-      "correct": 2,
-      "explanation": "The textbook lists apnea, breath-holding spells, and tics as conditions that can mimic seizures. Carpopedal spasm is not listed as a seizure mimic."
+      "explanation": "In severe, untreated cases of Familial Mediterranean fever (FMF), a major complication is the development of amyloidosis."
     }
   ]
 }
