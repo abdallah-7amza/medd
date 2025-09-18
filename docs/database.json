@@ -1,11 +1,336 @@
 {
-  "generatedAt": "2025-09-18T07:03:13.463Z",
+  "generatedAt": "2025-09-18T07:04:34.765Z",
   "tree": {
     "azhar-assiut": {
-      "children": {},
+      "children": {
+        "surgery": {
+          "children": {
+            "git": {
+              "children": {
+                "esophagus": {
+                  "children": {},
+                  "resources": {
+                    "collectionQuizzes": [
+                      {
+                        "id": "esophagus-bank",
+                        "title": "Esophagus Bank",
+                        "quizData": {
+                          "title": "Esophagus Bank",
+                          "questions": [
+                            {
+                              "stem": "The normal pressure of the Lower Esophageal Sphincter (LES) is:",
+                              "options": [
+                                "5-40 cm H2O",
+                                "10-20 cm H2O",
+                                "20-30 cm H2O",
+                                "30-40 cm H2O"
+                              ],
+                              "correct": 3,
+                              "explanation": "The lower esophageal sphincter (LES) is a high-pressure zone that separates the esophagus from the stomach. The normal resting pressure of the LES is 30-40 cm H2O. This pressure is essential for preventing the reflux of gastric contents back into the esophagus."
+                            },
+                            {
+                              "stem": "All of the following are part of VACTERL syndrome except:",
+                              "options": [
+                                "Vaginal hypoplasia.",
+                                "Imperforate anus.",
+                                "Tracheo-esophageal fistula.",
+                                "Polycystic kidney.",
+                                "Polydactyly."
+                              ],
+                              "correct": 3,
+                              "explanation": "VACTERL syndrome is a group of birth defects that often occur together. The acronym stands for Vertebral defects, Anal atresia, Cardiac defects, Tracheo-esophageal fistula, Renal anomalies, and Limb abnormalities. While renal anomalies are part of the syndrome, polycystic kidney disease is a separate genetic disorder and not typically included in VACTERL."
+                            },
+                            {
+                              "stem": "The best investigation in a newborn with arrest of a catheter at 10cm from the nostril is:",
+                              "options": [
+                                "Plain X-ray.",
+                                "Barium swallow.",
+                                "Lipiodol swallow.",
+                                "Gastrograffin meal.",
+                                "It is a normal variant with no need for investigations."
+                              ],
+                              "correct": 3,
+                              "explanation": "The inability to pass a catheter more than 10-12 cm from the nostril in a newborn is highly suggestive of esophageal atresia. A Gastrograffin meal is the preferred initial investigation. Gastrograffin is a water-soluble contrast agent that is safer than barium in case of aspiration into the lungs, which is a risk with a tracheo-esophageal fistula."
+                            },
+                            {
+                              "stem": "A newborn diagnosed as esophageal atresia should be kept in:",
+                              "options": [
+                                "Supine position.",
+                                "Prone position.",
+                                "Semisitting position.",
+                                "Trendlenberg position."
+                              ],
+                              "correct": 1,
+                              "explanation": "Placing a newborn with esophageal atresia in the prone position helps to prevent the aspiration of saliva and gastric contents into the lungs. This is because, in the prone position, gravity helps to drain secretions away from the airway."
+                            },
+                            {
+                              "stem": "As regards Bockdalek hernia all are correct except:",
+                              "options": [
+                                "It always presents in neonatal life.",
+                                "Presents with neonatal distress with scaphoid abdomen.",
+                                "X-ray shows gas shadow with mediastinal shift.",
+                                "Main line of treatment is conservative with respiratory support."
+                              ],
+                              "correct": 3,
+                              "explanation": "A Bochdalek hernia is a congenital diaphragmatic hernia that requires surgical repair. Conservative management is not the main line of treatment. Surgical intervention is necessary to move the abdominal organs back into the abdomen and close the defect in the diaphragm."
+                            },
+                            {
+                              "stem": "The commonest diaphragmatic hernia in adults is:",
+                              "options": [
+                                "Bockdalek hernia.",
+                                "Morgagni hernia.",
+                                "Rolling hernia.",
+                                "Sliding hiatus hernia."
+                              ],
+                              "correct": 3,
+                              "explanation": "A sliding hiatus hernia is the most common type of diaphragmatic hernia in adults. This occurs when the gastroesophageal junction and a portion of the stomach slide up into the chest through the esophageal hiatus."
+                            },
+                            {
+                              "stem": "The commonest diaphragmatic hernia in infants is:",
+                              "options": [
+                                "Bockdalek hernia.",
+                                "Morgagni hernia.",
+                                "Rolling hernia.",
+                                "Sliding hiatus hernia."
+                              ],
+                              "correct": 0,
+                              "explanation": "The Bochdalek hernia is the most common congenital diaphragmatic hernia, accounting for the majority of cases in infants. It is a posterolateral defect in the diaphragm."
+                            },
+                            {
+                              "stem": "Factors associated with the development of complications of gastroesophageal reflux disease include:",
+                              "options": [
+                                "The presence of a defective lower esophageal sphincter",
+                                "Inadequate esophageal clearance",
+                                "The presence of a hiatal hernia",
+                                "The presence of an alkaline component of the reflux material",
+                                "All of the above"
+                              ],
+                              "correct": 4,
+                              "explanation": "Complications of GERD, such as esophagitis, strictures, and Barrett's esophagus, are influenced by multiple factors. These include a weak or incompetent LES, delayed esophageal clearance of refluxed acid, the presence of a hiatal hernia which can exacerbate reflux, and the composition of the refluxate, including both acidic and alkaline components."
+                            },
+                            {
+                              "stem": "An asymptomatic lower esophageal ring (Schatzki's ring) is best treated by:",
+                              "options": [
+                                "Endoscopic dilatation",
+                                "Transthoracic resection of the ring",
+                                "Esophagogastrectomy with jejunal interposition",
+                                "Transabdominal excision of the ring",
+                                "Medical control of reflux esophagitis"
+                              ],
+                              "correct": 0,
+                              "explanation": "For an asymptomatic Schatzki's ring, which is a narrowing of the lower esophagus, endoscopic dilatation is the initial and least invasive treatment. Surgical options are reserved for cases that are refractory to dilatation."
+                            },
+                            {
+                              "stem": "Which patient should be offered (even poor medical risk) anti-reflux surgery as first treatment option for GERD:",
+                              "options": [
+                                "Symptoms >5 years",
+                                "Hiatus hernia",
+                                "Barrett's esophagitis",
+                                "Esophageal pH< 4 for >20% of the day",
+                                "A & B"
+                              ],
+                              "correct": 2,
+                              "explanation": "Barrett's esophagus is a precancerous condition where the lining of the esophagus changes due to chronic acid exposure. The presence of Barrett's esophagitis is a strong indication for anti-reflux surgery, even in patients with other medical problems, to reduce the risk of progression to esophageal cancer."
+                            },
+                            {
+                              "stem": "Which of the following tests are helpful in assessing operability of esophageal cancer:",
+                              "options": [
+                                "Esophagoscopy",
+                                "CT scan",
+                                "Barium swallow",
+                                "Endoluminal Ultrasonography",
+                                "B & D"
+                              ],
+                              "correct": 4,
+                              "explanation": "Both CT scans and endoluminal ultrasonography (EUS) are crucial for staging esophageal cancer and determining its operability. A CT scan helps to assess the extent of the tumor and look for distant metastases, while EUS provides detailed information about the depth of tumor invasion and lymph node involvement."
+                            },
+                            {
+                              "stem": "The worst palliative procedure for inoperable oesophageal carcinoma is:",
+                              "options": [
+                                "Colon bypass",
+                                "Esophagogastrostomy",
+                                "Esophagojejunostomy",
+                                "Gastrostomy",
+                                "Celestin tube"
+                              ],
+                              "correct": 3,
+                              "explanation": "A gastrostomy, which is the creation of a feeding tube directly into the stomach, is considered the worst palliative option for inoperable esophageal cancer because it does not relieve the dysphagia (difficulty swallowing), which is the primary symptom causing distress to the patient. Other procedures, while palliative, aim to restore some ability to swallow."
+                            },
+                            {
+                              "stem": "The most accurate method to evaluate lymph nodes involvement in esophageal cancer is:",
+                              "options": [
+                                "Barium esophagogram",
+                                "Endoscopic US",
+                                "CT scan",
+                                "Positron Emission tomography (PET)"
+                              ],
+                              "correct": 1,
+                              "explanation": "Endoscopic ultrasound (EUS) is the most accurate imaging modality for assessing the extent of lymph node involvement in esophageal cancer. It allows for high-resolution imaging of the esophageal wall and surrounding lymph nodes."
+                            },
+                            {
+                              "stem": "As regards Plummer Vinson syndrome all are correct except:",
+                              "options": [
+                                "Is more common in males.",
+                                "Of unknown etiology.",
+                                "May lead to postcricoid carcinoma.",
+                                "Associated with spleenomegaly."
+                              ],
+                              "correct": 0,
+                              "explanation": "Plummer-Vinson syndrome is a rare condition characterized by dysphagia, iron-deficiency anemia, and esophageal webs. It is significantly more common in women, particularly middle-aged women."
+                            },
+                            {
+                              "stem": "Motility disorder in achalasia include:",
+                              "options": [
+                                "Absent primary wave of peristalsis of LES.",
+                                "Week or incoordinated secondary wave.",
+                                "Abnormal tertiary wave.",
+                                "All of the above."
+                              ],
+                              "correct": 3,
+                              "explanation": "Achalasia is a primary esophageal motility disorder characterized by the failure of the lower esophageal sphincter (LES) to relax and the absence of peristalsis in the esophageal body. This leads to impaired swallowing. All the listed motility abnormalities are characteristic of achalasia."
+                            },
+                            {
+                              "stem": "The following are lines of medical treatment of achalasia:",
+                              "options": [
+                                "Botulinum toxin injection.",
+                                "Calcium channel blocker.",
+                                "Nitrates.",
+                                "All of the above."
+                              ],
+                              "correct": 3,
+                              "explanation": "Medical management of achalasia aims to reduce the pressure in the lower esophageal sphincter. This can be achieved with medications such as nitrates and calcium channel blockers, which relax the smooth muscle of the LES. Botulinum toxin injection directly into the LES is another non-surgical option."
+                            },
+                            {
+                              "stem": "Cardiospasm is associated with:",
+                              "options": [
+                                "esophageal webs",
+                                "coronary artery spasm",
+                                "hiatus hernia",
+                                "Chagas' disease"
+                              ],
+                              "correct": 3,
+                              "explanation": "Cardiospasm, another term for achalasia, can be caused by Chagas' disease. Chagas' disease is a parasitic infection that can damage the nerves of the esophagus, leading to the characteristic motility problems of achalasia."
+                            },
+                            {
+                              "stem": "Esophageal perforation is most often due to:",
+                              "options": [
+                                "Reflux oesophagitis",
+                                "Swallowed foreign bodies",
+                                "Persistent vomiting",
+                                "Instrumentation",
+                                "Malignant ulceration"
+                              ],
+                              "correct": 3,
+                              "explanation": "The most common cause of esophageal perforation is iatrogenic, meaning it is caused by medical procedures. Endoscopy and other instrumentation are the leading causes of esophageal perforation."
+                            },
+                            {
+                              "stem": "Management of endoscopic perforation of the esophagus All are correct except:",
+                              "options": [
+                                "Barium swallow is the test choice",
+                                "Conservative management is more likely to be successful than that of spontaneous rupture",
+                                "Conservative management is recommended for perforation < 1 cm in size",
+                                "Surgery is recommended for perforation >l cm in size",
+                                "Middle third perforations are approached through a right thoracotomy"
+                              ],
+                              "correct": 0,
+                              "explanation": "A barium swallow is contraindicated in cases of suspected esophageal perforation because barium is not water-soluble and can cause severe inflammation if it leaks into the mediastinum. A water-soluble contrast agent like Gastrograffin is the preferred diagnostic study."
+                            },
+                            {
+                              "stem": "The commonest congenital anomaly of the esophagus is :",
+                              "options": [
+                                "Atresia with tracheo-esophageal fistula into upper pouch.",
+                                "Atresia with tracheo-esophageal fistula into lower pouch.",
+                                "Atresia with fistula into each pouch.",
+                                "Simple atresia without fistula.",
+                                "Fistula without atresia."
+                              ],
+                              "correct": 1,
+                              "explanation": "The most frequent type of esophageal atresia is the one with a distal tracheo-esophageal fistula, where the upper esophagus ends in a blind pouch and the lower esophagus connects to the trachea."
+                            },
+                            {
+                              "stem": "The most common cause of reflux esophagitis is :",
+                              "options": [
+                                "Sliding hiatus hernia.",
+                                "Paraoesophageal hiatus hernia.",
+                                "Esophageal varices.",
+                                "Esophago-cardiomyotomy (Heller's operation).",
+                                "Prolonged vomiting."
+                              ],
+                              "correct": 0,
+                              "explanation": "A sliding hiatus hernia is the most common cause of reflux esophagitis. The displacement of the gastroesophageal junction into the chest weakens the anti-reflux barrier, making it easier for stomach acid to reflux into the esophagus."
+                            },
+                            {
+                              "stem": "Which of the following gives the best results for carcinoma of the esophagus :",
+                              "options": [
+                                "Surgical excision alone.",
+                                "Preoperative radiation and surgical excision.",
+                                "Surgical excision followed by radiotherapy.",
+                                "Radiotherapy and colon bypass.",
+                                "Surgical excision and chemotherapy."
+                              ],
+                              "correct": 1,
+                              "explanation": "A combination of preoperative (neoadjuvant) chemoradiation followed by surgical resection has been shown to improve survival rates for patients with locally advanced esophageal cancer compared to surgery alone."
+                            },
+                            {
+                              "stem": "The following statements about the Mallory-Weiss syndrome are true except that it :",
+                              "options": [
+                                "Is due to a mucosal tear along the gastroesophageal",
+                                "Usually results from forceful retching or vomiting.",
+                                "Is often associated with alcohol abuse.",
+                                "Requires endoscopy for the diagnosis.",
+                                "Should be treated surgically."
+                              ],
+                              "correct": 4,
+                              "explanation": "Mallory-Weiss syndrome, a tear in the mucosal lining of the esophagus, usually heals spontaneously with supportive care. Surgical intervention is rarely required and is reserved for cases with severe, persistent bleeding that cannot be controlled with endoscopic methods."
+                            },
+                            {
+                              "stem": "A previously healthy 8-year-old boy come to the emergency room because of massive hematemesis. The most probable cause is :",
+                              "options": [
+                                "Erosive gastritis.",
+                                "Idiopathic thrombocytopenic purpura (ITP).",
+                                "Hemophilia.",
+                                "Esophageal varices.",
+                                "Mallory-Weiss syndrome."
+                              ],
+                              "correct": 3,
+                              "explanation": "In a child with massive hematemesis, esophageal varices are a primary consideration. These are enlarged veins in the esophagus that can rupture and cause life-threatening bleeding, often due to underlying liver disease and portal hypertension."
+                            },
+                            {
+                              "stem": "The Mallory-Weiss syndrome occurs most often in:",
+                              "options": [
+                                "Alcoholics.",
+                                "Pregnant females.",
+                                "Obese patients.",
+                                "Children.",
+                                "Patients with hiatus hernia,"
+                              ],
+                              "correct": 0,
+                              "explanation": "Mallory-Weiss syndrome is most commonly associated with alcoholism and episodes of forceful vomiting or retching. The increased pressure in the abdomen and esophagus during these episodes can lead to a tear in the esophageal lining."
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "hasIndex": false,
+                  "label": "Esophagus",
+                  "isBranch": true
+                }
+              },
+              "hasIndex": false,
+              "label": "Git",
+              "isBranch": true
+            }
+          },
+          "hasIndex": false,
+          "label": "Surgery",
+          "isBranch": true
+        }
+      },
       "name": "Al-Azhar (Assiut)",
       "hasIndex": false,
-      "label": "Azhar Assiut"
+      "label": "Azhar Assiut",
+      "isBranch": true
     },
     "nub": {
       "children": {
