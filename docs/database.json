@@ -1,6 +1,26 @@
 {
-  "generatedAt": "2025-09-18T06:13:45.855Z",
+  "generatedAt": "2025-09-18T06:15:44.249Z",
   "tree": {
+    "content": {
+      "children": {
+        "universities": {
+          "children": {
+            "azhar-assiut": {
+              "children": {},
+              "hasIndex": false,
+              "label": "Azhar Assiut"
+            }
+          },
+          "hasIndex": false,
+          "label": "Universities",
+          "isBranch": true
+        }
+      },
+      "name": "Content",
+      "hasIndex": false,
+      "label": "Content",
+      "isBranch": true
+    },
     "nub": {
       "children": {
         "year5": {
