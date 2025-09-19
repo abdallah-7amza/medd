@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', async function() {
     const urlParams = new URLSearchParams(window.location.search);
-    const path = urlParams.get('path') || '';
-    // Normalize path (remove leading/trailing slashes) for consistent processing
-    const normalizedPath = path.replace(/^\/+|\/+$/g, '');
-    const rawPathSegments = normalizedPath.split('/').filter(Boolean);
+    const path = (urlParams.get('path') || '').replace(/^\/+|\/+$/g, ''); // Sanitize path
+    const pathSegments = path.split('/').filter(Boolean);
 
     const pageTitleEl = document.getElementById('page-title');
     const cardContainer = document.getElementById('card-container');
@@ -15,7 +13,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     navContainer.innerHTML = '<a href="javascript:history.back()" class="back-link">← Back</a>';
 
     if (!selectedUniId) {
-        // This check is important, but there is no pageTitleEl in index.html
         if (pageTitleEl) pageTitleEl.textContent = 'No University Selected.';
         return;
     }
@@ -27,28 +24,25 @@ document.addEventListener('DOMContentLoaded', async function() {
         const university = data.tree[selectedUniId];
         siteTitleEl.textContent = `${university.name} Med Portal`;
 
-        // --- Robust path traversal logic ---
-        // Create a "clean" array of path segments derived from the `path` parameter,
-        // but ensure the initial selectedUniId segment is explicitly removed.
-        const cleanSegments = [...rawPathSegments];
-        if (cleanSegments.length > 0 && cleanSegments[0] === selectedUniId) {
-            cleanSegments.shift();
-        }
-
-        // Start traversal from the university node
         let currentNode = university;
-        for (const segment of cleanSegments) {
-            if (!currentNode.children || !currentNode.children[segment]) {
-                console.warn(`Missing path segment "${segment}" under node:`, currentNode);
-                // Stop traversal on missing segment to avoid throwing; keep currentNode as-is
-                break;
-            }
-            currentNode = currentNode.children[segment];
+        
+        // --- START: THE CRITICAL FIX for navigation ---
+        let cleanPathSegments = [...pathSegments];
+        if (cleanPathSegments.length > 0 && cleanPathSegments[0] === selectedUniId) {
+            cleanPathSegments.shift(); // Remove university ID if present
         }
-        // --- End robust traversal ---
+        for (const segment of cleanPathSegments) {
+            if (currentNode?.children?.[segment]) {
+                currentNode = currentNode.children[segment];
+            } else {
+                throw new Error(`Path segment "${segment}" not found.`);
+            }
+        }
+        // --- END: THE CRITICAL FIX ---
 
+        // KEPT: Your good idea to hide the title on the first level
         if (pageTitleEl) {
-            if (cleanSegments.length === 0) {
+            if (pathSegments.length <= 1) {
                 pageTitleEl.style.display = 'none';
             } else {
                 pageTitleEl.style.display = 'block';
@@ -59,7 +53,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         cardContainer.innerHTML = '';
         toolbarContainer.innerHTML = '';
 
-        // Logic now passes the correct 'type' to createResourceButton
         if (currentNode.resources) {
             if (currentNode.resources.collectionQuizzes) {
                 currentNode.resources.collectionQuizzes.forEach(quiz => {
@@ -76,9 +69,13 @@ document.addEventListener('DOMContentLoaded', async function() {
         if (currentNode.children) {
             for (const id in currentNode.children) {
                 const childNode = currentNode.children[id];
-                const newPath = `${path}/${id}`;
+                // KEPT & FIXED: Build the new path safely
+                const newPath = path ? `${path}/${id}` : id;
                 
-                const targetUrl = childNode.isBranch
+                // FIXED: Calculate isBranch on the fly
+                const isBranch = childNode.children && Object.keys(childNode.children).length > 0;
+                
+                const targetUrl = isBranch
                     ? `lessons-list.html?path=${newPath}`
                     : `lesson.html?path=${newPath}`;
                 
@@ -92,20 +89,19 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
 });
 
-// This function now assigns the correct class for lessons
+// FIXED: Re-added the description to the card's innerHTML
 function createCard(title, url, description) {
     const cardLink = document.createElement('a');
     cardLink.href = url;
-    cardLink.className = 'card card--lesson'; // Assigns the lesson identity
-    cardLink.innerHTML = `<div class="card-content"><h2>${title}</h2></div>`;
+    cardLink.className = 'card card--lesson';
+    cardLink.innerHTML = `<div class="card-content"><h2>${title}</h2>${description ? `<p>${description}</p>` : ''}</div>`;
     return cardLink;
 }
 
-// This function now assigns a class based on the resource type
+// KEPT: Your good idea for dynamic resource classes
 function createResourceButton(text, url, type) {
     const button = document.createElement('a');
     button.href = url;
-    // Assigns a dynamic class like 'card--quiz' or 'card--flashcards'
     button.className = `card card--${type}`;
     button.innerHTML = `<h2>${text}</h2>`;
     return button;
