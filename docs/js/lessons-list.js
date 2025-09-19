@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', async function() {
     const urlParams = new URLSearchParams(window.location.search);
     const path = urlParams.get('path') || '';
-    const pathSegments = path.split('/').filter(Boolean);
+    // Normalize path (remove leading/trailing slashes) for consistent processing
+    const normalizedPath = path.replace(/^\/+|\/+$/g, '');
+    const rawPathSegments = normalizedPath.split('/').filter(Boolean);
 
     const pageTitleEl = document.getElementById('page-title');
     const cardContainer = document.getElementById('card-container');
@@ -25,13 +27,28 @@ document.addEventListener('DOMContentLoaded', async function() {
         const university = data.tree[selectedUniId];
         siteTitleEl.textContent = `${university.name} Med Portal`;
 
-        let currentNode = university;
-        for (const segment of pathSegments.slice(1)) {
-            currentNode = currentNode.children[segment];
+        // --- Robust path traversal logic ---
+        // Create a "clean" array of path segments derived from the `path` parameter,
+        // but ensure the initial selectedUniId segment is explicitly removed.
+        const cleanSegments = [...rawPathSegments];
+        if (cleanSegments.length > 0 && cleanSegments[0] === selectedUniId) {
+            cleanSegments.shift();
         }
 
+        // Start traversal from the university node
+        let currentNode = university;
+        for (const segment of cleanSegments) {
+            if (!currentNode.children || !currentNode.children[segment]) {
+                console.warn(`Missing path segment "${segment}" under node:`, currentNode);
+                // Stop traversal on missing segment to avoid throwing; keep currentNode as-is
+                break;
+            }
+            currentNode = currentNode.children[segment];
+        }
+        // --- End robust traversal ---
+
         if (pageTitleEl) {
-            if (pathSegments.length <= 1) {
+            if (cleanSegments.length === 0) {
                 pageTitleEl.style.display = 'none';
             } else {
                 pageTitleEl.style.display = 'block';
