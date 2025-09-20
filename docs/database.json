@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-19T03:04:22.866Z",
+  "generatedAt": "2025-09-20T15:27:23.362Z",
   "tree": {
     "nub": {
       "children": {
@@ -38469,7 +38469,7 @@
                               "correct": 3
                             },
                             {
-                              "stem": "A primary investigation for diagnosing bronchial asthma is spirometry.",
+                              "stem": "The primary investigation for diagnosing bronchial asthma is spirometry.",
                               "options": [
                                 "True",
                                 "False"
@@ -38739,7 +38739,7 @@
                                 "PPD is administered by subcutaneous injection.",
                                 "A false negative test can occur in disseminated TB."
                               ],
-                              "correct": 2
+                              "correct": 3
                             },
                             {
                               "stem": "Concerning Empyema, which of the following is true?",
@@ -38853,7 +38853,7 @@
                                 "Bronchial asthma",
                                 "Viral croup"
                               ],
-                              "correct": 0
+                              "correct": 1
                             },
                             {
                               "stem": "For the patient with whooping cough, which of the following drugs will be prescribed?",
@@ -39003,7 +39003,7 @@
                                 "Chest x-ray and blood gases",
                                 "Echocardiography"
                               ],
-                              "correct": 1
+                              "correct": 2
                             },
                             {
                               "stem": "Regarding bronchiolitis, which one of the following statements is INCORRECT?",
@@ -39023,7 +39023,7 @@
                                 "Pleural effusion",
                                 "Tuberculosis"
                               ],
-                              "correct": 2
+                              "correct": 3
                             },
                             {
                               "stem": "For the previous patient with suspected TB, the following investigations should be ordered first EXCEPT:",
@@ -39128,8 +39128,8 @@
                             {
                               "stem": "In a child with poorly controlled asthma, which of the following medications is contraindicated as monotherapy?",
                               "options": [
-                                "Oral corticosteroids",
                                 "Long-acting beta-2 agonists (LABA)",
+                                "Oral corticosteroids",
                                 "Leukotriene modifiers",
                                 "Cromolyn sodium"
                               ],
