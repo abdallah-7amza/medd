@@ -162,12 +162,12 @@
     {
       "stem": "Which of the following is wrong about nocturnal enuresis?",
       "options": [
-        "ADH rises during sleep.",
-        "Anticholinergic drugs can be used.",
-        "Drug therapy is the last therapeutic option.",
-        "Family history may be present."
+        "ADH rises during sleep",
+        "Anticholinergic drugs can be used",
+        "Drug therapy is the last therapeutic option",
+        "Family history may be present"
       ],
-      "correct": 2
+      "correct": 0
     },
     {
       "stem": "The most sensitive investigation for the detection of vesicoureteric reflux (VUR) is:",
@@ -202,7 +202,7 @@
     {
       "stem": "Risk factors for UTI include all of the following except:",
       "options": [
-        "Male sex (in infants)",
+        "Male sex",
         "Urinary tract anomaly",
         "Urinary stones",
         "Vesicoureteral reflux (VUR)"
