@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', async function() {
     const urlParams = new URLSearchParams(window.location.search);
-   const path = urlParams.get('path') || `/${selectedUniId}`;
+    const selectedUniId = localStorage.getItem('selectedUni');
+    const path = urlParams.get('path') || `/${selectedUniId}`;
     const pathSegments = path.split('/').filter(Boolean);
 
     const pageTitleEl = document.getElementById('page-title');
@@ -8,7 +9,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     const siteTitleEl = document.getElementById('site-title');
     const toolbarContainer = document.getElementById('toolbar-container');
     const navContainer = document.getElementById('nav-container');
-    const selectedUniId = localStorage.getItem('selectedUni');
 
     navContainer.innerHTML = '<a href="javascript:history.back()" class="back-link">← Back</a>';
 
