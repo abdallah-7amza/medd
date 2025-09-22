@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', async function() {
     const urlParams = new URLSearchParams(window.location.search);
-    const selectedUniId = localStorage.getItem('selectedUni');
-    const path = urlParams.get('path') || `/${selectedUniId}`;
+    const path = urlParams.get('path') || '';
     const pathSegments = path.split('/').filter(Boolean);
 
     const pageTitleEl = document.getElementById('page-title');
@@ -9,29 +8,51 @@ document.addEventListener('DOMContentLoaded', async function() {
     const siteTitleEl = document.getElementById('site-title');
     const toolbarContainer = document.getElementById('toolbar-container');
     const navContainer = document.getElementById('nav-container');
+    
+    // Path to the university name is now dynamic
+    const uniId = pathSegments[0]; 
 
     navContainer.innerHTML = '<a href="javascript:history.back()" class="back-link">← Back</a>';
 
-    if (!selectedUniId) {
-        // This check is important, but there is no pageTitleEl in index.html
+    if (!uniId) {
         if (pageTitleEl) pageTitleEl.textContent = 'No University Selected.';
         return;
     }
+    
+    // This is our new, surgically precise data fetching function
+    async function getData(url, cacheKey) {
+        const versionResponse = await fetch('content/version.json');
+        if (!versionResponse.ok) throw new Error('Version file not found.');
+        const rootVersions = (await versionResponse.json()).versions;
+        
+        const latestVersion = rootVersions[uniId];
+
+        const cachedVersion = localStorage.getItem(`${cacheKey}-version`);
+        const cachedData = localStorage.getItem(cacheKey);
+
+        if (cachedData && cachedVersion === latestVersion) {
+            console.log(`Loaded from cache: ${cacheKey}`);
+            return JSON.parse(cachedData);
+        } else {
+            console.log(`Fetching from network: ${url}`);
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`Failed to fetch data from ${url}`);
+            const data = await response.json();
+            localStorage.setItem(cacheKey, JSON.stringify(data));
+            localStorage.setItem(`${cacheKey}-version`, latestVersion);
+            return data;
+        }
+    }
 
     try {
-        const response = await fetch('./database.json');
-        if (!response.ok) throw new Error("Database file not found.");
-        const data = await response.json();
-        const university = data.tree[selectedUniId];
-        siteTitleEl.textContent = `${university.name} Med Portal`;
+        const dataPath = `content/${path}/meta.json`;
+        const cacheKey = `cached-data-${path}`;
+        const currentNode = await getData(dataPath, cacheKey);
 
-        let currentNode = university;
-        for (const segment of pathSegments.slice(1)) {
-            currentNode = currentNode.children[segment];
-        }
+        siteTitleEl.textContent = `${currentNode.name} Med Portal`;
 
         if (pageTitleEl) {
-            if (pathSegments.length <= 1) {
+            if (pathSegments.length < 1) { // Adjusted logic for root
                 pageTitleEl.style.display = 'none';
             } else {
                 pageTitleEl.style.display = 'block';
@@ -42,7 +63,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         cardContainer.innerHTML = '';
         toolbarContainer.innerHTML = '';
 
-        // Logic now passes the correct 'type' to createResourceButton
         if (currentNode.resources) {
             if (currentNode.resources.collectionQuizzes) {
                 currentNode.resources.collectionQuizzes.forEach(quiz => {
@@ -59,7 +79,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         if (currentNode.children) {
             for (const id in currentNode.children) {
                 const childNode = currentNode.children[id];
-                const newPath = `${path}/${id}`.replace(/\/\//g, '/');
+                const newPath = `${path}/${id}`;
                 
                 const targetUrl = childNode.isBranch
                     ? `lessons-list.html?path=${newPath}`
@@ -75,20 +95,17 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
 });
 
-// This function now assigns the correct class for lessons
 function createCard(title, url, description) {
     const cardLink = document.createElement('a');
     cardLink.href = url;
-    cardLink.className = 'card card--lesson'; // Assigns the lesson identity
+    cardLink.className = 'card card--lesson';
     cardLink.innerHTML = `<div class="card-content"><h2>${title}</h2></div>`;
     return cardLink;
 }
 
-// This function now assigns a class based on the resource type
 function createResourceButton(text, url, type) {
     const button = document.createElement('a');
     button.href = url;
-    // Assigns a dynamic class like 'card--quiz' or 'card--flashcards'
     button.className = `card card--${type}`;
     button.innerHTML = `<h2>${text}</h2>`;
     return button;
