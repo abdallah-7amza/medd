@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async function() {
     const urlParams = new URLSearchParams(window.location.search);
-    const path = urlParams.get('path') || '';
+    const path = urlParams.get('path') || `/${selectedUniId}`;
     const pathSegments = path.split('/').filter(Boolean);
 
     const pageTitleEl = document.getElementById('page-title');
