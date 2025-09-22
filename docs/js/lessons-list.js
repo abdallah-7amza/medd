@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async function() {
     const urlParams = new URLSearchParams(window.location.search);
-    const path = urlParams.get('path') || `/${selectedUniId}`;
+   const path = urlParams.get('path') || `/${selectedUniId}`;
     const pathSegments = path.split('/').filter(Boolean);
 
     const pageTitleEl = document.getElementById('page-title');
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         if (currentNode.children) {
             for (const id in currentNode.children) {
                 const childNode = currentNode.children[id];
-                const newPath = `${path}/${id}`;
+                const newPath = `${path}/${id}`.replace(/\/\//g, '/');
                 
                 const targetUrl = childNode.isBranch
                     ? `lessons-list.html?path=${newPath}`
