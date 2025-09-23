@@ -20,8 +20,8 @@ jobs:
       run: npm install
     - name: Generate database index
       run: npm run build
-    - name: Commit database.json
+    - name: Commit version.json and meta.json files
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
-        commit_message: "ci: auto-generate database.json"
-        file_pattern: "docs/database.json"
+        commit_message: "ci: auto-generate meta.json and version.json"
+        file_pattern: "docs/version.json content/**/*.json"
