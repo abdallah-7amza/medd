@@ -4,10 +4,9 @@ on:
   push:
     branches:
       - main
-      - dev  # <<<=== هذا هو السطر الجديد والمهم
-
-    paths:
-      - 'docs/database.json'
+      - dev
+    # paths:                <-- قمنا بتعطيل هذا السطر مؤقتًا للتشخيص
+    #  - 'docs/database.json' <-- وقمنا بتعطيل هذا السطر أيضًا
 
 jobs:
   build:
