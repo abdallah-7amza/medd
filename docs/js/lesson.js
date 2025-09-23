@@ -1,69 +1,65 @@
-document.addEventListener('DOMContentLoaded', async function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const path = urlParams.get('path') || '';
-    const pathSegments = path.split('/').filter(Boolean);
-    const selectedUniId = localStorage.getItem('selectedUni');
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 
-    const pageTitleEl = document.getElementById('page-title');
-    const contentContainer = document.getElementById('content-container');
-    const siteTitleEl = document.getElementById('site-title');
-    const toolbarContainer = document.getElementById('toolbar-container');
+const contentKey = 'contentData';
 
-    if (!selectedUniId || !path) {
-        pageTitleEl.textContent = 'Invalid parameters.'; return;
+async function loadAndDisplayLesson() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const currentPath = urlParams.get('path');
+
+  if (!currentPath) {
+    document.body.innerHTML = '<p>Error: No path specified.</p>';
+    return;
+  }
+
+  const cachedVersion = JSON.parse(localStorage.getItem('contentVersion'));
+  const folderHash = cachedVersion.hashes[currentPath.split('/').slice(-1)[0]];
+
+  const folderContent = await loadContent(currentPath, folderHash);
+
+  if (folderContent && folderContent.hasIndex) {
+    document.getElementById('page-title').textContent = folderContent.label;
+    const lessonContentDiv = document.getElementById('lesson-content');
+    
+    // Check if markdown content is available directly in the meta.json
+    if (folderContent.markdownContent) {
+      lessonContentDiv.innerHTML = folderContent.markdownContent;
+    } else {
+      // Fallback if content is not pre-loaded (e.g., from an older cache version)
+      // This part is for robustness, as new workflow ensures markdown is in meta.json
+      lessonContentDiv.innerHTML = '<p>Failed to load lesson content.</p>';
     }
-
-    try {
-        const response = await fetch('./database.json');
-        if (!response.ok) throw new Error("Database file not found.");
-        const data = await response.json();
-        let topicNode = data.tree[selectedUniId];
-        siteTitleEl.textContent = `${topicNode.name} Med Portal`;
-
-        for (const segment of pathSegments.slice(1)) {
-            topicNode = topicNode.children[segment];
-        }
-
-        if (!topicNode) throw new Error("Topic not found in database.");
-
-        pageTitleEl.textContent = topicNode.label;
-        toolbarContainer.innerHTML = '';
-
-        // **UPDATED**: This section now calls the new button creation function with the correct types
-        if (topicNode.resources) {
-            if (topicNode.resources.collectionQuizzes) {
-                topicNode.resources.collectionQuizzes.forEach(quiz => {
-                    toolbarContainer.appendChild(createResourceButton(quiz.title, `quiz.html?collection=${quiz.id}&path=${path}`, 'quiz'));
-                });
-            }
-            if (topicNode.resources.lessonQuiz) {
-                toolbarContainer.appendChild(createResourceButton(`Start Quiz`, `quiz.html?lessonQuiz=true&path=${path}`, 'quiz'));
-            }
-            if (topicNode.resources.flashcardDecks) {
-                topicNode.resources.flashcardDecks.forEach(deck => {
-                    toolbarContainer.appendChild(createResourceButton(deck.title, `flashcards.html?collection=${deck.id}&path=${path}`, 'flashcards'));
-                });
-            }
-        }
-
-        if (topicNode.hasIndex) {
-            contentContainer.innerHTML = marked.parse(topicNode.markdownContent);
-        } else {
-            contentContainer.innerHTML = "<p>No detailed lesson is available for this topic, but you can use the resources above.</p>";
-        }
-
-    } catch (error) {
-        console.error('Error:', error);
-        pageTitleEl.textContent = `Error: ${error.message}`;
-    }
-});
-
-// **UPDATED**: This function now creates cards with the correct visual identity
-function createResourceButton(text, url, type) {
-    const button = document.createElement('a');
-    button.href = url;
-    // Applies the correct class (e.g., 'card--quiz') for consistent styling
-    button.className = `card card--${type}`;
-    button.innerHTML = `<h2>${text}</h2>`;
-    return button;
+  } else {
+    document.body.innerHTML = '<p>Error: Lesson not found.</p>';
+  }
 }
+
+async function loadContent(path, hash) {
+  const cachedContent = localStorage.getItem(contentKey);
+  let contentData = cachedContent ? JSON.parse(cachedContent) : {};
+  const currentHash = contentData.hashes?.[path];
+
+  if (currentHash === hash && contentData.data?.[path]) {
+    return contentData.data[path];
+  }
+
+  const contentUrl = `${path}/meta.json`;
+  try {
+    const response = await fetch(contentUrl);
+    if (!response.ok) throw new Error('Network response was not ok.');
+    const newContent = await response.json();
+    
+    contentData.hashes = contentData.hashes || {};
+    contentData.data = contentData.data || {};
+    contentData.hashes[path] = hash;
+    contentData.data[path] = newContent;
+    localStorage.setItem(contentKey, JSON.stringify(contentData));
+    
+    return newContent;
+  } catch (error) {
+    console.error('Failed to fetch content:', error);
+    return null;
+  }
+}
+
+loadAndDisplayLesson();
