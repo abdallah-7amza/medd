@@ -1,39 +1,85 @@
-document.addEventListener('DOMContentLoaded', async function() {
-    const cardContainer = document.getElementById('universities-container');
-    if (!cardContainer) return; // Only run on the homepage
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 
-    cardContainer.innerHTML = '<div>Loading universities...</div>';
+const contentPath = '../content/universities/nub';
+const versionFile = '../docs/version.json';
+const databaseFile = '../docs/database.json';
 
-    try {
-        const response = await fetch('database.json');
-        if (!response.ok) throw new Error('Failed to load database.');
-        const data = await response.json();
+const versionKey = 'contentVersion';
+const contentKey = 'contentData';
 
-        cardContainer.innerHTML = ''; // Clear loading message
+async function fetchAndCacheVersion() {
+  try {
+    const response = await fetch(versionFile);
+    if (!response.ok) throw new Error('Network response was not ok.');
+    const versionData = await response.json();
+    localStorage.setItem(versionKey, JSON.stringify(versionData));
+    return versionData;
+  } catch (error) {
+    console.error('Failed to fetch version file:', error);
+    return null;
+  }
+}
 
-        if (!data.tree || Object.keys(data.tree).length === 0) {
-            cardContainer.innerHTML = '<div>No universities found.</div>';
-            return;
-        }
+async function loadContent(path, hash) {
+  const cachedContent = localStorage.getItem(contentKey);
+  let contentData = cachedContent ? JSON.parse(cachedContent) : {};
+  const currentHash = contentData.hashes?.[path];
 
-        for (const uniId in data.tree) {
-            const university = data.tree[uniId];
+  // If hash matches or content is already in cache, return from cache
+  if (currentHash === hash && contentData.data?.[path]) {
+    return contentData.data[path];
+  }
 
-            const card = document.createElement('a');
-            card.href = 'lessons-list.html';
-            card.className = 'card';
-            card.innerHTML = `<h2>${university.name}</h2>`;
+  // If not in cache or hash is different, fetch new content
+  const contentUrl = `${path}/meta.json`;
+  try {
+    const response = await fetch(contentUrl);
+    if (!response.ok) throw new Error('Network response was not ok.');
+    const newContent = await response.json();
+    
+    // Update the cache
+    contentData.hashes = contentData.hashes || {};
+    contentData.data = contentData.data || {};
+    contentData.hashes[path] = hash;
+    contentData.data[path] = newContent;
+    localStorage.setItem(contentKey, JSON.stringify(contentData));
+    
+    return newContent;
+  } catch (error) {
+    console.error('Failed to fetch content:', error);
+    return null;
+  }
+}
 
-            card.addEventListener('click', function(event) {
-                event.preventDefault(); 
-                localStorage.setItem('selectedUni', uniId);
-                window.location.href = card.href;
-            });
+async function initializeApp() {
+  const versionData = await fetchAndCacheVersion();
+  if (!versionData) {
+    // Fallback or error handling
+    document.getElementById('university-list').innerHTML = '<p>Failed to load app data. Please try again later.</p>';
+    return;
+  }
 
-            cardContainer.appendChild(card);
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        cardContainer.innerHTML = '<div>Error loading universities. Please try again later.</div>';
+  const universityDirName = 'nub'; // This should be dynamic in a multi-university setup
+  const universityPath = `${contentPath}`;
+  const universityHash = versionData.hashes[universityDirName];
+  
+  const universityContent = await loadContent(universityPath, universityHash);
+  if (universityContent) {
+    const university = { name: universityDirName, ...universityContent };
+    const universityList = document.getElementById('university-list');
+    
+    if (university.children) {
+      Object.entries(university.children).forEach(([childName, childNode]) => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = `lessons-list.html?path=${universityPath}/${childName}`;
+        a.textContent = childNode.label;
+        li.appendChild(a);
+        universityList.appendChild(li);
+      });
     }
-});
+  }
+}
+
+initializeApp();
