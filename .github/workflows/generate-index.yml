@@ -5,11 +5,15 @@ on:
     branches:
       - main
       - dev
-    # paths:                <-- قمنا بتعطيل هذا السطر مؤقتًا للتشخيص
-    #  - 'docs/database.json' <-- وقمنا بتعطيل هذا السطر أيضًا
+    paths:
+      - 'docs/database.json'
 
 jobs:
   build:
+    # <<<=== هذا هو السطر الجديد والمهم لمنح الصلاحية
+    permissions:
+      contents: write
+
     runs-on: ubuntu-latest
 
     steps:
@@ -29,6 +33,10 @@ jobs:
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add docs/content/
-        git status
-        git commit -m "Automated: Update segmented content" || echo "No changes to commit"
-        git push
+        # Check if there are changes to commit
+        if git status --porcelain | grep .; then
+          git commit -m "Automated: Update segmented content"
+          git push
+        else
+          echo "No changes to commit"
+        fi
