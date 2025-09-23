@@ -1,0 +1,32 @@
+{
+  "label": "Neonatology Branch",
+  "hasIndex": true,
+  "isBranch": true,
+  "summary": "This section covers topics related to newborn infants, including jaundice and other neonatal conditions.",
+  "markdownContent": "\n# Neonatology\n\nThis is the main page for the Neonatology branch. Lessons under this branch will appear here.\n",
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "KAF",
+        "title": "KAF"
+      },
+      {
+        "id": "neonatology-bank",
+        "title": "Neonatology Bank"
+      },
+      {
+        "id": "pbl-of-neonatology",
+        "title": "PBL of Neonatology"
+      }
+    ]
+  },
+  "children": {
+    "neonatal-jaundice": {
+      "label": "Neonatal Jaundice",
+      "hasIndex": false,
+      "isBranch": false,
+      "hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    }
+  },
+  "hash": "b366ec4312df965bd2f0d3532d89b3cb122388b6"
+}

@@ -1,0 +1,18 @@
+{
+  "label": "Endocrinology",
+  "hasIndex": false,
+  "isBranch": true,
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "endocrinology-nadine",
+        "title": "Endocrinology - Dr. Nadine"
+      },
+      {
+        "id": "gynecologic-endocrinology",
+        "title": "GYNECOLOGIC ENDOCRINOLOGY"
+      }
+    ]
+  },
+  "hash": "9c5f919894617e53023a256f8b26b451e9523135"
+}

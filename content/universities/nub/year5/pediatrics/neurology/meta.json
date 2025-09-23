@@ -1,0 +1,18 @@
+{
+  "label": "Neurology",
+  "hasIndex": false,
+  "isBranch": true,
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "KAF",
+        "title": "KAF"
+      },
+      {
+        "id": "pbl-of-neurology",
+        "title": "PBL of Neurology"
+      }
+    ]
+  },
+  "hash": "79be4b5d4ac6747458ca8015abdae026178df23c"
+}

@@ -1,95 +1,97 @@
-document.addEventListener('DOMContentLoaded', async function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const selectedUniId = localStorage.getItem('selectedUni');
-    const path = urlParams.get('path') || `/${selectedUniId}`;
-    const pathSegments = path.split('/').filter(Boolean);
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 
-    const pageTitleEl = document.getElementById('page-title');
-    const cardContainer = document.getElementById('card-container');
-    const siteTitleEl = document.getElementById('site-title');
-    const toolbarContainer = document.getElementById('toolbar-container');
-    const navContainer = document.getElementById('nav-container');
+const contentPath = '../content/universities/nub';
+const versionFile = '../docs/version.json';
+const contentKey = 'contentData';
 
-    navContainer.innerHTML = '<a href="javascript:history.back()" class="back-link">← Back</a>';
+async function loadAndDisplayLessons() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const currentPath = urlParams.get('path');
 
-    if (!selectedUniId) {
-        // This check is important, but there is no pageTitleEl in index.html
-        if (pageTitleEl) pageTitleEl.textContent = 'No University Selected.';
-        return;
+  if (!currentPath) {
+    document.body.innerHTML = '<p>Error: No path specified.</p>';
+    return;
+  }
+
+  const cachedVersion = JSON.parse(localStorage.getItem('contentVersion'));
+  const folderHash = cachedVersion.hashes[currentPath.split('/').slice(-1)[0]];
+
+  const folderContent = await loadContent(currentPath, folderHash);
+
+  if (folderContent) {
+    document.getElementById('page-title').textContent = folderContent.label;
+    const lessonsList = document.getElementById('lessons-list');
+    const quizzesList = document.getElementById('quizzes-list');
+    const flashcardsList = document.getElementById('flashcards-list');
+
+    // Display sub-branches/lessons
+    if (folderContent.children) {
+      Object.entries(folderContent.children).forEach(([childName, childNode]) => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = `lessons-list.html?path=${currentPath}/${childName}`;
+        a.textContent = childNode.label;
+        li.appendChild(a);
+        lessonsList.appendChild(li);
+      });
     }
 
-    try {
-        const response = await fetch('./database.json');
-        if (!response.ok) throw new Error("Database file not found.");
-        const data = await response.json();
-        const university = data.tree[selectedUniId];
-        siteTitleEl.textContent = `${university.name} Med Portal`;
-
-        let currentNode = university;
-        for (const segment of pathSegments.slice(1)) {
-            currentNode = currentNode.children[segment];
-        }
-
-        if (pageTitleEl) {
-            if (pathSegments.length <= 1) {
-                pageTitleEl.style.display = 'none';
-            } else {
-                pageTitleEl.style.display = 'block';
-                pageTitleEl.textContent = currentNode.label || currentNode.name;
-            }
-        }
-
-        cardContainer.innerHTML = '';
-        toolbarContainer.innerHTML = '';
-
-        // Logic now passes the correct 'type' to createResourceButton
-        if (currentNode.resources) {
-            if (currentNode.resources.collectionQuizzes) {
-                currentNode.resources.collectionQuizzes.forEach(quiz => {
-                    toolbarContainer.appendChild(createResourceButton(quiz.title, `quiz.html?collection=${quiz.id}&path=${path}`, 'quiz'));
-                });
-            }
-            if (currentNode.resources.flashcardDecks) {
-                currentNode.resources.flashcardDecks.forEach(deck => {
-                    toolbarContainer.appendChild(createResourceButton(deck.title, `flashcards.html?collection=${deck.id}&path=${path}`, 'flashcards'));
-                });
-            }
-        }
-
-        if (currentNode.children) {
-            for (const id in currentNode.children) {
-                const childNode = currentNode.children[id];
-                const newPath = `${path}/${id}`.replace(/\/\//g, '/');
-                
-                const targetUrl = childNode.isBranch
-                    ? `lessons-list.html?path=${newPath}`
-                    : `lesson.html?path=${newPath}`;
-                
-                const card = createCard(childNode.label, targetUrl, childNode.summary);
-                cardContainer.appendChild(card);
-            }
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        if(pageTitleEl) pageTitleEl.textContent = `Error: ${error.message}`;
+    // Display quizzes
+    if (folderContent.resources?.collectionQuizzes) {
+      folderContent.resources.collectionQuizzes.forEach(quiz => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = `quiz.html?path=${currentPath}/_collection_quiz/${quiz.id}`;
+        a.textContent = quiz.title;
+        li.appendChild(a);
+        quizzesList.appendChild(li);
+      });
     }
-});
 
-// This function now assigns the correct class for lessons
-function createCard(title, url, description) {
-    const cardLink = document.createElement('a');
-    cardLink.href = url;
-    cardLink.className = 'card card--lesson'; // Assigns the lesson identity
-    cardLink.innerHTML = `<div class="card-content"><h2>${title}</h2></div>`;
-    return cardLink;
+    // Display flashcards
+    if (folderContent.resources?.flashcardDecks) {
+      folderContent.resources.flashcardDecks.forEach(deck => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = `flashcards.html?path=${currentPath}/_flashcards/${deck.id}`;
+        a.textContent = deck.title;
+        li.appendChild(a);
+        flashcardsList.appendChild(li);
+      });
+    }
+  } else {
+    document.body.innerHTML = '<p>Error: Failed to load lessons.</p>';
+  }
 }
 
-// This function now assigns a class based on the resource type
-function createResourceButton(text, url, type) {
-    const button = document.createElement('a');
-    button.href = url;
-    // Assigns a dynamic class like 'card--quiz' or 'card--flashcards'
-    button.className = `card card--${type}`;
-    button.innerHTML = `<h2>${text}</h2>`;
-    return button;
+// Re-using the same cache function from index.js
+async function loadContent(path, hash) {
+  const cachedContent = localStorage.getItem(contentKey);
+  let contentData = cachedContent ? JSON.parse(cachedContent) : {};
+  const currentHash = contentData.hashes?.[path];
+
+  if (currentHash === hash && contentData.data?.[path]) {
+    return contentData.data[path];
+  }
+
+  const contentUrl = `${path}/meta.json`;
+  try {
+    const response = await fetch(contentUrl);
+    if (!response.ok) throw new Error('Network response was not ok.');
+    const newContent = await response.json();
+    
+    contentData.hashes = contentData.hashes || {};
+    contentData.data = contentData.data || {};
+    contentData.hashes[path] = hash;
+    contentData.data[path] = newContent;
+    localStorage.setItem(contentKey, JSON.stringify(contentData));
+    
+    return newContent;
+  } catch (error) {
+    console.error('Failed to fetch content:', error);
+    return null;
+  }
 }
+
+loadAndDisplayLessons();

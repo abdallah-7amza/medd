@@ -1,0 +1,24 @@
+{
+  "label": "Revision",
+  "hasIndex": false,
+  "isBranch": true,
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "rounds-questions",
+        "title": "Rounds"
+      },
+      {
+        "id": "vip",
+        "title": "VIP"
+      }
+    ],
+    "flashcardDecks": [
+      {
+        "id": "gynaecology-revision",
+        "title": "Gynaecology Revision"
+      }
+    ]
+  },
+  "hash": "8f67561272611f6a8e7b99f5ae1ee79e5bba2f2b"
+}

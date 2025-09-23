@@ -1,0 +1,18 @@
+{
+  "label": "Git",
+  "hasIndex": false,
+  "isBranch": true,
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "kaf",
+        "title": "KAF"
+      },
+      {
+        "id": "pbl-of-git",
+        "title": "PBL of GIT"
+      }
+    ]
+  },
+  "hash": "a89cedf7911d446c87b9713dd20e679cee226043"
+}

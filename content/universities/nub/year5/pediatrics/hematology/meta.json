@@ -1,0 +1,18 @@
+{
+  "label": "Hematology",
+  "hasIndex": false,
+  "isBranch": true,
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "kaf",
+        "title": "KAF"
+      },
+      {
+        "id": "pbl-of-hematology",
+        "title": "PBL of Hematology"
+      }
+    ]
+  },
+  "hash": "f4366e96166519f2201e6d00e201778c8912627d"
+}

@@ -1,0 +1,18 @@
+{
+  "label": "Nephrology",
+  "hasIndex": false,
+  "isBranch": true,
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "KAF",
+        "title": "KAF"
+      },
+      {
+        "id": "pbl-of-nephrology",
+        "title": "PBL of Nephrology"
+      }
+    ]
+  },
+  "hash": "ac5cd5e7d07fc13ee48ad1db45fd936fe1f4076f"
+}

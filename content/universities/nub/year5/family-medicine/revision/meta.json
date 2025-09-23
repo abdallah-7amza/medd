@@ -1,0 +1,14 @@
+{
+  "label": "Revision",
+  "hasIndex": false,
+  "isBranch": true,
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "family-medicine-revision",
+        "title": "Family Medicine Revision"
+      }
+    ]
+  },
+  "hash": "dbcf076384060f5ebdbcb2e04ad8b98f8145cc86"
+}

@@ -1,0 +1,14 @@
+{
+  "label": "Basic Operative Gynecology",
+  "hasIndex": false,
+  "isBranch": true,
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "basic-operative-gynecology-nadine",
+        "title": "Basic & Operative Gynecology - Dr. Nadine"
+      }
+    ]
+  },
+  "hash": "34c8d441c65bfeccf5eefddd38a5066af639ff4b"
+}

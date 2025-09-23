@@ -1,0 +1,14 @@
+{
+  "label": "Basic Obstetrics",
+  "hasIndex": false,
+  "isBranch": true,
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "basic-obstetrics",
+        "title": "BASIC OBSTETRICS"
+      }
+    ]
+  },
+  "hash": "8604e387d0eb785ed9d82570a698988108d63687"
+}

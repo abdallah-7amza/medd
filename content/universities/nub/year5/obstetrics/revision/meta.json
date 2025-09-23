@@ -1,0 +1,24 @@
+{
+  "label": "Revision",
+  "hasIndex": false,
+  "isBranch": true,
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "round-mcqs",
+        "title": "Round MCQs"
+      },
+      {
+        "id": "vip",
+        "title": "VIP"
+      }
+    ],
+    "flashcardDecks": [
+      {
+        "id": "obstetrics",
+        "title": "Obstetrics Flashcards"
+      }
+    ]
+  },
+  "hash": "bacab4252ecedfa708209dbe41c4256960b2e296"
+}

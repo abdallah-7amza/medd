@@ -1,0 +1,18 @@
+{
+  "label": "Rheumatology",
+  "hasIndex": false,
+  "isBranch": true,
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "KAF",
+        "title": "KAF"
+      },
+      {
+        "id": "pbl-of-rheumatology",
+        "title": "PBL of Rheumatology"
+      }
+    ]
+  },
+  "hash": "a55249f7a5ddab3583ca30716b206ba6e68ae03c"
+}

@@ -1,0 +1,18 @@
+{
+  "label": "Endocrine",
+  "hasIndex": false,
+  "isBranch": true,
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "KAF",
+        "title": "KAF"
+      },
+      {
+        "id": "pbl-of-endocrine",
+        "title": "PBL of Endocrine"
+      }
+    ]
+  },
+  "hash": "fca1e05e246fb03e31a84a8d4daf35e35073681f"
+}

@@ -1,0 +1,164 @@
+{
+  "label": "Obstetrics",
+  "hasIndex": false,
+  "isBranch": true,
+  "children": {
+    "3rd-stage-complications": {
+      "label": "3rd Stage Complications",
+      "hasIndex": false,
+      "isBranch": true,
+      "resources": {
+        "collectionQuizzes": [
+          {
+            "id": "3rd-stage-complications",
+            "title": "3rd Stage Complications"
+          }
+        ]
+      },
+      "hash": "7aecb09fb2189627ea8081ab3c13c27820e8797d"
+    },
+    "basic-obstetrics": {
+      "label": "Basic Obstetrics",
+      "hasIndex": false,
+      "isBranch": true,
+      "resources": {
+        "collectionQuizzes": [
+          {
+            "id": "basic-obstetrics",
+            "title": "BASIC OBSTETRICS"
+          }
+        ]
+      },
+      "hash": "8604e387d0eb785ed9d82570a698988108d63687"
+    },
+    "bleeding-in-late-pregnancy": {
+      "label": "Bleeding In Late Pregnancy",
+      "hasIndex": false,
+      "isBranch": true,
+      "resources": {
+        "collectionQuizzes": [
+          {
+            "id": "bleeding-in-late-pregnancy",
+            "title": "BLEEDING IN LATE PREGNANCY"
+          }
+        ]
+      },
+      "children": {
+        "antepartum-hemorrhage-aph": {
+          "label": "Antepartum Hemorrhage",
+          "hasIndex": true,
+          "isBranch": false,
+          "summary": "Antepartum Hemorrhage (APH) is bleeding that occurs after fetal viability until delivery (between 24-40 weeks). The bleeding is mostly maternal in origin, but less commonly can be fetal (vasa previa), which rapidly affects fetal wellbeing.",
+          "markdownContent": "\n**Antepartum Hemorrhage (APH)** is bleeding that occurs after fetal viability until delivery (between 24-40 weeks). The bleeding is mostly maternal in origin, but less commonly can be fetal (vasa previa), which rapidly affects fetal wellbeing.\n\n### **CAUSES AND DIFFERENTIAL DIAGNOSIS OF AΡΗ**\n\n1.  **OBSTETRIC CAUSES:** (detected by ultrasound)\n    * **Placental abruption:** Separation of a normally implanted placenta.\n    * **Placenta Previa:** Separation of an abnormally low implanted placenta.\n    * **Vasa Previa:** Bleeding from the umbilical cord (fetal origin).\n2.  **GYNECOLOGICAL CAUSES:** (detected by speculum examination)\n    * Vaginal trauma or lesions.\n    * Benign (erosion or polyp) or malignant cervical conditions.\n3.  **GENERAL OR SYSTEMIC CAUSES:** (detected from medical history)\n    * Anticoagulant therapy.\n    * Idiopathic thrombocytopenic purpura (ITP).\n    * Severe, uncontrolled Hypertension (HTN).\n\n### **PLACENTAL ABRUPTION**\n\nPlacental abruption is the separation of a normally implanted placenta. It complicates up to 1% of pregnancies and is the **most common cause for antepartum and intrapartum hemorrhage (MCQ)**. It is a significant cause of intrauterine fetal death (IUFD), preterm labor (PTL), and may be associated with **maternal coagulopathy and DIC (MCQ)**.\n\n#### **RISK FACTORS:**\n\n* Abruption in a previous pregnancy.\n* **Maternal hypertension and severe preeclampsia (PE) (MCQ)**.\n* **Sudden ROM in cases with polyhydramnios (MCQ)**.\n* Traumatic abruption from external trauma.\n* **Smoking (MCQ)**.\n* Thrombophilias.\n\n#### **TYPES OF BLEEDING IN PLACENTAL ABRUPTION:**\n\n1.  **Revealed type:** Blood dissects between membranes and is revealed externally through the vagina. **This is the commonest type (MCQ)**.\n2.  **Concealed type:** Blood is trapped, forming a retro-placental haematoma with no external bleeding. **This is the least common and most serious type (MCQ)**. It is often associated with severe PE, **severe pain, a hard tender uterus, and fetal distress (MCQ)**.\n3.  **Mixed type:** Bleeding is partially concealed and partially revealed.\n\n#### **CLINICAL PICTURE:**\n\n* **Mild separation:** Does not affect vital signs.\n* **Severe separation:** Associated with hemorrhagic shock. The degree of shock may not correlate with external bleeding in **concealed or mixed types (MCQ)**.\n* **DIC may occur in cases with concealed hemorrhage (MCQ)**.\n\n#### **ABDOMINAL EXAMINATION:**\n\n* **Uterine tenderness** is usually present.\n* A **rising fundal level may be noticed in concealed hemorrhage (MCQ)** due to an accumulating retroplacental hematoma.\n* **Vaginal examination should only be performed after excluding placenta previa by US (MCQ)**.\n\n#### **DIAGNOSIS:**\n\n* **Transabdominal ultrasound (TAS) is the gold standard for identifying placental site to exclude placenta previa (MCQ)**. It can also detect a **large retroplacental haematoma in concealed cases (MCQ)**.\n* Laboratory tests: CBC, coagulation profile, liver & kidney function tests.\n* Assessment of fetal wellbeing (FHR tracing, CTG, Doppler US).\n\n#### **PATHOLOGY AND COMPLICATIONS OF SEVERE PALCENTAL ABRUPTION:**\n\n1.  **Hemorrhagic shock, which might be complicated by acute renal tubular necrosis (MCQ)**.\n2.  Sheehan syndrome (acute pituitary necrosis).\n3.  **DIC due to thromboplastin release from damaged tissues (MCQ)**.\n4.  **Couvelaire's uterus:** In concealed hemorrhage, blood dissects into the myometrium, leading to **uterine atony and atonic postpartum hemorrhage (MCQ)**.\n5.  Fetal Complications: **Fetal distress, severe IUGR, IUFD, and preterm delivery (MCQ)**.\n\n#### **MANAGEMENT:**\n\nManagement can be active (immediate delivery) or expectant (conservative).\n\n* **A) ACTIVE MANAGEMENT (IMMEDIATE DELIVERY):**\n    * **Severe bleeding compromising maternal or fetal lives, regardless of gestational age (MCQ)**.\n    * Gestational age > 36 weeks.\n    * Spontaneous onset of labor.\n* **B) EXPECTANT MANAGEMENT (DELAY DELIVERY):**\n    * Indicated in preterm pregnancies < 36 weeks with **mild bleeding not affecting maternal or fetal well being (MCQ)** and absent labor pains. The goal is to **achieve better lung maturity (MCQ)**.\n* **Route of Delivery:**\n    * **Vaginal delivery is attempted in mild to moderate cases (MCQ)**.\n    * **CS is indicated for severe bleeding or other obstetric indications (MCQ)**.\n* **An Rh-negative mother should receive an Anti-D immunoglobulin injection (MCQ)**.\n\n### **PLACENTA PREVIA**\n\nPlacenta previa (PL PRV) is the implantation of the placenta partially or totally on the lower uterine segment (LUS). It can lead to an **abnormally invasive placenta (AIP) (MCQ)**, especially at the site of a previous CS scar.\n\n#### **INCIDENCE:**\n\n* **Occurs in around 0.5% of all pregnancies (MCQ)**.\n* Incidence is rising due to **increasing maternal age and repeated CS deliveries (MCQ)**.\n\n#### **PREDISPOSING AND RISK FACTORS:**\n\n* **Previous placenta previa (MCQ)**.\n* **Previous cesarean section; risk increases with the number of previous sections (MCQ)**.\n* **Increasing maternal age and parity (MCQ)**.\n* **Increased placental size (e.g., in multifetal pregnancies) (MCQ)**.\n\n#### **MECHANISM OF BLEEDING IN PL PRV:**\n\n* **Bleeding occurs from unavoidable separation of the placenta due to stretching of the LUS (MCQ)**.\n\n#### **PLACENTAL MIGRATION:**\n\n* A low-lying placenta diagnosed before 24 weeks often appears to move upward as the LUS develops. **Almost 90% of these cases resolve by the third trimester (MCQ)**.\n\n#### **CLASSIFICATION AND TYPES OF PL PRV:**\n\n* **Grade I (Lateralis/Low-lying):** Lower edge is > 2cm from the internal os.\n* **Grade II (Marginalis):** Lower edge reaches the internal os. **Considered minor placenta previa (MCQ)**.\n* **Grade III (Incomplete Centralis/Partial):** Placenta partially covers the cervix.\n* **Grade IV (Complete Centralis/Total):** **Placenta completely covers the cervix (MCQ)**.\n\n#### **SYMPTOMS & SIGNS:**\n\n* **Painless, causeless, recurrent vaginal bleeding is the most common presentation (MCQ)**.\n* Severe bleeding can lead to **hypovolemic shock (MCQ)**.\n* Abdominal exam: Uterus is soft and non-tender. **Malpresentations like breech and transverse lie are more frequent (MCQ)** because the placenta interferes with head engagement.\n* **Vaginal Examination (PV): should not be attempted as it may provoke severe uncontrollable bleeding (MCQ)**.\n\n#### **DIAGNOSIS:**\n\n* **A) TRANSABDOMINAL US (TAS): This is the gold standard for diagnosis (MCQ)**.\n* **B) TRANSVAGINAL US (TVS): More reliable than TAS for measuring the distance between the lower placental margin and the internal os (MCQ)**.\n* C) Maternal laboratory tests.\n* D) Tests for fetal wellbeing.\n\n#### **MATERNAL AND FETAL RISKS AND COMPLICATIONS IN PL PRV:**\n\n1.  **Severe APH leading to hypovolemic shock (MCQ)**.\n2.  **Severe postpartum hemorrhage (PPH)** due to poor contractility of the LUS.\n3.  Increased risk of CS hysterectomy.\n4.  **Increased risk of abnormally invasive placenta (placenta accreta), especially with a previous CS scar (MCQ)**.\n5.  Fetal complications due to prematurity, IUGR, and massive blood loss.\n\n#### **MANAGEMENT OF PL PRV:**\n\n* **All cases of total, partial, and marginal PL PRV will be delivered by CS (MCQ)**.\n* **A) ACTIVE MANAGEMENT BY IMMEDIATE CS:**\n    * **Severe bleeding compromising maternal or fetal lives, regardless of gestational age (MCQ)**.\n    * Gestational age > 36 weeks.\n    * Spontaneous onset of labor.\n* **B) EXPECTANT MANAGEMENT TO DELAY DELIVERY:**\n    * In **preterm pregnancies < 36 weeks with mild bleeding (MCQ)** and no labor pains, to allow for lung maturity. This requires hospitalization and close monitoring.\n* **C) LATERAL PL PRV:**\n    * A trial of vaginal delivery can be offered if the lower edge is 2 cm or more from the internal os and bleeding is minimal.\n\n### **PLACENTA ACCRETA SPECTRUM (Abnormally Invasive Placenta)**\n\nThis is a serious condition where the placenta adheres to or invades the myometrium, occurring mostly with PL PRV due to **poor decidual reaction in the LUS, especially at a previous CS scar site (MCQ)**.\n\n#### **TYPES OF ADHERENT PLACENTA:**\n\n* **Accreta:** Placenta is adherent to the myometrium (most common, 80%).\n* **Increta:** Placenta invades the myometrium.\n* **Percreta:** Placenta perforates the myometrium, potentially invading the bladder wall.\n\n#### **DIAGNOSIS DURING PREGNANCY:**\n\n* Can be achieved by expert **US (2D/3D and color Doppler) (MCQ)**.\n* **US reveals absence of a plane of cleavage between placenta and myometrium, with blood lacunae in cases of invasion (MCQ)**.\n* MRI can also be used but offers **no significant benefit over expert US (MCQ)**.\n\n#### **DIAGNOSIS DURING LABOR:**\n\n* Discovered when the placenta is partially or totally retained, leading to **severe atonic postpartum hemorrhage (PPH) (MCQ)**.\n\n#### **MANAGEMENT:**\n\n* **The majority of cases will require CS hysterectomy as a life-saving procedure (MCQ)**.\n\n### **RUPTURE VASA PREVIA (FETAL BLEEDING)**\n\nA very rare condition where umbilical cord vessels cross the internal os, often associated with **velamentous insertion of the cord or a succenturiate lobe (MCQ)**. Rupture of these vessels during labor leads to **fetal bleeding, severe fetal distress, and potential intrapartum fetal death (MCQ)**. The condition requires an **emergency CS (MCQ)**.\n",
+          "hash": "5673ae892491ca0bdaa63ce6886d30ff3669c07a"
+        }
+      },
+      "hash": "14dcd35f35ba1e998b4eb2479a47dd367baa1733"
+    },
+    "early-obstetric-complications": {
+      "label": "Early Obstetric Complications",
+      "hasIndex": false,
+      "isBranch": true,
+      "resources": {
+        "collectionQuizzes": [
+          {
+            "id": "early-obstetric-complications",
+            "title": "Early Obstetric Complications"
+          }
+        ]
+      },
+      "children": {
+        "bleeding-in-early-pregnancy": {
+          "label": "Bleeding In Early Pregnancy",
+          "hasIndex": true,
+          "isBranch": false,
+          "summary": "",
+          "markdownContent": "title: \"Bleeding in Early Pregnancy\"\n\n### Causes of bleeding in Early pregnancy:\n* **Abortion.**\n* **Ectopic pregnancy.**\n* **Gestational trophoblastic disease.**\n* Associated gynecologic conditions (cervical erosion, polyp or cancer).\n\n### SPONTANEOUS ABORTION (MISCARRIAGE)\n**DEFINITION:**\nTermination of pregnancy **before viability of the fetus (in Egypt, before 24 weeks) (MCQ)**. Viability denotes the chance of survival with maximum pediatric support.\n\n**INCIDENCE:**\nOccurs in **15-20%** of pregnancies, mostly in the early 1st trimester.\n\n**ETIOLOGY:**\n* **Genetic or chromosomal abnormalities in > 50% of cases (MCQ).**\n* Accidental trauma.\n* Hormonal as luteal phase defect.\n* Infections e.g. acute maternal fever.\n* Drugs: some teratogenic drugs may cause fetal demise.\n* Psychological factors or idiopathic.\n\n**CLINICAL TYPES OF SPONTANEOUS ABORTION:**\n* Threatened abortion.\n* Inevitable abortion.\n* Incomplete abortion.\n* Complete abortion.\n* Missed abortion.\n* Septic abortion.\n\n---\n### THREATENED ABORTION\n**Clinical picture:**\n* Symptoms & signs of pregnancy are present.\n* Minimal vaginal bleeding.\n* Mild suprapubic colicky pain may be present.\n* **Cervix is closed (MCQ).**\n* **Ultrasound shows an intrauterine gestational sac with a living fetus (MCQ).**\n\n**Investigations:**\n* Serial quantitative ẞHCG estimation to detect adequate doubling.\n* **Ultrasonography is the main diagnostic tool** to confirm fetal condition.\n\n**Treatment:**\n* Physical & mental rest.\n* **Hormonal support e.g. natural progesterone is beneficial in cases with luteal phase defect (MCQ).**\n* Follow up to ensure clinical improvement and fetal growth.\n\n**Prognosis:**\n**50% of cases will continue pregnancy** and 50% will end in inevitable or missed abortion.\n\n---\n### INEVITABLE ABORTION\nThere is no chance for pregnancy to continue.\n\n**Clinical Picture:**\n* Symptoms & signs of pregnancy are present.\n* **Moderate to severe vaginal bleeding** which may cause hypovolemic shock.\n* **Rupture of membranes <24 weeks is a sign of inevitability.**\n* Marked suprapubic colicky pain.\n* **PV examination reveals a dilated cervix (MCQ).**\n\n**Investigations:**\n* Ultrasonography to detect gestational age and decide the route of termination.\n* Blood group and CBC.\n\n**Treatment:**\nAnti-shock measures and termination of pregnancy:\n* **Anti-shock measures:** Rest, sedation, I.V crystalloids infusion, and blood transfusion if needed.\n* **Termination of pregnancy:**\n    * **<12 weeks: surgical vaginal evacuation by curettage or suction (MCQ).**\n    * **>12 weeks:** Medical evacuation by prostaglandins. If bleeding is severe, **abdominal hysterotomy is performed (MCQ).**\n\n---\n### INCOMPLETE ABORTION\nPart of the conception products are expelled from the uterus.\n\n**Clinical picture:**\n* Symptoms & signs of pregnancy are present.\n* Bleeding & pain similar to inevitable abortion, with **passage of parts of conception products (MCQ).**\n* **PV examination reveals an opened cervix with retained parts (MCQ).**\n\n**Investigations:**\n* **Ultrasonography detects retained products of conception (POC) (MCQ).**\n\n**Treatment:**\n* Anti-shock measures.\n* **Surgical evacuation.**\n\n---\n### COMPLETE ABORTION\nAll conception products are expelled from the uterus. **Bleeding and pain cease, and ultrasound confirms an empty uterus (MCQ).**\n\n---\n### MISSED ABORTION\nDeath of an embryo or fetus that is retained in the uterus.\n\n**Clinical picture:**\n* May be symptomless initially, later a **brownish vaginal discharge (MCQ)** and recurrent bleeding may occur, with loss of pregnancy symptoms.\n* PV examination reveals a smaller-than-expected uterus with a **closed internal os**.\n* **Coagulation problems like hypofibrinogenaemia and DIC may develop if retained for several weeks (MCQ).**\n\n**Investigations:**\n* **US examination is diagnostic**, revealing intrauterine fetal demise or anembryonic sac (blighted ovum).\n* Inadequate doubling or decreasing hCG levels.\n\n**Treatment:**\nTermination of pregnancy:\n* <12 weeks: surgical vaginal evacuation.\n* **>12 weeks: Medical induction by prostaglandins (MCQ).** Oxytocin is not effective due to decreased receptors. Abdominal hysterotomy is rare.\n* **N.B:** Following abortion, **Anti-D immunoglobulin should be given to RH-ve mothers.**\n\n---\n### SEPTIC ABORTION\nInfection superimposed on any type of abortion, usually incomplete.\n\n**Routes of infection:**\n* Exogenous: from instruments.\n* Endogenous: from genital tract flora.\n* Autogenous: from a septic focus in the body.\n\n**Clinical picture:**\n* Clinical picture of abortion.\n* Clinical picture of infection:\n    * **Generally:** Fever, headache, malaise, or septic shock.\n    * **Locally:** Lower abdominal pain, tender uterus, and **offensive vaginal discharge.**\n\n**Investigations:**\n* U.S. to detect intrauterine contents.\n* Blood picture shows leukocytosis.\n* Blood culture, kidney/liver functions, and coagulation profile.\n* Vaginal/cervical swab culture has limited value.\n\n**Treatment:**\n* Isolate the patient, Fowler's position.\n* Antishock measures may be needed.\n* **Parenteral broad-spectrum antibiotics.**\n* **Obstetrical management:**\n    * < 12 weeks: Vaginal surgical evacuation under antibiotic cover.\n    * >12 weeks: Medical induction. Hysterotomy or hysterectomy may be done if failed or uterus is markedly infected.\n\n**Complications:**\n* **Septic shock.**\n* **Acute renal & liver failure.**\n* **DIC.**\n\n---\n### SUMMARY OF CLINICAL TYPES OF ABORTION\n| | **Threatened Ab.** | **Missed** | **Inevitable** | **Incomplete** | **complete** | **septic** |\n| :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n| **Symptoms** | | | | | | |\n| 1-Bleeding | -ve | -ve | +ve | +ve | -ve | +ve |\n| 2-cramping Pelvic pain | Usually mild + | Usually mild + | ++or+++ | ++or+++ | + or -ve | Foul vag. discharge Fever |\n| **General exam.** | | | | | | |\n| Bp | Normotensive | Normotensive | Hypotension May be shocked | Hypotension May be shocked | Normotensive | Normotensive |\n| Pulse (rate and volume) | Average | Average | Rapid & low volume | Rapid & low volume | Average | Fever Rapid+good volume |\n| **Pelvic exam.** | | | | | | |\n| 1-Bleeding | Mild + | Mild + | Moderate/severe | Moderate/severe | Mild + | -ve or +ve |\n| 2-Int. OS | closed | closed | opened | opened | closed | Closed or open |\n| **Ultrasound exam** | I.U gestational sac With living fetus | I.U gestational sac With dead fetus | Dead or living fetus +open Int. os. | Retained POC +open Int. os. | Empty uterus | Retained POC |\n| **More investigations** | B-hCG quantitative | -Fibrinogen &FDP DIC | | | | -CBC→ infection -Fibrinogen &FDP DIC |\n| **Treatment** | Rest & reassurance, Progesterone | Surgical or medical evacuation | Antishock, Resuscitation + Evacuation | Antishock, Resuscitation + Evacuation | | Broad spectrum antibiotics + Evacuation |\n\n---\n### RECURRENT PREGNANCY LOSS (HABITUAL ABORTION)\n**Definition:** **Three or more successive spontaneous abortions.**\n\n**Incidence:** 1-2%\n\n**Causes:**\n* **Immunologic disorders are the commonest cause of early RPL:** **Antiphospholipid syndrome (APS)** leads to thrombosis of placental vessels.\n* Genetic or chromosomal abnormalities of the fertilized ovum.\n* Local causes in the uterus:\n    * Congenital: septate uterus.\n    * Traumatic: **Cervical incompetence (2nd trimesteric) (MCQ).**\n    * Neoplastic: **Submucous fibroid, especially fundal (MCQ).**\n* General and chronic diseases.\n* Hormonal as luteal phase defect or thyroid dysfunction.\n* Drugs or excessive smoking.\n* Chronic severe psychological disorders.\n* **N.B.: A fundal subserous fibroid does not commonly cause recurrent abortion (MCQ).**\n\n**Diagnosis:**\n* **History:** Early abortions suggest genetic causes or luteal phase defect. **Late 1st and 2nd trimester abortions may suggest antiphospholipid syndrome or cervical incompetence (MCQ).**\n* **Examination:** May detect general disease or local uterine causes.\n* **Investigations:**\n    * **Vaginal ultrasound** to detect uterine anomalies, fibroids, or signs of an incompetent cervix.\n    * Hysteroscopy for endometrial cavity evaluation.\n    * Chromosomal karyotyping for the couple.\n    * Thyroid function, blood sugar, etc.\n    * **Screening for anti-phospholipid syndrome: Lupus anticoagulant, anticardiolipin and ß2 glycoprotein (MCQ).**\n    * Screening for other causes of thrombophilia (Protein-S, Protein-C deficiency).\n\n**Treatment:**\n* **Inbetween pregnancies:** Treat the cause (e.g., myomectomy), control general disease.\n* **During pregnancy:**\n    * Progesterone supplementation for luteal phase defect.\n    * **Low dose aspirin (LDA) and Low molecular weight Heparin for antiphospholipid syndrome (MCQ).**\n    * Surgical treatment for incompetent os.\n\n---\n### Cervical (Isthmic) Incompetence\n**Definition:** Inability of the cervix to retain conception past the 1st trimester.\n\n**Etiology:**\n* **Traumatic injury** from D&C, previous delivery, or cervical surgery.\n* **Congenital:** very rare.\n\n**Diagnosis:**\n* Past history of trauma.\n* **Abortions are usually mid-trimesteric, easy, preceded by R.O.M & associated with minimal pain & bleeding (MCQ).**\n* Aborted fetus appears normal.\n* **During pregnancy: Ultrasound reveals funneling of membranes and a short cervix <2.5cm (MCQ).**\n\n**Treatment:**\n* **Cerclage operation** during pregnancy at 11-14 weeks, with rest and tocolytics. The suture is removed at 37 weeks or at the onset of labor.\n\n---\n### ECTOPIC PREGNANCY\n**Definition:** Implantation of the fertilized ovum outside the normal uterine cavity.\n\n**Incidence:** 0.5-2% of all pregnancies.\n\n**Sites:**\n* **Fallopian tube is the most common site (MCQ)**, mostly in the ampulla.\n* Other sites: Ovary, abdomen, rudimentary horn, cervix, CS scar.\n\n### TUBAL ECTOPIC\n**Etiology and Risk factors:**\n* **Previous ectopic gestation (MCQ).**\n* Previous Pelvic Inflammatory Disease (PID).\n* Endometriosis.\n* Pelvic and tubal surgery.\n* **IUD: prevents intrauterine pregnancy but not extra-uterine (MCQ).**\n* **Progesterone effect (e.g., in progesterone-only contraception) (MCQ).**\n* **ICSI procedure.**\n* **N.B.: Previous cesarean section is not a primary risk factor for tubal ectopic pregnancy (MCQ).**\n\n**Pathology:**\n* **Uterus:** Slightly enlarged with decidua present without chorionic villi (Arias-Stella reaction).\n* **Tube:** Disturbance of pregnancy occurs as early as 8-10 weeks.\n* **Results:** Tubal mole, tubal abortion, or tubal rupture.\n\n**Clinical Picture:**\n* **[I] Disturbed ectopic pregnancy, subacute type (stable):**\n    * **Symptoms:**\n        * Short period of amenorrhea.\n        * **Pain is the most prominent symptom (MCQ). It may be aching, stabbing, or colicky. It precedes vaginal bleeding (MCQ).**\n        * **Shoulder pain occurs in massive internal hemorrhage (MCQ).**\n        * **Vaginal bleeding is usually slight and dark (MCQ).**\n        * Syncope, nausea, and vomiting.\n    * **Signs:**\n        * **General:** Rapid pulse, falling BP proportional to internal bleeding.\n        * **Abdominal:** Lower abdominal tenderness and rebound tenderness.\n        * **Vaginal:** Marked tenderness on moving the cervix. Uterus slightly enlarged, adnexal mass may be felt.\n* **[II] Disturbed ectopic pregnancy, acute type (unstable):**\n    * The patient is shocked with severe intra-peritoneal hemorrhage. **It is an emergency.**\n* **[III] Undisturbed tubal pregnancy:**\n    * No symptoms or mild pelvic pain. Discovered accidentally.\n\n**Specific investigations:**\n* **The most important are combined transvaginal ultrasound (TVS) and estimation of ß-hCG (MCQ).**\n* **TVS:** **Diagnostic findings are an empty uterus with an adnexal mass** and pelvic fluid collection.\n* **Serum ßhCG level:** In ectopic pregnancy, there is an **improper doubling of the level after 48 hours (MCQ).**\n* **Discrimination zone:** With a ß-HCG level of **>1500 IU/mL, a gestational sac should be seen intrauterine by TVS (MCQ).** If the uterus is empty, it confirms an ectopic pregnancy.\n* **Laparoscopy:** Used to confirm the diagnosis in doubtful, hemodynamically stable cases.\n\n**Management of tubal pregnancy:**\n* Blood transfusion and antishock measures may be needed.\n* **Anti-D should be given to RH-ve cases.**\n* **(A) Surgical treatment:**\n    * **Conservative:** Salpingostomy (linear incision to remove ectopic), tube heals by secondary intention. Recurrence rate is high.\n    * **Radical:** Unilateral salpingectomy.\n* **(B) Medical treatment by methotrexate injections:**\n    * **Mode of action:** Antifolinic acid.\n    * **Indications:** Undisturbed early cases with ectopic < 3cm, **no fetal heart activity (MCQ)**, and hCG <6000 mIU/ml.\n    * Contraindications: **History of active hepatic or renal disease (MCQ).**\n    * Regimen: Single IM injection. Follow up with serum ß-HCG.\n    * Counseling: **Subsequent pregnancy should be delayed for 3 months (MCQ).**\n\n### Other Types of Ectopic Pregnancy\n* **Ovarian Ectopic Pregnancy:** Similar symptoms to tubal. Treatment aims to preserve ovarian tissue.\n* **Advanced Abdominal Pregnancy:** Rare. Placenta is often left in situ to avoid massive hemorrhage.\n* **Pregnancy in a Rudimentary Horn:** **Ruptures late, around 4th-5th month (MCQ).**\n* **Cervical Ectopic Pregnancy:** **Presents with severe vaginal bleeding rather than pain (MCQ).** Hysterectomy may be needed for life-threatening bleeding.\n* **CS Scar Pregnancy:** Increasing frequency. Can be treated with methotrexate or surgery. **Curettage is not a good option (MCQ).**\n\n---\n### GESTATIONAL TROPHOBLASTIC DISEASE (GTD)\nA spectrum of cellular proliferations from placental trophoblasts.\n* **Benign GTD:** Vesicular (Hydatidiform) Mole (Complete and Partial).\n* **Malignant GTD:** Invasive Mole and **Choriocarcinoma (MCQ).**\n\n### VESICULAR (HYDATIDIFORM) MOLE\nRare, benign form of GTD.\n\n**Risk factors:** **Extremes of age (<20 & >35 years).**\n\n**Pathology:**\n* **A. Complete mole:**\n    * Originates from **fertilization of an empty ovum, resulting in a 46 XX karyotype (MCQ).**\n    * **Gross:** Uterine cavity distended with grape-like vesicles. **No amniotic sac or fetal tissue.**\n    * **Histology:** Diffuse trophoblastic proliferation, marked villous edema, absent fetal blood vessels.\n* **B. Partial mole:**\n    * Originates from fertilization of a normal ovum by 2 sperms, leading to **triploidy (69 chromosomes).**\n    * **Gross:** Focal hydatidiform changes, with presence of amniotic sac or fetal tissues.\n    * **Histology:** Focal villous edema and trophoblastic proliferation.\n* **C. Associated ovarian cysts:**\n    * **Functional ovarian theca lutein cysts occur in 25-60% of complete moles** due to high hCG levels.\n    * **They undergo spontaneous regression after molar evacuation (MCQ).**\n\n**Clinical picture of molar pregnancy:**\n* **Recurrent early pregnancy bleeding is the chief symptom.**\n* **Severe nausea and vomiting (hyperemesis gravidarum) due to high hCG levels.**\n* Characteristic prune juice discharge or expulsion of vesicles.\n* **Fundal level larger than gestational age.**\n* Uterus is soft and **doughy.**\n* Fetal parts and heart pulsations are absent in complete moles.\n\n**Diagnostic investigations:**\n* **Ultrasonography is the gold standard.**\n    * **Complete mole: shows a characteristic \"snowstorm\" appearance (MCQ).**\n    * Partial Mole: shows an embryo, often with anomalies, and vesicular changes in the placenta.\n* **Serum ß-hCG: Abnormally high levels, often >100,000 mIU/ml (MCQ).**\n* Metastatic workup for malignant changes.\n\n**Complications of molar pregnancy:**\n* **Hyperemesis gravidarum.**\n* Severe bleeding.\n* **Early onset pregnancy induced hypertension.**\n* **Hyperthyroidism.**\n* Trophoblastic embolization.\n* Risk of developing Invasive Mole or **Choriocarcinoma (5% of complete moles) (MCQ).**\n* **Subsequent uterine adenocarcinoma is not a complication (MCQ).**\n\n**Management of molar pregnancy:**\n* **Suction evacuation is the gold standard technique (MCQ).**\n* Gentle curettage is performed after suction to ensure complete evacuation.\n* **Hysterectomy is indicated only in elderly patients (>40 years) with a completed family (MCQ).**\n* **Follow up:**\n    * **Repeated serum ß-hCG assays weekly until negative for 3 weeks, then monthly for 1 year (MCQ).**\n    * **Contraception is recommended for 1 year.**\n* **Persistent trophoblastic disease (PTD):** Incomplete fall of hCG levels after evacuation. Treated with methotrexate.\n\n### Malignant Gestational Trophoblastic Diseases (GTD)\nIncludes Invasive Mole and Choriocarcinoma.\n* **More than 50% follow a molar pregnancy.**\n* Characterized by aggressive invasion and tendency to metastasize (lung, vagina, brain, liver).\n* **Gestational Choriocarcinoma:** A highly malignant tumor with early blood-borne metastases.\n\n**Diagnosis of Malignant GTD:**\n* **Persistent vaginal bleeding** following a pregnancy event.\n* **Abnormally high or rising hCG levels** after a terminated pregnancy.\n* Imaging (TVS/TAS, MRI, CT) to detect uterine lesion and metastases.\n\n**Management:**\n* **Chemotherapy is the main line of treatment.**\n* Hysterectomy may be offered to elderly patients or in cases with severe bleeding.\n",
+          "hash": "63186d8adf19fbfecf636b03fcf0f538957f3f28"
+        }
+      },
+      "hash": "f8872fda47420fe5377e972dafd8b2bf3548100c"
+    },
+    "fetus-and-neonate": {
+      "label": "Fetus And Neonate",
+      "hasIndex": false,
+      "isBranch": true,
+      "resources": {
+        "collectionQuizzes": [
+          {
+            "id": "fetus-and-neonate",
+            "title": "Fetus and Neonate"
+          }
+        ]
+      },
+      "hash": "f592f76361793cff9ddb689d8ecdd0e58ceb12dc"
+    },
+    "medical-disorders-in-pregnancy": {
+      "label": "Medical Disorders In Pregnancy",
+      "hasIndex": false,
+      "isBranch": true,
+      "resources": {
+        "collectionQuizzes": [
+          {
+            "id": "medical-disorders-in-pregnancy",
+            "title": "Medical Disorders in Pregnancy"
+          }
+        ]
+      },
+      "hash": "26c420d998afb48d4468efa0c0581eb4a948a41a"
+    },
+    "normal-and-abnormal-labor-and-delivery": {
+      "label": "Normal And Abnormal Labor And Delivery",
+      "hasIndex": false,
+      "isBranch": true,
+      "resources": {
+        "collectionQuizzes": [
+          {
+            "id": "normal-and-abnormal-labor-and-delivery",
+            "title": "NORMAL AND ABNORMAL LABOR AND DELIVERY"
+          }
+        ]
+      },
+      "hash": "7014ac970425fba5707cf0926ee46f4d39f37a9d"
+    },
+    "obstetric-injuries": {
+      "label": "Obstetric Injuries",
+      "hasIndex": false,
+      "isBranch": true,
+      "resources": {
+        "collectionQuizzes": [
+          {
+            "id": "obstetric-injuries",
+            "title": "OBSTETRIC INJURIES"
+          }
+        ]
+      },
+      "hash": "3c755e00ea8f7dddfff6671b9d47eaf8ae47ad85"
+    },
+    "revision": {
+      "label": "Revision",
+      "hasIndex": false,
+      "isBranch": true,
+      "resources": {
+        "collectionQuizzes": [
+          {
+            "id": "round-mcqs",
+            "title": "Round MCQs"
+          },
+          {
+            "id": "vip",
+            "title": "VIP"
+          }
+        ],
+        "flashcardDecks": [
+          {
+            "id": "obstetrics",
+            "title": "Obstetrics Flashcards"
+          }
+        ]
+      },
+      "hash": "bacab4252ecedfa708209dbe41c4256960b2e296"
+    }
+  },
+  "hash": "3aa8d5d260c104df96642fade963ac6edb0481ca"
+}

@@ -1,0 +1,18 @@
+{
+  "label": "Growth And Development",
+  "hasIndex": false,
+  "isBranch": true,
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "KAF",
+        "title": "KAF"
+      },
+      {
+        "id": "pbl-of-growth",
+        "title": "PBL of Growth & Development"
+      }
+    ]
+  },
+  "hash": "463c2b9f561e6e23359a6faea00d9c2e7b8f5c6d"
+}

@@ -1,0 +1,18 @@
+{
+  "label": "Hepatology",
+  "hasIndex": false,
+  "isBranch": true,
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "KAF",
+        "title": "KAF"
+      },
+      {
+        "id": "pbl-of-hepatology",
+        "title": "PBL of Hepatology"
+      }
+    ]
+  },
+  "hash": "b3c8cb4dd38eca20b90687ed054b3998f26b5de3"
+}

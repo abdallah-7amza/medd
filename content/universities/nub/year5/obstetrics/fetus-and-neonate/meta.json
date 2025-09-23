@@ -1,0 +1,14 @@
+{
+  "label": "Fetus And Neonate",
+  "hasIndex": false,
+  "isBranch": true,
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "fetus-and-neonate",
+        "title": "Fetus and Neonate"
+      }
+    ]
+  },
+  "hash": "f592f76361793cff9ddb689d8ecdd0e58ceb12dc"
+}
