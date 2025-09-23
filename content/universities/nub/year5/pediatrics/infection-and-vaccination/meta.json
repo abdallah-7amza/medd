@@ -1,0 +1,18 @@
+{
+  "label": "Infection And Vaccination",
+  "hasIndex": false,
+  "isBranch": true,
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "kaf",
+        "title": "KAF"
+      },
+      {
+        "id": "pbl-of-infection-and-vaccination",
+        "title": "PBL of Infection and Vaccination"
+      }
+    ]
+  },
+  "hash": "7fa4869818c870c4fe49079d94815c0b3d31a0f8"
+}

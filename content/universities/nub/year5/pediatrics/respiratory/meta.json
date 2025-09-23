@@ -1,0 +1,18 @@
+{
+  "label": "Respiratory",
+  "hasIndex": false,
+  "isBranch": true,
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "pbl-of-respiratory-and-allergy",
+        "title": "PBL of Respiratory & Allergy"
+      },
+      {
+        "id": "respiratory-and-allergy-kaf",
+        "title": "Respiratory and allergy KAF"
+      }
+    ]
+  },
+  "hash": "45ab6ea922664369c7193c94b5ef8c1384eccbec"
+}

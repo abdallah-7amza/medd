@@ -1,0 +1,18 @@
+{
+  "label": "Cardiology",
+  "hasIndex": false,
+  "isBranch": true,
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "KAF",
+        "title": "KAF"
+      },
+      {
+        "id": "pbl-of-cardiology",
+        "title": "PBL of Cardiology"
+      }
+    ]
+  },
+  "hash": "50d5e66dd887ef1b8483d640d658269b5ad344d6"
+}

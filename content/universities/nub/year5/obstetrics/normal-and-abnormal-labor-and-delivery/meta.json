@@ -1,0 +1,14 @@
+{
+  "label": "Normal And Abnormal Labor And Delivery",
+  "hasIndex": false,
+  "isBranch": true,
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "normal-and-abnormal-labor-and-delivery",
+        "title": "NORMAL AND ABNORMAL LABOR AND DELIVERY"
+      }
+    ]
+  },
+  "hash": "7014ac970425fba5707cf0926ee46f4d39f37a9d"
+}

@@ -1,0 +1,14 @@
+{
+  "label": "Diagnostic Procedures And Operations In Gynecology",
+  "hasIndex": false,
+  "isBranch": true,
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "diagnostic-procedures-and-operations-in-gynecology",
+        "title": "Diagnostic Procedures and Operations in Gynecology"
+      }
+    ]
+  },
+  "hash": "6556efae640d69c790715308b17e19ae0aacb4a7"
+}

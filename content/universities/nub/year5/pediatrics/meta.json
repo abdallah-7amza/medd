@@ -1,0 +1,289 @@
+{
+  "label": "Pediatrics",
+  "hasIndex": false,
+  "isBranch": true,
+  "children": {
+    "cardiology": {
+      "label": "Cardiology",
+      "hasIndex": false,
+      "isBranch": true,
+      "resources": {
+        "collectionQuizzes": [
+          {
+            "id": "KAF",
+            "title": "KAF"
+          },
+          {
+            "id": "pbl-of-cardiology",
+            "title": "PBL of Cardiology"
+          }
+        ]
+      },
+      "hash": "50d5e66dd887ef1b8483d640d658269b5ad344d6"
+    },
+    "emergency": {
+      "label": "Emergency",
+      "hasIndex": false,
+      "isBranch": true,
+      "resources": {
+        "collectionQuizzes": [
+          {
+            "id": "KAF",
+            "title": "KAF"
+          }
+        ]
+      },
+      "hash": "fd258d8d046f5ba739d865bf86d861931d45ecc1"
+    },
+    "endocrine": {
+      "label": "Endocrine",
+      "hasIndex": false,
+      "isBranch": true,
+      "resources": {
+        "collectionQuizzes": [
+          {
+            "id": "KAF",
+            "title": "KAF"
+          },
+          {
+            "id": "pbl-of-endocrine",
+            "title": "PBL of Endocrine"
+          }
+        ]
+      },
+      "hash": "fca1e05e246fb03e31a84a8d4daf35e35073681f"
+    },
+    "genetics": {
+      "label": "Genetics",
+      "hasIndex": false,
+      "isBranch": true,
+      "resources": {
+        "collectionQuizzes": []
+      },
+      "hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    },
+    "git": {
+      "label": "Git",
+      "hasIndex": false,
+      "isBranch": true,
+      "resources": {
+        "collectionQuizzes": [
+          {
+            "id": "kaf",
+            "title": "KAF"
+          },
+          {
+            "id": "pbl-of-git",
+            "title": "PBL of GIT"
+          }
+        ]
+      },
+      "hash": "a89cedf7911d446c87b9713dd20e679cee226043"
+    },
+    "growth-and-development": {
+      "label": "Growth And Development",
+      "hasIndex": false,
+      "isBranch": true,
+      "resources": {
+        "collectionQuizzes": [
+          {
+            "id": "KAF",
+            "title": "KAF"
+          },
+          {
+            "id": "pbl-of-growth",
+            "title": "PBL of Growth & Development"
+          }
+        ]
+      },
+      "hash": "463c2b9f561e6e23359a6faea00d9c2e7b8f5c6d"
+    },
+    "hematology": {
+      "label": "Hematology",
+      "hasIndex": false,
+      "isBranch": true,
+      "resources": {
+        "collectionQuizzes": [
+          {
+            "id": "kaf",
+            "title": "KAF"
+          },
+          {
+            "id": "pbl-of-hematology",
+            "title": "PBL of Hematology"
+          }
+        ]
+      },
+      "hash": "f4366e96166519f2201e6d00e201778c8912627d"
+    },
+    "hepatology": {
+      "label": "Hepatology",
+      "hasIndex": false,
+      "isBranch": true,
+      "resources": {
+        "collectionQuizzes": [
+          {
+            "id": "KAF",
+            "title": "KAF"
+          },
+          {
+            "id": "pbl-of-hepatology",
+            "title": "PBL of Hepatology"
+          }
+        ]
+      },
+      "hash": "b3c8cb4dd38eca20b90687ed054b3998f26b5de3"
+    },
+    "infection-and-vaccination": {
+      "label": "Infection And Vaccination",
+      "hasIndex": false,
+      "isBranch": true,
+      "resources": {
+        "collectionQuizzes": [
+          {
+            "id": "kaf",
+            "title": "KAF"
+          },
+          {
+            "id": "pbl-of-infection-and-vaccination",
+            "title": "PBL of Infection and Vaccination"
+          }
+        ]
+      },
+      "hash": "7fa4869818c870c4fe49079d94815c0b3d31a0f8"
+    },
+    "neonatology": {
+      "label": "Neonatology Branch",
+      "hasIndex": true,
+      "isBranch": true,
+      "summary": "This section covers topics related to newborn infants, including jaundice and other neonatal conditions.",
+      "markdownContent": "\n# Neonatology\n\nThis is the main page for the Neonatology branch. Lessons under this branch will appear here.\n",
+      "resources": {
+        "collectionQuizzes": [
+          {
+            "id": "KAF",
+            "title": "KAF"
+          },
+          {
+            "id": "neonatology-bank",
+            "title": "Neonatology Bank"
+          },
+          {
+            "id": "pbl-of-neonatology",
+            "title": "PBL of Neonatology"
+          }
+        ]
+      },
+      "children": {
+        "neonatal-jaundice": {
+          "label": "Neonatal Jaundice",
+          "hasIndex": false,
+          "isBranch": false,
+          "hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        }
+      },
+      "hash": "b366ec4312df965bd2f0d3532d89b3cb122388b6"
+    },
+    "nephrology": {
+      "label": "Nephrology",
+      "hasIndex": false,
+      "isBranch": true,
+      "resources": {
+        "collectionQuizzes": [
+          {
+            "id": "KAF",
+            "title": "KAF"
+          },
+          {
+            "id": "pbl-of-nephrology",
+            "title": "PBL of Nephrology"
+          }
+        ]
+      },
+      "hash": "ac5cd5e7d07fc13ee48ad1db45fd936fe1f4076f"
+    },
+    "neurology": {
+      "label": "Neurology",
+      "hasIndex": false,
+      "isBranch": true,
+      "resources": {
+        "collectionQuizzes": [
+          {
+            "id": "KAF",
+            "title": "KAF"
+          },
+          {
+            "id": "pbl-of-neurology",
+            "title": "PBL of Neurology"
+          }
+        ]
+      },
+      "hash": "79be4b5d4ac6747458ca8015abdae026178df23c"
+    },
+    "nutrition": {
+      "label": "Nutrition",
+      "hasIndex": false,
+      "isBranch": true,
+      "resources": {
+        "collectionQuizzes": [
+          {
+            "id": "KAF",
+            "title": "KAF"
+          },
+          {
+            "id": "pbl-of-nutrition",
+            "title": "PBL of Nutrition"
+          }
+        ]
+      },
+      "children": {
+        "malnutrition": {
+          "label": "Principles of Malnutrition",
+          "hasIndex": true,
+          "isBranch": false,
+          "summary": "An overview of the causes and classifications of malnutrition.",
+          "markdownContent": "\n# Principles of Malnutrition\n\nThis topic covers the primary and secondary forms of malnutrition in pediatrics.\n",
+          "hash": "2628ecbddbcf881619706f0d091eabc0490ccafe"
+        }
+      },
+      "hash": "c98174573a4c070db74de888ec080e81c0325651"
+    },
+    "respiratory": {
+      "label": "Respiratory",
+      "hasIndex": false,
+      "isBranch": true,
+      "resources": {
+        "collectionQuizzes": [
+          {
+            "id": "pbl-of-respiratory-and-allergy",
+            "title": "PBL of Respiratory & Allergy"
+          },
+          {
+            "id": "respiratory-and-allergy-kaf",
+            "title": "Respiratory and allergy KAF"
+          }
+        ]
+      },
+      "hash": "45ab6ea922664369c7193c94b5ef8c1384eccbec"
+    },
+    "rheumatology": {
+      "label": "Rheumatology",
+      "hasIndex": false,
+      "isBranch": true,
+      "resources": {
+        "collectionQuizzes": [
+          {
+            "id": "KAF",
+            "title": "KAF"
+          },
+          {
+            "id": "pbl-of-rheumatology",
+            "title": "PBL of Rheumatology"
+          }
+        ]
+      },
+      "hash": "a55249f7a5ddab3583ca30716b206ba6e68ae03c"
+    }
+  },
+  "hash": "a5ee09c6590232c3a388d04ef4017fdfdf4b717c"
+}

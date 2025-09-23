@@ -1,0 +1,14 @@
+{
+  "label": "Obstetric Injuries",
+  "hasIndex": false,
+  "isBranch": true,
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "obstetric-injuries",
+        "title": "OBSTETRIC INJURIES"
+      }
+    ]
+  },
+  "hash": "3c755e00ea8f7dddfff6671b9d47eaf8ae47ad85"
+}

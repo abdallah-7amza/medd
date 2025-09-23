@@ -1,0 +1,625 @@
+{
+  "label": "Year5",
+  "hasIndex": false,
+  "isBranch": true,
+  "children": {
+    "family-medicine": {
+      "label": "Family Medicine",
+      "hasIndex": false,
+      "isBranch": true,
+      "children": {
+        "revision": {
+          "label": "Revision",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "family-medicine-revision",
+                "title": "Family Medicine Revision"
+              }
+            ]
+          },
+          "hash": "dbcf076384060f5ebdbcb2e04ad8b98f8145cc86"
+        }
+      },
+      "hash": "c1d5b519ed0c47f8d220966cad13e00e8bafb618"
+    },
+    "gynecology": {
+      "label": "Gynecology",
+      "hasIndex": false,
+      "isBranch": true,
+      "children": {
+        "basic-operative-gynecology": {
+          "label": "Basic Operative Gynecology",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "basic-operative-gynecology-nadine",
+                "title": "Basic & Operative Gynecology - Dr. Nadine"
+              }
+            ]
+          },
+          "hash": "34c8d441c65bfeccf5eefddd38a5066af639ff4b"
+        },
+        "diagnostic-procedures-and-operations-in-gynecology": {
+          "label": "Diagnostic Procedures And Operations In Gynecology",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "diagnostic-procedures-and-operations-in-gynecology",
+                "title": "Diagnostic Procedures and Operations in Gynecology"
+              }
+            ]
+          },
+          "hash": "6556efae640d69c790715308b17e19ae0aacb4a7"
+        },
+        "endocrinology": {
+          "label": "Endocrinology",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "endocrinology-nadine",
+                "title": "Endocrinology - Dr. Nadine"
+              },
+              {
+                "id": "gynecologic-endocrinology",
+                "title": "GYNECOLOGIC ENDOCRINOLOGY"
+              }
+            ]
+          },
+          "hash": "9c5f919894617e53023a256f8b26b451e9523135"
+        },
+        "female-genital-infections": {
+          "label": "Female Genital Infections",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "female-genital-infections",
+                "title": "Female Genital Infections"
+              },
+              {
+                "id": "gynecological-infections-nadine",
+                "title": "Gynecological Infections - Dr. Nadine"
+              }
+            ]
+          },
+          "children": {
+            "gynecologic-infections": {
+              "label": "Gynecologic Infections",
+              "hasIndex": true,
+              "isBranch": false,
+              "summary": "This lesson covers the normal vaginal flora and pH, focusing on Lactobacillus acidophilus, which maintains an acidic environment (pH 3.8-4.5). It explores natural defenses, predisposing factors for infections, and details common types of vaginitis, cervicitis, and Pelvic Inflammatory Disease (PID).",
+              "markdownContent": "\n### **VAGINAL FLORA AND VAGINAL PH**\n\nThe normal vaginal flora in a reproductive-age woman includes multiple aerobic, facultative, and obligate anaerobic species.\n* **Lactobacillus acidophilus is the dominant bacterium in a healthy vagina (MCQ).** It plays a critical role in maintaining the normal vaginal environment by:\n    * Producing **lactic acid**, which is responsible for the **acidic vaginal environment (pH: 3.8-4.5) (MCQ)**.\n    * Producing lactic acid and hydrogen peroxide, which are toxic to anaerobic bacteria.\n* A decreased glycogen content (as in menopause or childhood) leads to diminished acid production and a rise in vaginal pH, making it alkaline.\n\n#### **NATURAL DEFENSE MECHANISMS AGAINST GENITAL TRACT INFECTION (GTI)**\n\n* **Vaginal PH**: The **slightly acidic vaginal pH** acts as an unfavorable medium for many pathogens **(MCQ)**.\n* **Vaginal epithelium**: The thick stratified squamous epithelium is protective. Normal estrogen levels prevent atrophic changes.\n* **Cellular and Humoral immunity**: These play a role in normal vaginal defense.\n\n#### **FACTORS THAT PREDISPOSE TO VAGINAL INFECTIONS**\n\n1.  **Alterations in the normal vaginal pH**:\n    * Menstrual blood flow (more alkaline).\n    * Vaginal douching.\n    * Decreased estrogen (childhood and menopause).\n    * Sexual intercourse (alkaline semen).\n2.  **Imbalance between vaginal bacterial flora and Candida species**:\n    * As with recent treatment with **broad-spectrum antibiotics (MCQ)**.\n3.  **Decreased resistance of vaginal epithelium**:\n    * Atrophic epithelium (childhood and menopause).\n    * Introduction of new organisms (STDs).\n    * Foreign bodies (tampons, IUD threads).\n4.  **Suppression of immune system**:\n    * HIV infections, autoimmune disorders, corticosteroid therapy, and **diabetes mellitus** can result in recurrent vaginal infections, especially candidiasis **(MCQ)**.\n\n### **COMMON TYPES OF VAGINITIS**\n\nVaginitis is a common complaint occurring at different periods of a woman's life.\n* **In the childbearing period**:\n    * Bacterial vaginosis (BV).\n    * Candida vaginitis (CV).\n    * Trichomonas vaginalis (TV).\n* **In childhood**: Vulvovaginitis of childhood.\n* **In menopausal women**: Senile or Atrophic vaginitis.\n\n#### **Lower Genital Tract Infections in Childbearing period**\n\n**1. BACTERIAL VAGINOSIS**\n\n* **Bacterial vaginosis (BV) is the commonest bacterial vaginal infection** and the **commonest cause for non-irritant, malodorous vaginal discharge (MCQ)**.\n* **ETIOLOGY AND CAUSATIVE ORGANISMS**:\n    * Anaerobic bacteria normally found in the vagina, including **Gardnerella vaginalis (GV)**, Bacteroides species, and Mycoplasma hominis.\n* BV represents an alteration of normal vaginal flora where:\n    * **Anaerobic organisms markedly increase (MCQ)**.\n    * Hydrogen peroxide-producing **lactobacilli markedly decrease or disappear (MCQ)**.\n    * **The vaginal pH rises, ranging from 4.7-7.0 (alkaline) (MCQ)**.\n    * Anaerobic bacteria produce amines, resulting in a **characteristic fishy odor discharge (MCQ)**.\n* BV is not sexually acquired; the sexual partner does not need to be treated.\n* **CLINICAL PICTURE (Symptoms & Signs)**:\n    * Asymptomatic in 50% of women.\n    * Vaginal discharge is the commonest symptom: profuse, thin, homogenous, non-irritant, with a **malodorous, fishy amine smell**, especially around menses or after intercourse **(MCQ)**.\n* **DIAGNOSTIC INVESTIGATIONS (AMSEL'S CRITERIA)**: Requires at least 3 of the following 4 criteria:\n    1.  Characteristic vaginal discharge.\n    2.  Microscopic examination reveals **characteristic clue cells (MCQ)**.\n    3.  Adding 10% KOH releases a **characteristic fishy odor (whiff test) (MCQ)**.\n    4.  **Vaginal pH > 4.5 (MCQ)**.\n* **TREATMENT OF BV (CDC 2021)**:\n    * **Oral Preparations**: **Metronidazole** tablets: 500 mg twice a day for 7 days.\n    * **Intravaginal Preparations**: **Clindamycin cream** vaginally daily for 7 days.\n    * **During Pregnancy**: **Vaginal Clindamycin may be used from the first trimester**. **Oral Metronidazole may be used after the first trimester (MCQ)**.\n* **Ν.Β.**: Women with BV are at increased risk for second-trimester abortion, preterm labor, endometritis, and pelvic inflammatory disease (PID).\n\n**2. CANDIDA VAGINITIS**\n\n* Candida vaginitis (Candidiasis or Moniliasis) is the second most common cause of childbearing period vaginitis. It flourishes in acidic media.\n* **ETIOLOGY AND CAUSATIVE ORGANISMS**:\n    * **Candida albicans** is the causative organism in > 80% of cases. It is a normal inhabitant of the bowel and peri-anal region.\n    * Non-albicans strains are less common and usually resistant to standard antifungal treatment.\n* **PREDISPOSING FACTORS FOR SYMPTOMATIC INFECTION**:\n    * Alteration of vaginal pH to more acidic.\n    * **Altered host immunity**: **Pregnancy, diabetes mellitus**, long-term corticosteroid therapy, and **HIV infection (MCQ)**.\n    * **Altered microbiology**: **Long-term use of antibiotics** or chemotherapy **(MCQ)**.\n    * Wetness and moisture.\n* **CLINICAL PICTURE (Symptoms & Signs)**:\n    * **Vulvar pruritis**: Itching and progressive scratching is usually the main symptom **(MCQ)**.\n    * **Vaginal soreness**: Burning sensation that may cause discomfort and dyspareunia.\n    * **Vaginal discharge**: **scanty, thick, odorless, white discharge (cottage cheese discharge) (MCQ)**.\n    * **Vulvar erythema**: red and swollen, sometimes with **fissures and excoriations (MCQ)**.\n* **DIAGNOSTIC INVESTIGATIONS**:\n    * **Vaginal pH is slightly acidic (< 4.5) (MCQ)**.\n    * Microscopic examination with saline and 10% KOH reveals hyphae or pseudo-hyphae.\n    * Vaginal swabs for culture are not necessary except in resistant or recurrent infection.\n* **TREATMENT OF VAGINAL CANDIDIASIS (CDC 2021)**:\n    * **Non-complicated cases**:\n        * **Oral preparations**: **Fluconazole**; Single oral dose 150 mg **(MCQ)**.\n        * **Intravaginal preparations**: **Clotrimazole cream, OR Tioconazole ointment OR Terconazole vaginal suppository (MCQ)**.\n        * **During pregnancy**: **Only intravaginal treatment for CV is considered safe throughout pregnancy**.\n    * **Recurrent vulvovaginal candidiasis**: Fluconazole 150 mg orally weekly dose for 6 weeks.\n* **N.B.**: Routine treatment of sexual partners is not recommended, except in symptomatic partners.\n\n**3. TRICHOMONAS VAGINALIS VAGINITIS**\n\n* Trichomoniasis is the 3rd most common cause for vaginitis. It is a multifocal infection involving the vaginal epithelium, Skene's glands, Bartholin gland, and urethra.\n* **ETIOLOGY AND CAUSATIVE ORGANISM**:\n    * **Trichomonas vaginalis (TV): an ovoid, motile, flagellated protozoon (MCQ)**.\n* **Sexual transmission**: In 70% of cases, TV can be recovered from male partners, hence it is considered a **sexually transmitted disease (STD) (MCQ)**.\n* **CLINICAL PICTURE (Symptoms and Signs)**:\n    * **Asymptomatic in 70%-85% of women (MCQ)**.\n    * **Vaginal discharge**: **Copious, yellow or green, frothy, offensive (MCQ)**.\n    * **Vulval irritation** causing burning pain and dyspareunia.\n    * Speculum examination reveals vaginal or cervical punctate hemorrhages in 25% of cases, also known as **strawberry spots (MCQ)**.\n* **DIAGNOSTIC INVESTIGATIONS**:\n    * Nucleic Acid Amplification Test (NAAT) is the most sensitive.\n    * **Saline wet mount preparations** of the vaginal discharge reveal numerous leukocytes and **highly motile flagellated trichomonads (MCQ)**.\n    * Cultures from vaginal discharge.\n    * Pap smear.\n* **TREATMENT (CDC 2021)**:\n    * Recommended regimen: **Metronidazole: 2g single oral dose for both partners (MCQ)**.\n    * **During Pregnancy**: **Oral Metronidazole can be used after the first trimester (MCQ)**.\n    * **The male sexual partner should be promptly treated by oral Metronidazole to prevent re-infection (MCQ)**.\n    * Re-testing for the female partner is recommended after 3 months due to high rates of re-infection.\n\n#### **CHILDHOOD VAGINITIS**\n\n* Childhood vulvovaginitis is rare, occurring mostly due to decreased vaginal wall resistance from low estrogen and low vaginal pH.\n* **RISK FACTORS**: Poor hygiene, **foreign body (MCQ)**, Pinworms.\n* **CAUSATIVE ORGANISMS**: Bacterial infection (E. coli, streptococci), rare CV and TV.\n* **CLINICAL PICTURE**: Purulent, foul odor, sometimes bloody discharge. Pruritus vulvae.\n* **DIAGNOSTIC INVESTIGATIONS**: Culture and sensitivity, U.S./X-ray for foreign body.\n* **TREATMENT**: Local cleanliness, systemic antibiotics, and **removal of foreign body in the vagina under anesthesia (MCQ)**.\n\n#### **ATROPHIC VAGINITIS**\n\n* Occurs due to loss of the normal protective thickness of the vaginal epithelium with **decreased estrogen levels (MCQ)**. It is often seen in **postmenopausal women** (senile vaginitis) and breastfeeding women.\n* The vaginal epithelium becomes thin, glycogen content decreases, and **pH becomes alkaline**.\n* **CLINICAL PICTURE**: **Leucorrhea, pruritus, vaginal burning, tenderness, and dyspareunia (MCQ)**. Speculum examination shows atrophic, inflamed walls. **Vaginal pH is alkaline > 4.5**.\n* **TREATMENT**:\n    * Systemic antibiotics if secondarily infected.\n    * **Intravaginal estrogen cream administered every night for 2 weeks, then once weekly (MCQ)**.\n    * Systemic hormone therapy (HT) only if medically indicated for other menopausal symptoms.\n\n### **ACUTE AND CHRONIC CERVICITIS**\n\n**1. ACUTE ENDOCERVICITIS**\n\n* Acute inflammation of endocervical glands, mostly secondary to STPs.\n* **ETIOLOGY AND CAUSATIVE ORGANISMS**:\n    * **Sexually transmitted pathogens**: **Neisseria gonorrhea, Chlamydia Trachomatis**, and TV **(MCQ)**.\n    * Other bacterial organisms related to IUD insertion, puerperal, post-abortive, or post-operative infection.\n* **CLINICAL PICTURE**: Mucopurulent discharge, backache, dyspareunia. Cervix is red and swollen.\n* **DIAGNOSIS**: Culture and sensitivity in resistant cases.\n* **TREATMENT (CDC 2010)**: Doxycycline 100 mg orally twice daily for 7 days OR Azithromycin 1g orally in a single dose (in pregnancy).\n* **COMPLICATIONS**: Chronic Cervicitis, **Pelvic Inflammatory Disease (PID) (MCQ)**.\n\n**2. CHRONIC CERVICITIS**\n\n* Chronic inflammation of endocervical glands, usually a sequel of acute Cervicitis.\n* **CLINICAL PICTURE**:\n    * **Symptoms**: Mucopurulent offensive discharge, backache, dyspareunia, dysmenorrhea, **contact bleeding (MCQ)**, frequency of micturition.\n    * **Signs on Speculum examination**: Mucopurulent discharge, **Cervical erosion**, Chronic hypertrophic cervicitis, Mucous polyp, **Nabothian cysts**.\n\n#### **CERVICAL EROSION**\n\n* A bright red area around the external os due to replacement of stratified squamous epithelium with endocervical columnar epithelium.\n* **ETIOLOGY**:\n    1.  **Chronic Cervicitis**.\n    2.  **Hormonal erosion**: Excess estrogen (as during pregnancy and with **oral contraceptive use**) causes growth of columnar epithelium **(MCQ)**.\n    3.  **Congenital erosion**.\n* **CLINICAL PICTURE**:\n    * **SYMPTOMS**: Excessive mucoid discharge, **contact bleeding (MCQ)**, symptoms of chronic cervicitis if complicated.\n    * **SIGNS**: Velvety sensation on vaginal examination, red flat area on speculum examination.\n* **DIAGNOSIS**: Vaginal and cervical smears to exclude malignancy.\n* **TREATMENT**: Antimicrobials for associated infection. Destruction of cervical tissue is not commonly done. Hormonal erosion requires no treatment except if persistent.\n\n### **VAGINAL DISCHARGE**\n\n* **Sources of Normal Vaginal Discharge**: Vaginal transudate, exfoliated cells, endocervical secretions, vulval secretions, micro-organisms.\n* **Characters of Normal Vaginal Discharge**: Clear, semi-fluid, little or no smell. **PH is 3.8-4.5 (acidic)**.\n\n#### **LEUCORRHEA**\n\n* Excessive white non-infected vaginal discharge due to excess normal secretion or transudation.\n* **Physiologic causes**: Related to estrogen effect (preovulatory, pregnancy).\n* **Pathologic causes**: Associated with pelvic congestion (PID, fibroids).\n\n#### **ABNORMAL VAGINAL DISCHARGE**\n\n* **Colored offensive discharge**: Bacterial vaginosis & Trichomonas vaginalis.\n* **Scanty cottage cheese discharge**: Candidiasis **(MCQ)**.\n* **Muco-purulent discharge**: Chronic cervicitis.\n* **Purulent offensive discharge**: Septic abortion, foreign body, pyometra, malignancies.\n* **Blood stained (sanguineous) discharge**: Atrophic vaginitis, ulcers, erosion, malignancies.\n* **Serous (watery) discharge**: Intermittent hydrosalpinx, urinary fistula.\n\n### **UPPER GENITAL TRACT INFECTIONS**\n\n#### **PELVIC INFLAMMATORY DISEASE (PID)**\n\n* PID is an infection of the upper reproductive tract organs. The fallopian tube is the most common organ affected, so PID is commonly used to describe acute salpingitis and/or **salpingo-oophoritis (MCQ)**. PID is usually caused by **bacterial pathogens ascending from the lower to the upper female genital tract (MCQ)**.\n\n##### **DEFINITIONS AND TYPES**\n\n* **Acute PID**: acute infection ascending from the cervix, to the tubes and ovaries.\n* **Chronic PID**: chronic pelvic infection following an acute episode or as a sequel to genital T.B.\n* **Silent PID**: may occur with no or mild symptoms, diagnosed later from sequelae like tubal damage.\n\n**1- ACUTE PELVIC INFLAMMATORY DISEASE (PID)**\n\n* **MICROBIOLOGY OF PID**: A polymicrobial infection caused by:\n    * **Neisseria gonorrhea**: A Gram-negative diplococcus. **The most common cause for acute salpingitis (MCQ)**.\n    * **Chlamydia trachomatis**: Usually causes silent PID **(MCQ)**.\n    * Endogenous bacteria (Aerobic and Anaerobic).\n* **ROUTES OF INFECTION**:\n    1.  **Ascending infection from endocervicitis (gonorrhea & chlamydia) is the commonest route (MCQ)**.\n    2.  Direct or lymphatic extension from GIT conditions.\n    3.  Blood borne extension from pulmonary T.B. (rarely).\n* **RISK FACTORS**:\n    * **Factors associated with increased risk for PID**: Young age (25-35 years), **multiple sexual partners**, **use of intrauterine contraceptive device (IUCD) (MCQ)**.\n    * **Factors associated with decreased risk for PID**: **Barrier methods** (male condom), **Oral contraceptive pills (OCPs) (MCQ)**.\n    * **Factors facilitating ascending infection**: **Menstrual periods**, sexual intercourse, **iatrogenic procedures (D&C, IUD insertion) (MCQ)**.\n* **PATHOLOGY OF ACUTE SALPINGO-OOPHORITIS**:\n    1.  Endosalpingitis: congestion, oedema, destruction of tubal cells.\n    2.  Interstitial salpingitis and perisalpingitis.\n    3.  Oophoritis: may occur with micro-abscesses on the ovarian surface.\n    4.  Pelvic peritonitis.\n    5.  Chronic PID.\n* **REMOTE SEQUELAE AND COMPLICATIONS OF ACUTE PID**:\n    1.  **Tubal obstruction and infertility**: Risk increases with number of PID episodes **(MCQ)**.\n    2.  **Ectopic pregnancy**: Rate increases 10-fold. Approximately 50% of tubal ectopics result from PID-induced tubal damage **(MCQ)**.\n    3.  **Chronic pelvic pain**: Develops in almost 20% of women **(MCQ)**.\n    4.  **Mortality**: Rare (<1%), only in neglected cases with septic shock and ruptured tubo-ovarian abscess.\n* **CLINICAL PICTURE (Symptoms & Signs)**:\n    * **History**: Recent IUD insertion, D&C, delivery, or abortion.\n    * **Symptoms**: Often start post-menstrually. **Acute lower abdominal pain is the most common symptom (MCQ)**. Fever, increased vaginal discharge, GIT symptoms.\n    * **Signs**: Lower abdominal tenderness, **cervical motion and adnexal tenderness (MCQ)**, mucopurulent discharge.\n* **DIAGNOSTIC INVESTIGATIONS**:\n    1.  **Blood tests**: Increased WBCs, ESR, CRP are non-specific.\n    2.  **Ultrasound**: May be normal, or show fluid-filled thickened tubes or a **tubo-ovarian complex (MCQ)**.\n    3.  **Examination of Cervico-vaginal discharge**: Gram stain for N. gonorrhea.\n    4.  **Laparoscopy**: Considered the **gold standard** to confirm the diagnosis. Will reveal tubal hyperemia, oedema, purulent exudates, and **peri-tubal adhesions (Fitz-Hugh-Curtis syndrome) (MCQ)**.\n    5.  **Testing for HIV and STDs**: Should be offered.\n    6.  **Pregnancy test**: To exclude ectopic pregnancy.\n* **CDC Criteria for Diagnosis of Acute PID (2021)**:\n    * One or more of the following: **Cervical motion tenderness OR uterine tenderness OR adnexal tenderness**.\n    * One or more additional criteria to support diagnosis: Oral temp >38.3°C, abnormal discharge, elevated ESR/CRP, laboratory documentation of cervical infection.\n* **DIFFERENTIAL DIAGNOSIS FOR ACUTE PID**: Ectopic pregnancy, torsion/ruptured ovarian cyst, degenerating fibroids, inflammatory bowel disease.\n* **TREATMENT OF ACUTE PID**:\n    * **Empiric treatment is immediately started** to eradicate bacteria, relieve symptoms, and prevent sequelae. Rest, analgesics, and antibiotics are key.\n    * **CDC antibiotic regimens (2021)**:\n        * **IM/ Oral regimen (mild-moderate PID)**: **Ceftriaxone** IM single dose PLUS **Doxycycline** 100 mg orally twice a day for 14 days WITH/ WITHOUT **Metronidazole**.\n        * **IV regimen (severe PID)**: Requires hospitalization. IV regimens are continued for 24-48 hours after improvement. Recommended drugs: **Ceftriaxone** 1gm IV every 24 hrs PLUS **Metronidazole** 500 mg IV every 12 hrs.\n    * If no improvement in 72 hours, hospitalization/surgery may be needed.\n    * If using an IUCD, it should be removed if no improvement after 48-72 hrs.\n    * Evaluation and treatment of the male partner is essential.\n* **Treatment of Tubo-Ovarian Abscess (TOA)**:\n    * **Medical**: Triple therapy (Clindamycin, Metronidazole, Doxycycline).\n    * **Surgical**: Considered in severe cases. May involve laparoscopy or laparotomy for drainage or salpingo-oophorectomy **(MCQ)**.\n\n**2- CHRONIC PELVIC INFLAMMATORY DISEASE (PID)**\n\n* Ill-defined term including all sequelae of acute PID.\n* **ETIOLOGY**: Sequelae of acute PID, Genital TB.\n* **PATHOLOGY**: Hydrosalpinx, **Pyosalpinx**, Chronic interstitial salpingitis, **Tubo-ovarian cyst/abscess (MCQ)**.\n* **CLINICAL PICTURE**:\n    * **Symptoms**: History of acute PID, dull aching lower abdominal pain, pelvic congestive symptoms, **infertility (MCQ)**.\n    * **Signs**: Adnexal swelling.\n* **DIAGNOSTIC INVESTIGATIONS**: Pelvic ultrasonography, Diagnostic Laparoscopy.\n* **TREATMENT OF CHRONIC PID**:\n    * Antibiotics in acute exacerbations.\n    * Symptomatic treatment for pain.\n    * Infertile patients are best advised for ICSI/IVF.\n    * Surgery (TAH-BSO) for elderly patients and resistant cases.\n\n### **TUBERCULOSIS OF THE FEMALE GENITAL TRACT (TB)**\n\n* A chronic granulomatous disease caused by Mycobacterium tuberculosis.\n* **Female genital TB is always secondary to a lesion elsewhere, most commonly the lungs (MCQ)**. Spread is mainly hematogenous.\n* **PATHOLOGY**:\n    * **Sites affected**: **The tubes are affected in almost all cases (MCQ)**; the endometrium in up to 80%.\n    * **Macroscopic picture**: The tube is thickened and tortuous (TB pyosalpinx). The endometrium may show tuberculous follicles. Intrauterine synechiae may develop.\n    * **Microscopic picture**: **Tuberculous follicle** is the characteristic lesion, with central Langhan's giant cells and **caseation (MCQ)**.\n* **CLINICAL PICTURE**:\n    * **Symptoms**: Often asymptomatic. **Infertility** may be the underlying cause in 5-10% of cases **(MCQ)**. Chronic pelvic pain, secondary amenorrhea.\n    * **Signs**: Usually normal exam; may have a tender, fixed adnexal swelling.\n* **DIAGNOSTIC INVESTIGATIONS**:\n    * Chest x-ray, Pelvic x-ray (may show calcification).\n    * HSG: may show beading, pipe-stem appearance of tubes.\n    * **Endometrial Biopsy**: **Premenstrual endometrial biopsy** is strongly suggestive **(MCQ)**.\n    * Laparoscopy: to confirm findings and take biopsies.\n    * Tuberculin test is a good negative test for exclusion.\n* **GUIDELINES IN THE TREATMENT OF FEMALE GENITAL TB**:\n    * The disease always calls for active treatment.\n    * **Antituberculous drugs**: Treatment for 18-24 months.\n    * Surgical treatment for resistant adnexal masses.\n\n### **SEXUALLY TRANSMITTED DISEASES**\n\nInfections acquired principally through sexual contact.\n* **RISK FACTOR FOR STDS**: Young sexually active females, **multiple sexual partners**, lack of hygiene, previous STD.\n* **CAUSATIVE ORGANISMS**: Bacterial, Viral, Spirochetes, Protozoons, Ectoparasites.\n\n#### **BACTERIAL SEXUALLY TRANSMITTED DISEASES**\n\n**1. GONORRHEA**\n\n* Caused by **Gram-negative diplococci Neisseria gonorrhea (MCQ)**. Involves columnar and transitional epithelium.\n* **PATHOLOGY**: Primary sites include cervix (endocervicitis), urethra, and Bartholin gland. Secondary sites include PID.\n* **CLINICAL PICTURE**: **Frequently asymptomatic (MCQ)**. Symptomatic cases (2-5 days after exposure) include **mucopurulent cervical discharge**, lower abdominal pain (if PID develops), dysuria.\n* **DIAGNOSTIC INVESTIGATIONS**: Gram stains, Culture, **Nucleic acid amplification test (NAAT)**.\n* **TREATMENT (CDC 2021)**: Uncomplicated genital infections: **Ceftriaxone 250-500 mg IM single dose, PLUS Doxycycline or Azithromycin if chlamydia is not excluded (MCQ)**. Sex partners should be treated.\n* **SEQUELAE**: **Ascending infection may lead to salpingitis and tubal damage, predisposing to infertility and ectopic pregnancy (MCQ)**.\n\n**2. CHLAMYDIA TRACHOMATIS**\n\n* The **second most commonly reported STD**. An obligatory intracellular Gram-negative bacterium. Attacks columnar epithelial cells.\n* **CLINICAL PICTURE**: **Asymptomatic in almost 75% of cases (MCQ)**. Symptomatic cases present with mucopurulent endocervicitis, or mild, insidious PID (**Fitz-Hugh-Curtis syndrome**) **(MCQ)**.\n* **DIAGNOSTIC INVESTIGATIONS**: Microscopic exam, Culture, **NAAT**, Laparoscopy.\n* **TREATMENT**: Doxycycline 100 mg orally twice daily for 7 days OR Azithromycin 1 g orally once.\n\n**3. CHANCROID**\n\n* A genital ulcerative painful lesion caused by **Haemophilus ducreyi (MCQ)**.\n* **Clinical picture**: Incubation 3-5 days. Lesions begin as papules that break into **painful genital vulval ulcers (MCQ)**, may be accompanied by inguinal lymphadenopathy.\n* **Treatment**: Azithromycin 1g orally once OR Ceftriaxone 250mg IM single dose.\n\n**4. GRANULOMA INGUINALE (DONOVANOSIS)**\n\n* A genital ulcerative disease caused by *Klebsiella granulomatis*.\n* **Clinical picture**: **Painless**, friable ulcerative genital lesions without lymphadenopathy **(MCQ)**.\n* **Treatment**: Doxycycline or Azithromycin for 21 days.\n\n**5. LYMPHOGRANULOMA VENERUM**\n\n* Caused by *C. trachomatis* serotypes L1, L2, and L3.\n* **Clinical picture**: Genital granulomatous lesions appearing 3-5 weeks after exposure, may ulcerate, associated with tender inguinal lymphadenopathy.\n* **Treatment**: Doxycycline or Azithromycin for 21 days.\n\n#### **VIRAL SEXUALLY TRANSMITTED DISEASES**\n\n**1. HERPES SIMPLEX VIRUS**\n\n* HSV 1 (non-venereal) and **HSV 2 (venereal)** **(MCQ)**.\n* **CLINICAL PICTURE**:\n    * **The first attack is the most severe**, with multiple **painful anogenital vesicles or painful ulcers** **(MCQ)**.\n    * Subsequent attacks are shorter and less severe. The virus **lies dormant in the dorsal root ganglia (MCQ)**.\n* **DIAGNOSTIC INVESTIGATIONS**: Culture from vesicles, serum anti-HSV antibodies, HSV NAAT assays.\n* **TREATMENT**: Supportive with analgesics. **Acyclovir** 400 mg orally three times a day for 7-10 days.\n\n**2. HUMAN PAPILLOMA VIRUS (HPV)**\n\n* Responsible for **genital warts (condyloma acuminata) (MCQ)** and associated with CIN.\n* **EPIDEMIOLOGY**:\n    * **HPV types 6 and 11** are usual causes for visible external warts **(MCQ)**.\n    * **HPV types 16, 18, 31, 33, and 35** are strongly associated with CIN **(MCQ)**.\n    * Mode of transmission is contact with infected partners.\n* **CLINICAL PICTURE**: Asymptomatic or skin lesions (genital warts).\n* **DIAGNOSIS**: Direct inspection, Liquid-Based cytology (koilocytes), HPV DNA test.\n* **PREVENTION**: Barrier contraception, **HPV vaccination (MCQ)**.\n* **TREATMENT OF EXTERNAL CONDYLOMAS**: Imiquimod or **Podofilox solution** or gel applied by the patient **(MCQ)**. Destruction by cryotherapy or Trichloroacetic acid (TCA) applied by the physician.\n\n**3. HUMAN IMMUNODEFICIENCY VIRUS (HIV)**\n\n* Retrovirus that causes acquired immunodeficiency syndrome (AIDS).\n* **CLINICAL PICTURE**: Asymptomatic for up to 10 years. Initial exposure may cause fever, sweats. **AIDS is the final stage with opportunistic infections and malignancy (MCQ)**.\n* **DIAGNOSTIC INVESTIGATIONS**: ELIZA screening, Western blot confirmation, Viral load testing.\n* **TREATMENT**: Immediate referral to specialized centers, antiretroviral therapy.\n\n#### **SYPHILIS**\n\n* Systemic STD caused by the spirochete *Treponema pallidum*.\n* **CLINICAL PICTURE**:\n    * **Primary syphilis**: initial lesion is a **painless, ulcerated chancre (MCQ)**.\n    * **Secondary syphilis**: mucous patches, **condyloma latum**.\n    * **Tertiary syphilis**: aortitis, tabes dorsalis.\n    * **Congenital syphilis**: materno-fetal transmission.\n* **DIAGNOSTIC INVESTIGATIONS**: Dark field examination, Serologic tests (Non-treponemal and Treponemal).\n* **TREATMENT**: **Benzathine penicillin G**.\n",
+              "hash": "4e086eece9e8b58027e419f9960755cdf518b868"
+            }
+          },
+          "hash": "988d5b8b36ee0e5a8d4e7bef322c843f4874c07c"
+        },
+        "general-gynecology": {
+          "label": "General Gynecology",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "general-gynecology-nadine",
+                "title": "General Gynecology - Dr. Nadine"
+              },
+              {
+                "id": "general-gynecology",
+                "title": "Kasr Al Ainy"
+              }
+            ]
+          },
+          "hash": "e8f2200f1c1840303f5e44d1cd1b4591f835b53e"
+        },
+        "oncology": {
+          "label": "Oncology",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "gynecologic-oncology",
+                "title": "Gynecologic Oncology"
+              },
+              {
+                "id": "oncology-nadine",
+                "title": "Oncology - Dr. Nadine"
+              }
+            ]
+          },
+          "hash": "17300a12162d28ea8c42b3955332c2f012b94c9f"
+        },
+        "revision": {
+          "label": "Revision",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "rounds-questions",
+                "title": "Rounds"
+              },
+              {
+                "id": "vip",
+                "title": "VIP"
+              }
+            ],
+            "flashcardDecks": [
+              {
+                "id": "gynaecology-revision",
+                "title": "Gynaecology Revision"
+              }
+            ]
+          },
+          "hash": "8f67561272611f6a8e7b99f5ae1ee79e5bba2f2b"
+        }
+      },
+      "hash": "2dc098a8dc1a4d9d81acd3c05551f6aeb07c6176"
+    },
+    "obstetrics": {
+      "label": "Obstetrics",
+      "hasIndex": false,
+      "isBranch": true,
+      "children": {
+        "3rd-stage-complications": {
+          "label": "3rd Stage Complications",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "3rd-stage-complications",
+                "title": "3rd Stage Complications"
+              }
+            ]
+          },
+          "hash": "7aecb09fb2189627ea8081ab3c13c27820e8797d"
+        },
+        "basic-obstetrics": {
+          "label": "Basic Obstetrics",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "basic-obstetrics",
+                "title": "BASIC OBSTETRICS"
+              }
+            ]
+          },
+          "hash": "8604e387d0eb785ed9d82570a698988108d63687"
+        },
+        "bleeding-in-late-pregnancy": {
+          "label": "Bleeding In Late Pregnancy",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "bleeding-in-late-pregnancy",
+                "title": "BLEEDING IN LATE PREGNANCY"
+              }
+            ]
+          },
+          "children": {
+            "antepartum-hemorrhage-aph": {
+              "label": "Antepartum Hemorrhage",
+              "hasIndex": true,
+              "isBranch": false,
+              "summary": "Antepartum Hemorrhage (APH) is bleeding that occurs after fetal viability until delivery (between 24-40 weeks). The bleeding is mostly maternal in origin, but less commonly can be fetal (vasa previa), which rapidly affects fetal wellbeing.",
+              "markdownContent": "\n**Antepartum Hemorrhage (APH)** is bleeding that occurs after fetal viability until delivery (between 24-40 weeks). The bleeding is mostly maternal in origin, but less commonly can be fetal (vasa previa), which rapidly affects fetal wellbeing.\n\n### **CAUSES AND DIFFERENTIAL DIAGNOSIS OF AΡΗ**\n\n1.  **OBSTETRIC CAUSES:** (detected by ultrasound)\n    * **Placental abruption:** Separation of a normally implanted placenta.\n    * **Placenta Previa:** Separation of an abnormally low implanted placenta.\n    * **Vasa Previa:** Bleeding from the umbilical cord (fetal origin).\n2.  **GYNECOLOGICAL CAUSES:** (detected by speculum examination)\n    * Vaginal trauma or lesions.\n    * Benign (erosion or polyp) or malignant cervical conditions.\n3.  **GENERAL OR SYSTEMIC CAUSES:** (detected from medical history)\n    * Anticoagulant therapy.\n    * Idiopathic thrombocytopenic purpura (ITP).\n    * Severe, uncontrolled Hypertension (HTN).\n\n### **PLACENTAL ABRUPTION**\n\nPlacental abruption is the separation of a normally implanted placenta. It complicates up to 1% of pregnancies and is the **most common cause for antepartum and intrapartum hemorrhage (MCQ)**. It is a significant cause of intrauterine fetal death (IUFD), preterm labor (PTL), and may be associated with **maternal coagulopathy and DIC (MCQ)**.\n\n#### **RISK FACTORS:**\n\n* Abruption in a previous pregnancy.\n* **Maternal hypertension and severe preeclampsia (PE) (MCQ)**.\n* **Sudden ROM in cases with polyhydramnios (MCQ)**.\n* Traumatic abruption from external trauma.\n* **Smoking (MCQ)**.\n* Thrombophilias.\n\n#### **TYPES OF BLEEDING IN PLACENTAL ABRUPTION:**\n\n1.  **Revealed type:** Blood dissects between membranes and is revealed externally through the vagina. **This is the commonest type (MCQ)**.\n2.  **Concealed type:** Blood is trapped, forming a retro-placental haematoma with no external bleeding. **This is the least common and most serious type (MCQ)**. It is often associated with severe PE, **severe pain, a hard tender uterus, and fetal distress (MCQ)**.\n3.  **Mixed type:** Bleeding is partially concealed and partially revealed.\n\n#### **CLINICAL PICTURE:**\n\n* **Mild separation:** Does not affect vital signs.\n* **Severe separation:** Associated with hemorrhagic shock. The degree of shock may not correlate with external bleeding in **concealed or mixed types (MCQ)**.\n* **DIC may occur in cases with concealed hemorrhage (MCQ)**.\n\n#### **ABDOMINAL EXAMINATION:**\n\n* **Uterine tenderness** is usually present.\n* A **rising fundal level may be noticed in concealed hemorrhage (MCQ)** due to an accumulating retroplacental hematoma.\n* **Vaginal examination should only be performed after excluding placenta previa by US (MCQ)**.\n\n#### **DIAGNOSIS:**\n\n* **Transabdominal ultrasound (TAS) is the gold standard for identifying placental site to exclude placenta previa (MCQ)**. It can also detect a **large retroplacental haematoma in concealed cases (MCQ)**.\n* Laboratory tests: CBC, coagulation profile, liver & kidney function tests.\n* Assessment of fetal wellbeing (FHR tracing, CTG, Doppler US).\n\n#### **PATHOLOGY AND COMPLICATIONS OF SEVERE PALCENTAL ABRUPTION:**\n\n1.  **Hemorrhagic shock, which might be complicated by acute renal tubular necrosis (MCQ)**.\n2.  Sheehan syndrome (acute pituitary necrosis).\n3.  **DIC due to thromboplastin release from damaged tissues (MCQ)**.\n4.  **Couvelaire's uterus:** In concealed hemorrhage, blood dissects into the myometrium, leading to **uterine atony and atonic postpartum hemorrhage (MCQ)**.\n5.  Fetal Complications: **Fetal distress, severe IUGR, IUFD, and preterm delivery (MCQ)**.\n\n#### **MANAGEMENT:**\n\nManagement can be active (immediate delivery) or expectant (conservative).\n\n* **A) ACTIVE MANAGEMENT (IMMEDIATE DELIVERY):**\n    * **Severe bleeding compromising maternal or fetal lives, regardless of gestational age (MCQ)**.\n    * Gestational age > 36 weeks.\n    * Spontaneous onset of labor.\n* **B) EXPECTANT MANAGEMENT (DELAY DELIVERY):**\n    * Indicated in preterm pregnancies < 36 weeks with **mild bleeding not affecting maternal or fetal well being (MCQ)** and absent labor pains. The goal is to **achieve better lung maturity (MCQ)**.\n* **Route of Delivery:**\n    * **Vaginal delivery is attempted in mild to moderate cases (MCQ)**.\n    * **CS is indicated for severe bleeding or other obstetric indications (MCQ)**.\n* **An Rh-negative mother should receive an Anti-D immunoglobulin injection (MCQ)**.\n\n### **PLACENTA PREVIA**\n\nPlacenta previa (PL PRV) is the implantation of the placenta partially or totally on the lower uterine segment (LUS). It can lead to an **abnormally invasive placenta (AIP) (MCQ)**, especially at the site of a previous CS scar.\n\n#### **INCIDENCE:**\n\n* **Occurs in around 0.5% of all pregnancies (MCQ)**.\n* Incidence is rising due to **increasing maternal age and repeated CS deliveries (MCQ)**.\n\n#### **PREDISPOSING AND RISK FACTORS:**\n\n* **Previous placenta previa (MCQ)**.\n* **Previous cesarean section; risk increases with the number of previous sections (MCQ)**.\n* **Increasing maternal age and parity (MCQ)**.\n* **Increased placental size (e.g., in multifetal pregnancies) (MCQ)**.\n\n#### **MECHANISM OF BLEEDING IN PL PRV:**\n\n* **Bleeding occurs from unavoidable separation of the placenta due to stretching of the LUS (MCQ)**.\n\n#### **PLACENTAL MIGRATION:**\n\n* A low-lying placenta diagnosed before 24 weeks often appears to move upward as the LUS develops. **Almost 90% of these cases resolve by the third trimester (MCQ)**.\n\n#### **CLASSIFICATION AND TYPES OF PL PRV:**\n\n* **Grade I (Lateralis/Low-lying):** Lower edge is > 2cm from the internal os.\n* **Grade II (Marginalis):** Lower edge reaches the internal os. **Considered minor placenta previa (MCQ)**.\n* **Grade III (Incomplete Centralis/Partial):** Placenta partially covers the cervix.\n* **Grade IV (Complete Centralis/Total):** **Placenta completely covers the cervix (MCQ)**.\n\n#### **SYMPTOMS & SIGNS:**\n\n* **Painless, causeless, recurrent vaginal bleeding is the most common presentation (MCQ)**.\n* Severe bleeding can lead to **hypovolemic shock (MCQ)**.\n* Abdominal exam: Uterus is soft and non-tender. **Malpresentations like breech and transverse lie are more frequent (MCQ)** because the placenta interferes with head engagement.\n* **Vaginal Examination (PV): should not be attempted as it may provoke severe uncontrollable bleeding (MCQ)**.\n\n#### **DIAGNOSIS:**\n\n* **A) TRANSABDOMINAL US (TAS): This is the gold standard for diagnosis (MCQ)**.\n* **B) TRANSVAGINAL US (TVS): More reliable than TAS for measuring the distance between the lower placental margin and the internal os (MCQ)**.\n* C) Maternal laboratory tests.\n* D) Tests for fetal wellbeing.\n\n#### **MATERNAL AND FETAL RISKS AND COMPLICATIONS IN PL PRV:**\n\n1.  **Severe APH leading to hypovolemic shock (MCQ)**.\n2.  **Severe postpartum hemorrhage (PPH)** due to poor contractility of the LUS.\n3.  Increased risk of CS hysterectomy.\n4.  **Increased risk of abnormally invasive placenta (placenta accreta), especially with a previous CS scar (MCQ)**.\n5.  Fetal complications due to prematurity, IUGR, and massive blood loss.\n\n#### **MANAGEMENT OF PL PRV:**\n\n* **All cases of total, partial, and marginal PL PRV will be delivered by CS (MCQ)**.\n* **A) ACTIVE MANAGEMENT BY IMMEDIATE CS:**\n    * **Severe bleeding compromising maternal or fetal lives, regardless of gestational age (MCQ)**.\n    * Gestational age > 36 weeks.\n    * Spontaneous onset of labor.\n* **B) EXPECTANT MANAGEMENT TO DELAY DELIVERY:**\n    * In **preterm pregnancies < 36 weeks with mild bleeding (MCQ)** and no labor pains, to allow for lung maturity. This requires hospitalization and close monitoring.\n* **C) LATERAL PL PRV:**\n    * A trial of vaginal delivery can be offered if the lower edge is 2 cm or more from the internal os and bleeding is minimal.\n\n### **PLACENTA ACCRETA SPECTRUM (Abnormally Invasive Placenta)**\n\nThis is a serious condition where the placenta adheres to or invades the myometrium, occurring mostly with PL PRV due to **poor decidual reaction in the LUS, especially at a previous CS scar site (MCQ)**.\n\n#### **TYPES OF ADHERENT PLACENTA:**\n\n* **Accreta:** Placenta is adherent to the myometrium (most common, 80%).\n* **Increta:** Placenta invades the myometrium.\n* **Percreta:** Placenta perforates the myometrium, potentially invading the bladder wall.\n\n#### **DIAGNOSIS DURING PREGNANCY:**\n\n* Can be achieved by expert **US (2D/3D and color Doppler) (MCQ)**.\n* **US reveals absence of a plane of cleavage between placenta and myometrium, with blood lacunae in cases of invasion (MCQ)**.\n* MRI can also be used but offers **no significant benefit over expert US (MCQ)**.\n\n#### **DIAGNOSIS DURING LABOR:**\n\n* Discovered when the placenta is partially or totally retained, leading to **severe atonic postpartum hemorrhage (PPH) (MCQ)**.\n\n#### **MANAGEMENT:**\n\n* **The majority of cases will require CS hysterectomy as a life-saving procedure (MCQ)**.\n\n### **RUPTURE VASA PREVIA (FETAL BLEEDING)**\n\nA very rare condition where umbilical cord vessels cross the internal os, often associated with **velamentous insertion of the cord or a succenturiate lobe (MCQ)**. Rupture of these vessels during labor leads to **fetal bleeding, severe fetal distress, and potential intrapartum fetal death (MCQ)**. The condition requires an **emergency CS (MCQ)**.\n",
+              "hash": "5673ae892491ca0bdaa63ce6886d30ff3669c07a"
+            }
+          },
+          "hash": "14dcd35f35ba1e998b4eb2479a47dd367baa1733"
+        },
+        "early-obstetric-complications": {
+          "label": "Early Obstetric Complications",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "early-obstetric-complications",
+                "title": "Early Obstetric Complications"
+              }
+            ]
+          },
+          "children": {
+            "bleeding-in-early-pregnancy": {
+              "label": "Bleeding In Early Pregnancy",
+              "hasIndex": true,
+              "isBranch": false,
+              "summary": "",
+              "markdownContent": "title: \"Bleeding in Early Pregnancy\"\n\n### Causes of bleeding in Early pregnancy:\n* **Abortion.**\n* **Ectopic pregnancy.**\n* **Gestational trophoblastic disease.**\n* Associated gynecologic conditions (cervical erosion, polyp or cancer).\n\n### SPONTANEOUS ABORTION (MISCARRIAGE)\n**DEFINITION:**\nTermination of pregnancy **before viability of the fetus (in Egypt, before 24 weeks) (MCQ)**. Viability denotes the chance of survival with maximum pediatric support.\n\n**INCIDENCE:**\nOccurs in **15-20%** of pregnancies, mostly in the early 1st trimester.\n\n**ETIOLOGY:**\n* **Genetic or chromosomal abnormalities in > 50% of cases (MCQ).**\n* Accidental trauma.\n* Hormonal as luteal phase defect.\n* Infections e.g. acute maternal fever.\n* Drugs: some teratogenic drugs may cause fetal demise.\n* Psychological factors or idiopathic.\n\n**CLINICAL TYPES OF SPONTANEOUS ABORTION:**\n* Threatened abortion.\n* Inevitable abortion.\n* Incomplete abortion.\n* Complete abortion.\n* Missed abortion.\n* Septic abortion.\n\n---\n### THREATENED ABORTION\n**Clinical picture:**\n* Symptoms & signs of pregnancy are present.\n* Minimal vaginal bleeding.\n* Mild suprapubic colicky pain may be present.\n* **Cervix is closed (MCQ).**\n* **Ultrasound shows an intrauterine gestational sac with a living fetus (MCQ).**\n\n**Investigations:**\n* Serial quantitative ẞHCG estimation to detect adequate doubling.\n* **Ultrasonography is the main diagnostic tool** to confirm fetal condition.\n\n**Treatment:**\n* Physical & mental rest.\n* **Hormonal support e.g. natural progesterone is beneficial in cases with luteal phase defect (MCQ).**\n* Follow up to ensure clinical improvement and fetal growth.\n\n**Prognosis:**\n**50% of cases will continue pregnancy** and 50% will end in inevitable or missed abortion.\n\n---\n### INEVITABLE ABORTION\nThere is no chance for pregnancy to continue.\n\n**Clinical Picture:**\n* Symptoms & signs of pregnancy are present.\n* **Moderate to severe vaginal bleeding** which may cause hypovolemic shock.\n* **Rupture of membranes <24 weeks is a sign of inevitability.**\n* Marked suprapubic colicky pain.\n* **PV examination reveals a dilated cervix (MCQ).**\n\n**Investigations:**\n* Ultrasonography to detect gestational age and decide the route of termination.\n* Blood group and CBC.\n\n**Treatment:**\nAnti-shock measures and termination of pregnancy:\n* **Anti-shock measures:** Rest, sedation, I.V crystalloids infusion, and blood transfusion if needed.\n* **Termination of pregnancy:**\n    * **<12 weeks: surgical vaginal evacuation by curettage or suction (MCQ).**\n    * **>12 weeks:** Medical evacuation by prostaglandins. If bleeding is severe, **abdominal hysterotomy is performed (MCQ).**\n\n---\n### INCOMPLETE ABORTION\nPart of the conception products are expelled from the uterus.\n\n**Clinical picture:**\n* Symptoms & signs of pregnancy are present.\n* Bleeding & pain similar to inevitable abortion, with **passage of parts of conception products (MCQ).**\n* **PV examination reveals an opened cervix with retained parts (MCQ).**\n\n**Investigations:**\n* **Ultrasonography detects retained products of conception (POC) (MCQ).**\n\n**Treatment:**\n* Anti-shock measures.\n* **Surgical evacuation.**\n\n---\n### COMPLETE ABORTION\nAll conception products are expelled from the uterus. **Bleeding and pain cease, and ultrasound confirms an empty uterus (MCQ).**\n\n---\n### MISSED ABORTION\nDeath of an embryo or fetus that is retained in the uterus.\n\n**Clinical picture:**\n* May be symptomless initially, later a **brownish vaginal discharge (MCQ)** and recurrent bleeding may occur, with loss of pregnancy symptoms.\n* PV examination reveals a smaller-than-expected uterus with a **closed internal os**.\n* **Coagulation problems like hypofibrinogenaemia and DIC may develop if retained for several weeks (MCQ).**\n\n**Investigations:**\n* **US examination is diagnostic**, revealing intrauterine fetal demise or anembryonic sac (blighted ovum).\n* Inadequate doubling or decreasing hCG levels.\n\n**Treatment:**\nTermination of pregnancy:\n* <12 weeks: surgical vaginal evacuation.\n* **>12 weeks: Medical induction by prostaglandins (MCQ).** Oxytocin is not effective due to decreased receptors. Abdominal hysterotomy is rare.\n* **N.B:** Following abortion, **Anti-D immunoglobulin should be given to RH-ve mothers.**\n\n---\n### SEPTIC ABORTION\nInfection superimposed on any type of abortion, usually incomplete.\n\n**Routes of infection:**\n* Exogenous: from instruments.\n* Endogenous: from genital tract flora.\n* Autogenous: from a septic focus in the body.\n\n**Clinical picture:**\n* Clinical picture of abortion.\n* Clinical picture of infection:\n    * **Generally:** Fever, headache, malaise, or septic shock.\n    * **Locally:** Lower abdominal pain, tender uterus, and **offensive vaginal discharge.**\n\n**Investigations:**\n* U.S. to detect intrauterine contents.\n* Blood picture shows leukocytosis.\n* Blood culture, kidney/liver functions, and coagulation profile.\n* Vaginal/cervical swab culture has limited value.\n\n**Treatment:**\n* Isolate the patient, Fowler's position.\n* Antishock measures may be needed.\n* **Parenteral broad-spectrum antibiotics.**\n* **Obstetrical management:**\n    * < 12 weeks: Vaginal surgical evacuation under antibiotic cover.\n    * >12 weeks: Medical induction. Hysterotomy or hysterectomy may be done if failed or uterus is markedly infected.\n\n**Complications:**\n* **Septic shock.**\n* **Acute renal & liver failure.**\n* **DIC.**\n\n---\n### SUMMARY OF CLINICAL TYPES OF ABORTION\n| | **Threatened Ab.** | **Missed** | **Inevitable** | **Incomplete** | **complete** | **septic** |\n| :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n| **Symptoms** | | | | | | |\n| 1-Bleeding | -ve | -ve | +ve | +ve | -ve | +ve |\n| 2-cramping Pelvic pain | Usually mild + | Usually mild + | ++or+++ | ++or+++ | + or -ve | Foul vag. discharge Fever |\n| **General exam.** | | | | | | |\n| Bp | Normotensive | Normotensive | Hypotension May be shocked | Hypotension May be shocked | Normotensive | Normotensive |\n| Pulse (rate and volume) | Average | Average | Rapid & low volume | Rapid & low volume | Average | Fever Rapid+good volume |\n| **Pelvic exam.** | | | | | | |\n| 1-Bleeding | Mild + | Mild + | Moderate/severe | Moderate/severe | Mild + | -ve or +ve |\n| 2-Int. OS | closed | closed | opened | opened | closed | Closed or open |\n| **Ultrasound exam** | I.U gestational sac With living fetus | I.U gestational sac With dead fetus | Dead or living fetus +open Int. os. | Retained POC +open Int. os. | Empty uterus | Retained POC |\n| **More investigations** | B-hCG quantitative | -Fibrinogen &FDP DIC | | | | -CBC→ infection -Fibrinogen &FDP DIC |\n| **Treatment** | Rest & reassurance, Progesterone | Surgical or medical evacuation | Antishock, Resuscitation + Evacuation | Antishock, Resuscitation + Evacuation | | Broad spectrum antibiotics + Evacuation |\n\n---\n### RECURRENT PREGNANCY LOSS (HABITUAL ABORTION)\n**Definition:** **Three or more successive spontaneous abortions.**\n\n**Incidence:** 1-2%\n\n**Causes:**\n* **Immunologic disorders are the commonest cause of early RPL:** **Antiphospholipid syndrome (APS)** leads to thrombosis of placental vessels.\n* Genetic or chromosomal abnormalities of the fertilized ovum.\n* Local causes in the uterus:\n    * Congenital: septate uterus.\n    * Traumatic: **Cervical incompetence (2nd trimesteric) (MCQ).**\n    * Neoplastic: **Submucous fibroid, especially fundal (MCQ).**\n* General and chronic diseases.\n* Hormonal as luteal phase defect or thyroid dysfunction.\n* Drugs or excessive smoking.\n* Chronic severe psychological disorders.\n* **N.B.: A fundal subserous fibroid does not commonly cause recurrent abortion (MCQ).**\n\n**Diagnosis:**\n* **History:** Early abortions suggest genetic causes or luteal phase defect. **Late 1st and 2nd trimester abortions may suggest antiphospholipid syndrome or cervical incompetence (MCQ).**\n* **Examination:** May detect general disease or local uterine causes.\n* **Investigations:**\n    * **Vaginal ultrasound** to detect uterine anomalies, fibroids, or signs of an incompetent cervix.\n    * Hysteroscopy for endometrial cavity evaluation.\n    * Chromosomal karyotyping for the couple.\n    * Thyroid function, blood sugar, etc.\n    * **Screening for anti-phospholipid syndrome: Lupus anticoagulant, anticardiolipin and ß2 glycoprotein (MCQ).**\n    * Screening for other causes of thrombophilia (Protein-S, Protein-C deficiency).\n\n**Treatment:**\n* **Inbetween pregnancies:** Treat the cause (e.g., myomectomy), control general disease.\n* **During pregnancy:**\n    * Progesterone supplementation for luteal phase defect.\n    * **Low dose aspirin (LDA) and Low molecular weight Heparin for antiphospholipid syndrome (MCQ).**\n    * Surgical treatment for incompetent os.\n\n---\n### Cervical (Isthmic) Incompetence\n**Definition:** Inability of the cervix to retain conception past the 1st trimester.\n\n**Etiology:**\n* **Traumatic injury** from D&C, previous delivery, or cervical surgery.\n* **Congenital:** very rare.\n\n**Diagnosis:**\n* Past history of trauma.\n* **Abortions are usually mid-trimesteric, easy, preceded by R.O.M & associated with minimal pain & bleeding (MCQ).**\n* Aborted fetus appears normal.\n* **During pregnancy: Ultrasound reveals funneling of membranes and a short cervix <2.5cm (MCQ).**\n\n**Treatment:**\n* **Cerclage operation** during pregnancy at 11-14 weeks, with rest and tocolytics. The suture is removed at 37 weeks or at the onset of labor.\n\n---\n### ECTOPIC PREGNANCY\n**Definition:** Implantation of the fertilized ovum outside the normal uterine cavity.\n\n**Incidence:** 0.5-2% of all pregnancies.\n\n**Sites:**\n* **Fallopian tube is the most common site (MCQ)**, mostly in the ampulla.\n* Other sites: Ovary, abdomen, rudimentary horn, cervix, CS scar.\n\n### TUBAL ECTOPIC\n**Etiology and Risk factors:**\n* **Previous ectopic gestation (MCQ).**\n* Previous Pelvic Inflammatory Disease (PID).\n* Endometriosis.\n* Pelvic and tubal surgery.\n* **IUD: prevents intrauterine pregnancy but not extra-uterine (MCQ).**\n* **Progesterone effect (e.g., in progesterone-only contraception) (MCQ).**\n* **ICSI procedure.**\n* **N.B.: Previous cesarean section is not a primary risk factor for tubal ectopic pregnancy (MCQ).**\n\n**Pathology:**\n* **Uterus:** Slightly enlarged with decidua present without chorionic villi (Arias-Stella reaction).\n* **Tube:** Disturbance of pregnancy occurs as early as 8-10 weeks.\n* **Results:** Tubal mole, tubal abortion, or tubal rupture.\n\n**Clinical Picture:**\n* **[I] Disturbed ectopic pregnancy, subacute type (stable):**\n    * **Symptoms:**\n        * Short period of amenorrhea.\n        * **Pain is the most prominent symptom (MCQ). It may be aching, stabbing, or colicky. It precedes vaginal bleeding (MCQ).**\n        * **Shoulder pain occurs in massive internal hemorrhage (MCQ).**\n        * **Vaginal bleeding is usually slight and dark (MCQ).**\n        * Syncope, nausea, and vomiting.\n    * **Signs:**\n        * **General:** Rapid pulse, falling BP proportional to internal bleeding.\n        * **Abdominal:** Lower abdominal tenderness and rebound tenderness.\n        * **Vaginal:** Marked tenderness on moving the cervix. Uterus slightly enlarged, adnexal mass may be felt.\n* **[II] Disturbed ectopic pregnancy, acute type (unstable):**\n    * The patient is shocked with severe intra-peritoneal hemorrhage. **It is an emergency.**\n* **[III] Undisturbed tubal pregnancy:**\n    * No symptoms or mild pelvic pain. Discovered accidentally.\n\n**Specific investigations:**\n* **The most important are combined transvaginal ultrasound (TVS) and estimation of ß-hCG (MCQ).**\n* **TVS:** **Diagnostic findings are an empty uterus with an adnexal mass** and pelvic fluid collection.\n* **Serum ßhCG level:** In ectopic pregnancy, there is an **improper doubling of the level after 48 hours (MCQ).**\n* **Discrimination zone:** With a ß-HCG level of **>1500 IU/mL, a gestational sac should be seen intrauterine by TVS (MCQ).** If the uterus is empty, it confirms an ectopic pregnancy.\n* **Laparoscopy:** Used to confirm the diagnosis in doubtful, hemodynamically stable cases.\n\n**Management of tubal pregnancy:**\n* Blood transfusion and antishock measures may be needed.\n* **Anti-D should be given to RH-ve cases.**\n* **(A) Surgical treatment:**\n    * **Conservative:** Salpingostomy (linear incision to remove ectopic), tube heals by secondary intention. Recurrence rate is high.\n    * **Radical:** Unilateral salpingectomy.\n* **(B) Medical treatment by methotrexate injections:**\n    * **Mode of action:** Antifolinic acid.\n    * **Indications:** Undisturbed early cases with ectopic < 3cm, **no fetal heart activity (MCQ)**, and hCG <6000 mIU/ml.\n    * Contraindications: **History of active hepatic or renal disease (MCQ).**\n    * Regimen: Single IM injection. Follow up with serum ß-HCG.\n    * Counseling: **Subsequent pregnancy should be delayed for 3 months (MCQ).**\n\n### Other Types of Ectopic Pregnancy\n* **Ovarian Ectopic Pregnancy:** Similar symptoms to tubal. Treatment aims to preserve ovarian tissue.\n* **Advanced Abdominal Pregnancy:** Rare. Placenta is often left in situ to avoid massive hemorrhage.\n* **Pregnancy in a Rudimentary Horn:** **Ruptures late, around 4th-5th month (MCQ).**\n* **Cervical Ectopic Pregnancy:** **Presents with severe vaginal bleeding rather than pain (MCQ).** Hysterectomy may be needed for life-threatening bleeding.\n* **CS Scar Pregnancy:** Increasing frequency. Can be treated with methotrexate or surgery. **Curettage is not a good option (MCQ).**\n\n---\n### GESTATIONAL TROPHOBLASTIC DISEASE (GTD)\nA spectrum of cellular proliferations from placental trophoblasts.\n* **Benign GTD:** Vesicular (Hydatidiform) Mole (Complete and Partial).\n* **Malignant GTD:** Invasive Mole and **Choriocarcinoma (MCQ).**\n\n### VESICULAR (HYDATIDIFORM) MOLE\nRare, benign form of GTD.\n\n**Risk factors:** **Extremes of age (<20 & >35 years).**\n\n**Pathology:**\n* **A. Complete mole:**\n    * Originates from **fertilization of an empty ovum, resulting in a 46 XX karyotype (MCQ).**\n    * **Gross:** Uterine cavity distended with grape-like vesicles. **No amniotic sac or fetal tissue.**\n    * **Histology:** Diffuse trophoblastic proliferation, marked villous edema, absent fetal blood vessels.\n* **B. Partial mole:**\n    * Originates from fertilization of a normal ovum by 2 sperms, leading to **triploidy (69 chromosomes).**\n    * **Gross:** Focal hydatidiform changes, with presence of amniotic sac or fetal tissues.\n    * **Histology:** Focal villous edema and trophoblastic proliferation.\n* **C. Associated ovarian cysts:**\n    * **Functional ovarian theca lutein cysts occur in 25-60% of complete moles** due to high hCG levels.\n    * **They undergo spontaneous regression after molar evacuation (MCQ).**\n\n**Clinical picture of molar pregnancy:**\n* **Recurrent early pregnancy bleeding is the chief symptom.**\n* **Severe nausea and vomiting (hyperemesis gravidarum) due to high hCG levels.**\n* Characteristic prune juice discharge or expulsion of vesicles.\n* **Fundal level larger than gestational age.**\n* Uterus is soft and **doughy.**\n* Fetal parts and heart pulsations are absent in complete moles.\n\n**Diagnostic investigations:**\n* **Ultrasonography is the gold standard.**\n    * **Complete mole: shows a characteristic \"snowstorm\" appearance (MCQ).**\n    * Partial Mole: shows an embryo, often with anomalies, and vesicular changes in the placenta.\n* **Serum ß-hCG: Abnormally high levels, often >100,000 mIU/ml (MCQ).**\n* Metastatic workup for malignant changes.\n\n**Complications of molar pregnancy:**\n* **Hyperemesis gravidarum.**\n* Severe bleeding.\n* **Early onset pregnancy induced hypertension.**\n* **Hyperthyroidism.**\n* Trophoblastic embolization.\n* Risk of developing Invasive Mole or **Choriocarcinoma (5% of complete moles) (MCQ).**\n* **Subsequent uterine adenocarcinoma is not a complication (MCQ).**\n\n**Management of molar pregnancy:**\n* **Suction evacuation is the gold standard technique (MCQ).**\n* Gentle curettage is performed after suction to ensure complete evacuation.\n* **Hysterectomy is indicated only in elderly patients (>40 years) with a completed family (MCQ).**\n* **Follow up:**\n    * **Repeated serum ß-hCG assays weekly until negative for 3 weeks, then monthly for 1 year (MCQ).**\n    * **Contraception is recommended for 1 year.**\n* **Persistent trophoblastic disease (PTD):** Incomplete fall of hCG levels after evacuation. Treated with methotrexate.\n\n### Malignant Gestational Trophoblastic Diseases (GTD)\nIncludes Invasive Mole and Choriocarcinoma.\n* **More than 50% follow a molar pregnancy.**\n* Characterized by aggressive invasion and tendency to metastasize (lung, vagina, brain, liver).\n* **Gestational Choriocarcinoma:** A highly malignant tumor with early blood-borne metastases.\n\n**Diagnosis of Malignant GTD:**\n* **Persistent vaginal bleeding** following a pregnancy event.\n* **Abnormally high or rising hCG levels** after a terminated pregnancy.\n* Imaging (TVS/TAS, MRI, CT) to detect uterine lesion and metastases.\n\n**Management:**\n* **Chemotherapy is the main line of treatment.**\n* Hysterectomy may be offered to elderly patients or in cases with severe bleeding.\n",
+              "hash": "63186d8adf19fbfecf636b03fcf0f538957f3f28"
+            }
+          },
+          "hash": "f8872fda47420fe5377e972dafd8b2bf3548100c"
+        },
+        "fetus-and-neonate": {
+          "label": "Fetus And Neonate",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "fetus-and-neonate",
+                "title": "Fetus and Neonate"
+              }
+            ]
+          },
+          "hash": "f592f76361793cff9ddb689d8ecdd0e58ceb12dc"
+        },
+        "medical-disorders-in-pregnancy": {
+          "label": "Medical Disorders In Pregnancy",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "medical-disorders-in-pregnancy",
+                "title": "Medical Disorders in Pregnancy"
+              }
+            ]
+          },
+          "hash": "26c420d998afb48d4468efa0c0581eb4a948a41a"
+        },
+        "normal-and-abnormal-labor-and-delivery": {
+          "label": "Normal And Abnormal Labor And Delivery",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "normal-and-abnormal-labor-and-delivery",
+                "title": "NORMAL AND ABNORMAL LABOR AND DELIVERY"
+              }
+            ]
+          },
+          "hash": "7014ac970425fba5707cf0926ee46f4d39f37a9d"
+        },
+        "obstetric-injuries": {
+          "label": "Obstetric Injuries",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "obstetric-injuries",
+                "title": "OBSTETRIC INJURIES"
+              }
+            ]
+          },
+          "hash": "3c755e00ea8f7dddfff6671b9d47eaf8ae47ad85"
+        },
+        "revision": {
+          "label": "Revision",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "round-mcqs",
+                "title": "Round MCQs"
+              },
+              {
+                "id": "vip",
+                "title": "VIP"
+              }
+            ],
+            "flashcardDecks": [
+              {
+                "id": "obstetrics",
+                "title": "Obstetrics Flashcards"
+              }
+            ]
+          },
+          "hash": "bacab4252ecedfa708209dbe41c4256960b2e296"
+        }
+      },
+      "hash": "3aa8d5d260c104df96642fade963ac6edb0481ca"
+    },
+    "pediatrics": {
+      "label": "Pediatrics",
+      "hasIndex": false,
+      "isBranch": true,
+      "children": {
+        "cardiology": {
+          "label": "Cardiology",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "KAF",
+                "title": "KAF"
+              },
+              {
+                "id": "pbl-of-cardiology",
+                "title": "PBL of Cardiology"
+              }
+            ]
+          },
+          "hash": "50d5e66dd887ef1b8483d640d658269b5ad344d6"
+        },
+        "emergency": {
+          "label": "Emergency",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "KAF",
+                "title": "KAF"
+              }
+            ]
+          },
+          "hash": "fd258d8d046f5ba739d865bf86d861931d45ecc1"
+        },
+        "endocrine": {
+          "label": "Endocrine",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "KAF",
+                "title": "KAF"
+              },
+              {
+                "id": "pbl-of-endocrine",
+                "title": "PBL of Endocrine"
+              }
+            ]
+          },
+          "hash": "fca1e05e246fb03e31a84a8d4daf35e35073681f"
+        },
+        "genetics": {
+          "label": "Genetics",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": []
+          },
+          "hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        "git": {
+          "label": "Git",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "kaf",
+                "title": "KAF"
+              },
+              {
+                "id": "pbl-of-git",
+                "title": "PBL of GIT"
+              }
+            ]
+          },
+          "hash": "a89cedf7911d446c87b9713dd20e679cee226043"
+        },
+        "growth-and-development": {
+          "label": "Growth And Development",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "KAF",
+                "title": "KAF"
+              },
+              {
+                "id": "pbl-of-growth",
+                "title": "PBL of Growth & Development"
+              }
+            ]
+          },
+          "hash": "463c2b9f561e6e23359a6faea00d9c2e7b8f5c6d"
+        },
+        "hematology": {
+          "label": "Hematology",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "kaf",
+                "title": "KAF"
+              },
+              {
+                "id": "pbl-of-hematology",
+                "title": "PBL of Hematology"
+              }
+            ]
+          },
+          "hash": "f4366e96166519f2201e6d00e201778c8912627d"
+        },
+        "hepatology": {
+          "label": "Hepatology",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "KAF",
+                "title": "KAF"
+              },
+              {
+                "id": "pbl-of-hepatology",
+                "title": "PBL of Hepatology"
+              }
+            ]
+          },
+          "hash": "b3c8cb4dd38eca20b90687ed054b3998f26b5de3"
+        },
+        "infection-and-vaccination": {
+          "label": "Infection And Vaccination",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "kaf",
+                "title": "KAF"
+              },
+              {
+                "id": "pbl-of-infection-and-vaccination",
+                "title": "PBL of Infection and Vaccination"
+              }
+            ]
+          },
+          "hash": "7fa4869818c870c4fe49079d94815c0b3d31a0f8"
+        },
+        "neonatology": {
+          "label": "Neonatology Branch",
+          "hasIndex": true,
+          "isBranch": true,
+          "summary": "This section covers topics related to newborn infants, including jaundice and other neonatal conditions.",
+          "markdownContent": "\n# Neonatology\n\nThis is the main page for the Neonatology branch. Lessons under this branch will appear here.\n",
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "KAF",
+                "title": "KAF"
+              },
+              {
+                "id": "neonatology-bank",
+                "title": "Neonatology Bank"
+              },
+              {
+                "id": "pbl-of-neonatology",
+                "title": "PBL of Neonatology"
+              }
+            ]
+          },
+          "children": {
+            "neonatal-jaundice": {
+              "label": "Neonatal Jaundice",
+              "hasIndex": false,
+              "isBranch": false,
+              "hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+            }
+          },
+          "hash": "b366ec4312df965bd2f0d3532d89b3cb122388b6"
+        },
+        "nephrology": {
+          "label": "Nephrology",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "KAF",
+                "title": "KAF"
+              },
+              {
+                "id": "pbl-of-nephrology",
+                "title": "PBL of Nephrology"
+              }
+            ]
+          },
+          "hash": "ac5cd5e7d07fc13ee48ad1db45fd936fe1f4076f"
+        },
+        "neurology": {
+          "label": "Neurology",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "KAF",
+                "title": "KAF"
+              },
+              {
+                "id": "pbl-of-neurology",
+                "title": "PBL of Neurology"
+              }
+            ]
+          },
+          "hash": "79be4b5d4ac6747458ca8015abdae026178df23c"
+        },
+        "nutrition": {
+          "label": "Nutrition",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "KAF",
+                "title": "KAF"
+              },
+              {
+                "id": "pbl-of-nutrition",
+                "title": "PBL of Nutrition"
+              }
+            ]
+          },
+          "children": {
+            "malnutrition": {
+              "label": "Principles of Malnutrition",
+              "hasIndex": true,
+              "isBranch": false,
+              "summary": "An overview of the causes and classifications of malnutrition.",
+              "markdownContent": "\n# Principles of Malnutrition\n\nThis topic covers the primary and secondary forms of malnutrition in pediatrics.\n",
+              "hash": "2628ecbddbcf881619706f0d091eabc0490ccafe"
+            }
+          },
+          "hash": "c98174573a4c070db74de888ec080e81c0325651"
+        },
+        "respiratory": {
+          "label": "Respiratory",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "pbl-of-respiratory-and-allergy",
+                "title": "PBL of Respiratory & Allergy"
+              },
+              {
+                "id": "respiratory-and-allergy-kaf",
+                "title": "Respiratory and allergy KAF"
+              }
+            ]
+          },
+          "hash": "45ab6ea922664369c7193c94b5ef8c1384eccbec"
+        },
+        "rheumatology": {
+          "label": "Rheumatology",
+          "hasIndex": false,
+          "isBranch": true,
+          "resources": {
+            "collectionQuizzes": [
+              {
+                "id": "KAF",
+                "title": "KAF"
+              },
+              {
+                "id": "pbl-of-rheumatology",
+                "title": "PBL of Rheumatology"
+              }
+            ]
+          },
+          "hash": "a55249f7a5ddab3583ca30716b206ba6e68ae03c"
+        }
+      },
+      "hash": "a5ee09c6590232c3a388d04ef4017fdfdf4b717c"
+    }
+  },
+  "hash": "9e1963d308f6fd27877cfbc3a2474957024a8592"
+}

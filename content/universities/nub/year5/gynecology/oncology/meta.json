@@ -1,0 +1,18 @@
+{
+  "label": "Oncology",
+  "hasIndex": false,
+  "isBranch": true,
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "gynecologic-oncology",
+        "title": "Gynecologic Oncology"
+      },
+      {
+        "id": "oncology-nadine",
+        "title": "Oncology - Dr. Nadine"
+      }
+    ]
+  },
+  "hash": "17300a12162d28ea8c42b3955332c2f012b94c9f"
+}

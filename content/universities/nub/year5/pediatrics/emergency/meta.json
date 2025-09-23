@@ -1,0 +1,14 @@
+{
+  "label": "Emergency",
+  "hasIndex": false,
+  "isBranch": true,
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "KAF",
+        "title": "KAF"
+      }
+    ]
+  },
+  "hash": "fd258d8d046f5ba739d865bf86d861931d45ecc1"
+}

@@ -1,0 +1,14 @@
+{
+  "label": "Medical Disorders In Pregnancy",
+  "hasIndex": false,
+  "isBranch": true,
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "medical-disorders-in-pregnancy",
+        "title": "Medical Disorders in Pregnancy"
+      }
+    ]
+  },
+  "hash": "26c420d998afb48d4468efa0c0581eb4a948a41a"
+}

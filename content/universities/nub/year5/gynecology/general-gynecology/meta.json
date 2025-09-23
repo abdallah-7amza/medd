@@ -1,0 +1,18 @@
+{
+  "label": "General Gynecology",
+  "hasIndex": false,
+  "isBranch": true,
+  "resources": {
+    "collectionQuizzes": [
+      {
+        "id": "general-gynecology-nadine",
+        "title": "General Gynecology - Dr. Nadine"
+      },
+      {
+        "id": "general-gynecology",
+        "title": "Kasr Al Ainy"
+      }
+    ]
+  },
+  "hash": "e8f2200f1c1840303f5e44d1cd1b4591f835b53e"
+}
