@@ -1,4 +1,5 @@
 name: Generate Database Index
+
 on:
   push:
     branches:
@@ -6,22 +7,32 @@ on:
   pull_request:
     branches:
       - main
+
+# أضف هذا القسم لمنح صلاحيات الكتابة
+permissions:
+  contents: write
+
 jobs:
   generate-index:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
         node-version: 18
+
     - name: Install Dependencies
       run: npm install
+
     - name: Generate database index
       run: npm run build
+
     - name: Commit version.json and meta.json files
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
         commit_message: "ci: auto-generate meta.json and version.json"
         file_pattern: "docs/version.json content/**/*.json"
+
