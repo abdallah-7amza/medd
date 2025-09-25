@@ -3,40 +3,36 @@ import path from 'path';
 import matter from 'gray-matter';
 import crypto from 'crypto';
 
-// Helper to format names as a fallback
+const contentBasePath = 'content';
+const outputBasePath = 'docs/api';
+const docsPath = 'docs';
+
 function formatLabel(name) {
     return name.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
 }
 
-// Helper to calculate SHA1 hash from a string
 function calculateHash(data) {
     return crypto.createHash('sha1').update(data, 'utf8').digest('hex');
 }
 
-// Main recursive function to scan directories
 async function scanDirectory(dirPath) {
     const dirName = path.basename(dirPath);
-    const node = { label: formatLabel(dirName), hasIndex: false, isBranch: false };
+    const node = { id: dirName, label: formatLabel(dirName), hasIndex: false, isBranch: false };
     const allHashes = [];
 
-    // --- 1. Process current folder's metadata and content ---
     const indexPath = path.join(dirPath, 'index.md');
     try {
         const fileContent = await fs.readFile(indexPath, 'utf8');
-        const { data, content } = matter(fileContent);
+        const { data } = matter(fileContent);
         node.hasIndex = true;
         node.label = data.title || node.label;
         node.summary = data.summary || '';
-        node.markdownContent = content;
         allHashes.push(calculateHash(fileContent));
     } catch {
         node.hasIndex = false;
     }
-
-    // --- 2. Process all resources and their hashes ---
+    
     node.resources = {};
-
-    // Collection Quizzes
     const collectionQuizPath = path.join(dirPath, '_collection_quiz');
     try {
         const files = await fs.readdir(collectionQuizPath);
@@ -48,17 +44,12 @@ async function scanDirectory(dirPath) {
                 const fileContent = await fs.readFile(jsonFilePath, 'utf8');
                 const quizData = JSON.parse(fileContent);
                 const title = quizData.title || formatLabel(baseName);
-
-                // Add to metadata without full content
                 node.resources.collectionQuizzes.push({ id: baseName, title: title });
-
-                // Add content hash for folder hash calculation
                 allHashes.push(calculateHash(fileContent));
             }
         }
     } catch {}
 
-    // Flashcard Decks
     const flashcardsPath = path.join(dirPath, '_flashcards');
     try {
         const files = await fs.readdir(flashcardsPath);
@@ -70,17 +61,12 @@ async function scanDirectory(dirPath) {
                 const fileContent = await fs.readFile(jsonFilePath, 'utf8');
                 const deckData = JSON.parse(fileContent);
                 const title = deckData.title || formatLabel(baseName);
-
-                // Add to metadata without full content
                 node.resources.flashcardDecks.push({ id: baseName, title: title });
-
-                // Add content hash for folder hash calculation
                 allHashes.push(calculateHash(fileContent));
             }
         }
     } catch {}
 
-    // --- 3. Recursively scan children directories ---
     const entries = await fs.readdir(dirPath, { withFileTypes: true });
     for (const entry of entries) {
         if (entry.isDirectory() && !entry.name.startsWith('_') && !entry.name.startsWith('.')) {
@@ -92,32 +78,34 @@ async function scanDirectory(dirPath) {
         }
     }
 
-    // --- 4. Finalize node and save meta.json ---
     node.hash = calculateHash(allHashes.sort().join(''));
     node.isBranch = Object.keys(node.children || {}).length > 0 || (Object.keys(node.resources).length > 0 && !node.hasIndex);
     
-    // Clean up empty resource objects
     if (Object.keys(node.resources).length === 0) {
         delete node.resources;
     }
-
-    // Write the new meta.json file for the current directory
-    const metaOutputPath = path.join(dirPath, 'meta.json');
+    
+    const relativePath = path.relative(contentBasePath, dirPath);
+    const metaOutputPath = path.join(outputBasePath, relativePath, 'meta.json');
+    
+    await fs.mkdir(path.dirname(metaOutputPath), { recursive: true });
     await fs.writeFile(metaOutputPath, JSON.stringify(node, null, 2));
 
     return node;
 }
 
-// Main execution function
 async function main() {
-    const universitiesPath = 'content/universities';
-    const docsPath = 'docs';
+    const universitiesPath = path.join(contentBasePath, 'universities');
     const versionFilePath = path.join(docsPath, 'version.json');
+
+    await fs.rm(outputBasePath, { recursive: true, force: true }).catch(() => {});
 
     const versionData = {
         generatedAt: new Date().toISOString(),
         hashes: {}
     };
+    
+    const universityDataForHTML = [];
 
     try {
         const uniDirs = await fs.readdir(universitiesPath, { withFileTypes: true });
@@ -126,12 +114,32 @@ async function main() {
                 const uniPath = path.join(universitiesPath, uniDir.name);
                 const uniNode = await scanDirectory(uniPath);
                 versionData.hashes[uniDir.name] = uniNode.hash;
+                universityDataForHTML.push({ id: uniNode.id, label: uniNode.label });
             }
         }
-
-        // Write the single version.json file
         await fs.writeFile(versionFilePath, JSON.stringify(versionData, null, 2));
         console.log(`Version index generated successfully at ${versionFilePath}`);
+
+        // --- المهمة الجديدة: حقن البيانات في HTML ---
+        console.log('Injecting university list into index.html...');
+        const htmlTemplatePath = path.join(docsPath, 'index.html');
+        let htmlContent = await fs.readFile(htmlTemplatePath, 'utf8');
+
+        const universityCardsHTML = universityDataForHTML.map(uni => {
+            return `
+            <a href="lessons-list.html?uni=${uni.id}" class="card-link">
+                <div class="card">
+                    <h2>${uni.label}</h2>
+                </div>
+            </a>`;
+        }).join('');
+
+        const placeholder = '';
+        htmlContent = htmlContent.replace(placeholder, universityCardsHTML);
+
+        await fs.writeFile(htmlTemplatePath, htmlContent, 'utf8');
+        console.log('Successfully injected university list into index.html');
+
     } catch (error) {
         console.error("Error generating index:", error);
         process.exit(1);
